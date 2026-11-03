@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Résido">
+<meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon" sizes="152x152" href="icone-152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icone-180.png">
+<title>Résido</title>
+<!--
+  Résido : le hub résidentiel de Gilbert, sur un iPad 4
+  Cible : iPad 4e génération, iOS 10.3.3, Safari 10.1 (WebKit 603).
+  Le JavaScript est volontairement en ES5 et le CSS n'utilise que des
+  propriétés reconnues par Safari 10. Vérifier avec : node verifier.js
+-->
+<style>
+@font-face { font-family: "Instrument Serif"; src: url("polices/InstrumentSerif-Regular.woff") format("woff"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Instrument Serif"; src: url("polices/InstrumentSerif-Italic.woff") format("woff"); font-weight: 400; font-style: italic; }
+@font-face { font-family: "Geist"; src: url("polices/Geist-Regular.woff") format("woff"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Geist"; src: url("polices/Geist-Medium.woff") format("woff"); font-weight: 500; font-style: normal; }
+
+:root {
+  --encre: #0A0F18;      /* fond */
+  --givre: #E9ECF1;      /* texte principal */
+  --brume: #8D97A8;      /* texte secondaire */
+  --ardoise: #3A4456;    /* filets et mentions */
+  --lueur: #E7B37E;      /* soleil : lever, coucher */
+  --veille: #B8805A;     /* texte du mode veille */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; background: var(--encre); }
+body {
+  position: fixed; top: 0; right: 0; bottom: 0; left: 0;
+  overflow: hidden;
+  color: var(--givre);
+  font-family: "Geist", -apple-system, "Helvetica Neue", sans-serif;
+  font-size: 2.5vmin;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -webkit-user-select: none; user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: default;
+}
+
+/* La lueur d'horizon : la couleur du ciel du moment, posée au bas de l'écran */
+#horizon {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 1;
+  -webkit-transition: opacity 2s ease; transition: opacity 2s ease;
+  pointer-events: none;
+}
+#horizon:after {
+  content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url("data:image/png;base64,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");
+  background-size: 64px 64px;
+  opacity: .03;
+}
+.ciel-nuit #horizon       { background: radial-gradient(130% 48% at 50% 100%, rgba(70, 92, 170, .16) 0%, rgba(70, 92, 170, .05) 45%, rgba(70, 92, 170, 0) 100%); }
+.ciel-aube #horizon       { background: radial-gradient(130% 48% at 50% 100%, rgba(232, 150, 128, .30) 0%, rgba(214, 140, 140, .10) 45%, rgba(214, 140, 140, 0) 100%); }
+.ciel-jour #horizon       { background: radial-gradient(130% 48% at 50% 100%, rgba(128, 168, 220, .22) 0%, rgba(128, 168, 220, .07) 45%, rgba(128, 168, 220, 0) 100%); }
+.ciel-crepuscule #horizon { background: radial-gradient(130% 48% at 50% 100%, rgba(226, 132, 88, .32) 0%, rgba(190, 110, 120, .10) 45%, rgba(190, 110, 120, 0) 100%); }
+
+#scene {
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  padding: 5.6vmin 7vmin 4.6vmin;
+  display: -webkit-flex; display: flex;
+  -webkit-flex-direction: column; flex-direction: column;
+}
+
+.tete {
+  display: -webkit-flex; display: flex;
+  -webkit-justify-content: space-between; justify-content: space-between;
+  -webkit-align-items: baseline; align-items: baseline;
+}
+.date {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-size: 5.4vmin;
+  line-height: 1;
+  color: var(--givre);
+}
+.lieu { color: var(--brume); font-size: 2.3vmin; }
+
+.milieu {
+  display: -webkit-flex; display: flex;
+  -webkit-align-items: flex-end; align-items: flex-end;
+  -webkit-justify-content: space-between; justify-content: space-between;
+  margin-top: auto;
+}
+.heure {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 38vmin;
+  line-height: .8;
+  letter-spacing: -.012em;
+  margin-left: -1.6vmin;
+  white-space: nowrap;
+  font-feature-settings: "lnum" 1;
+}
+.heure .h { font-size: .46em; margin: 0 .09em 0 .05em; letter-spacing: 0; }
+
+.actuel { width: 31%; padding-bottom: .6vmin; }
+.actuel-vide { color: var(--brume); font-size: 2.4vmin; }
+.ligne-temp {
+  display: -webkit-flex; display: flex;
+  -webkit-align-items: center; align-items: center;
+  margin-bottom: 1.6vmin;
+}
+.icone { display: block; width: 8.4vmin; height: 8.4vmin; color: var(--givre); }
+.icone svg { display: block; width: 100%; height: 100%; }
+.temp {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 12vmin; line-height: .9;
+  margin-left: 2.4vmin;
+  font-feature-settings: "lnum" 1;
+}
+.cond-titre { font-size: 3vmin; font-weight: 500; line-height: 1.25; }
+.cond-details { color: var(--brume); font-size: 2.4vmin; margin-top: .3vmin; }
+.cond-details span { margin-right: 2.2vmin; }
+.precip { font-size: 2.4vmin; margin-top: 1.8vmin; line-height: 1.35; }
+
+.meteo { margin-top: auto; }
+.courbe { height: 16vmin; margin: 0 0 2.6vmin; }
+.courbe svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.courbe .ligne { fill: none; stroke: var(--brume); stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
+.courbe .point { fill: var(--givre); }
+.courbe .t { fill: var(--givre); font-family: "Geist", sans-serif; font-size: 15px; }
+.courbe .hh { fill: var(--brume); font-family: "Geist", sans-serif; font-size: 13.5px; }
+.courbe .soleil { stroke: var(--lueur); stroke-width: 1; stroke-dasharray: 2 4; }
+.courbe .soleil-txt { fill: var(--lueur); font-family: "Geist", sans-serif; font-size: 13.5px; }
+
+.pied {
+  display: -webkit-flex; display: flex;
+  -webkit-align-items: flex-end; align-items: flex-end;
+  -webkit-justify-content: space-between; justify-content: space-between;
+}
+.jours { list-style: none; display: -webkit-flex; display: flex; }
+.jour {
+  display: -webkit-flex; display: flex;
+  -webkit-align-items: center; align-items: center;
+  margin-right: 6vmin;
+}
+.jour-nom { color: var(--brume); width: 6vmin; font-size: 2.4vmin; }
+.jour .icone { width: 4.6vmin; height: 4.6vmin; color: var(--brume); margin-right: 1.4vmin; }
+.jour-max { font-size: 2.6vmin; margin-right: 1.2vmin; }
+.jour-min { font-size: 2.6vmin; color: var(--brume); }
+.mentions { text-align: right; color: var(--ardoise); font-size: 1.8vmin; line-height: 1.5; }
+.mentions .etat { color: var(--brume); }
+
+/* À la une : un titre à la fois, au-dessus de la courbe */
+.une {
+  display: -webkit-flex; display: flex;
+  -webkit-align-items: baseline; align-items: baseline;
+  width: 100%;
+  margin: 0 0 3.2vmin;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  -webkit-appearance: none;
+  cursor: pointer;
+  opacity: 1;
+  -webkit-transition: opacity .45s ease; transition: opacity .45s ease;
+}
+.une.change { opacity: 0; }
+.une-rubrique {
+  -webkit-flex: none; flex: none;
+  width: 13vmin;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-size: 3.4vmin;
+  line-height: 1;
+  color: var(--brume);
+}
+.une-texte { -webkit-flex: 1; flex: 1; min-width: 0; }
+.une-titre {
+  display: block;
+  font-size: 2.7vmin;
+  line-height: 1.3;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.une-meta { display: block; color: var(--brume); font-size: 2vmin; margin-top: .3vmin; }
+
+/* Écran Actualité */
+.actus {
+  display: none;
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  padding: 5.6vmin 7vmin 4.6vmin;
+  background: var(--encre);
+}
+.actus-ouvert .actus { display: block; }
+.actus-ouvert #scene { visibility: hidden; }
+.actus-tete {
+  display: -webkit-flex; display: flex;
+  -webkit-align-items: baseline; align-items: baseline;
+  margin-bottom: 4.4vmin;
+}
+.actus-titre {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-size: 5.4vmin; line-height: 1;
+}
+.actus-maj { -webkit-flex: 1; flex: 1; margin-left: 3vmin; color: var(--brume); font-size: 2.1vmin; }
+.actus-fermer {
+  -webkit-appearance: none; border: 0; background: none; font: inherit;
+  color: var(--brume); font-size: 2.3vmin;
+  padding: 1.4vmin 0 1.4vmin 3vmin;
+}
+.actus-grille {
+  display: -webkit-flex; display: flex;
+  -webkit-flex-wrap: wrap; flex-wrap: wrap;
+  margin-right: -5vmin;
+}
+.rubrique { width: 50%; padding-right: 5vmin; margin-bottom: 4.2vmin; }
+.rubrique-titre {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-size: 3.6vmin; line-height: 1;
+  color: var(--brume);
+  margin-bottom: 1.8vmin;
+}
+.article { margin-bottom: 1.8vmin; }
+.article-titre {
+  font-size: 2.35vmin; line-height: 1.32;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.article-meta { color: var(--brume); font-size: 1.85vmin; margin-top: .3vmin; }
+.actus-vide { color: var(--brume); font-size: 2.4vmin; }
+
+/* Acquit, sur demande */
+.acquit-bouton {
+  -webkit-appearance: none; border: 0; background: none; padding: 1vmin 0 1.2vmin 3vmin;
+  font-family: "Instrument Serif", Georgia, serif; font-style: italic;
+  font-size: 3.2vmin; line-height: 1; color: var(--brume);
+  cursor: pointer;
+}
+.acquit-ouvert .acquit { display: block; }
+.acquit-ouvert #scene, .acquit-ouvert #actus { visibility: hidden; }
+.acq-libelle { color: var(--brume); font-size: 2.3vmin; margin-bottom: 1vmin; }
+.acq-grand {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 15vmin; line-height: .95; letter-spacing: -.01em;
+  font-feature-settings: "lnum" 1;
+}
+.acq-moyen {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 7.4vmin; line-height: 1;
+  font-feature-settings: "lnum" 1;
+}
+.acq-detail { color: var(--brume); font-size: 2.3vmin; margin-top: 1.2vmin; line-height: 1.4; }
+.acq-reste { margin-bottom: 6vmin; }
+.acq-colonnes { display: -webkit-flex; display: flex; }
+.acq-colonnes > div { width: 50%; padding-right: 5vmin; }
+.acq-factures { list-style: none; }
+.acq-facture {
+  display: -webkit-flex; display: flex;
+  -webkit-align-items: baseline; align-items: baseline;
+  padding: 1.1vmin 0;
+  font-size: 2.5vmin;
+}
+.acq-facture-nom { -webkit-flex: 1; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.acq-facture-date { -webkit-flex: none; flex: none; width: 13vmin; text-align: right; color: var(--brume); margin-right: 2.4vmin; font-size: 2.2vmin; }
+.acq-facture-montant { -webkit-flex: none; flex: none; }
+.acq-facture-montant { font-feature-settings: "tnum" 1; }
+.acq-oublier {
+  -webkit-appearance: none; border: 0; background: none; font: inherit;
+  color: var(--ardoise); font-size: 1.9vmin; margin-top: 5vmin; padding: 1vmin 0;
+}
+.acq-jumelage { max-width: 70vmin; }
+.acq-titre-form {
+  font-family: "Instrument Serif", Georgia, serif; font-style: italic;
+  font-size: 4.6vmin; line-height: 1.1; margin-bottom: 2vmin;
+}
+.acq-code {
+  display: block; width: 46vmin; margin: 4vmin 0 2.4vmin;
+  padding: 1.6vmin 2vmin;
+  border: 1px solid var(--ardoise); border-radius: 1.2vmin;
+  background: transparent; color: var(--givre);
+  font-family: "Geist", sans-serif; font-size: 4.4vmin; letter-spacing: .16em;
+  text-transform: uppercase;
+  -webkit-appearance: none; -webkit-user-select: text; user-select: text;
+}
+.acq-code:focus { outline: none; border-color: var(--brume); }
+.acq-relier {
+  -webkit-appearance: none; border: 0; border-radius: 1.2vmin;
+  background: var(--givre); color: var(--encre);
+  font-family: "Geist", sans-serif; font-weight: 500; font-size: 2.6vmin;
+  padding: 1.6vmin 4.4vmin;
+}
+.acq-relier[disabled] { opacity: .5; }
+.acq-erreur { color: var(--lueur); font-size: 2.3vmin; margin-top: 2.4vmin; min-height: 3vmin; }
+
+/* Mode veille : l'heure seule, en ambre, pour la nuit */
+.resume { display: none; }
+#scene, #horizon, .tete, .meteo, .actuel, .heure { -webkit-transition: opacity 1.2s ease, color 1.2s ease; transition: opacity 1.2s ease, color 1.2s ease; }
+.veille #horizon { opacity: 0; }
+.veille .tete, .veille .meteo, .veille .actuel { opacity: 0; }
+.veille .heure { color: var(--veille); }
+.veille .resume {
+  display: block;
+  margin-top: 4vmin;
+  color: var(--veille);
+  opacity: .8;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-size: 4.6vmin;
+}
+.veille .tete, .veille .meteo, .veille .actuel { position: absolute; visibility: hidden; }
+.veille .actus, .veille .acquit { display: none; }
+.veille #scene { visibility: visible; }
+.veille .resume { margin-bottom: auto; }
+
+/* Portrait */
+@media (orientation: portrait) {
+  .milieu { display: block; margin-top: 8vmin; }
+  .heure { font-size: 27vmax; }
+  .actuel { width: auto; margin-top: 7vmin; }
+  .pied { -webkit-flex-direction: column; flex-direction: column; -webkit-align-items: flex-start; align-items: flex-start; }
+  .mentions { text-align: left; margin-top: 3vmin; }
+  .rubrique { width: 100%; margin-bottom: 3.4vmin; }
+  .article:nth-child(n+4) { display: none; }
+  .acq-colonnes { display: block; }
+  .acq-colonnes > div { width: 100%; margin-bottom: 5vmin; }
+}
+
+@media (orientation: landscape) {
+  .article:nth-child(n+5) { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #scene, #horizon, .tete, .meteo, .actuel, .heure, .une { -webkit-transition: none; transition: none; }
+}
+</style>
+</head>
+<body class="ciel-nuit">
+<div id="horizon" aria-hidden="true"></div>
+<main id="scene">
+  <header class="tete">
+    <p id="date" class="date"></p>
+    <p class="lieu" id="lieu"></p>
+  </header>
+  <div class="milieu">
+    <p id="heure" class="heure" aria-live="off"></p>
+    <div class="actuel" id="actuel">
+      <p class="actuel-vide" id="meteo-vide">Chargement de la météo…</p>
+      <div id="meteo-plein" style="display:none">
+        <div class="ligne-temp">
+          <span id="icone" class="icone" role="img"></span>
+          <span id="temp" class="temp"></span>
+        </div>
+        <p id="condition" class="cond-titre"></p>
+        <p id="details" class="cond-details"></p>
+        <p id="precip" class="precip"></p>
+      </div>
+    </div>
+  </div>
+  <p id="resume" class="resume"></p>
+  <section id="meteo" class="meteo" aria-label="Prévisions">
+    <button id="une" class="une" type="button" style="display:none" aria-label="Ouvrir l’actualité">
+      <span class="une-rubrique" id="une-rubrique"></span>
+      <span class="une-texte"><span class="une-titre" id="une-titre"></span><span class="une-meta" id="une-meta"></span></span>
+    </button>
+    <div id="courbe" class="courbe" aria-hidden="true"></div>
+    <div class="pied">
+      <ul id="jours" class="jours"></ul>
+      <div class="mentions">
+        <button id="acquit-bouton" class="acquit-bouton" type="button">Acquit</button>
+        <p><span id="etat" class="etat"></span><br>Données météo Open-Meteo</p>
+      </div>
+    </div>
+  </section>
+</main>
+<section id="acquit" class="actus acquit" aria-label="Acquit">
+  <header class="actus-tete">
+    <p class="actus-titre">Acquit</p>
+    <p class="actus-maj" id="acquit-maj"></p>
+    <button class="actus-fermer" id="acquit-fermer" type="button">Fermer</button>
+  </header>
+  <div id="acquit-contenu"></div>
+</section>
+<section id="actus" class="actus" aria-label="Actualité">
+  <header class="actus-tete">
+    <p class="actus-titre">Actualité</p>
+    <p class="actus-maj" id="actus-maj"></p>
+    <button class="actus-fermer" id="actus-fermer" type="button">Fermer</button>
+  </header>
+  <div class="actus-grille" id="actus-grille"></div>
+</section>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Réglages ---------- */
+  var REGLAGES = {
+    lieu: 'Saint-Raymond',
+    latitude: 46.8901,
+    longitude: -71.83415,
+    fuseau: 'America/Toronto',
+    veilleDebut: 22 * 60,       // 22 h 00, en minutes depuis minuit
+    veilleFin: 6 * 60,          // 6 h 00
+    reveilSecondes: 30,         // durée de l'affichage complet après un toucher en veille
+    meteoMinutes: 30,           // fréquence de mise à jour de la météo
+    reessaiMinutes: 5,          // nouvel essai après une erreur réseau
+    meteoPerimeeMinutes: 90,    // au-delà, l'heure de la dernière mise à jour s'affiche
+    actusMinutes: 15,           // fréquence de lecture de l'actualité
+    uneSecondes: 20,            // durée d'affichage de chaque titre « à la une »
+    actusFermetureSecondes: 90, // l'écran Actualité se referme seul après ce délai
+    acquitSecondes: 30,         // les chiffres d'Acquit se cachent après ce délai
+    acquitUrl: 'https://dlsmbkktvfsuzvjrndvk.supabase.co/functions/v1/resido',
+    // Heure par rapport à UTC. null : fuseau de l'iPad. Si le Québec abolit le
+    // changement d'heure, mettre -5 (heure normale) ou -4 (heure avancée), puis publier.
+    decalageUTC: null
+  };
+
+  var JOURS = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+  var JOURS_COURTS = ['dim.', 'lun.', 'mar.', 'mer.', 'jeu.', 'ven.', 'sam.'];
+  var MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+
+  /* Mêmes libellés que Giboul (src/lib/weather.ts) */
+  var LIBELLES = {
+    0: 'ciel dégagé', 1: 'peu nuageux', 2: 'partiellement nuageux', 3: 'couvert',
+    45: 'brouillard', 48: 'brouillard givrant',
+    51: 'bruine légère', 53: 'bruine', 55: 'bruine dense',
+    61: 'pluie légère', 63: 'pluie modérée', 65: 'pluie forte',
+    66: 'pluie verglaçante', 67: 'pluie verglaçante forte',
+    71: 'neige légère', 73: 'neige modérée', 75: 'neige forte', 77: 'grésil',
+    80: 'averses légères', 81: 'averses', 82: 'averses violentes',
+    85: 'averses de neige', 86: 'averses de neige fortes',
+    95: 'orage', 96: 'orage avec grêle', 99: 'orage violent avec grêle'
+  };
+
+  var NBSP = ' ';
+  var FINE = ' ';
+
+  /* ---------- Outils ---------- */
+  var decalage = 0; // seulement pour les essais : ?t=14:32
+  (function () {
+    var m = /[?&]t=(\d{1,2}):(\d{2})/.exec(window.location.search);
+    if (m) {
+      var cible = new Date();
+      cible.setHours(parseInt(m[1], 10), parseInt(m[2], 10), 0, 0);
+      decalage = cible.getTime() - Date.now();
+    }
+  })();
+
+  function instant() { return Date.now() + decalage; }
+  /* Date dont les heures et minutes sont celles de Résido, même si iOS 10 ne connaît pas une future règle d'heure */
+  function local(ms) {
+    if (REGLAGES.decalageUTC === null) { return new Date(ms); }
+    return new Date(ms + (REGLAGES.decalageUTC * 60 + new Date(ms).getTimezoneOffset()) * 60000);
+  }
+  function maintenant() { return local(instant()); }
+  function deux(n) { return n < 10 ? '0' + n : String(n); }
+  function $(id) { return document.getElementById(id); }
+  function texte(el, t) { if (el.textContent !== t) { el.textContent = t; } }
+  function heureCourte(d) { return d.getHours() + NBSP + 'h' + NBSP + deux(d.getMinutes()); }
+  function heureRonde(d) { return d.getHours() + NBSP + 'h'; }
+  function majuscule(t) { return t ? t.charAt(0).toUpperCase() + t.slice(1) : t; }
+  function memeJour(a, b) { return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate(); }
+  function degres(n) { return Math.round(n) + '°'; }
+
+  function lire(cle) { try { return JSON.parse(window.localStorage.getItem(cle)); } catch (e) { return null; } }
+  function ecrire(cle, valeur) { try { window.localStorage.setItem(cle, JSON.stringify(valeur)); } catch (e) { /* stockage indisponible : on continue sans cache */ } }
+
+  /* ---------- Icônes (traits, couleur héritée) ---------- */
+  var NUAGE = 'M15 33h19a7.5 7.5 0 0 0 .6-15 10.5 10.5 0 0 0-20.3 2.6A6.2 6.2 0 0 0 15 33z';
+  var NUAGE_HAUT = 'M15 28h19a7 7 0 0 0 .6-14 10 10 0 0 0-19.4 2.5A5.8 5.8 0 0 0 15 28z';
+  function svg(contenu) {
+    return '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' + contenu + '</svg>';
+  }
+  function soleil(cx, cy, r, rayon) {
+    var s = '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '"/>';
+    for (var i = 0; i < 8; i++) {
+      var a = i * Math.PI / 4;
+      var x1 = cx + Math.cos(a) * (r + 3.2), y1 = cy + Math.sin(a) * (r + 3.2);
+      var x2 = cx + Math.cos(a) * (r + 3.2 + rayon), y2 = cy + Math.sin(a) * (r + 3.2 + rayon);
+      s += '<line x1="' + x1.toFixed(1) + '" y1="' + y1.toFixed(1) + '" x2="' + x2.toFixed(1) + '" y2="' + y2.toFixed(1) + '"/>';
+    }
+    return s;
+  }
+  function lune(tx, ty, k) {
+    return '<path transform="translate(' + tx + ' ' + ty + ') scale(' + k + ')" d="M30 28.5A12 12 0 1 1 19.5 12a9.5 9.5 0 0 0 10.5 16.5z"/>';
+  }
+  function gouttes(oblique) {
+    var s = '';
+    var xs = [17, 24, 31];
+    for (var i = 0; i < 3; i++) {
+      s += oblique ? '<line x1="' + (xs[i] + 1.5) + '" y1="33" x2="' + (xs[i] - 1.5) + '" y2="40"/>' : '<line x1="' + xs[i] + '" y1="34" x2="' + xs[i] + '" y2="37"/>';
+    }
+    return s;
+  }
+  function flocons() {
+    var s = '';
+    var pts = [[17, 36], [24, 40], [31, 36]];
+    for (var i = 0; i < 3; i++) {
+      var x = pts[i][0], y = pts[i][1];
+      s += '<line x1="' + x + '" y1="' + (y - 2.4) + '" x2="' + x + '" y2="' + (y + 2.4) + '"/>' +
+           '<line x1="' + (x - 2.1) + '" y1="' + (y - 1.2) + '" x2="' + (x + 2.1) + '" y2="' + (y + 1.2) + '"/>' +
+           '<line x1="' + (x - 2.1) + '" y1="' + (y + 1.2) + '" x2="' + (x + 2.1) + '" y2="' + (y - 1.2) + '"/>';
+    }
+    return s;
+  }
+  function icone(code, jour) {
+    if (code === 0) { return svg(jour ? soleil(24, 24, 7.5, 3.6) : lune(0, 0, 1)); }
+    if (code === 1 || code === 2) {
+      var astre = jour ? soleil(17, 17, 5, 2.4) : lune(-6, -6, .72);
+      return svg(astre + '<path transform="translate(4 5)" fill="#0A0F18" d="' + NUAGE + '"/>');
+    }
+    if (code === 3) { return svg('<path d="' + NUAGE + '"/>'); }
+    if (code === 45 || code === 48) { return svg('<line x1="10" y1="18" x2="38" y2="18"/><line x1="13" y1="24" x2="35" y2="24"/><line x1="10" y1="30" x2="38" y2="30"/>'); }
+    if (code >= 51 && code <= 55) { return svg('<path d="' + NUAGE_HAUT + '"/>' + gouttes(false)); }
+    if (code === 66 || code === 67) { return svg('<path d="' + NUAGE_HAUT + '"/>' + gouttes(true) + '<circle cx="24" cy="44" r=".8"/>'); }
+    if ((code >= 61 && code <= 65) || (code >= 80 && code <= 82)) { return svg('<path d="' + NUAGE_HAUT + '"/>' + gouttes(true)); }
+    if ((code >= 71 && code <= 77) || code === 85 || code === 86) { return svg('<path d="' + NUAGE_HAUT + '"/>' + flocons()); }
+    if (code >= 95) { return svg('<path d="' + NUAGE_HAUT + '"/><path d="M25.5 30l-4 6.5h5l-3.5 6.5"/>'); }
+    return svg('<path d="' + NUAGE + '"/>');
+  }
+
+  function typePrecip(code) {
+    if ((code >= 71 && code <= 77) || code === 85 || code === 86) { return 'Neige'; }
+    if (code === 66 || code === 67) { return 'Pluie verglaçante'; }
+    if (code >= 95) { return 'Orage'; }
+    if (code >= 51 && code <= 55) { return 'Bruine'; }
+    if (code >= 61) { return 'Pluie'; }
+    return 'Précipitations';
+  }
+
+  /* ---------- Horloge et date ---------- */
+  var elHeure = $('heure'), elDate = $('date');
+  var derniereMinute = -1;
+
+  function afficherHeure() {
+    var d = maintenant();
+    var cle = d.getHours() * 60 + d.getMinutes();
+    if (cle === derniereMinute) { return; }
+    derniereMinute = cle;
+    elHeure.innerHTML = d.getHours() + '<span class="h">h</span>' + deux(d.getMinutes());
+    elHeure.setAttribute('aria-label', d.getHours() + ' heures ' + d.getMinutes());
+    texte(elDate, JOURS[d.getDay()] + ' ' + (d.getDate() === 1 ? '1er' : d.getDate()) + ' ' + MOIS[d.getMonth()]);
+    appliquerVeille();
+    appliquerCiel();
+    minuteurs();
+  }
+
+  function tic() {
+    afficherHeure();
+    var ms = 60000 - (Date.now() + decalage) % 60000;
+    window.setTimeout(tic, ms + 40);
+  }
+
+  /* ---------- Météo ---------- */
+  var meteo = null;      // { recu: ms, data: réponse Open-Meteo }
+  var prochainAppel = null;
+
+  function urlMeteo() {
+    return 'https://api.open-meteo.com/v1/forecast' +
+      '?latitude=' + REGLAGES.latitude + '&longitude=' + REGLAGES.longitude +
+      '&current=temperature_2m,apparent_temperature,weather_code,is_day,wind_speed_10m,wind_gusts_10m' +
+      '&hourly=temperature_2m,weather_code,precipitation_probability,is_day' +
+      '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,sunrise,sunset' +
+      '&timezone=' + encodeURIComponent(REGLAGES.fuseau) + '&timeformat=unixtime&forecast_days=4';
+  }
+
+  function chargerMeteo() {
+    if (prochainAppel) { window.clearTimeout(prochainAppel); prochainAppel = null; }
+    var xhr = new XMLHttpRequest();
+    var fini = false;
+    function echec() {
+      if (fini) { return; }
+      fini = true;
+      afficherMeteo();
+      planifier(REGLAGES.reessaiMinutes);
+    }
+    xhr.open('GET', urlMeteo(), true);
+    xhr.timeout = 20000;
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState !== 4 || fini) { return; }
+      if (xhr.status !== 200) { echec(); return; }
+      try {
+        var data = JSON.parse(xhr.responseText);
+        if (!data || !data.current || !data.hourly || !data.daily) { echec(); return; }
+        fini = true;
+        meteo = { recu: Date.now(), data: data };
+        ecrire('resido.meteo', meteo);
+        afficherMeteo();
+        planifier(REGLAGES.meteoMinutes);
+      } catch (e) { echec(); }
+    };
+    xhr.ontimeout = echec;
+    xhr.onerror = echec;
+    try { xhr.send(); } catch (e) { echec(); }
+  }
+
+  function planifier(minutes) {
+    if (prochainAppel) { window.clearTimeout(prochainAppel); }
+    prochainAppel = window.setTimeout(chargerMeteo, minutes * 60000);
+  }
+
+  function indexJour(data, d) {
+    for (var i = 0; i < data.daily.time.length; i++) {
+      if (memeJour(local(data.daily.time[i] * 1000 + 43200000), d)) { return i; }
+    }
+    return -1;
+  }
+
+  function indexHeure(data, ms) {
+    var s = ms / 1000;
+    for (var i = 0; i < data.hourly.time.length; i++) {
+      if (data.hourly.time[i] + 3600 > s) { return i; }
+    }
+    return -1;
+  }
+
+  function phrasePrecip(data, debut) {
+    var c = data.current.weather_code;
+    var fin = Math.min(debut + 12, data.hourly.time.length);
+    if (c >= 51) {
+      for (var j = debut + 1; j < fin; j++) {
+        var pj = data.hourly.precipitation_probability[j];
+        if (pj !== null && pj !== undefined && pj < 30) { return 'Accalmie probable vers ' + heureRonde(local(data.hourly.time[j] * 1000)); }
+      }
+      return 'Précipitations prévues pour les 12 prochaines heures';
+    }
+    var pmax = 0;
+    for (var i = debut; i < fin; i++) {
+      var p = data.hourly.precipitation_probability[i];
+      if (p === null || p === undefined) { continue; }
+      if (p >= 50) {
+        if (i === debut) { return typePrecip(data.hourly.weather_code[i]) + ' probable d\u2019ici une heure (' + p + NBSP + '%)'; }
+        var quand = local(data.hourly.time[i] * 1000);
+        var demain = !memeJour(quand, maintenant());
+        return typePrecip(data.hourly.weather_code[i]) + ' probable vers ' + heureRonde(quand) + (demain && quand.getHours() >= 6 ? ' demain' : '') + ' (' + p + NBSP + '%)';
+      }
+      if (p > pmax) { pmax = p; }
+    }
+    if (pmax >= 20) { return 'Faible risque de précipitations d’ici 12' + NBSP + 'h (' + pmax + NBSP + '%)'; }
+    return 'Pas de précipitations prévues d’ici 12' + NBSP + 'h';
+  }
+
+  function afficherMeteo() {
+    var vide = $('meteo-vide'), plein = $('meteo-plein');
+    if (!meteo) {
+      vide.style.display = '';
+      plein.style.display = 'none';
+      texte(vide, 'Météo indisponible pour l’instant. Nouvel essai dans ' + REGLAGES.reessaiMinutes + NBSP + 'minutes.');
+      texte($('resume'), '');
+      $('jours').innerHTML = '';
+      return;
+    }
+    var data = meteo.data;
+    var now = maintenant();
+    var c = data.current;
+    var ij = indexJour(data, now);
+    var ih = indexHeure(data, instant());
+
+    vide.style.display = 'none';
+    plein.style.display = '';
+
+    var libelle = LIBELLES[c.weather_code] || 'conditions inconnues';
+    $('icone').innerHTML = icone(c.weather_code, c.is_day === 1);
+    $('icone').setAttribute('aria-label', libelle);
+    texte($('temp'), degres(c.temperature_2m));
+    texte($('condition'), majuscule(libelle));
+
+    var details = [];
+    if (Math.abs(c.apparent_temperature - c.temperature_2m) >= 2) { details.push('Ressentie ' + degres(c.apparent_temperature)); }
+    if (ij >= 0) {
+      details.push('Max. ' + degres(data.daily.temperature_2m_max[ij]));
+      details.push('Min. ' + degres(data.daily.temperature_2m_min[ij]));
+    }
+    if (c.wind_gusts_10m >= 40) { details.push('Rafales ' + Math.round(c.wind_gusts_10m) + NBSP + 'km/h'); }
+    var html = '';
+    for (var i = 0; i < details.length; i++) { html += '<span>' + details[i] + '</span>'; }
+    $('details').innerHTML = html;
+
+    texte($('precip'), ih >= 0 ? phrasePrecip(data, ih) : '');
+    texte($('resume'), degres(c.temperature_2m) + ', ' + libelle);
+
+    dessinerCourbe(data, ih);
+    afficherJours(data, ij);
+    afficherEtat();
+    appliquerCiel();
+  }
+
+  function afficherEtat() {
+    var el = $('etat');
+    if (!meteo) { texte(el, ''); return; }
+    var age = (Date.now() - meteo.recu) / 60000;
+    if (age > REGLAGES.meteoPerimeeMinutes) {
+      var d = local(meteo.recu + decalage);
+      var jour = memeJour(d, maintenant()) ? '' : ' le ' + d.getDate() + ' ' + MOIS[d.getMonth()];
+      texte(el, 'Météo du réseau à ' + heureCourte(d) + jour);
+    } else {
+      texte(el, '');
+    }
+  }
+
+  function afficherJours(data, ij) {
+    var ul = $('jours');
+    if (ij < 0) { ul.innerHTML = ''; return; }
+    var html = '';
+    for (var k = ij + 1; k < data.daily.time.length && k <= ij + 3; k++) {
+      var d = local(data.daily.time[k] * 1000 + 43200000);
+      var lib = LIBELLES[data.daily.weather_code[k]] || '';
+      html += '<li class="jour"><span class="jour-nom">' + JOURS_COURTS[d.getDay()] + '</span>' +
+        '<span class="icone" role="img" aria-label="' + lib + '">' + icone(data.daily.weather_code[k], true) + '</span>' +
+        '<span class="jour-max">' + degres(data.daily.temperature_2m_max[k]) + '</span>' +
+        '<span class="jour-min">' + degres(data.daily.temperature_2m_min[k]) + '</span></li>';
+    }
+    ul.innerHTML = html;
+  }
+
+  /* La courbe des 12 prochaines heures, avec le lever et le coucher du soleil */
+  function dessinerCourbe(data, debut) {
+    var boite = $('courbe');
+    if (debut < 0) { boite.innerHTML = ''; return; }
+    var W = boite.clientWidth || 880, H = boite.clientHeight || 115;
+    var n = Math.min(13, data.hourly.time.length - debut);
+    if (n < 2) { boite.innerHTML = ''; return; }
+    var haut = 26, bas = 30, marge = 14;
+    var temps = [], min = 1e9, max = -1e9, i;
+    for (i = 0; i < n; i++) {
+      var t = data.hourly.temperature_2m[debut + i];
+      temps.push(t);
+      if (t < min) { min = t; }
+      if (t > max) { max = t; }
+    }
+    if (max - min < 4) { var milieu = (max + min) / 2; min = milieu - 2; max = milieu + 2; }
+    var pas = (W - 2 * marge) / (n - 1);
+    function x(k) { return marge + k * pas; }
+    function y(t) { return haut + (1 - (t - min) / (max - min)) * (H - haut - bas); }
+
+    var pts = [];
+    for (i = 0; i < n; i++) { pts.push(x(i).toFixed(1) + ',' + y(temps[i]).toFixed(1)); }
+    var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none">';
+    s += '<polyline class="ligne" points="' + pts.join(' ') + '"/>';
+
+    // Lever et coucher du soleil dans la fenêtre
+    var t0 = data.hourly.time[debut], t1 = data.hourly.time[debut + n - 1];
+    var marques = [];
+    var evts = [];
+    for (i = 0; i < data.daily.time.length; i++) {
+      evts.push({ t: data.daily.sunrise[i], nom: 'Lever ' });
+      evts.push({ t: data.daily.sunset[i], nom: 'Coucher ' });
+    }
+    for (i = 0; i < evts.length; i++) {
+      var e = evts[i];
+      if (e.t > t0 && e.t < t1) {
+        var xs = marge + (e.t - t0) / 3600 * pas;
+        marques.push(xs);
+        s += '<line class="soleil" x1="' + xs.toFixed(1) + '" y1="' + (haut - 8) + '" x2="' + xs.toFixed(1) + '" y2="' + (H - bas + 4) + '"/>';
+        s += '<text class="soleil-txt" x="' + xs.toFixed(1) + '" y="' + (H - 6) + '" text-anchor="middle">' + e.nom + heureCourte(local(e.t * 1000)) + '</text>';
+      }
+    }
+
+    // Repères toutes les trois heures
+    for (i = 0; i < n; i += 3) {
+      var px = x(i), py = y(temps[i]);
+      s += '<circle class="point" cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="2.6"/>';
+      s += '<text class="t" x="' + px.toFixed(1) + '" y="' + (py - 10).toFixed(1) + '" text-anchor="middle">' + degres(temps[i]) + '</text>';
+      var proche = false;
+      for (var m = 0; m < marques.length; m++) { if (Math.abs(marques[m] - px) < 70) { proche = true; } }
+      if (!proche) {
+        var lib = i === 0 ? 'Maint.' : heureRonde(local(data.hourly.time[debut + i] * 1000));
+        s += '<text class="hh" x="' + px.toFixed(1) + '" y="' + (H - 6) + '" text-anchor="middle">' + lib + '</text>';
+      }
+    }
+    s += '</svg>';
+    boite.innerHTML = s;
+  }
+
+  /* ---------- Ciel, veille, dérive ---------- */
+  var cielActuel = '';
+  function phaseCiel() {
+    var now = maintenant();
+    var s = instant() / 1000;
+    if (meteo) {
+      var ij = indexJour(meteo.data, now);
+      if (ij >= 0) {
+        var lever = meteo.data.daily.sunrise[ij], coucher = meteo.data.daily.sunset[ij];
+        var fenetre = 40 * 60;
+        if (Math.abs(s - lever) <= fenetre) { return 'aube'; }
+        if (Math.abs(s - coucher) <= fenetre) { return 'crepuscule'; }
+        if (s > lever && s < coucher) { return 'jour'; }
+        return 'nuit';
+      }
+    }
+    var h = now.getHours();
+    return h >= 7 && h < 17 ? 'jour' : 'nuit';
+  }
+
+  function appliquerCiel() {
+    var p = phaseCiel();
+    if (p === cielActuel) { return; }
+    document.body.className = document.body.className.replace(/\bciel-\S+/g, '').replace(/^\s+|\s+$/g, '') + ' ciel-' + p;
+    cielActuel = p;
+  }
+
+  var reveilJusqua = 0;
+  var chargement = Date.now();
+  function enVeille() {
+    var d = maintenant();
+    var m = d.getHours() * 60 + d.getMinutes();
+    var dans = REGLAGES.veilleDebut > REGLAGES.veilleFin ?
+      (m >= REGLAGES.veilleDebut || m < REGLAGES.veilleFin) :
+      (m >= REGLAGES.veilleDebut && m < REGLAGES.veilleFin);
+    return dans && Date.now() > reveilJusqua;
+  }
+  function appliquerVeille() {
+    var b = document.body;
+    var v = enVeille();
+    var a = /\bveille\b/.test(b.className);
+    if (v && !a) { b.className += ' veille'; }
+    if (!v && a) { b.className = b.className.replace(/\s*\bveille\b/, ''); }
+  }
+
+  var reveilMinuteur = null;
+  function reveiller() {
+    if (!/\bveille\b/.test(document.body.className)) { return; }
+    reveilJusqua = Date.now() + REGLAGES.reveilSecondes * 1000;
+    appliquerVeille();
+    if (reveilMinuteur) { window.clearTimeout(reveilMinuteur); }
+    reveilMinuteur = window.setTimeout(appliquerVeille, REGLAGES.reveilSecondes * 1000 + 100);
+  }
+  document.addEventListener('touchstart', reveiller, false);
+  document.addEventListener('mousedown', reveiller, false);
+  document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+  /* Petit déplacement toutes les 15 minutes pour éviter la rémanence de l'écran */
+  var derniereDerive = -1;
+  function minuteurs() {
+    var d = maintenant();
+    var quart = Math.floor((d.getHours() * 60 + d.getMinutes()) / 15);
+    if (quart !== derniereDerive) {
+      derniereDerive = quart;
+      var dx = Math.round(Math.random() * 12 - 6), dy = Math.round(Math.random() * 10 - 5);
+      var t = 'translate(' + dx + 'px,' + dy + 'px)';
+      var sc = $('scene').style;
+      sc.webkitTransform = t; sc.transform = t;
+      if (meteo) { afficherMeteo(); } // garde la courbe et les phrases à jour
+    }
+    // Rechargement complet une fois par nuit pour repartir à neuf
+    if (d.getHours() === 3 && d.getMinutes() === 30 && Date.now() - chargement > 3600000) {
+      window.location.reload();
+    }
+  }
+  /* Retour au premier plan : rattraper l'heure et la météo */
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { return; }
+    derniereMinute = -1;
+    afficherHeure();
+    if (!meteo || Date.now() - meteo.recu > REGLAGES.meteoMinutes * 60000) { chargerMeteo(); }
+    if (!actus || Date.now() - actus.recu > REGLAGES.actusMinutes * 60000) { chargerActus(); }
+  }, false);
+
+  var redim = null;
+  window.addEventListener('resize', function () {
+    if (redim) { window.clearTimeout(redim); }
+    redim = window.setTimeout(function () { if (meteo) { afficherMeteo(); } }, 250);
+  }, false);
+
+  /* ---------- Actualité ---------- */
+  var actus = null;          // { recu: ms, data: { genere, rubriques } }, produit par scripts/actualites.py
+  var fileUne = [], posUne = -1, uneMinuteur = null, actusFermeture = null;
+
+  function echapper(t) {
+    return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function ilYa(sec) {
+    var min = Math.max(0, Math.round((instant() / 1000 - sec) / 60));
+    if (min < 1) { return 'à l’instant'; }
+    if (min < 60) { return 'il y a ' + min + NBSP + 'min'; }
+    var h = Math.round(min / 60);
+    if (h < 24) { return 'il y a ' + h + NBSP + 'h'; }
+    if (memeJour(local(sec * 1000), local(instant() - 86400000))) { return 'hier'; }
+    return 'il y a ' + Math.max(2, Math.round(h / 24)) + NBSP + 'j';
+  }
+
+  function nbArticles(data) {
+    var n = 0;
+    if (!data || !data.rubriques) { return 0; }
+    for (var i = 0; i < data.rubriques.length; i++) { n += (data.rubriques[i].articles || []).length; }
+    return n;
+  }
+
+  function chargerActus() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'actualites.json?v=' + Math.floor(Date.now() / 60000), true);
+    xhr.timeout = 20000;
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState !== 4 || xhr.status !== 200) { return; }
+      try {
+        var data = JSON.parse(xhr.responseText);
+        if (nbArticles(data) === 0) { return; } // fichier vide : on garde l'actualité précédente
+        actus = { recu: Date.now(), data: data };
+        ecrire('resido.actus', actus);
+        preparerUne();
+        if (/\bactus-ouvert\b/.test(document.body.className)) { afficherActus(); }
+      } catch (e) { /* fichier illisible : on garde l'actualité précédente */ }
+    };
+    try { xhr.send(); } catch (e) { /* hors ligne */ }
+  }
+
+  /* Un titre de chaque rubrique à tour de rôle */
+  function preparerUne() {
+    fileUne = [];
+    if (actus) {
+      var r = actus.data.rubriques;
+      for (var k = 0; k < 3; k++) {
+        for (var i = 0; i < r.length; i++) {
+          var a = r[i].articles && r[i].articles[k];
+          if (a) { fileUne.push({ court: r[i].court, article: a }); }
+        }
+      }
+    }
+    $('une').style.display = fileUne.length ? '' : 'none';
+    if (posUne >= fileUne.length) { posUne = -1; }
+    if (fileUne.length && posUne < 0) { tournerUne(true); }
+  }
+
+  function remplirUne() {
+    var e = fileUne[posUne];
+    if (!e) { return; }
+    texte($('une-rubrique'), e.court);
+    texte($('une-titre'), e.article.titre);
+    texte($('une-meta'), e.article.source + ', ' + ilYa(e.article.date));
+  }
+
+  function tournerUne(immediat) {
+    if (uneMinuteur) { window.clearTimeout(uneMinuteur); }
+    uneMinuteur = window.setTimeout(function () { tournerUne(false); }, REGLAGES.uneSecondes * 1000);
+    if (!fileUne.length) { return; }
+    var b = document.body.className;
+    if (!immediat && /\b(veille|actus-ouvert|acquit-ouvert)\b/.test(b)) { return; } // rien ne bouge quand personne ne regarde
+    posUne = (posUne + 1) % fileUne.length;
+    if (immediat) { remplirUne(); return; }
+    var el = $('une');
+    el.className = 'une change';
+    window.setTimeout(function () { remplirUne(); el.className = 'une'; }, 450);
+  }
+
+  function afficherActus() {
+    var g = $('actus-grille');
+    if (!actus) {
+      g.innerHTML = '<p class="actus-vide">L’actualité n’est pas encore disponible. Elle se met à jour toutes les 30' + NBSP + 'minutes.</p>';
+      texte($('actus-maj'), '');
+      return;
+    }
+    var r = actus.data.rubriques, html = '';
+    for (var i = 0; i < r.length; i++) {
+      var a = r[i].articles || [];
+      html += '<div class="rubrique"><p class="rubrique-titre">' + echapper(r[i].titre) + '</p>';
+      if (!a.length) { html += '<p class="article-meta">Aucun article récent.</p>'; }
+      for (var k = 0; k < a.length; k++) {
+        html += '<div class="article"><p class="article-titre">' + echapper(a[k].titre) + '</p>' +
+          '<p class="article-meta">' + echapper(a[k].source) + ', ' + ilYa(a[k].date) + '</p></div>';
+      }
+      html += '</div>';
+    }
+    g.innerHTML = html;
+    var d = local(actus.data.genere * 1000);
+    texte($('actus-maj'), 'Mise à jour à ' + heureCourte(d) + (memeJour(d, maintenant()) ? '' : ' le ' + d.getDate() + ' ' + MOIS[d.getMonth()]));
+  }
+
+  function ouvrirActus() {
+    afficherActus();
+    if (!/\bactus-ouvert\b/.test(document.body.className)) { document.body.className += ' actus-ouvert'; }
+    if (actusFermeture) { window.clearTimeout(actusFermeture); }
+    actusFermeture = window.setTimeout(fermerActus, REGLAGES.actusFermetureSecondes * 1000);
+  }
+  function fermerActus() {
+    document.body.className = document.body.className.replace(/\s*\bactus-ouvert\b/, '');
+    if (actusFermeture) { window.clearTimeout(actusFermeture); actusFermeture = null; }
+  }
+  $('une').addEventListener('click', ouvrirActus, false);
+  $('actus').addEventListener('click', fermerActus, false);
+
+  /* ---------- Acquit, sur demande ---------- */
+  // Jeton propre à cet écran, obtenu par jumelage. Aucun chiffre n'est conservé sur l'iPad.
+  var CLE_JETON = 'resido.acquit.jeton';
+  var acquitMinuteur = null, acquitMode = '';
+
+  function jetonAcquit() { try { return window.localStorage.getItem(CLE_JETON); } catch (e) { return null; } }
+  function memoriserJeton(j) {
+    try { if (j) { window.localStorage.setItem(CLE_JETON, j); } else { window.localStorage.removeItem(CLE_JETON); } } catch (e) { /* stockage indisponible */ }
+  }
+
+  function appelAcquit(corps, jeton, rappel) {
+    var xhr = new XMLHttpRequest();
+    var fini = false;
+    function terminer(statut, donnees) { if (!fini) { fini = true; rappel(statut, donnees); } }
+    xhr.open('POST', REGLAGES.acquitUrl, true);
+    xhr.timeout = 20000;
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    if (jeton) { xhr.setRequestHeader('X-Resido-Jeton', jeton); }
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState !== 4) { return; }
+      var d = null;
+      try { d = JSON.parse(xhr.responseText); } catch (e) { d = null; }
+      terminer(xhr.status, d);
+    };
+    xhr.ontimeout = function () { terminer(0, null); };
+    xhr.onerror = function () { terminer(0, null); };
+    try { xhr.send(JSON.stringify(corps)); } catch (e) { terminer(0, null); }
+  }
+
+  function argent(n) {
+    var negatif = n < 0;
+    var cents = Math.round(Math.abs(n) * 100);
+    var entier = String(Math.floor(cents / 100)).replace(/\B(?=(\d{3})+(?!\d))/g, FINE);
+    return (negatif ? '−' : '') + entier + ',' + deux(cents % 100) + NBSP + '$';
+  }
+
+  function dateCle(cle) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(cle || '');
+    return m ? new Date(parseInt(m[1], 10), parseInt(m[2], 10) - 1, parseInt(m[3], 10)) : null;
+  }
+
+  function jourRelatif(d) {
+    var auj = maintenant();
+    if (memeJour(d, auj)) { return 'aujourd’hui'; }
+    var dem = new Date(auj.getFullYear(), auj.getMonth(), auj.getDate() + 1);
+    if (memeJour(d, dem)) { return 'demain'; }
+    return JOURS_COURTS[d.getDay()] + ' ' + d.getDate();
+  }
+
+  function planifierFermetureAcquit(secondes) {
+    if (acquitMinuteur) { window.clearTimeout(acquitMinuteur); }
+    acquitMinuteur = window.setTimeout(fermerAcquit, secondes * 1000);
+  }
+
+  function contenuAcquit(html, mode, maj) {
+    acquitMode = mode;
+    $('acquit-contenu').innerHTML = html;
+    texte($('acquit-maj'), maj || '');
+  }
+
+  function messageAcquit(t) {
+    contenuAcquit('<p class="acq-detail">' + echapper(t) + '</p>', 'message', '');
+    planifierFermetureAcquit(REGLAGES.acquitSecondes);
+  }
+
+  function afficherAcquit(reponse) {
+    var d = reponse && reponse.donnees;
+    if (!d || !d.reste || !d.semaine) {
+      messageAcquit('Acquit n’a pas encore envoyé de chiffres. Ouvre Acquit sur ton iPhone : l’envoi se fait tout seul.');
+      return;
+    }
+    var html = '<div class="acq-reste"><p class="acq-libelle">Reste à dépenser ce mois-ci</p>' +
+      '<p class="acq-grand">' + argent(d.reste.montant) + '</p>' +
+      '<p class="acq-detail">' + argent(d.reste.parJour) + ' par jour, ' + d.reste.joursRestants + (d.reste.joursRestants > 1 ? ' jours restants' : ' jour restant') + '</p></div>';
+    var lundi = dateCle(d.semaine.depuis);
+    html += '<div class="acq-colonnes"><div><p class="acq-libelle">Dépenses de la semaine</p>' +
+      '<p class="acq-moyen">' + argent(d.semaine.depenses) + '</p>' +
+      '<p class="acq-detail">' + (lundi ? 'depuis ' + JOURS[lundi.getDay()] + ' ' + lundi.getDate() + ' ' + MOIS[lundi.getMonth()] : '') + '</p></div>';
+    html += '<div><p class="acq-libelle">Factures des 7 prochains jours</p>';
+    var f = d.factures || [];
+    if (!f.length) {
+      html += '<p class="acq-detail">Aucune facture prévue.</p>';
+    } else {
+      html += '<ul class="acq-factures">';
+      for (var i = 0; i < f.length; i++) {
+        var jour = dateCle(f[i].date);
+        html += '<li class="acq-facture"><span class="acq-facture-nom">' + echapper(f[i].nom) + '</span>' +
+          '<span class="acq-facture-date">' + (jour ? jourRelatif(jour) : '') + '</span>' +
+          '<span class="acq-facture-montant">' + argent(f[i].montant) + '</span></li>';
+      }
+      html += '</ul>';
+    }
+    html += '</div></div><button class="acq-oublier" id="acq-oublier" type="button">Oublier Acquit sur cet iPad</button>';
+    var calc = Date.parse(d.genereLe);
+    var maj = '';
+    if (!isNaN(calc)) {
+      var c = local(calc);
+      maj = 'Calculé par Acquit à ' + heureCourte(c) + (memeJour(c, maintenant()) ? '' : ' le ' + c.getDate() + ' ' + MOIS[c.getMonth()]);
+    }
+    contenuAcquit(html, 'donnees', maj);
+    $('acq-oublier').addEventListener('click', function (e) {
+      e.stopPropagation();
+      memoriserJeton(null);
+      afficherJumelage('Acquit est oublié sur cet iPad. Retire aussi l’écran dans Acquit : Réglages, Écran Résido.');
+    }, false);
+    planifierFermetureAcquit(REGLAGES.acquitSecondes);
+  }
+
+  function afficherJumelage(message) {
+    contenuAcquit('<div class="acq-jumelage">' +
+      '<p class="acq-titre-form">Relier Acquit à cet écran</p>' +
+      '<p class="acq-detail">Dans Acquit, ouvre Réglages, puis Écran Résido, et touche « Relier un écran ». Entre ici le code affiché.</p>' +
+      '<input id="acq-code" class="acq-code" type="text" maxlength="9" autocapitalize="characters" autocorrect="off" autocomplete="off" spellcheck="false" placeholder="ABCD 2345">' +
+      '<button id="acq-relier" class="acq-relier" type="button">Relier</button>' +
+      '<p id="acq-erreur" class="acq-erreur"></p></div>', 'jumelage', 'Lecture seule');
+    texte($('acq-erreur'), message || '');
+    var champ = $('acq-code'), bouton = $('acq-relier');
+    champ.addEventListener('click', function (e) { e.stopPropagation(); }, false);
+    champ.addEventListener('input', function () { planifierFermetureAcquit(180); }, false);
+    champ.addEventListener('keyup', function (e) { if (e.keyCode === 13) { relier(); } }, false);
+    bouton.addEventListener('click', function (e) { e.stopPropagation(); relier(); }, false);
+    function relier() {
+      var code = champ.value.toUpperCase().replace(/[\s-]/g, '');
+      if (!/^[A-HJKMNP-Z2-9]{8}$/.test(code)) { texte($('acq-erreur'), 'Le code compte 8 caractères, lettres et chiffres.'); return; }
+      bouton.disabled = true;
+      texte($('acq-erreur'), '');
+      appelAcquit({ action: 'jumeler', code: code }, null, function (statut, d) {
+        bouton.disabled = false;
+        if (statut === 200 && d && d.jeton) {
+          memoriserJeton(d.jeton);
+          if (champ.blur) { champ.blur(); }
+          ouvrirAcquit();
+          return;
+        }
+        texte($('acq-erreur'), statut === 404 || statut === 400 ? 'Code invalide ou expiré. Touche « Relier un écran » dans Acquit pour en obtenir un nouveau.' :
+          statut === 429 ? 'Trop d’essais. Attends une minute, puis réessaie.' :
+          'Acquit est injoignable pour l’instant. Vérifie le Wi-Fi, puis réessaie.');
+      });
+    }
+    planifierFermetureAcquit(180);
+  }
+
+  function ouvrirAcquit() {
+    fermerActus();
+    if (!/\bacquit-ouvert\b/.test(document.body.className)) { document.body.className += ' acquit-ouvert'; }
+    var j = jetonAcquit();
+    if (!j) { afficherJumelage(''); return; }
+    contenuAcquit('<p class="acq-detail">Lecture d’Acquit…</p>', 'message', '');
+    planifierFermetureAcquit(REGLAGES.acquitSecondes);
+    appelAcquit({ action: 'resume' }, j, function (statut, d) {
+      if (!/\bacquit-ouvert\b/.test(document.body.className)) { return; }
+      if (statut === 200 && d) { afficherAcquit(d); return; }
+      if (statut === 401) { memoriserJeton(null); afficherJumelage('Cet écran a été retiré dans Acquit. Relie-le de nouveau.'); return; }
+      messageAcquit(statut === 429 ? 'Trop de lectures en peu de temps. Réessaie dans quelques minutes.' :
+        'Acquit est injoignable pour l’instant. Vérifie le Wi-Fi, puis réessaie.');
+    });
+  }
+
+  function fermerAcquit() {
+    document.body.className = document.body.className.replace(/\s*\bacquit-ouvert\b/, '');
+    if (acquitMinuteur) { window.clearTimeout(acquitMinuteur); acquitMinuteur = null; }
+    $('acquit-contenu').innerHTML = ''; // les chiffres ne restent pas dans la page
+    texte($('acquit-maj'), '');
+    acquitMode = '';
+  }
+
+  $('acquit-bouton').addEventListener('click', function (e) { e.stopPropagation(); ouvrirAcquit(); }, false);
+  $('acquit-fermer').addEventListener('click', function (e) { e.stopPropagation(); fermerAcquit(); }, false);
+  $('acquit').addEventListener('click', function () { if (acquitMode !== 'jumelage') { fermerAcquit(); } }, false);
+
+  /* ---------- Démarrage ---------- */
+  texte($('lieu'), REGLAGES.lieu);
+  meteo = lire('resido.meteo');
+  if (meteo && (!meteo.data || !meteo.data.current)) { meteo = null; }
+  tic();
+  if (meteo) { afficherMeteo(); }
+  chargerMeteo();
+  actus = lire('resido.actus');
+  if (actus && nbArticles(actus.data) === 0) { actus = null; }
+  preparerUne();
+  chargerActus();
+  window.setInterval(chargerActus, REGLAGES.actusMinutes * 60000);
+})();
+</script>
+</body>
+</html>
