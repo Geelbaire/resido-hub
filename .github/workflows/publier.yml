@@ -32,6 +32,7 @@ jobs:
           mkdir -p _site
           cp index.html icone-152.png icone-180.png CNAME _site/
           cp -R polices _site/
+          cp -R illustrations _site/
 
       - name: Collecter l'actualité
         run: |

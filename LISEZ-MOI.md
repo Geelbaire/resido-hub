@@ -1,8 +1,46 @@
 # Résido
 
 Hub résidentiel de Gilbert, conçu pour un iPad 4 (A1458, iOS 10.3.3, Safari 10.1).
-Une seule page web, sombre et sobre, qui affiche l'heure, la date et la météo de
-Saint-Raymond.
+Une seule page web, « Jardin de minuit », qui affiche l'heure, la date et la
+météo de Saint-Raymond dans un décor botanique cuivre et lilas. Les dessins,
+la typographie et les icônes composent un cadre décoratif pour la chambre.
+
+## Jardin de minuit et petits outils
+
+Le feuillage, la lune décorative et le papillon sont des illustrations PNG
+transparentes séparées, animées lentement par transformations CSS. La lune
+est une illustration, pas une indication de sa phase réelle. Les illustrations
+sont locales, sans bibliothèque, vidéo, police distante ou moteur 3D.
+
+Le bouton **Les petits outils** ouvre neuf compagnons :
+
+- **Le temps pour soi** : minuteur de 1 à 180 minutes, pause et reprise.
+- **Une chose à la fois** : concentration de 25 minutes ou pause de 5 minutes.
+- **Le carnet du soir** : note de 8 000 caractères au maximum, enregistrée à la saisie.
+- **Les petits rituels** : liste personnelle, jusqu'à 20 éléments, cases à cocher.
+- **Un moment pour soi** : lune qui accompagne un rythme visuel de 4 et 6 secondes.
+- **La pluie feutrée** : ambiance sonore générée localement, activée au toucher.
+- **La fenêtre ouverte** : tableau météo des 12 prochaines heures, vent et ressenti.
+- **Un jour à attendre** : date personnelle et décompte des jours du calendrier.
+- **Les nuances du jardin** : trois palettes, voile d'assombrissement, pause des
+  dessins et choix de conserver le décor visible la nuit.
+
+Les réglages, notes, listes et minuteurs résident seulement dans le
+`localStorage` de cet appareil, sous `resido.jardin.*`. Aucune synchronisation
+ni sauvegarde externe n'est faite. Effacer les données du site efface aussi
+ces éléments. Safari et l'icône d'écran d'accueil ont leurs propres stockages.
+Un message indique si une écriture locale échoue.
+
+Le minuteur suit une échéance réelle même après rechargement; une pause
+conserve le temps restant. Il est visuel, sans notification système ni alarme
+en arrière-plan : garder Résido ouvert pour voir sa fin. Le son démarre
+seulement au toucher, s'arrête en quittant la page et dispose d'un bouton
+d'arrêt sur l'accueil. Son fonctionnement matériel reste à vérifier sur l'iPad.
+
+La veille automatique de 22 h à 6 h reste activée par défaut. Pour garder le
+nouveau décor la nuit : toucher l'écran, **Les petits outils → Les nuances du
+jardin → Garder le jardin visible la nuit**. Le voile assombrit la page, sans
+modifier la luminosité physique de l'iPad.
 
 ## Ce que la page fait
 
@@ -30,10 +68,16 @@ Les réglages (lieu, heures de veille, fréquences) sont en haut du script, dans
   autant qu'un pixel blanc, contrairement à un écran OLED. Le fond sombre sert
   surtout au confort et permet de baisser la luminosité. **Ce qui économise
   vraiment l'énergie, c'est la luminosité de l'iPad.**
-- La page ne fait presque rien : l'heure change une fois par minute, la météo
-  se met à jour toutes les 30 minutes, aucune animation continue.
+- L'heure change une fois par minute et la météo toutes les 30 minutes. Les
+  trois dessins décoratifs utilisent des cycles lents et seulement les
+  transformations et l'opacité. Ils se mettent en pause en veille, lorsque la
+  page est masquée ou lorsqu'un panneau est ouvert. Un bouton permet de les
+  arrêter, et les navigateurs qui reconnaissent la préférence de réduction
+  des animations la respectent. Le rafraîchissement à la seconde est réservé
+  aux minuteurs actifs et au guide visuel de respiration.
 - Toutes les 15 minutes, la page se déplace de quelques pixels pour éviter la
-  rémanence de l'écran. Elle se recharge une fois par nuit, à 3 h 30.
+  rémanence de l'écran. Elle se recharge une fois par nuit, à 3 h 30, sauf si
+  un outil est ouvert ou qu'une ambiance sonore joue.
 
 ## Tester sur l'iPad avec le Mac (réseau local)
 

@@ -194,7 +194,7 @@ body {
   padding: 5.6vmin 7vmin 4.6vmin;
   background: var(--encre);
 }
-.actus-ouvert .actus { display: block; }
+.actus-ouvert #actus { display: block; }
 .actus-ouvert #scene { visibility: hidden; }
 .actus-tete {
   display: -webkit-flex; display: flex;
@@ -337,11 +337,156 @@ body {
 @media (prefers-reduced-motion: reduce) {
   #scene, #horizon, .tete, .meteo, .actuel, .heure, .une { -webkit-transition: none; transition: none; }
 }
+/* Jardin de minuit, composition pour le cadre 4:3 de l'iPad. */
+:root { --encre:#0c111c; --givre:#f1e4d0; --brume:#b5aeb9; --ardoise:#645662; --lueur:#dca77c; --veille:#b47c59; }
+body { background:var(--encre); }
+button { cursor:pointer; }
+button:focus, input:focus, textarea:focus { outline:1px solid var(--lueur); outline-offset:4px; }
+#scene { padding:0; z-index:1; }
+.signature { position:absolute; left:4.5vmin; top:3vmin; display:-webkit-flex; display:flex; -webkit-align-items:center; align-items:center; width:61%; }
+.marque { font-family:"Instrument Serif",Georgia,serif; font-size:4.9vmin; line-height:1; letter-spacing:-.03em; }
+.signature .dessin-icone { width:4.8vmin; height:5.8vmin; margin-right:.8vmin; }
+.collection { margin-left:3.7vmin; font-family:"Instrument Serif",Georgia,serif; font-style:italic; font-size:3vmin; color:var(--lueur); }
+.signature:after { content:""; height:1px; background:var(--ardoise); width:12vmin; margin-left:2.5vmin; opacity:.6; }
+.tete { position:absolute; top:14%; left:4.5vmin; display:block; }
+.date { font-size:4.5vmin; }
+.lieu { display:none; }
+.milieu { display:block; margin:0; }
+.heure { position:absolute; top:23%; left:3.4vmin; margin:0; font-size:29.5vmin; line-height:.78; letter-spacing:-.025em; }
+.heure .h { font-size:.44em; margin:0 .04em; }
+.actuel { position:absolute; top:49.5%; left:4.5vmin; width:56%; padding:0; }
+#meteo-plein { display:-webkit-flex; display:flex; -webkit-align-items:center; align-items:center; }
+.ligne-temp { margin:0 2.5vmin 0 0; -webkit-flex:none; flex:none; }
+.ligne-temp .icone { width:9vmin; height:9vmin; color:var(--lueur); }
+.temp { font-size:10vmin; margin-left:1vmin; }
+.weather-copy { border-left:1px solid var(--ardoise); padding-left:2.4vmin; }
+.cond-titre { font-weight:400; font-size:2.8vmin; }
+.meteo-lieu { font-size:2.3vmin; color:var(--brume); margin-top:.3vmin; }
+.cond-details { font-size:2vmin; }
+.cond-details span { margin-right:1.4vmin; }
+.precip { display:none; }
+.meteo { position:absolute; top:66%; bottom:0; left:4.5vmin; right:4.5vmin; margin:0; }
+.courbe { width:65%; height:10vmin; margin:0; }
+.courbe .ligne { stroke:var(--lueur); stroke-width:1; }
+.courbe .t { fill:var(--givre); font-size:14px; }
+.courbe .hh,.courbe .soleil-txt { font-size:12px; }
+.une { position:absolute; top:10.7vmin; width:66%; margin:0; -webkit-align-items:center; align-items:center; }
+.une-rubrique { width:11vmin; color:var(--lueur); font-size:2.6vmin; }
+.une-titre { font-size:1.9vmin; }
+.une-meta { display:none; }
+.pied { position:absolute; left:0; right:0; bottom:6vmin; -webkit-align-items:center; align-items:center; }
+.jours { width:42%; -webkit-flex:none; flex:none; }
+.jour { display:block; width:33.333%; margin:0; padding-right:1vmin; }
+.jour-nom { display:block; width:auto; font-size:2.1vmin; margin-bottom:.7vmin; }
+.jour .icone { display:inline-block; vertical-align:middle; width:4vmin; height:4vmin; margin-right:.4vmin; color:var(--lueur); }
+.jour-max,.jour-min { font-size:2.2vmin; margin-right:.6vmin; }
+.dock { display:-webkit-flex; display:flex; width:58%; -webkit-justify-content:space-around; justify-content:space-around; }
+.dock-bouton { -webkit-appearance:none; border:0; border-left:1px solid var(--ardoise); background:none; color:var(--givre); padding:.2vmin 1.5vmin; width:25%; font-family:"Geist",sans-serif; font-size:1.9vmin; line-height:1.25; min-height:8vmin; }
+.dessin-icone { width:4.8vmin; height:4.8vmin; display:block; margin:0 auto .8vmin; color:var(--lueur); }
+.dessin-icone svg { width:100%; height:100%; display:block; }
+.mentions { position:absolute; bottom:1.2vmin; right:0; color:var(--brume); opacity:.75; font-size:1.4vmin; }
+.jardin { position:absolute; top:0; right:0; width:51%; height:86%; pointer-events:none; overflow:hidden; -webkit-transition:opacity 1.2s; transition:opacity 1.2s; }
+.jardin-feuillage { position:absolute; width:100%; height:auto; top:-8%; right:-8%; -webkit-transform-origin:85% 90%; transform-origin:85% 90%; -webkit-animation:feuillage 19s ease-in-out infinite alternate; animation:feuillage 19s ease-in-out infinite alternate; }
+.jardin-lune { position:absolute; width:40%; height:auto; top:15%; left:30%; -webkit-animation:lune-douce 13s ease-in-out infinite alternate; animation:lune-douce 13s ease-in-out infinite alternate; }
+.jardin-papillon { position:absolute; width:14%; height:auto; left:23%; top:38%; -webkit-animation:papillon 23s ease-in-out infinite; animation:papillon 23s ease-in-out infinite; }
+@-webkit-keyframes feuillage { from {-webkit-transform:rotate(-1deg);} to {-webkit-transform:rotate(1deg);} }
+@keyframes feuillage { from {transform:rotate(-1deg);} to {transform:rotate(1deg);} }
+@-webkit-keyframes lune-douce { from {opacity:.8;-webkit-transform:translateY(0);} to {opacity:1;-webkit-transform:translateY(-.8vmin);} }
+@keyframes lune-douce { from {opacity:.8;transform:translateY(0);} to {opacity:1;transform:translateY(-.8vmin);} }
+@-webkit-keyframes papillon { 0%,100% {-webkit-transform:translate(0,0) rotate(-8deg);} 40% {-webkit-transform:translate(-3vmin,-2vmin) rotate(7deg);} 70% {-webkit-transform:translate(2vmin,-4vmin) rotate(-4deg);} }
+@keyframes papillon { 0%,100% {transform:translate(0,0) rotate(-8deg);} 40% {transform:translate(-3vmin,-2vmin) rotate(7deg);} 70% {transform:translate(2vmin,-4vmin) rotate(-4deg);} }
+.sans-mouvement .jardin img,.page-cachee .jardin img,.veille .jardin img,.outils-ouvert .jardin img,.actus-ouvert .jardin img,.acquit-ouvert .jardin img { -webkit-animation-play-state:paused; animation-play-state:paused; }
+.veille .jardin,.veille .signature { opacity:0; visibility:hidden; }
+.veille .heure { top:35%; font-size:36vmin; }
+.veille .resume { position:absolute; top:65%; left:4.5vmin; margin:0; }
+.actus { z-index:4; background:var(--encre); padding:5vmin; overflow-y:auto; -webkit-overflow-scrolling:touch; }
+.actus-tete { -webkit-align-items:center; align-items:center; padding-bottom:2vmin; border-bottom:1px solid var(--ardoise); }
+.actus-fermer { min-width:8vmin; min-height:6vmin; color:var(--givre); }
+.actus-titre { font-size:5.4vmin; color:var(--givre); }
+.article { padding:1.3vmin 0; border-bottom:1px solid rgba(181,174,185,.17); }
+.outils { display:none; }
+.outils-ouvert .outils { display:block; }
+.outils-ouvert #scene { visibility:hidden; }
+.outils-intro { color:var(--brume); font-size:2.2vmin; margin:-1vmin 0 3vmin; }
+.outils-grille { display:-webkit-flex; display:flex; -webkit-flex-wrap:wrap; flex-wrap:wrap; margin:0 -1vmin; }
+.outil-carte { width:33.333%; padding:1vmin; }
+.outil-ouvrir { width:100%; min-height:17vmin; text-align:left; background:rgba(181,174,185,.045); border:1px solid var(--ardoise); border-radius:.6vmin; padding:2.2vmin; color:var(--givre); -webkit-appearance:none; }
+.outil-ouvrir .dessin-icone { margin:0 0 1vmin; width:4.2vmin; height:4.2vmin; }
+.outil-ouvrir strong { display:block; font-family:"Instrument Serif",Georgia,serif; font-size:3.2vmin; font-weight:400; }
+.outil-ouvrir small { display:block; margin-top:.7vmin; font-family:"Geist",sans-serif; font-size:1.9vmin; color:var(--brume); }
+.outil-ouvrir:active { background:rgba(220,167,124,.12); }
+.outil-retour { color:var(--lueur); background:none; border:0; padding:1.5vmin 0; font:inherit; font-size:2.1vmin; margin-bottom:1vmin; min-height:6vmin; }
+.outil-titre { font-family:"Instrument Serif",Georgia,serif; font-size:5vmin; font-weight:400; line-height:1.1; margin-bottom:1.5vmin; }
+.outil-description { color:var(--brume); font-size:2.2vmin; max-width:80vmin; margin-bottom:3vmin; }
+.outil-ligne { display:-webkit-flex; display:flex; -webkit-align-items:center; align-items:center; -webkit-flex-wrap:wrap; flex-wrap:wrap; margin-bottom:2vmin; }
+.outil-action { -webkit-appearance:none; background:transparent; color:var(--givre); border:1px solid var(--ardoise); border-radius:.5vmin; padding:1.4vmin 2.6vmin; min-height:6vmin; font:inherit; font-size:2.2vmin; margin:0 1.2vmin 1vmin 0; }
+.outil-action.primaire { color:var(--encre); background:var(--givre); border-color:var(--givre); }
+.outil-action[aria-pressed="true"] { border-color:var(--lueur); color:var(--lueur); }
+.outil-champ { -webkit-appearance:none; -webkit-user-select:text; user-select:text; background:rgba(181,174,185,.04); color:var(--givre); border:1px solid var(--ardoise); border-radius:.5vmin; padding:1.6vmin; font:inherit; font-size:2.5vmin; }
+.outil-champ[type="number"] { width:15vmin; margin-right:1vmin; }
+.outil-champ[type="date"] { min-height:7vmin; width:34vmin; }
+.outil-carnet { display:block; width:100%; height:29vmin; resize:none; line-height:1.6; margin:2vmin 0; }
+.outil-status { color:var(--lueur); font-size:2vmin; min-height:3vmin; }
+.outil-compteur { font-family:"Instrument Serif",Georgia,serif; font-size:15vmin; line-height:1.1; margin:2vmin 0; font-variant-numeric:tabular-nums; }
+.minuteur-pastille { display:none; position:absolute; top:3.7vmin; right:4.5vmin; z-index:3; background:var(--encre); color:var(--lueur); border:1px solid var(--ardoise); border-radius:4vmin; font:inherit; font-size:2vmin; padding:1vmin 2vmin; }
+.veille .minuteur-pastille { display:none !important; }
+.outil-label { display:block; font-size:2.2vmin; margin:2vmin 0 1vmin; }
+.outil-range { width:50vmin; height:6vmin; max-width:100%; }
+.rituel-item { display:-webkit-flex; display:flex; -webkit-align-items:center; align-items:center; border-bottom:1px solid var(--ardoise); padding:2vmin 0; font-size:2.6vmin; }
+.rituel-item input { width:3vmin; height:3vmin; margin-right:2vmin; }
+.rituel-item input:checked + span { text-decoration:line-through; color:var(--brume); }
+.rituel-item span { -webkit-flex:1; flex:1; }
+.rituel-supprimer { background:none; border:0; color:var(--brume); min-height:6vmin; padding:1vmin; font:inherit; font-size:2vmin; }
+.rituel-ajout { margin-top:3vmin; }
+.rituel-ajout input { width:65%; margin-right:1vmin; }
+.respiration-image { width:23vmin; height:23vmin; display:block; margin:3vmin auto; }
+.respiration-active .respiration-image { -webkit-animation:souffle 10s ease-in-out infinite; animation:souffle 10s ease-in-out infinite; }
+@-webkit-keyframes souffle { 0%,100% {-webkit-transform:scale(.72);} 40% {-webkit-transform:scale(1);} }
+@keyframes souffle { 0%,100% {transform:scale(.72);} 40% {transform:scale(1);} }
+.respiration-zone { text-align:center; }
+.respiration-texte { font-family:"Instrument Serif",Georgia,serif; font-size:4.5vmin; min-height:6vmin; color:var(--lueur); }
+.meteo-table { width:100%; border-collapse:collapse; font-size:2.2vmin; }
+.meteo-table td,.meteo-table th { padding:1.5vmin 1vmin; text-align:left; border-bottom:1px solid var(--ardoise); }
+.meteo-table th { color:var(--brume); font-weight:400; }
+.outil-memo { max-width:80vmin; line-height:1.7; white-space:pre-wrap; word-wrap:break-word; }
+#voile { position:fixed; top:0; left:0; right:0; bottom:0; background:#000; opacity:0; z-index:15; pointer-events:none; }
+.ambiance-miel { --lueur:#e8b76c; --brume:#bbae9e; --encre:#17110f; }
+.ambiance-prune { --lueur:#d3abc8; --brume:#b5a6bd; --encre:#17101c; }
+@media (orientation:portrait) {
+ .signature { width:90%; }.signature:after { display:none; }.collection { font-size:3vmin; }
+ .tete { top:13%; }.heure { top:23%; font-size:31vmin; }
+ .jardin { width:77%; height:80%; right:-21%; top:0; opacity:.55; }
+ .actuel { width:88%; top:46%; }.meteo { top:62%; }.courbe { width:100%; }
+ .une { width:100%; top:12vmin; }.une-titre { font-size:2.2vmin; }
+ .pied { display:block; bottom:6vmin; }.jours { width:100%; margin-bottom:3vmin; }
+ .dock { width:100%; }.dock-bouton { font-size:2.2vmin; min-height:10vmin; }
+ .jour { text-align:center; }.jour-nom { display:inline-block; margin-right:1vmin; }
+ .outil-carte { width:50%; }.outil-ouvrir { min-height:21vmin; }
+ .veille .heure { font-size:33vmin; }.veille .resume { top:53%; }
+}
+@media (prefers-reduced-motion:reduce) { .jardin img { -webkit-animation:none; animation:none; } }
+
+.outils-ouvert .minuteur-pastille,.actus-ouvert .minuteur-pastille,.acquit-ouvert .minuteur-pastille { display:none !important; }
+.jardin-lune { z-index:1; }
+.jardin-papillon { z-index:2; }
+.ligne-temp .icone { position:relative; width:11vmin; }
+.gravure-meteo { position:absolute; width:100%; height:auto; top:50%; left:0; -webkit-transform:translateY(-50%); transform:translateY(-50%); }
+.arabesque { position:absolute; left:-11vmin; bottom:-5vmin; width:70vmin; height:auto; pointer-events:none; opacity:.72; }
+.veille .arabesque { visibility:hidden; }
 </style>
 </head>
 <body class="ciel-nuit">
 <div id="horizon" aria-hidden="true"></div>
+<div class="jardin" aria-hidden="true">
+  <img class="jardin-lune" src="illustrations/lune-gravee.png" alt="">
+  <img class="jardin-feuillage" src="illustrations/jardin-botanique.png" alt="">
+  <img class="jardin-papillon" src="illustrations/papillon-de-nuit.png" alt="">
+</div>
+<img class="arabesque" src="illustrations/arabesque-botanique.png" alt="" aria-hidden="true">
+<button class="minuteur-pastille" id="pluie-pastille" style="top:10vmin" type="button">Pluie en cours · arrêter</button>
+<button class="minuteur-pastille" id="minuteur-pastille" type="button" aria-label="Ouvrir le minuteur en cours"></button>
 <main id="scene">
+  <div class="signature"><span data-dessin="feuille"></span><span class="marque">Résido</span><span class="collection">Jardin de minuit</span></div>
   <header class="tete">
     <p id="date" class="date"></p>
     <p class="lieu" id="lieu"></p>
@@ -355,9 +500,9 @@ body {
           <span id="icone" class="icone" role="img"></span>
           <span id="temp" class="temp"></span>
         </div>
-        <p id="condition" class="cond-titre"></p>
+        <div class="weather-copy"><p id="condition" class="cond-titre"></p><p class="meteo-lieu">Saint-Raymond</p>
         <p id="details" class="cond-details"></p>
-        <p id="precip" class="precip"></p>
+        <p id="precip" class="precip"></p></div>
       </div>
     </div>
   </div>
@@ -370,13 +515,21 @@ body {
     <div id="courbe" class="courbe" aria-hidden="true"></div>
     <div class="pied">
       <ul id="jours" class="jours"></ul>
-      <div class="mentions">
-        <button id="acquit-bouton" class="acquit-bouton" type="button">Acquit</button>
-        <p><span id="etat" class="etat"></span><br>Données météo Open-Meteo</p>
-      </div>
+      <nav class="dock" aria-label="Le jardin et ses outils">
+        <button id="actualite-bouton" class="dock-bouton" type="button"><span data-dessin="livre"></span>À la une</button>
+        <button id="outils-bouton" class="dock-bouton" type="button"><span data-dessin="feuille"></span>Les petits outils</button>
+        <button id="respiration-bouton" class="dock-bouton" type="button"><span data-dessin="fleur"></span>Un moment pour soi</button>
+        <button id="acquit-bouton" class="dock-bouton" type="button"><span data-dessin="acquit"></span>Acquit</button>
+      </nav>
     </div>
+    <div class="mentions"><span id="etat" class="etat"></span> Météo Open-Meteo</div>
   </section>
 </main>
+<section id="outils" class="actus outils" role="dialog" aria-modal="true" aria-label="Les petits outils">
+  <header class="actus-tete"><p class="actus-titre">Les petits outils</p><p class="actus-maj">Le cabinet de Résido</p><button class="actus-fermer" id="outils-fermer" type="button">Fermer</button></header>
+  <div id="outils-contenu"></div>
+</section>
+<div id="voile" aria-hidden="true"></div>
 <section id="acquit" class="actus acquit" aria-label="Acquit">
   <header class="actus-tete">
     <p class="actus-titre">Acquit</p>
@@ -544,7 +697,7 @@ body {
     derniereMinute = cle;
     elHeure.innerHTML = d.getHours() + '<span class="h">h</span>' + deux(d.getMinutes());
     elHeure.setAttribute('aria-label', d.getHours() + ' heures ' + d.getMinutes());
-    texte(elDate, JOURS[d.getDay()] + ' ' + (d.getDate() === 1 ? '1er' : d.getDate()) + ' ' + MOIS[d.getMonth()]);
+    texte(elDate, JOURS[d.getDay()] + ' ' + (d.getDate() === 1 ? '1er' : d.getDate()) + ' ' + MOIS[d.getMonth()] + ' ' + d.getFullYear());
     appliquerVeille();
     appliquerCiel();
     minuteurs();
@@ -665,7 +818,7 @@ body {
     plein.style.display = '';
 
     var libelle = LIBELLES[c.weather_code] || 'conditions inconnues';
-    $('icone').innerHTML = icone(c.weather_code, c.is_day === 1);
+    $('icone').innerHTML = c.weather_code === 3 ? '<img class="gravure-meteo" src="illustrations/nuage-grave.png" alt="">' : icone(c.weather_code, c.is_day === 1);
     $('icone').setAttribute('aria-label', libelle);
     texte($('temp'), degres(c.temperature_2m));
     texte($('condition'), majuscule(libelle));
@@ -812,7 +965,7 @@ body {
     var dans = REGLAGES.veilleDebut > REGLAGES.veilleFin ?
       (m >= REGLAGES.veilleDebut || m < REGLAGES.veilleFin) :
       (m >= REGLAGES.veilleDebut && m < REGLAGES.veilleFin);
-    return dans && Date.now() > reveilJusqua;
+    return dans && !(cabinetReglages && cabinetReglages.jardinNuit === true) && !/\boutils-ouvert\b/.test(document.body.className) && Date.now() > reveilJusqua;
   }
   function appliquerVeille() {
     var b = document.body;
@@ -832,7 +985,14 @@ body {
   }
   document.addEventListener('touchstart', reveiller, false);
   document.addEventListener('mousedown', reveiller, false);
-  document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+  document.addEventListener('touchmove', function (e) {
+    var el = e.target;
+    while (el && el !== document.body) {
+      if (el.id === 'outils' || el.id === 'actus' || el.id === 'acquit') { return; }
+      el = el.parentNode;
+    }
+    e.preventDefault();
+  }, false);
 
   /* Petit déplacement toutes les 15 minutes pour éviter la rémanence de l'écran */
   var derniereDerive = -1;
@@ -848,7 +1008,7 @@ body {
       if (meteo) { afficherMeteo(); } // garde la courbe et les phrases à jour
     }
     // Rechargement complet une fois par nuit pour repartir à neuf
-    if (d.getHours() === 3 && d.getMinutes() === 30 && Date.now() - chargement > 3600000) {
+    if (d.getHours() === 3 && d.getMinutes() === 30 && Date.now() - chargement > 3600000 && !/\boutils-ouvert\b/.test(document.body.className) && !cabinetBruit) {
       window.location.reload();
     }
   }
@@ -1153,6 +1313,319 @@ body {
   $('acquit-bouton').addEventListener('click', function (e) { e.stopPropagation(); ouvrirAcquit(); }, false);
   $('acquit-fermer').addEventListener('click', function (e) { e.stopPropagation(); fermerAcquit(); }, false);
   $('acquit').addEventListener('click', function () { if (acquitMode !== 'jumelage') { fermerAcquit(); } }, false);
+
+  /* ---------- Le cabinet du Jardin : entièrement local ---------- */
+  var cabinetFocus = null;
+  var cabinetVue = '', cabinetBoucle = null, cabinetSouffle = 0, cabinetAudio = null;
+  var cabinetBruit = null, cabinetGain = null;
+  var cabinetReglages = lire('resido.jardin.reglages') || {};
+  if (typeof cabinetReglages !== 'object' || Object.prototype.toString.call(cabinetReglages) === '[object Array]') { cabinetReglages = {}; }
+  var cabinetTimer = lire('resido.jardin.minuteur');
+  if (!cabinetTimer || typeof cabinetTimer.fin !== 'number' || !isFinite(cabinetTimer.fin) || typeof cabinetTimer.nom !== 'string' || (cabinetTimer.pause !== null && (typeof cabinetTimer.pause !== 'number' || !isFinite(cabinetTimer.pause) || cabinetTimer.pause < 0))) { cabinetTimer = null; }
+  var cabinetCatalogue = [
+    ['minuteur', 'Le temps pour soi', 'Un thé, quelques pages, une pause.', 'sablier'],
+    ['concentration', 'Une chose à la fois', '25 minutes, puis on souffle.', 'soleil'],
+    ['carnet', 'Le carnet du soir', 'Déposer une pensée. La retrouver demain.', 'livre'],
+    ['rituels', 'Les petits rituels', 'Une liste à ta façon, sans pression.', 'feuille'],
+    ['respiration', 'Un moment pour soi', 'Suivre la lune, à ton rythme.', 'fleur'],
+    ['pluie', 'La pluie feutrée', 'Une ambiance sonore, tout doucement.', 'pluie'],
+    ['meteo', 'La fenêtre ouverte', 'Les douze prochaines heures en détail.', 'soleil'],
+    ['moment', 'Un jour à attendre', 'Un départ, une fête, un beau rendez-vous.', 'etoile'],
+    ['ambiance', 'Les nuances du jardin', 'La lumière, la couleur, le mouvement.', 'fleur']
+  ];
+  function cabinetClasse(nom, active) {
+    var re = new RegExp('\\s*\\b' + nom + '\\b', 'g');
+    document.body.className = document.body.className.replace(re, '');
+    if (active) { document.body.className += ' ' + nom; }
+  }
+  function cabinetSauver(cle, valeur) {
+    try {
+      var json = JSON.stringify(valeur);
+      window.localStorage.setItem('resido.jardin.' + cle, json);
+      return window.localStorage.getItem('resido.jardin.' + cle) === json;
+    } catch (e) { return false; }
+  }
+  function dessin(nom) {
+    var motifs = {
+      livre: '<path d="M24 13c-5-5-12-6-18-4v26c7-2 13 0 18 4 5-4 11-6 18-4V9c-6-2-13-1-18 4zm0 0v26M11 15c3 0 5 1 8 2m-8 4 8 2m-8 4 8 2m10-12 8-2m-8 8 8-2"/>',
+      feuille: '<path d="M9 40C9 24 21 5 39 7c2 16-9 30-25 28m-5 5 24-26M17 30l-1-10m9 3 10-1m-8-10 1 8"/>',
+      fleur: '<path d="M24 41C9 36 7 26 8 21c9 0 13 4 16 12 3-8 7-12 16-12 1 5-1 15-16 20zm0 0V12m0-9 3 5-3 5-3-5zm-5 26c-6-7-6-12-3-17 5 2 7 6 8 12m5 5c6-7 6-12 3-17-5 2-7 6-8 12"/>',
+      sablier: '<path d="M13 5h22M13 43h22M16 6c0 10 0 11 8 18-8 7-8 8-8 18M32 6c0 10 0 11-8 18 8 7 8 8 8 18M18 37l6-5 6 5m-12-24 6 5 6-5"/>',
+      etoile: '<path d="m24 5 4 14 14 5-14 4-4 15-4-15-14-4 14-5zM7 7l3 3m28 28 3 3M7 41l3-3m28-28 3-3"/>',
+      soleil: soleil(24, 24, 8, 4),
+      pluie: '<path d="M12 27h23a7 7 0 0 0-1-14 10 10 0 0 0-19-1 8 8 0 0 0-3 15zM17 33l-3 7m12-7-3 7m12-7-3 7"/>',
+      acquit: '<circle cx="24" cy="24" r="17"/><path d="m16 24 5 6 12-13M10 39l4-4m20-22 4-4"/>'
+    };
+    return '<span class="dessin-icone" aria-hidden="true">' + svg(motifs[nom] || motifs.fleur) + '</span>';
+  }
+  function cabinetIcones() {
+    var nodes = document.querySelectorAll('[data-dessin]');
+    for (var i = 0; i < nodes.length; i++) { nodes[i].innerHTML = dessin(nodes[i].getAttribute('data-dessin')); }
+  }
+  function cabinetAction(id, titre, primaire) {
+    return '<button type="button" id="' + id + '" class="outil-action' + (primaire ? ' primaire' : '') + '">' + titre + '</button>';
+  }
+  function cabinetEcouter(id, fn, event) { $(id).addEventListener(event || 'click', fn, false); }
+  function cabinetEntete(titre, description) {
+    return '<button type="button" class="outil-retour" id="outil-retour">Tous les petits outils</button><h2 class="outil-titre">' + titre + '</h2><p class="outil-description">' + description + '</p>';
+  }
+  function cabinetCadre(titre, description, contenu) {
+    $('outils-contenu').innerHTML = cabinetEntete(titre, description) + contenu;
+    cabinetEcouter('outil-retour', function () { cabinetOuvrir(''); });
+  }
+  function cabinetAppliquer() {
+    var niveau = Number(cabinetReglages.lumiere);
+    if (!isFinite(niveau)) { niveau = 0; }
+    $('voile').style.opacity = String(Math.max(0, Math.min(.65, niveau / 100)));
+    cabinetClasse('sans-mouvement', cabinetReglages.pause === true);
+    cabinetClasse('ambiance-miel', cabinetReglages.teinte === 'miel');
+    cabinetClasse('ambiance-prune', cabinetReglages.teinte === 'prune');
+    cabinetClasse('page-cachee', document.hidden === true);
+  }
+  function cabinetOuvrir(vue) {
+    if (!/\boutils-ouvert\b/.test(document.body.className)) { cabinetFocus = document.activeElement; }
+    fermerAcquit(); fermerActus();
+    cabinetSouffle = 0;
+    cabinetVue = vue;
+    cabinetClasse('outils-ouvert', true);
+    reveilJusqua = Date.now() + REGLAGES.reveilSecondes * 1000;
+    appliquerVeille();
+    $('outils').scrollTop = 0;
+    if (!vue) {
+      var html = '<p class="outils-intro">De petits compagnons pour habiter le temps.</p><div class="outils-grille">';
+      for (var i = 0; i < cabinetCatalogue.length; i++) {
+        var outil = cabinetCatalogue[i];
+        html += '<div class="outil-carte"><button type="button" class="outil-ouvrir" data-outil="' + outil[0] + '">' + dessin(outil[3]) + '<strong>' + outil[1] + '</strong><small>' + outil[2] + '</small></button></div>';
+      }
+      $('outils-contenu').innerHTML = html + '</div>';
+      $('outils-fermer').focus(); return;
+    }
+    if (vue === 'minuteur' || vue === 'concentration') { cabinetAfficherTimer(vue); }
+    if (vue === 'carnet') { cabinetAfficherCarnet(); }
+    if (vue === 'rituels') { cabinetAfficherRituels(); }
+    if (vue === 'respiration') { cabinetAfficherSouffle(); }
+    if (vue === 'pluie') { cabinetAfficherPluie(); }
+    if (vue === 'meteo') { cabinetAfficherMeteo(); }
+    if (vue === 'moment') { cabinetAfficherMoment(); }
+    if (vue === 'ambiance') { cabinetAfficherAmbiance(); }
+    if ($('outil-retour')) { $('outil-retour').focus(); }
+  }
+  function cabinetFermer() {
+    cabinetVue = ''; cabinetSouffle = 0;
+    cabinetClasse('outils-ouvert', false);
+    $('outils-contenu').innerHTML = '';
+    if (cabinetFocus && cabinetFocus.focus) { cabinetFocus.focus(); }
+    reveilJusqua = Date.now() + REGLAGES.reveilSecondes * 1000;
+    appliquerVeille();
+  }
+  function cabinetDuree(ms) {
+    var s = Math.max(0, Math.ceil(ms / 1000));
+    return deux(Math.floor(s / 60)) + ':' + deux(s % 60);
+  }
+  function cabinetRafraichir() {
+    var pastille = $('minuteur-pastille');
+    if (cabinetTimer) {
+      var reste = cabinetTimer.pause !== null ? cabinetTimer.pause : cabinetTimer.fin - Date.now();
+      var fini = reste <= 0;
+      var affichage = fini ? 'Ton moment est terminé' : cabinetTimer.nom + ' · ' + cabinetDuree(reste) + (cabinetTimer.pause !== null ? ' · pause' : '');
+      texte(pastille, affichage); pastille.style.display = 'block';
+      if ($('outil-compteur')) { texte($('outil-compteur'), cabinetDuree(reste)); }
+      if ($('timer-etat')) { texte($('timer-etat'), fini ? 'Le temps est écoulé. Tu peux prendre ton temps.' : cabinetTimer.pause !== null ? 'Le minuteur est en pause.' : 'Le décompte continue quand tu fermes ce panneau.'); }
+      if ($('timer-pause')) { texte($('timer-pause'), cabinetTimer.pause !== null ? 'Reprendre' : 'Mettre en pause'); }
+    } else {
+      pastille.style.display = 'none';
+    }
+    if (cabinetSouffle && $('souffle-texte')) {
+      var phase = (Date.now() - cabinetSouffle) % 10000;
+      texte($('souffle-texte'), phase < 4000 ? 'Inspire doucement' : 'Expire doucement');
+    }
+    if (cabinetBoucle) { window.clearTimeout(cabinetBoucle); cabinetBoucle = null; }
+    if (!document.hidden && ((cabinetTimer && cabinetTimer.pause === null && cabinetTimer.fin > Date.now()) || cabinetSouffle)) {
+      cabinetBoucle = window.setTimeout(cabinetRafraichir, 1000);
+    }
+  }
+  function cabinetDemarrerTimer(minutes, nom) {
+    if (!isFinite(minutes) || minutes < 1 || minutes > 180) { texte($('timer-etat'), 'Choisis une durée de 1 à 180 minutes.'); return; }
+    if (cabinetTimer && cabinetTimer.fin > Date.now() && !window.confirm('Remplacer le minuteur en cours ?')) { return; }
+    cabinetTimer = { fin: Date.now() + Math.round(minutes * 60) * 1000, pause: null, nom: nom };
+    cabinetSauver('minuteur', cabinetTimer);
+    cabinetAfficherTimer(cabinetVue);
+    cabinetRafraichir();
+  }
+  function cabinetAfficherTimer(vue) {
+    var concentration = vue === 'concentration';
+    cabinetCadre(concentration ? 'Une chose à la fois' : 'Le temps pour soi',
+      'Un minuteur visuel. Garde Résido ouvert pour voir la fin; il ne remplace pas une alarme.',
+      '<p id="outil-compteur" class="outil-compteur" aria-live="off">' + (cabinetTimer ? cabinetDuree(cabinetTimer.pause !== null ? cabinetTimer.pause : cabinetTimer.fin - Date.now()) : (concentration ? '25:00' : '20:00')) + '</p>' +
+      '<div class="outil-ligne">' + (concentration ? cabinetAction('timer-focus', 'Concentration · 25 min', true) + cabinetAction('timer-repos', 'Pause · 5 min') :
+      '<label for="timer-minutes" class="outil-label">Durée en minutes</label><input id="timer-minutes" class="outil-champ" type="number" min="1" max="180" value="20">' + cabinetAction('timer-demarrer', 'Commencer', true)) + '</div>' +
+      (cabinetTimer ? cabinetAction('timer-pause', 'Mettre en pause') + cabinetAction('timer-arreter', 'Terminer') : '') +
+      '<p class="outil-status" id="timer-etat" aria-live="polite"></p>');
+    if (concentration) {
+      cabinetEcouter('timer-focus', function () { cabinetDemarrerTimer(25, 'Concentration'); });
+      cabinetEcouter('timer-repos', function () { cabinetDemarrerTimer(5, 'Petite pause'); });
+    } else { cabinetEcouter('timer-demarrer', function () { cabinetDemarrerTimer(Number($('timer-minutes').value), 'Mon moment'); }); }
+    if (cabinetTimer) {
+      cabinetEcouter('timer-pause', function () {
+        if (cabinetTimer.pause === null) { cabinetTimer.pause = Math.max(0, cabinetTimer.fin - Date.now()); }
+        else { cabinetTimer.fin = Date.now() + cabinetTimer.pause; cabinetTimer.pause = null; }
+        cabinetSauver('minuteur', cabinetTimer); cabinetRafraichir();
+      });
+      cabinetEcouter('timer-arreter', function () { cabinetTimer = null; cabinetSauver('minuteur', null); cabinetAfficherTimer(vue); cabinetRafraichir(); });
+    }
+    cabinetRafraichir();
+  }
+  function cabinetAfficherCarnet() {
+    var note = lire('resido.jardin.carnet');
+    cabinetCadre('Le carnet du soir', 'Une idée à garder, quelque chose de beau, ou simplement ce qui te passe par la tête.',
+      '<label for="carnet-note" class="outil-label">Ta page, pour toi</label><textarea id="carnet-note" class="outil-champ outil-carnet" maxlength="8000" placeholder="Ce soir, je dépose ici…"></textarea><p id="carnet-etat" class="outil-status" aria-live="polite">Conservé sur cet appareil seulement.</p>');
+    $('carnet-note').value = typeof note === 'string' ? note : '';
+    cabinetEcouter('carnet-note', function () {
+      texte($('carnet-etat'), cabinetSauver('carnet', $('carnet-note').value) ? 'Enregistré sur cet appareil seulement.' : 'Le stockage est indisponible. Cette note ne sera pas conservée.');
+    }, 'input');
+  }
+  function cabinetAfficherRituels() {
+    var liste = lire('resido.jardin.rituels');
+    if (!liste || Object.prototype.toString.call(liste) !== '[object Array]') { liste = [{ texte:'Préparer une petite chose pour demain', fait:false }, { texte:'Garder un bon moment de la journée', fait:false }, { texte:'Prendre un moment pour soi', fait:false }]; }
+    liste = liste.filter(function (item) { return item && typeof item.texte === 'string'; }).slice(0, 20);
+    var html = '<div id="rituel-liste">';
+    for (var i = 0; i < liste.length; i++) {
+      html += '<label class="rituel-item"><input type="checkbox" data-rituel="' + i + '"' + (liste[i].fait ? ' checked' : '') + '><span>' + echapper(liste[i].texte) + '</span></label>';
+    }
+    cabinetCadre('Les petits rituels', 'Une liste tranquille, à composer à ta façon. Elle reste ici aussi longtemps que tu veux.',
+      html + '</div><div class="rituel-ajout outil-ligne"><label for="rituel-texte" class="outil-label">Un nouveau petit rituel</label><input id="rituel-texte" class="outil-champ" maxlength="100" placeholder="Par exemple, préparer mon livre">' + cabinetAction('rituel-ajouter', 'Ajouter', true) + '</div>' +
+      cabinetAction('rituel-recommencer', 'Tout décocher') + cabinetAction('rituel-retirer', 'Retirer les éléments cochés') + '<p class="outil-status" id="rituel-etat" aria-live="polite"></p>');
+    function sauvegarder() { return cabinetSauver('rituels', liste); }
+    $('rituel-liste').addEventListener('change', function (e) {
+      var index = Number(e.target.getAttribute('data-rituel'));
+      if (liste[index]) { liste[index].fait = e.target.checked; texte($('rituel-etat'), sauvegarder() ? 'Liste enregistrée sur cet appareil.' : 'Stockage indisponible : liste non conservée.'); }
+    }, false);
+    cabinetEcouter('rituel-ajouter', function () {
+      var t = $('rituel-texte').value.replace(/^\s+|\s+$/g, '');
+      if (!t) { return; }
+      if (liste.length >= 20) { texte($('rituel-etat'), 'Le carnet accueille jusqu’à 20 petits rituels.'); return; }
+      liste.push({ texte:t.slice(0, 100), fait:false });
+      if (sauvegarder()) { cabinetAfficherRituels(); } else { texte($('rituel-etat'), 'Stockage indisponible : rituel non conservé.'); }
+    });
+    cabinetEcouter('rituel-recommencer', function () { for (var j = 0; j < liste.length; j++) { liste[j].fait = false; } if (sauvegarder()) { cabinetAfficherRituels(); } });
+    cabinetEcouter('rituel-retirer', function () { liste = liste.filter(function (item) { return !item.fait; }); if (sauvegarder()) { cabinetAfficherRituels(); } });
+  }
+  function cabinetAfficherSouffle() {
+    cabinetCadre('Un moment pour soi', 'Laisse la lune grandir et se retirer. Tu peux suivre ce mouvement ou garder ton rythme naturel.',
+      '<div class="respiration-zone" id="souffle-zone"><img class="respiration-image" src="illustrations/lune-gravee.png" alt=""><p id="souffle-texte" class="respiration-texte" aria-live="off">Une petite pause.</p>' + cabinetAction('souffle-demarrer', 'Commencer', true) + '</div>');
+    cabinetEcouter('souffle-demarrer', function () {
+      if (cabinetSouffle) {
+        cabinetSouffle = 0; $('souffle-zone').className = 'respiration-zone'; texte($('souffle-texte'), 'Une petite pause.'); texte($('souffle-demarrer'), 'Commencer');
+      } else {
+        cabinetSouffle = Date.now(); $('souffle-zone').className += ' respiration-active'; texte($('souffle-demarrer'), 'Terminer');
+      }
+      cabinetRafraichir();
+    });
+  }
+  function cabinetArreterAudio() {
+    if (cabinetBruit) { try { cabinetBruit.stop(); } catch (e) { /* déjà arrêté */ } cabinetBruit = null; }
+    if (cabinetAudio) { try { cabinetAudio.close(); } catch (e2) { /* ancien moteur */ } cabinetAudio = null; }
+    cabinetGain = null; $('pluie-pastille').style.display = 'none';
+    if ($('pluie-demarrer')) { texte($('pluie-demarrer'), 'Écouter la pluie'); }
+    if ($('pluie-etat')) { texte($('pluie-etat'), 'Ambiance arrêtée.'); }
+  }
+  function cabinetAfficherPluie() {
+    cabinetCadre('La pluie feutrée', 'Un souffle de pluie créé sur l’iPad, sans téléchargement. Commence à faible volume; le son s’arrête quand tu quittes Résido.',
+      cabinetAction('pluie-demarrer', cabinetBruit ? 'Arrêter la pluie' : 'Écouter la pluie', true) + '<label for="pluie-volume" class="outil-label">Volume de l’ambiance</label><input class="outil-range" id="pluie-volume" type="range" min="0" max="100" value="25"><p id="pluie-etat" class="outil-status" aria-live="polite"></p>');
+    cabinetEcouter('pluie-demarrer', function () {
+      if (cabinetBruit) { cabinetArreterAudio(); return; }
+      var Audio = window.AudioContext || window.webkitAudioContext;
+      if (!Audio) { texte($('pluie-etat'), 'L’ambiance sonore n’est pas disponible dans ce navigateur.'); return; }
+      try {
+        cabinetAudio = new Audio();
+        if (cabinetAudio.resume) { cabinetAudio.resume(); }
+        var taille = cabinetAudio.sampleRate * 3;
+        var buffer = cabinetAudio.createBuffer(1, taille, cabinetAudio.sampleRate);
+        var canal = buffer.getChannelData(0);
+        for (var i = 0; i < taille; i++) { canal[i] = Math.random() * 2 - 1; }
+        cabinetBruit = cabinetAudio.createBufferSource(); cabinetBruit.buffer = buffer; cabinetBruit.loop = true;
+        var filtre = cabinetAudio.createBiquadFilter(); filtre.type = 'lowpass'; filtre.frequency.value = 1400;
+        cabinetGain = cabinetAudio.createGain(); cabinetGain.gain.value = Number($('pluie-volume').value) / 100 * .12;
+        cabinetBruit.connect(filtre); filtre.connect(cabinetGain); cabinetGain.connect(cabinetAudio.destination);
+        cabinetBruit.start(); $('pluie-pastille').style.display = 'block'; texte($('pluie-demarrer'), 'Arrêter la pluie'); texte($('pluie-etat'), 'La pluie accompagne ton jardin.');
+      } catch (e) { cabinetArreterAudio(); texte($('pluie-etat'), 'Le son n’a pas pu démarrer. Réessaie après un toucher.'); }
+    });
+    cabinetEcouter('pluie-volume', function () { if (cabinetGain) { cabinetGain.gain.value = Number($('pluie-volume').value) / 100 * .12; } }, 'input');
+  }
+  function cabinetAfficherMeteo() {
+    if (!meteo) { cabinetCadre('La fenêtre ouverte', 'La météo attend le réseau. Elle reviendra automatiquement.', cabinetAction('meteo-reessayer', 'Réessayer', true)); cabinetEcouter('meteo-reessayer', chargerMeteo); return; }
+    var data = meteo.data, debut = indexHeure(data, instant());
+    var details = 'Ressentie ' + degres(data.current.apparent_temperature) + ' · Vent ' + Math.round(data.current.wind_speed_10m) + ' km/h';
+    var age = Math.round((Date.now() - meteo.recu) / 60000);
+    details += ' · Données reçues ' + (age < 1 ? 'à l’instant' : 'il y a ' + age + ' min') + '.';
+    var html = '<table class="meteo-table"><thead><tr><th>Heure</th><th>Conditions</th><th>Temp.</th><th>Précip.</th></tr></thead><tbody>';
+    for (var i = Math.max(0, debut); i < data.hourly.time.length && i < Math.max(0, debut) + 12; i++) {
+      var p = data.hourly.precipitation_probability[i];
+      html += '<tr><td>' + heureCourte(local(data.hourly.time[i] * 1000)) + '</td><td>' + echapper(majuscule(LIBELLES[data.hourly.weather_code[i]] || 'Inconnues')) + '</td><td>' + degres(data.hourly.temperature_2m[i]) + '</td><td>' + (p === null || p === undefined ? 'Indisponible' : p + ' %') + '</td></tr>';
+    }
+    cabinetCadre('La fenêtre ouverte', details, html + '</tbody></table><p class="outil-description">Prévisions Open-Meteo. Les probabilités restent des prévisions.</p>');
+  }
+  function cabinetAfficherMoment() {
+    var moment = lire('resido.jardin.moment') || {};
+    cabinetCadre('Un jour à attendre', 'Garde un beau rendez-vous dans un coin du jardin. Le décompte suit les jours du calendrier de l’iPad.',
+      '<label for="moment-nom" class="outil-label">Ce que tu attends</label><input id="moment-nom" class="outil-champ" maxlength="60" placeholder="Un départ, un spectacle…"><label for="moment-date" class="outil-label">La date</label><input id="moment-date" class="outil-champ" type="date"><p id="moment-compteur" class="outil-compteur"></p><p id="moment-status" class="outil-status" aria-live="polite"></p>' + cabinetAction('moment-garder', 'Garder ce moment', true) + cabinetAction('moment-oublier', 'Oublier ce moment'));
+    $('moment-nom').value = typeof moment.nom === 'string' ? moment.nom : '';
+    $('moment-date').value = typeof moment.date === 'string' ? moment.date : '';
+    function calculer(sauver) {
+      var valeur = $('moment-date').value, m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(valeur);
+      if (!m) { texte($('moment-compteur'), ''); if (sauver) { texte($('moment-status'), 'Choisis une date complète.'); } return; }
+      var cible = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+      if (cible.getMonth() !== Number(m[2]) - 1 || cible.getDate() !== Number(m[3])) { texte($('moment-status'), 'Cette date n’est pas valide.'); return; }
+      var d = new Date(), jours = Math.round((Date.UTC(cible.getFullYear(), cible.getMonth(), cible.getDate()) - Date.UTC(d.getFullYear(), d.getMonth(), d.getDate())) / 86400000);
+      texte($('moment-compteur'), jours === 0 ? 'C’est aujourd’hui' : jours > 0 ? 'Dans ' + jours + (jours === 1 ? ' jour' : ' jours') : 'Il y a ' + Math.abs(jours) + (jours === -1 ? ' jour' : ' jours'));
+      if (sauver) { texte($('moment-status'), cabinetSauver('moment', { nom:$('moment-nom').value, date:valeur }) ? 'Ce moment est gardé sur cet appareil.' : 'Stockage indisponible : moment non conservé.'); }
+    }
+    cabinetEcouter('moment-oublier', function () { if (cabinetSauver('moment', null)) { cabinetAfficherMoment(); } else { texte($('moment-status'), 'Stockage indisponible.'); } });
+    cabinetEcouter('moment-garder', function () { calculer(true); });
+    cabinetEcouter('moment-date', function () { calculer(false); }, 'change');
+    calculer(false);
+  }
+  function cabinetAfficherAmbiance() {
+    cabinetCadre('Les nuances du jardin', 'Ajuste le jardin à ta chambre. Le voile assombrit la page; la luminosité physique se règle toujours sur l’iPad.',
+      '<label class="outil-label" for="jardin-lumiere">Voile du soir</label><input id="jardin-lumiere" class="outil-range" type="range" min="0" max="65" value="' + (Number(cabinetReglages.lumiere) || 0) + '"><div class="outil-ligne">' + cabinetAction('teinte-encre', 'Encre & cuivre') + cabinetAction('teinte-miel', 'Miel du soir') + cabinetAction('teinte-prune', 'Prune & lilas') + '</div>' +
+      cabinetAction('jardin-animation', cabinetReglages.pause ? 'Reprendre les dessins' : 'Mettre les dessins en pause') + cabinetAction('jardin-nuit', cabinetReglages.jardinNuit ? 'Veille automatique de 22 h à 6 h' : 'Garder le jardin visible la nuit') + '<p id="ambiance-status" class="outil-status" aria-live="polite"></p>');
+    function garder() { cabinetAppliquer(); texte($('ambiance-status'), cabinetSauver('reglages', cabinetReglages) ? 'Ambiance enregistrée pour les prochaines visites.' : 'Ambiance temporaire : stockage indisponible.'); }
+    cabinetEcouter('jardin-lumiere', function () { cabinetReglages.lumiere = Number($('jardin-lumiere').value); garder(); }, 'input');
+    var teintes = ['encre', 'miel', 'prune'];
+    for (var i = 0; i < teintes.length; i++) {
+      (function (teinte) {
+        $('teinte-' + teinte).setAttribute('aria-pressed', String((cabinetReglages.teinte || 'encre') === teinte));
+        cabinetEcouter('teinte-' + teinte, function () { cabinetReglages.teinte = teinte; garder(); cabinetAfficherAmbiance(); });
+      })(teintes[i]);
+    }
+    cabinetEcouter('jardin-nuit', function () { cabinetReglages.jardinNuit = !cabinetReglages.jardinNuit; garder(); appliquerVeille(); texte($('jardin-nuit'), cabinetReglages.jardinNuit ? 'Veille automatique de 22 h à 6 h' : 'Garder le jardin visible la nuit'); });
+    cabinetEcouter('jardin-animation', function () { cabinetReglages.pause = !cabinetReglages.pause; garder(); texte($('jardin-animation'), cabinetReglages.pause ? 'Reprendre les dessins' : 'Mettre les dessins en pause'); });
+  }
+  cabinetEcouter('pluie-pastille', cabinetArreterAudio);
+  cabinetEcouter('outils-bouton', function () { cabinetOuvrir(''); });
+  cabinetEcouter('respiration-bouton', function () { cabinetOuvrir('respiration'); });
+  cabinetEcouter('actualite-bouton', ouvrirActus);
+  cabinetEcouter('outils-fermer', cabinetFermer);
+  cabinetEcouter('minuteur-pastille', function () { cabinetOuvrir('minuteur'); });
+  $('outils-contenu').addEventListener('click', function (e) {
+    var el = e.target;
+    while (el && el !== this) {
+      var vue = el.getAttribute && el.getAttribute('data-outil');
+      if (vue) { cabinetOuvrir(vue); return; }
+      el = el.parentNode;
+    }
+  }, false);
+  document.addEventListener('keydown', function (e) { if (e.keyCode === 27) { cabinetFermer(); fermerActus(); fermerAcquit(); } }, false);
+  document.addEventListener('visibilitychange', function () {
+    cabinetAppliquer();
+    if (document.hidden) {
+      cabinetArreterAudio(); cabinetSouffle = 0;
+      if ($('souffle-zone')) { $('souffle-zone').className = 'respiration-zone'; texte($('souffle-texte'), 'Une petite pause.'); texte($('souffle-demarrer'), 'Commencer'); }
+    }
+    cabinetRafraichir();
+  }, false);
+  window.addEventListener('pagehide', cabinetArreterAudio, false);
+  cabinetIcones(); cabinetAppliquer(); cabinetRafraichir();
 
   /* ---------- Démarrage ---------- */
   texte($('lieu'), REGLAGES.lieu);
