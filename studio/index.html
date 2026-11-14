@@ -409,11 +409,17 @@
       <img src="./assets/logo.jpg" alt="" class="brand-badge" style="object-fit:cover; border:none;" />
       <div>
         <h1>FRANC NORD // STUDIO</h1>
-        <p>Plein Écran Cinématique • Gemini Hydrogen (Amont) → Claude Opus (Motion Design)</p>
+        <p id="pipelineSubtitle">Plein Écran Cinématique • Gemini Hydrogen (Amont) → Claude Opus 5.5 / Codex Sol 6.1</p>
       </div>
     </div>
 
     <div class="toolbar">
+      <button id="copyGeminiPromptBtn" type="button" title="Copier la consigne quotidienne pour Gemini Hydrogen (Étape 1)">📋 1. Prompt Gemini</button>
+      <select id="motionAgentSelect" aria-label="Choisir l'agent de Motion Design (Étape 2)" style="background:var(--bg-2); color:var(--text); border:1px solid var(--border); border-radius:10px; padding:8px 12px; font-size:13px; font-weight:700; cursor:pointer;">
+        <option value="opus">🟣 Agent 2 : Claude Opus 5.5</option>
+        <option value="codex">🟢 Agent 2 : Codex Sol 6.1</option>
+      </select>
+      <button id="copyMotionPromptBtn" type="button" title="Copier la consigne Motion Design pour l'agent sélectionné">📋 2. Copier Prompt Motion</button>
       <button id="format16x9Btn" type="button" class="active-format">📺 16:9 (YouTube)</button>
       <button id="format9x16Btn" type="button">📱 9:16 (Facebook / TikTok)</button>
       <button id="playPauseBtn" type="button" class="primary">Pause</button>

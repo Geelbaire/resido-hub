@@ -21,6 +21,10 @@ const playPauseBtn = document.getElementById('playPauseBtn');
 const restartBtn = document.getElementById('restartBtn');
 const format16x9Btn = document.getElementById('format16x9Btn');
 const format9x16Btn = document.getElementById('format9x16Btn');
+const copyGeminiPromptBtn = document.getElementById('copyGeminiPromptBtn');
+const motionAgentSelect = document.getElementById('motionAgentSelect');
+const copyMotionPromptBtn = document.getElementById('copyMotionPromptBtn');
+const pipelineSubtitle = document.getElementById('pipelineSubtitle');
 const scrubber = document.getElementById('scrubber');
 const timecodeDisplay = document.getElementById('timecodeDisplay');
 const scenePillsContainer = document.getElementById('scenePillsContainer');
@@ -313,6 +317,51 @@ restartBtn.addEventListener('click', () => {
 
 format16x9Btn.addEventListener('click', () => applyFormat('16x9'));
 format9x16Btn.addEventListener('click', () => applyFormat('9x16'));
+
+const AGENT_STORAGE_KEY = 'franc_nord_motion_agent';
+const savedAgent = localStorage.getItem(AGENT_STORAGE_KEY);
+if (savedAgent === 'codex' || savedAgent === 'opus') {
+  motionAgentSelect.value = savedAgent;
+}
+
+function updateAgentLabel() {
+  const isCodex = motionAgentSelect?.value === 'codex';
+  if (pipelineSubtitle) {
+    pipelineSubtitle.textContent = isCodex
+      ? 'Plein Écran Cinématique • Gemini Hydrogen (Amont) → Codex Sol 6.1 (Motion Design)'
+      : 'Plein Écran Cinématique • Gemini Hydrogen (Amont) → Claude Opus 5.5 (Motion Design)';
+  }
+}
+updateAgentLabel();
+
+motionAgentSelect?.addEventListener('change', () => {
+  localStorage.setItem(AGENT_STORAGE_KEY, motionAgentSelect.value);
+  updateAgentLabel();
+});
+
+copyGeminiPromptBtn?.addEventListener('click', async () => {
+  const todayStr = new Date().toISOString().slice(0, 10);
+  const promptText = `Prépare le bulletin FRANC NORD d'aujourd'hui (${todayStr}) en suivant "/Volumes/Projets/FRANC NORD/1-amont-gemini-hydrogen/PROMPT_GEMINI_HYDROGEN.md" (format 8m30s / 13 scènes dans episodes/${todayStr}/storyboard.json et teleprompteur.md).`;
+  await navigator.clipboard.writeText(promptText);
+  const orig = copyGeminiPromptBtn.textContent;
+  copyGeminiPromptBtn.textContent = '✓ Prompt Gemini copié !';
+  setTimeout(() => {
+    copyGeminiPromptBtn.textContent = orig;
+  }, 2200);
+});
+
+copyMotionPromptBtn?.addEventListener('click', async () => {
+  const isCodex = motionAgentSelect?.value === 'codex';
+  const promptText = isCodex
+    ? `Examine les images de notre charte dans "/Volumes/Projets/FRANC NORD/identite-visuelle/", étudie le code de référence "/Volumes/Projets/FRANC NORD/episodes/2026-11-14/scenes-custom.js" et lis "/Volumes/Projets/FRANC NORD/2-aval-opus-motion/PROMPT_CODEX_SOL_6_1.md" ainsi que le storyboard.json du jour. Code les 13 scènes dans scenes-custom.js, synchronise avec voix.mp3 et exporte les MP4 16x9 et 9x16. EXIGENCE ABSOLUE : Égale ou surpasse le calibre de l'Épisode #1 (zéro musique, plein écran cinématique) et prouve-moi que tu es le meilleur motion designer de la terre entière.`
+    : `Examine les images de notre charte dans "/Volumes/Projets/FRANC NORD/identite-visuelle/", lis "/Volumes/Projets/FRANC NORD/2-aval-opus-motion/PROMPT_OPUS_5_5.md" et le storyboard.json du jour, puis code les 13 scènes dans scenes-custom.js, synchronise avec voix.mp3 et exporte les MP4 16x9 et 9x16. EXIGENCE ABSOLUE : Crée une vidéo de HAUT CALIBRE (zéro musique, plein écran cinématique) et prouve-moi seconde par seconde que tu es le meilleur motion designer de la terre entière.`;
+  await navigator.clipboard.writeText(promptText);
+  const orig = copyMotionPromptBtn.textContent;
+  copyMotionPromptBtn.textContent = isCodex ? '✓ Prompt Codex Sol 6.1 copié !' : '✓ Prompt Claude Opus 5.5 copié !';
+  setTimeout(() => {
+    copyMotionPromptBtn.textContent = orig;
+  }, 2200);
+});
 
 scrubber.addEventListener('input', (e) => {
   seekTo(parseFloat(e.target.value) || 0);
