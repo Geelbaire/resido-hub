@@ -339,10 +339,36 @@ motionAgentSelect?.addEventListener('change', () => {
   updateAgentLabel();
 });
 
+function copyTextReliable(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text).catch(() => fallbackCopy(text));
+  }
+  return Promise.resolve(fallbackCopy(text));
+}
+
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.setAttribute('readonly', '');
+  ta.style.position = 'fixed';
+  ta.style.top = '-9999px';
+  ta.style.left = '-9999px';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  ta.setSelectionRange(0, text.length);
+  try {
+    document.execCommand('copy');
+  } finally {
+    document.body.removeChild(ta);
+  }
+}
+
 copyGeminiPromptBtn?.addEventListener('click', async () => {
   const todayStr = new Date().toISOString().slice(0, 10);
   const promptText = `Prépare le bulletin FRANC NORD d'aujourd'hui (${todayStr}) en suivant "/Volumes/Projets/FRANC NORD/1-amont-gemini-hydrogen/PROMPT_GEMINI_HYDROGEN.md" (format 8m30s / 13 scènes dans episodes/${todayStr}/storyboard.json et teleprompteur.md).`;
-  await navigator.clipboard.writeText(promptText);
+  await copyTextReliable(promptText);
+  voiceStatusText.textContent = `✓ Copié dans le presse-papiers : ${promptText}`;
   const orig = copyGeminiPromptBtn.textContent;
   copyGeminiPromptBtn.textContent = '✓ Prompt Gemini copié !';
   setTimeout(() => {
@@ -355,7 +381,8 @@ copyMotionPromptBtn?.addEventListener('click', async () => {
   const promptText = isCodex
     ? `Examine les images de notre charte dans "/Volumes/Projets/FRANC NORD/identite-visuelle/", étudie le code de référence "/Volumes/Projets/FRANC NORD/episodes/2026-11-14/scenes-custom.js" et lis "/Volumes/Projets/FRANC NORD/2-aval-opus-motion/PROMPT_CODEX_SOL_6_1.md" ainsi que le storyboard.json du jour. Code les 13 scènes dans scenes-custom.js, synchronise avec voix.mp3 et exporte les MP4 16x9 et 9x16. EXIGENCE ABSOLUE : Égale ou surpasse le calibre de l'Épisode #1 (zéro musique, plein écran cinématique) et prouve-moi que tu es le meilleur motion designer de la terre entière.`
     : `Examine les images de notre charte dans "/Volumes/Projets/FRANC NORD/identite-visuelle/", lis "/Volumes/Projets/FRANC NORD/2-aval-opus-motion/PROMPT_OPUS_5_5.md" et le storyboard.json du jour, puis code les 13 scènes dans scenes-custom.js, synchronise avec voix.mp3 et exporte les MP4 16x9 et 9x16. EXIGENCE ABSOLUE : Crée une vidéo de HAUT CALIBRE (zéro musique, plein écran cinématique) et prouve-moi seconde par seconde que tu es le meilleur motion designer de la terre entière.`;
-  await navigator.clipboard.writeText(promptText);
+  await copyTextReliable(promptText);
+  voiceStatusText.textContent = `✓ Copié dans le presse-papiers : ${promptText}`;
   const orig = copyMotionPromptBtn.textContent;
   copyMotionPromptBtn.textContent = isCodex ? '✓ Prompt Codex Sol 6.1 copié !' : '✓ Prompt Claude Opus 5.5 copié !';
   setTimeout(() => {
