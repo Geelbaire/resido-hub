@@ -3,9 +3,9 @@
   "showTagline": "Le monde expliqué d'ici • Sans filtre ni commanditaire",
   "contactEmail": "contact.francnord@proton.me",
   "episodeDate": "2026-11-14",
-  "episodeNumber": 1,
-  "title": "Pétrole sous tension en mer, dollar canadien à 71 ¢ US et ruée mondiale sur Hydro-Québec",
-  "totalDurationSeconds": 444.99,
+  "episodeNumber": 2,
+  "title": "COP31 sous tension, plan sur le Donbass et double panne aérienne et numérique",
+  "totalDurationSeconds": 446.119125,
   "chapters": [
     {
       "id": "ch0",
@@ -16,19 +16,19 @@
     {
       "id": "ch1",
       "number": "01",
-      "label": "DÉTROIT D'ORMUZ",
+      "label": "COP31 & CLIMAT",
       "colorKey": "amber"
     },
     {
       "id": "ch2",
       "number": "02",
-      "label": "DOLLAR & ÉPICERIE",
+      "label": "DONBASS & SOMMET À TROIS",
       "colorKey": "cyan"
     },
     {
       "id": "ch3",
       "number": "03",
-      "label": "IA & HYDRO-QUÉBEC",
+      "label": "PANNES FAA & MICROSOFT",
       "colorKey": "emerald"
     },
     {
@@ -42,588 +42,833 @@
     {
       "id": "intro-sommaire",
       "chapterId": "ch0",
-      "duration": 32.36,
-      "shortVisualTitle": "Franc Nord — Les 3 ondes de choc du jour",
+      "duration": 29.28,
+      "shortVisualTitle": "Franc Nord — Les 3 ondes de choc du 14 novembre",
       "locationBadge": "MONDE → QUÉBEC",
       "sources": [
-        "Reuters",
-        "AP",
-        "AFP"
+        "ONU Info",
+        "BBC News",
+        "France 24",
+        "Radio-Canada"
       ],
-      "narration": "Bienvenue sur Franc Nord, le bulletin qui décortique ce qui se passe vraiment sur la planète et ce que ça change concrètement pour nous au Québec, sans commanditaire et sans filtre. Aujourd'hui, trois grandes ondes de choc mondiales : d'abord, un goulot d'étranglement sur les routes pétrolières qui menace directement le prix à nos pompes. Ensuite, la chute de notre dollar autour de soixante-et-onze sous américains juste avant l'hiver, qui frappe le panier d'épicerie. Et enfin, la panne sèche électrique de l'intelligence artificielle mondiale qui pousse les géants américains à cogner à la porte d'Hydro-Québec.",
-      "motionBrief": "Ouverture cinématique plein écran : dans l'obscurité abyssale, la boussole géométrique Franc Nord s'illumine au centre, puis la caméra plonge à travers trois anneaux d'ondes lumineuses (Ambre, Cyan, Émeraude) qui révèlent tour à tour les 3 symboles minimalistes de l'épisode.",
+      "narration": "Bienvenue sur Franc Nord, le bulletin qui décortique l'actualité mondiale et ce qu'elle change pour nous au Québec, sans filtre et sans commanditaire. Aujourd'hui, trois grandes secousses planétaires : d'abord, la bataille financière à la COP31 autour du mot d'ordre « faites payer les pollueurs » et de l'empreinte de l'IA. Ensuite, Washington qui met la cession du Donbass sur la table avant un sommet inédit Trump-Poutine-Xi. Enfin, une double panne aérienne et numérique qui révèle la fragilité de nos infrastructures.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran sur fond Abyssal Midnight (#030509). Acte I : la boussole géométrique Franc Nord s'illumine au centre dans un halo cyan boréal (#38BDF8). Acte II : la caméra virtuelle plonge à travers trois anneaux d'ondes lumineuses (Ambre, Cyan, Émeraude) qui se dilatent en parallaxe. Acte III : chaque anneau révèle une icône épurée (bilan climatique, échiquier diplomatique, réseau aérien et cloud) avant de converger vers la silhouette en pointillés lumineux du Québec.",
       "voiceSync": {
+        "method": "ASR word alignment",
         "sentences": [
           {
-            "start": 0.25,
-            "end": 9.46,
+            "start": 0.0,
+            "end": 7.4,
             "from": 0,
-            "to": 181,
-            "anchored": true
+            "to": 150,
+            "anchored": false
           },
           {
-            "start": 9.46,
-            "end": 18.03,
-            "from": 182,
-            "to": 340,
-            "anchored": true
+            "start": 7.96,
+            "end": 17.54,
+            "from": 150,
+            "to": 324,
+            "anchored": false
           },
           {
-            "start": 18.03,
-            "end": 24.59,
-            "from": 341,
-            "to": 471,
-            "anchored": true
+            "start": 17.76,
+            "end": 23.7067,
+            "from": 324,
+            "to": 428,
+            "anchored": false
           },
           {
-            "start": 24.59,
-            "end": 32.36,
-            "from": 472,
-            "to": 616,
+            "start": 24.16,
+            "end": 28.92,
+            "from": 428,
+            "to": 522,
             "anchored": true
           }
         ]
-      }
+      },
+      "wordSync": [
+        {
+          "phrase": "Aujourd'hui",
+          "time": 7.96,
+          "globalTime": 7.96,
+          "matched": true
+        },
+        {
+          "phrase": "Ensuite",
+          "time": 17.76,
+          "globalTime": 17.76,
+          "matched": true
+        },
+        {
+          "phrase": "Enfin",
+          "time": 24.16,
+          "globalTime": 24.16,
+          "matched": true
+        }
+      ]
     },
     {
       "id": "d1-fait-declencheur",
       "chapterId": "ch1",
-      "duration": 32.57,
-      "shortVisualTitle": "+38 % sur les assurances des pétroliers",
-      "locationBadge": "GOLFE PERSIQUE & MER ROUGE",
+      "duration": 33.86,
+      "shortVisualTitle": "COP31 : bataille de milliards et empreinte de l'IA",
+      "locationBadge": "ANTALYA • TURQUIE (ONU)",
       "sources": [
-        "Reuters Maritime",
-        "Lloyd's Market"
+        "ONU Info",
+        "France 24"
       ],
-      "narration": "Commençons au Moyen-Orient. Pendant qu'ici on parle de nos enjeux locaux, une crise silencieuse vient de franchir un cap en mer Rouge et aux abords du détroit d'Ormuz. En l'espace de quelques jours, les grandes compagnies d'assurance maritime de Londres ont fait bondir leurs primes de risque de guerre de trente-huit pour cent pour chaque supertanker qui traverse la zone. Concrètement, assurer un seul navire géant coûte maintenant des centaines de milliers de dollars supplémentaires par voyage, et plusieurs armateurs préfèrent carrément faire le grand détour par le sud de l'Afrique, ce qui rallonge la route de deux semaines entières.",
-      "motionBrief": "Caméra virtuelle en plongée au-dessus d'une mer noire minimaliste : un sillage lumineux doré avance lentement puis se fige face à une onde de choc concentrique rouge corail ; l'écran bascule en un travelling vertical révélant le chiffre monumental +38 %.",
+      "narration": "Commençons à Antalya, en Turquie, où la Conférence des Nations unies sur le climat — la COP31 — vient d'entrer dans une phase électrique. Vendredi, les débats ont été dominés par un bras de fer portant sur des milliards de dollars de financement climatique, sous le mot d'ordre « faites payer les pollueurs ». En parallèle, l'ONU a lancé de nouvelles priorités d'action pour mesurer l'empreinte écologique réelle de l'intelligence artificielle et garantir une information climatique fiable. Sur le terrain, l'urgence reste brutale : au Tchad, par exemple, une sécheresse historique fait déjà craindre des poches de famine.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : vue zénithale sombre sur la Méditerranée orientale, un point focal ambre (#F59E0B) s'allume sur Antalya. Acte II : des vecteurs de flux financiers lumineux convergent vers un noyau central qui se divise entre financement climatique et empreinte énergétique de l'IA. Acte III : une onde de chaleur sèche traverse le Sahel sur la carte en pointillés, illustrant l'urgence alimentaire évoquée à la conférence.",
       "voiceSync": {
+        "method": "ASR word alignment",
         "sentences": [
           {
-            "start": 0,
-            "end": 1.82,
+            "start": 0.36,
+            "end": 7.72,
             "from": 0,
-            "to": 27,
+            "to": 137,
             "anchored": true
           },
           {
-            "start": 1.82,
-            "end": 8.99,
-            "from": 28,
-            "to": 167,
+            "start": 8.26,
+            "end": 16.5,
+            "from": 137,
+            "to": 309,
             "anchored": true
           },
           {
-            "start": 8.99,
-            "end": 19.05,
-            "from": 168,
-            "to": 373,
-            "anchored": true
-          },
-          {
-            "start": 19.05,
-            "end": 32.57,
-            "from": 374,
-            "to": 640,
-            "anchored": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "d1-geopolitique-detroit",
-      "chapterId": "ch1",
-      "duration": 31.35,
-      "shortVisualTitle": "33 kilomètres qui tiennent l'économie mondiale",
-      "locationBadge": "DÉTROIT D'ORMUZ • 21 M BARILS/JOUR",
-      "sources": [
-        "Agence Internationale de l'Énergie",
-        "EIA"
-      ],
-      "narration": "Pour saisir pourquoi toute la planète retient son souffle, il faut regarder la géographie pure. Le détroit d'Ormuz, dans sa partie navigable, c'est un couloir maritime large d'à peine trente-trois kilomètres. C'est moins large que la distance entre Montréal et Saint-Jérôme. Pourtant, chaque jour, vingt-et-un millions de barils de pétrole brut et un cinquième du gaz naturel liquéfié de la planète entière doivent absolument passer par ce trou d'aiguille. Il n'existe aucun pipeline capable de remplacer un tel volume si jamais le passage ralentit ne serait-ce que de vingt pour cent.",
-      "motionBrief": "Carte topographique vectorielle ultra-épurée plein écran : deux masses côtières sombres se resserrent comme un étau autour d'un faisceau lumineux de 33 km où circulent des particules d'or, avec une échelle comparative minimaliste.",
-      "voiceSync": {
-        "sentences": [
-          {
-            "start": 0,
-            "end": 5.24,
-            "from": 0,
-            "to": 95,
-            "anchored": true
-          },
-          {
-            "start": 5.24,
-            "end": 10.87,
-            "from": 96,
-            "to": 208,
-            "anchored": true
-          },
-          {
-            "start": 10.87,
-            "end": 14.15,
-            "from": 209,
-            "to": 274,
-            "anchored": false
-          },
-          {
-            "start": 14.15,
-            "end": 24.46,
-            "from": 275,
-            "to": 456,
-            "anchored": true
-          },
-          {
-            "start": 24.46,
-            "end": 31.35,
-            "from": 457,
-            "to": 585,
-            "anchored": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "d1-deux-cotes-opep-occident",
-      "chapterId": "ch1",
-      "duration": 36.68,
-      "shortVisualTitle": "Producteurs vs Consommateurs : les 2 thèses",
-      "locationBadge": "LES DEUX CÔTÉS DE LA MÉDAILLE",
-      "sources": [
-        "AFP",
-        "OPEP+",
-        "G7 Énergie"
-      ],
-      "narration": "Mais qui est vraiment responsable de la facture qui grimpe ? Fidèles à notre règle sur Franc Nord, écoutons les deux côtés de la médaille. Du côté des pays producteurs de l'OPEP+, l'argument est clair : ils refusent d'augmenter leur production parce qu'ils estiment que la demande chinoise ralentit, qu'ils doivent financer la transition de leurs propres économies et que ce sont surtout les taxes occidentales qui gonflent le prix final. À l'inverse, du côté des pays importateurs et des associations de consommateurs, on dénonce une rareté maintenue artificiellement pour garder le baril cher, tout en pointant du doigt les grandes raffineries nord-américaines dont les marges restent proches des sommets historiques.",
-      "motionBrief": "Chorégraphie géométrique d'équilibre : deux plans lumineux opposés (Ambre chaud à gauche pour l'OPEP+, Bleu glacé à droite pour les importateurs) pivotent en 2.5D autour d'un axe central pur, affichant uniquement 2 mots-clés monumentaux à la fois.",
-      "voiceSync": {
-        "sentences": [
-          {
-            "start": 0,
-            "end": 3.19,
-            "from": 0,
-            "to": 60,
-            "anchored": true
-          },
-          {
-            "start": 3.19,
-            "end": 7.26,
-            "from": 61,
-            "to": 138,
-            "anchored": true
-          },
-          {
-            "start": 7.26,
-            "end": 22.45,
-            "from": 139,
-            "to": 438,
-            "anchored": true
-          },
-          {
-            "start": 22.45,
-            "end": 36.68,
-            "from": 439,
-            "to": 719,
-            "anchored": false
-          }
-        ]
-      }
-    },
-    {
-      "id": "d1-impact-quebec-pompe",
-      "chapterId": "ch1",
-      "duration": 36,
-      "shortVisualTitle": "Pourquoi le Québec paie pour un détroit à 10 000 km",
-      "locationBadge": "MONTRÉAL • QUÉBEC • RÉGIONS",
-      "sources": [
-        "Régie de l'énergie du Québec",
-        "CAA-Québec"
-      ],
-      "narration": "Et c'est là que plusieurs Québécois posent une question légitime : pourquoi est-ce qu'on paierait plus cher ici alors que le pétrole raffiné à Montréal et à Lévis vient presque entièrement de l'Ouest canadien et des États-Unis ? La réponse tient en un mécanisme implacable : le pétrole est une marchandise cotée sur une bourse mondiale unique, à New York et à Londres. Dès que l'Asie ou l'Europe craint de manquer de barils au Moyen-Orient, les acheteurs mondiaux surenchérissent sur le pétrole nord-américain. Résultat direct : chaque secousse là-bas se traduit ici par huit à douze sous de plus le litre à la pompe, et renchérit le transport par camion de tout ce qu'on achète.",
-      "motionBrief": "Un fil lumineux continu relie l'épicentre maritime à une silhouette épurée du Québec ; la caméra zoome sur le compteur minimaliste géant qui grimpe avec inertie de 1,64 $ à 1,75 $/L dans un halo ambre.",
-      "voiceSync": {
-        "sentences": [
-          {
-            "start": 0,
-            "end": 11.33,
-            "from": 0,
-            "to": 228,
-            "anchored": true
-          },
-          {
-            "start": 11.33,
-            "end": 19.68,
-            "from": 229,
-            "to": 368,
-            "anchored": true
-          },
-          {
-            "start": 19.68,
-            "end": 26.55,
-            "from": 369,
-            "to": 510,
-            "anchored": true
-          },
-          {
-            "start": 26.55,
-            "end": 36,
-            "from": 511,
-            "to": 679,
-            "anchored": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "d2-decision-fed-ecart-taux",
-      "chapterId": "ch2",
-      "duration": 34.06,
-      "shortVisualTitle": "L'aimant américain : pourquoi le huard recule",
-      "locationBadge": "WASHINGTON → OTTAWA",
-      "sources": [
-        "Réserve fédérale US",
-        "Banque du Canada"
-      ],
-      "narration": "Passons maintenant à notre deuxième grand dossier : la glissade du dollar canadien autour de soixante-et-onze sous américains. Que s'est-il passé cette semaine ? Aux États-Unis, l'économie reste étonnamment vigoureuse, ce qui pousse la Réserve fédérale américaine à maintenir ses taux d'intérêt plus élevés plus longtemps. Pendant ce temps, au Canada, la croissance s'essouffle et la Banque du Canada a dû baisser ses taux plus vite pour éviter d'étouffer les emprunteurs. Sur les marchés financiers mondiaux, l'argent va toujours là où il rapporte le plus : les grands fonds d'investissement vendent donc leurs dollars canadiens pour acheter des dollars américains.",
-      "motionBrief": "Deux masses gravitationnelles lumineuses dans l'espace noir : la sphère américaine grandit et attire vers elle un flux de particules lumineuses quittant la sphère canadienne, tandis que le chiffre 0,71 $ US se dessine avec une netteté chirurgicale.",
-      "voiceSync": {
-        "sentences": [
-          {
-            "start": 0,
-            "end": 6.63,
-            "from": 0,
-            "to": 126,
-            "anchored": true
-          },
-          {
-            "start": 6.63,
-            "end": 8.4,
-            "from": 127,
-            "to": 161,
-            "anchored": true
-          },
-          {
-            "start": 8.4,
-            "end": 16.93,
-            "from": 162,
-            "to": 322,
-            "anchored": true
-          },
-          {
-            "start": 16.93,
-            "end": 24.76,
-            "from": 323,
-            "to": 472,
-            "anchored": true
-          },
-          {
-            "start": 24.76,
-            "end": 34.06,
-            "from": 473,
-            "to": 666,
-            "anchored": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "d2-deux-cotes-banques-centrales",
-      "chapterId": "ch2",
-      "duration": 30.63,
-      "shortVisualTitle": "Hypothèques vs Devise : le dilemme impossible",
-      "locationBadge": "LES DEUX CÔTÉS DE LA MÉDAILLE",
-      "sources": [
-        "Reuters Economics",
-        "Institut du Québec"
-      ],
-      "narration": "Là encore, il y a deux écoles qui s'affrontent durement sur la stratégie à suivre. Le premier camp applaudit la baisse rapide des taux au Canada : selon eux, la priorité absolue est de sauver les familles québécoises et canadiennes qui doivent renouveler leur hypothèque cette année et d'aider nos entreprises exportatrices qui profitent d'un dollar plus bas. Mais le deuxième camp tire la sonnette d'alarme : en laissant le dollar canadien s'affaiblir autant face au billet vert, on importe une nouvelle vague d'inflation sur tout ce qu'on achète de l'étranger, de l'électronique jusqu'à la nourriture.",
-      "motionBrief": "Bascule géométrique minimale sur fond bleu nuit : d'un côté l'icône architecturale d'un toit québécois qui respire (soulagement hypothécaire), de l'autre une flèche d'inflation importée qui s'élève, arbitrée par une ligne d'horizon tendue.",
-      "voiceSync": {
-        "sentences": [
-          {
-            "start": 0,
-            "end": 4.65,
-            "from": 0,
-            "to": 82,
-            "anchored": true
-          },
-          {
-            "start": 4.65,
-            "end": 18.31,
-            "from": 83,
-            "to": 359,
-            "anchored": true
-          },
-          {
-            "start": 18.31,
-            "end": 30.63,
-            "from": 360,
-            "to": 603,
-            "anchored": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "d2-mecanisme-importations-hiver",
-      "chapterId": "ch2",
-      "duration": 30.31,
-      "shortVisualTitle": "70 % de nos fruits et légumes d'hiver payés en USD",
-      "locationBadge": "CALIFORNIE & MEXIQUE → MARCHÉ CENTRAL",
-      "sources": [
-        "Statistique Canada",
-        "MAPAQ"
-      ],
-      "narration": "Et pourquoi ce détail monétaire devient critique précisément à la mi-novembre au Québec ? Parce que la saison de nos récoltes locales en plein champ est terminée. De novembre jusqu'au mois d'avril, plus de soixante-dix pour cent des fruits et légumes frais qui entrent dans les entrepôts de distribution de Montréal et de Québec arrivent de la Californie, de l'Arizona, de la Floride et du Mexique. Or, même quand un grossiste québécois achète des petits fruits ou des brocolis au Mexique, le contrat international est presque toujours facturé en dollars américains.",
-      "motionBrief": "Projection cartographique nord-américaine dans le noir : trois trajectoires lumineuses partent de Californie, Floride et Mexique et convergent vers le Saint-Laurent ; l'écran révèle un cercle pur rempli à 70 % d'une lueur corail.",
-      "voiceSync": {
-        "sentences": [
-          {
-            "start": 0,
-            "end": 4.81,
-            "from": 0,
-            "to": 89,
-            "anchored": true
-          },
-          {
-            "start": 4.81,
-            "end": 8.62,
-            "from": 90,
-            "to": 162,
-            "anchored": true
-          },
-          {
-            "start": 8.62,
-            "end": 20.96,
-            "from": 163,
-            "to": 398,
-            "anchored": false
-          },
-          {
-            "start": 20.96,
-            "end": 30.31,
-            "from": 399,
-            "to": 566,
-            "anchored": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "d2-impact-quebec-familles",
-      "chapterId": "ch2",
-      "duration": 30.82,
-      "shortVisualTitle": "La taxe invisible sur chaque panier d'épicerie",
-      "locationBadge": "PORTFEUILLE DES MÉNAGES QUÉBÉCOIS",
-      "sources": [
-        "Laboratoire de sciences analytiques en agroalimentaire"
-      ],
-      "narration": "Le calcul est donc impitoyable pour nos épiceries cet hiver. Quand le dollar canadien perd cinq sous par rapport au dollar américain, c'est exactement comme si on ajoutait du jour au lendemain une taxe douanière invisible de sept pour cent sur tous les produits frais importés, à laquelle s'ajoute en plus la hausse du diesel pour les camions frigorifiques qui remontent le continent. Pour une famille de quatre personnes au Québec, les économistes estiment que la seule faiblesse de notre devise peut représenter plusieurs centaines de dollars de plus sur la facture alimentaire annuelle.",
-      "motionBrief": "Une courbe unique ultra-fluide traverse le plein écran : à mesure que la ligne cyan du huard descend, une ombre lumineuse ambre/corail s'élève en miroir (+7 % de surcoût d'importation) dans un cadrage minimaliste monumental.",
-      "voiceSync": {
-        "sentences": [
-          {
-            "start": 0,
-            "end": 3.71,
-            "from": 0,
-            "to": 60,
-            "anchored": true
-          },
-          {
-            "start": 3.71,
-            "end": 20.33,
-            "from": 61,
-            "to": 384,
-            "anchored": true
-          },
-          {
-            "start": 20.33,
-            "end": 30.82,
-            "from": 385,
-            "to": 589,
-            "anchored": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "d3-mur-electrique-ia",
-      "chapterId": "ch3",
-      "duration": 37.6,
-      "shortVisualTitle": "La panne sèche électrique de l'intelligence artificielle",
-      "locationBadge": "VIRGINIE • SILICON VALLEY • FRANCFORT",
-      "sources": [
-        "Agence Internationale de l'Énergie",
-        "Financial Times"
-      ],
-      "narration": "Troisième grand dossier mondial aujourd'hui, et c'est sans doute celui qui va le plus façonner l'avenir économique du Québec : la course mondiale à l'intelligence artificielle vient de frapper un mur physique, celui de l'électricité. Aux États-Unis, en Irlande et en Allemagne, les réseaux électriques sont rendus au point de rupture. Un seul méga-centre de données d'entraînement d'IA de nouvelle génération demande aujourd'hui autant de puissance électrique en continu qu'une ville de quatre cent mille habitants. Résultat : plusieurs États américains n'arrivent même plus à raccorder les nouveaux serveurs et vont jusqu'à prolonger la vie de vieilles centrales au charbon ou au gaz.",
-      "motionBrief": "Dans le noir profond, une grille électrique géométrique pulse de plus en plus vite jusqu'à la saturation rouge incandescente ; la caméra recule pour montrer l'ampleur monumentale de la demande en gigawatts.",
-      "voiceSync": {
-        "sentences": [
-          {
-            "start": 0,
-            "end": 13.18,
-            "from": 0,
-            "to": 233,
-            "anchored": true
-          },
-          {
-            "start": 13.18,
-            "end": 19.16,
-            "from": 234,
-            "to": 334,
-            "anchored": true
-          },
-          {
-            "start": 19.16,
-            "end": 28.52,
-            "from": 335,
-            "to": 515,
-            "anchored": true
-          },
-          {
-            "start": 28.52,
-            "end": 37.6,
-            "from": 516,
-            "to": 685,
-            "anchored": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "d3-ruee-vers-hydro-quebec",
-      "chapterId": "ch3",
-      "duration": 36.15,
-      "shortVisualTitle": "Pourquoi la planète lorgne sur l'or bleu québécois",
-      "locationBadge": "MANIC-5 & BAIE-JAMES • QUÉBEC",
-      "sources": [
-        "Hydro-Québec",
-        "Ministère de l'Économie et de l'Énergie"
-      ],
-      "narration": "Face à cette pénurie mondiale, devinez vers quel territoire tous les regards de la planète technologique se tournent ? Le Québec. Nous avons trois atouts que presque personne d'autre ne possède en même temps en Occident : une électricité renouvelable propre à quatre-vingt-dix-neuf pour cent, des tarifs industriels parmi les plus bas du continent, et un climat nordique froid qui réduit énormément les coûts de climatisation des serveurs. Sauf qu'il y a un hic majeur : les fameux surplus historiques d'Hydro-Québec sont déjà presque tous engagés, et les demandes de branchement dépassent de plusieurs fois notre capacité disponible d'ici deux mille trente.",
-      "motionBrief": "Les faisceaux saturés du monde entier traversent l'obscurité et convergent vers une silhouette architecturale monumentale et épurée des voûtes du barrage Manic-5 dessinée en lignes de lumière émeraude et bleu boréal.",
-      "voiceSync": {
-        "sentences": [
-          {
-            "start": 0,
-            "end": 6.22,
-            "from": 0,
-            "to": 118,
-            "anchored": true
-          },
-          {
-            "start": 6.22,
-            "end": 7.47,
-            "from": 119,
-            "to": 129,
-            "anchored": true
-          },
-          {
-            "start": 7.47,
-            "end": 24.08,
-            "from": 130,
-            "to": 439,
-            "anchored": true
-          },
-          {
-            "start": 24.08,
-            "end": 36.15,
-            "from": 440,
-            "to": 658,
-            "anchored": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "d3-deux-cotes-megawatts",
-      "chapterId": "ch3",
-      "duration": 37.26,
-      "shortVisualTitle": "Jackpot financier vs Souveraineté énergétique",
-      "locationBadge": "LES DEUX CÔTÉS DE LA MÉDAILLE",
-      "sources": [
-        "Chambre de commerce",
-        "Regroupements industriels & citoyens"
-      ],
-      "narration": "Ce qui nous amène au cœur du dilemme qui divise les experts économiques. D'un côté, les partisans de l'ouverture disent que le Québec a une occasion historique unique : au lieu de vendre notre électricité au rabais, on pourrait la facturer deux ou trois fois plus cher à ces géants mondiaux de l'IA et utiliser ces milliards de profits neufs pour financer nos hôpitaux, nos écoles et nos nouveaux barrages. De l'autre côté, les opposants rappellent que les centres de données créent très peu d'emplois permanents par mégawatt consommé, et qu'accorder nos précieux blocs d'énergie à des multinationales étrangères risque de priver nos propres entreprises québécoises et de faire grimper les tarifs résidentiels.",
-      "motionBrief": "Deux flux d'énergie émeraude et or se séparent au centre de l'écran dans une chorégraphie symétrique : à gauche la multiplication de valeur financière (Tarif Premium), à droite le réseau local québécois (PME & Maisons).",
-      "voiceSync": {
-        "sentences": [
-          {
-            "start": 0,
-            "end": 3.91,
-            "from": 0,
-            "to": 72,
-            "anchored": true
-          },
-          {
-            "start": 3.91,
-            "end": 21.78,
-            "from": 73,
-            "to": 406,
-            "anchored": false
-          },
-          {
-            "start": 21.78,
-            "end": 37.26,
-            "from": 407,
-            "to": 710,
-            "anchored": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "conclusion-debat-quebec",
-      "chapterId": "ch4",
-      "duration": 39.2,
-      "shortVisualTitle": "Option A ou Option B : que doit faire le Québec ?",
-      "locationBadge": "LA QUESTION DU JOUR • FRANC NORD",
-      "sources": [
-        "Débat Citoyen Franc Nord"
-      ],
-      "narration": "Et c'est sur ce choix stratégique que je vous laisse la parole aujourd'hui. Si c'était vous qui aviez la main sur le disjoncteur d'Hydro-Québec demain matin, quelle direction prendriez-vous ? Option A : on vend notre électricité au prix fort aux géants mondiaux de l'IA pour encaisser le maximum de milliards pour l'État québécois. Ou Option B : on ferme la porte aux méga-centres de données étrangers et on réserve cent pour cent de nos mégawatts pour nos ménages et nos entreprises d'ici. Écrivez Option A ou Option B dans les commentaires en expliquant pourquoi, partagez ce bulletin Franc Nord sur Facebook pour lancer la discussion autour de vous, et on se retrouve demain pour décoder le monde d'ici !",
-      "motionBrief": "Finale monumentale et épurée : un faisceau lumineux diagonal scinde l'écran noir en deux plans majestueux (A · VENDRE AU PRIX FORT / B · RÉSERVER AU QUÉBEC) avec la boussole Franc Nord qui pulse doucement au centre.",
-      "voiceSync": {
-        "sentences": [
-          {
-            "start": 0,
-            "end": 3.52,
-            "from": 0,
-            "to": 75,
-            "anchored": true
-          },
-          {
-            "start": 3.52,
-            "end": 9.11,
-            "from": 76,
-            "to": 191,
-            "anchored": true
-          },
-          {
-            "start": 9.11,
-            "end": 16.88,
-            "from": 192,
-            "to": 331,
-            "anchored": true
-          },
-          {
-            "start": 16.88,
-            "end": 25.62,
-            "from": 332,
+            "start": 16.96,
+            "end": 25.98,
+            "from": 309,
             "to": 490,
             "anchored": true
           },
           {
-            "start": 25.62,
-            "end": 36.5,
-            "from": 491,
-            "to": 707,
+            "start": 26.48,
+            "end": 33.46,
+            "from": 490,
+            "to": 622,
             "anchored": true
           }
         ]
-      }
+      },
+      "wordSync": [
+        {
+          "phrase": "des milliards",
+          "time": 11.58,
+          "globalTime": 40.86,
+          "matched": true
+        },
+        {
+          "phrase": "En parallèle",
+          "time": 16.96,
+          "globalTime": 46.24,
+          "matched": true
+        },
+        {
+          "phrase": "Au Tchad",
+          "time": 28.84,
+          "globalTime": 58.12,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "id": "d1-coulisses-geopolitiques",
+      "chapterId": "ch1",
+      "duration": 33.75,
+      "shortVisualTitle": "Pourquoi le financement climatique bloque chaque année",
+      "locationBadge": "NORD VS SUD GLOBAL",
+      "sources": [
+        "ONU Info",
+        "France 24"
+      ],
+      "narration": "Pourquoi cette question financière bloque-t-elle presque tous les sommets climatiques ? Parce qu'elle touche directement au portefeuille des États. Les pays en développement, qui subissent de plein fouet les sécheresses, les inondations et les pertes agricoles tout en ayant peu contribué aux émissions passées, exigent des fonds publics garantis pour s'adapter. De leur côté, les pays industrialisés doivent déjà composer avec des dettes publiques lourdes et des électorats réticents à financer des transferts internationaux. S'ajoute désormais la consommation électrique explosive des centres de données d'IA, qui complique tous les objectifs de réduction.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : un axe horizontal sépare deux hémisphères de particules sur un globe minimaliste sombre. Acte II : des vagues ambre montent depuis l'hémisphère sud pendant que des compteurs budgétaires épurés oscillent au nord. Acte III : une grille de serveurs lumineux surgit en surimpression, tirant une courbe énergétique vers le haut et accentuant la tension entre les deux blocs.",
+      "voiceSync": {
+        "method": "ASR word alignment",
+        "sentences": [
+          {
+            "start": 0.4,
+            "end": 3.88,
+            "from": 0,
+            "to": 87,
+            "anchored": true
+          },
+          {
+            "start": 4.34,
+            "end": 7.04,
+            "from": 87,
+            "to": 147,
+            "anchored": false
+          },
+          {
+            "start": 7.5,
+            "end": 17.96,
+            "from": 147,
+            "to": 362,
+            "anchored": true
+          },
+          {
+            "start": 18.46,
+            "end": 26.56,
+            "from": 362,
+            "to": 526,
+            "anchored": true
+          },
+          {
+            "start": 26.92,
+            "end": 33.4,
+            "from": 526,
+            "to": 658,
+            "anchored": false
+          }
+        ]
+      },
+      "wordSync": [
+        {
+          "phrase": "Les pays en développement",
+          "time": 7.5,
+          "globalTime": 70.64,
+          "matched": true
+        },
+        {
+          "phrase": "De leur côté",
+          "time": 18.46,
+          "globalTime": 81.6,
+          "matched": true
+        },
+        {
+          "phrase": "S'ajoute",
+          "time": 26.92,
+          "globalTime": 90.06,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "id": "d1-deux-cotes-medaille",
+      "chapterId": "ch1",
+      "duration": 34.39,
+      "shortVisualTitle": "Justice climatique ou compétitivité économique ?",
+      "locationBadge": "DEUX CÔTÉS DE LA MÉDAILLE",
+      "sources": [
+        "ONU Info"
+      ],
+      "narration": "Sur la facture à payer, deux logiques s'affrontent avec force à la COP31. D'un côté, les défenseurs de la justice climatique soutiennent que les grands émetteurs historiques et les multinationales fossiles doivent assumer financièrement les dégâts causés ailleurs, faute de quoi les crises alimentaires et migratoires coûteront encore plus cher à toute la planète. De l'autre côté, les gouvernements prudents et les milieux industriels rappellent que surtaxer les économies occidentales pendant que de grands émetteurs émergents augmentent encore leur charbon risque simplement de délocaliser nos emplois sans faire baisser les émissions mondiales.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran sans aucune boîte. Acte I : un faisceau vertical cyan pur divise l'espace sombre en deux plans symétriques. Acte II : à gauche, une balance de transfert ambre dirige des flux vers des zones vulnérables ; à droite, un engrenage industriel et commercial cherche l'équilibre concurrentiel. Acte III : les deux forces s'alignent sur une ligne d'horizon stable, présentant les deux camps avec rigueur.",
+      "voiceSync": {
+        "method": "ASR word alignment",
+        "sentences": [
+          {
+            "start": 0.35,
+            "end": 4.23,
+            "from": 0,
+            "to": 73,
+            "anchored": true
+          },
+          {
+            "start": 4.71,
+            "end": 19.29,
+            "from": 73,
+            "to": 364,
+            "anchored": true
+          },
+          {
+            "start": 19.51,
+            "end": 34.21,
+            "from": 364,
+            "to": 648,
+            "anchored": true
+          }
+        ]
+      },
+      "wordSync": [
+        {
+          "phrase": "D'un côté",
+          "time": 4.71,
+          "globalTime": 101.6,
+          "matched": true
+        },
+        {
+          "phrase": "De l'autre côté",
+          "time": 19.51,
+          "globalTime": 116.4,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "id": "d1-impact-quebec",
+      "chapterId": "ch1",
+      "duration": 32.12,
+      "shortVisualTitle": "Assurances, marché du carbone et atout hydroélectrique",
+      "locationBadge": "QUÉBEC • PORTFEUILLE & ÉNERGIE",
+      "sources": [
+        "ONU Info",
+        "Radio-Canada"
+      ],
+      "narration": "Qu'est-ce que ces débats d'Antalya changent concrètement ici, au Québec ? D'abord sur votre budget : la multiplication des événements météo extrêmes à l'échelle mondiale tire déjà vers le haut les coûts de réassurance, ce qui se répercute sur nos primes d'assurance habitation et sur les budgets de nos municipalités. Ensuite sur notre économie : alors que l'ONU veut encadrer l'empreinte écologique de l'IA et faire payer les pollueurs, le Québec possède un atout rare avec son marché du carbone et son hydroélectricité propre, très convoitée par les entreprises qui veulent décarboner leurs opérations.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : une onde ambre quitte la Méditerranée et traverse l'Atlantique vers la vallée du Saint-Laurent. Acte II : la caméra zoome en travelling fluide sur la carte en pointillés du Québec où des arcs bleus symbolisent les réseaux hydroélectriques. Acte III : trois pulsations épurées s'illuminent tour à tour — assurances, municipalités, énergie propre — avant le fondu de transition.",
+      "voiceSync": {
+        "method": "ASR word alignment",
+        "sentences": [
+          {
+            "start": 0.18,
+            "end": 3.56,
+            "from": 0,
+            "to": 73,
+            "anchored": true
+          },
+          {
+            "start": 4.16,
+            "end": 16.26,
+            "from": 73,
+            "to": 317,
+            "anchored": false
+          },
+          {
+            "start": 16.66,
+            "end": 31.82,
+            "from": 317,
+            "to": 604,
+            "anchored": true
+          }
+        ]
+      },
+      "wordSync": [
+        {
+          "phrase": "D'abord sur votre budget",
+          "time": 4.16,
+          "globalTime": 135.44,
+          "matched": true
+        },
+        {
+          "phrase": "Ensuite sur notre économie",
+          "time": 16.66,
+          "globalTime": 147.94,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "id": "d2-fait-declencheur",
+      "chapterId": "ch2",
+      "duration": 33.22,
+      "shortVisualTitle": "Le Donbass contre l'OTAN et un sommet Trump-Poutine-Xi",
+      "locationBadge": "KIEV • WASHINGTON • PÉKIN",
+      "sources": [
+        "BBC News",
+        "France 24"
+      ],
+      "narration": "Deuxième grand dossier aujourd'hui : un virage diplomatique majeur autour de la guerre en Ukraine. De retour de pourparlers à Abou Dhabi et à Dublin, le président Volodymyr Zelensky révèle que des émissaires américains ont évoqué l'idée que Kiev cède la région du Donbass à la Russie en échange d'une adhésion à l'OTAN. Zelensky se dit même ouvert à un référendum sur le sujet. Au même moment, la Maison-Blanche confirme une rencontre historique la semaine prochaine en Chine entre Donald Trump, Vladimir Poutine et Xi Jinping pour discuter notamment de réduction des armes nucléaires.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : trois pôles lumineux (Washington, Moscou, Pékin) forment un triangle géométrique tendu sur une projection sombre. Acte II : la caméra plonge vers l'est de l'Ukraine où une ligne de démarcation ambre s'anime autour du Donbass, reliée à un arc bleu OTAN. Acte III : les trois sommets du triangle convergent vers Pékin dans une impulsion lumineuse haute tension.",
+      "voiceSync": {
+        "method": "ASR word alignment",
+        "sentences": [
+          {
+            "start": 0.3,
+            "end": 5.08,
+            "from": 0,
+            "to": 98,
+            "anchored": false
+          },
+          {
+            "start": 5.6,
+            "end": 17.88,
+            "from": 98,
+            "to": 319,
+            "anchored": false
+          },
+          {
+            "start": 18.24,
+            "end": 21.26,
+            "from": 319,
+            "to": 377,
+            "anchored": true
+          },
+          {
+            "start": 21.64,
+            "end": 32.98,
+            "from": 377,
+            "to": 585,
+            "anchored": false
+          }
+        ]
+      },
+      "wordSync": [
+        {
+          "phrase": "cède la région du Donbass",
+          "time": 13.64,
+          "globalTime": 177.04,
+          "matched": true
+        },
+        {
+          "phrase": "Au même moment",
+          "time": 21.64,
+          "globalTime": 185.04,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "id": "d2-coulisses-geopolitiques",
+      "chapterId": "ch2",
+      "duration": 37.28,
+      "shortVisualTitle": "Frontières redessinées et nouvel équilibre nucléaire",
+      "locationBadge": "GÉOPOLITIQUE MONDIALE",
+      "sources": [
+        "BBC News",
+        "France 24"
+      ],
+      "narration": "Pour comprendre l'ampleur du moment, il faut relier ces deux nouvelles. Pendant des années, la ligne officielle occidentale rejetait tout échange territorial avec Moscou, tandis que le Kremlin refusait net l'entrée de l'Ukraine dans l'Alliance atlantique. Aujourd'hui, Vladimir Poutine durcit encore ses exigences sur l'architecture de sécurité européenne, persuadé d'avoir désormais l'avantage diplomatique. En parallèle, réunir Donald Trump, Vladimir Poutine et Xi Jinping dans une même pièce en Chine marque un retour brutal de la politique des grandes puissances, où le sort des pays moyens et les traités nucléaires se négocient directement au sommet.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : des lignes de front historiques en pointillés pâles se superposent comme des strates temporelles. Acte II : trois sphères massives en orbite lente imposent leur champ gravitationnel sur les lignes européennes plus fines. Acte III : une onde de choc circulaire représente l'enjeu nucléaire, se resserrant vers un point focal central d'une grande sobriété.",
+      "voiceSync": {
+        "method": "ASR word alignment",
+        "sentences": [
+          {
+            "start": 0.24,
+            "end": 3.6,
+            "from": 0,
+            "to": 71,
+            "anchored": true
+          },
+          {
+            "start": 4.1,
+            "end": 13.4,
+            "from": 71,
+            "to": 255,
+            "anchored": true
+          },
+          {
+            "start": 13.76,
+            "end": 22.56,
+            "from": 255,
+            "to": 408,
+            "anchored": false
+          },
+          {
+            "start": 23.08,
+            "end": 37.04,
+            "from": 408,
+            "to": 656,
+            "anchored": false
+          }
+        ]
+      },
+      "wordSync": [
+        {
+          "phrase": "Aujourd'hui",
+          "time": 13.76,
+          "globalTime": 210.38,
+          "matched": true
+        },
+        {
+          "phrase": "En parallèle",
+          "time": 23.08,
+          "globalTime": 219.7,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "id": "d2-deux-cotes-medaille",
+      "chapterId": "ch2",
+      "duration": 33.92,
+      "shortVisualTitle": "Compromis réaliste ou précédent dangereux ?",
+      "locationBadge": "DEUX CÔTÉS DE LA MÉDAILLE",
+      "sources": [
+        "BBC News",
+        "France 24"
+      ],
+      "narration": "Ce scénario de paix contre territoire divise profondément les observateurs, et les deux arguments méritent d'être entendus. Les partisans d'un tel accord y voient un réalisme nécessaire : après des années de destruction humaine et matérielle, figer la ligne de front en échange d'un bouclier de l'OTAN pour le reste de l'Ukraine et d'un dialogue nucléaire entre grandes puissances permettrait enfin d'arrêter les combats. À l'inverse, les critiques préviennent qu'entériner la perte du Donbass récompense l'usage de la force, affaiblit le droit international et envoie le signal que les frontières peuvent être redessinées par les armes.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : l'écran s'ouvre en deux plans symétriques séparés par une ligne d'horizon lumineuse. Acte II : le plan gauche construit un dôme protecteur géométrique autour d'un territoire stabilisé ; le plan droit montre une ligne de frontière qui se fracture par effet domino. Acte III : les deux plans se rejoignent en un point d'interrogation architectural minimaliste.",
+      "voiceSync": {
+        "method": "ASR word alignment",
+        "sentences": [
+          {
+            "start": 0.24,
+            "end": 7.22,
+            "from": 0,
+            "to": 123,
+            "anchored": true
+          },
+          {
+            "start": 7.22,
+            "end": 22.42,
+            "from": 123,
+            "to": 421,
+            "anchored": false
+          },
+          {
+            "start": 22.86,
+            "end": 33.92,
+            "from": 421,
+            "to": 637,
+            "anchored": false
+          }
+        ]
+      },
+      "wordSync": [
+        {
+          "phrase": "Les partisans",
+          "time": 7.22,
+          "globalTime": 241.12,
+          "matched": true
+        },
+        {
+          "phrase": "À l'inverse",
+          "time": 22.86,
+          "globalTime": 256.76,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "id": "d2-impact-quebec",
+      "chapterId": "ch2",
+      "duration": 32.57,
+      "shortVisualTitle": "Défense, Arctique et industrie québécoise",
+      "locationBadge": "MONTRÉAL • OTAN • ARCTIQUE",
+      "sources": [
+        "BBC News",
+        "Radio-Canada"
+      ],
+      "narration": "Qu'est-ce que ce grand marchandage change pour le Québec ? D'abord sur le plan de la sécurité : si l'OTAN évolue et que Washington redéfinit ses priorités avec Moscou et Pékin, le Canada subit une pression accrue pour investir davantage dans sa propre défense et la surveillance de l'Arctique. Cela touche directement notre industrie aérospatiale et technologique concentrée dans le grand Montréal. Sur le plan humain et économique, un règlement ou un blocage prolongé influence aussi nos dépenses fédérales, les marchés des céréales et des métaux, et l'avenir de la communauté ukrainienne d'ici.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : la caméra glisse par-dessus le pôle Nord, reliant l'Eurasie au Nord canadien et au Québec par des arcs polaires cyan. Acte II : trois nœuds lumineux s'allument sur l'Arctique, Montréal et la vallée du Saint-Laurent. Acte III : les arcs se stabilisent sur le contour du Québec, illustrant les retombées sur la défense, l'aérospatiale et les budgets publics.",
+      "voiceSync": {
+        "method": "ASR word alignment",
+        "sentences": [
+          {
+            "start": 0.0,
+            "end": 2.94,
+            "from": 0,
+            "to": 58,
+            "anchored": true
+          },
+          {
+            "start": 3.64,
+            "end": 16.22,
+            "from": 58,
+            "to": 293,
+            "anchored": false
+          },
+          {
+            "start": 16.6,
+            "end": 21.55,
+            "from": 293,
+            "to": 398,
+            "anchored": false
+          },
+          {
+            "start": 22.0,
+            "end": 32.24,
+            "from": 398,
+            "to": 596,
+            "anchored": true
+          }
+        ]
+      },
+      "wordSync": [
+        {
+          "phrase": "Cela touche directement",
+          "time": 16.6,
+          "globalTime": 284.42,
+          "matched": true
+        },
+        {
+          "phrase": "Sur le plan humain",
+          "time": 22.0,
+          "globalTime": 289.82,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "id": "d3-enjeu-mondial",
+      "chapterId": "ch3",
+      "duration": 34.98,
+      "shortVisualTitle": "Ciel américain figé et panne mondiale chez Microsoft",
+      "locationBadge": "ÉTATS-UNIS & RÉSEAU MONDIAL",
+      "sources": [
+        "Radio-Canada",
+        "BBC News"
+      ],
+      "narration": "Troisième dossier aujourd'hui, et celui-là touche directement nos vies connectées : en moins de vingt-quatre heures, deux pannes majeures ont paralysé des millions d'usagers en Amérique du Nord et ailleurs. D'abord, les États-Unis ont dû suspendre tous les décollages aériens à cause d'équipements vieillissants surchargés — et non d'une cyberattaque, selon les autorités — poussant le secrétaire au Transport à réclamer cinquante milliards de dollars au Congrès pour moderniser le contrôle aérien. Presque au même moment, Microsoft a dû réparer une panne mondiale d'une journée entière qui a bloqué Outlook, Teams et Copilot partout sur la planète.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : des centaines de trajectoires aériennes émeraude (#10B981) s'immobilisent brusquement au-dessus de l'Amérique du Nord. Acte II : la caméra traverse vers une couche numérique profonde où des nœuds de serveurs clignotent puis s'éteignent en cascade, illustrant la panne mondiale cloud. Acte III : deux chiffres monumentaux — 50 G$ et 24 H — apparaissent brièvement en plein écran épuré.",
+      "voiceSync": {
+        "method": "ASR word alignment",
+        "sentences": [
+          {
+            "start": 0.33,
+            "end": 10.53,
+            "from": 0,
+            "to": 206,
+            "anchored": false
+          },
+          {
+            "start": 10.97,
+            "end": 25.45,
+            "from": 206,
+            "to": 498,
+            "anchored": false
+          },
+          {
+            "start": 25.87,
+            "end": 34.65,
+            "from": 498,
+            "to": 649,
+            "anchored": false
+          }
+        ]
+      },
+      "wordSync": [
+        {
+          "phrase": "D'abord",
+          "time": 10.97,
+          "globalTime": 311.36,
+          "matched": true
+        },
+        {
+          "phrase": "cinquante milliards",
+          "time": 21.7033,
+          "globalTime": 322.0933,
+          "matched": false
+        },
+        {
+          "phrase": "Presque au même moment",
+          "time": 25.87,
+          "globalTime": 326.26,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "id": "d3-lien-quebec",
+      "chapterId": "ch3",
+      "duration": 35.7533,
+      "shortVisualTitle": "Voyageurs bloqués et dépendance numérique au Québec",
+      "locationBadge": "YUL • ENTREPRISES • SERVICES PUBLICS",
+      "sources": [
+        "Radio-Canada",
+        "BBC News"
+      ],
+      "narration": "Au Québec, ce double incident agit comme un signal d'alarme très concret pour les voyageurs et les travailleurs. Nos corridors aériens vers New York, Boston, la Floride ou les correspondances internationales dépendent étroitement de la fluidité du contrôle aérien américain : quand le ciel des États-Unis fige, nos aéroports de Montréal et de Québec encaissent aussitôt les retards en chaîne. Et côté numérique, nos PME, nos écoles, nos hôpitaux et nos ministères reposent massivement sur la suite Microsoft. Une seule défaillance centrale à l'étranger suffit à ralentir des milliers de bureaux ici, de Gatineau jusqu'à Sept-Îles.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : des arcs de vol reliant Montréal et Québec aux plaques tournantes américaines se figent en pointillés ambre. Acte II : une trame de filaments émeraude relie des points du territoire québécois vers des centres de données externes au sud. Acte III : une pulsation coupe brièvement les liens entrants, mettant en évidence la vulnérabilité de la dépendance centralisée.",
+      "voiceSync": {
+        "method": "ASR word alignment",
+        "sentences": [
+          {
+            "start": 0.33,
+            "end": 5.89,
+            "from": 0,
+            "to": 112,
+            "anchored": true
+          },
+          {
+            "start": 6.35,
+            "end": 21.09,
+            "from": 112,
+            "to": 392,
+            "anchored": true
+          },
+          {
+            "start": 21.57,
+            "end": 28.23,
+            "from": 392,
+            "to": 508,
+            "anchored": true
+          },
+          {
+            "start": 28.73,
+            "end": 35.5767,
+            "from": 508,
+            "to": 630,
+            "anchored": false
+          }
+        ]
+      },
+      "wordSync": [
+        {
+          "phrase": "Nos corridors aériens",
+          "time": 6.35,
+          "globalTime": 341.72,
+          "matched": true
+        },
+        {
+          "phrase": "Et côté numérique",
+          "time": 21.57,
+          "globalTime": 356.94,
+          "matched": true
+        },
+        {
+          "phrase": "Une seule défaillance",
+          "time": 28.73,
+          "globalTime": 364.1,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "id": "d3-deux-cotes-medaille",
+      "chapterId": "ch3",
+      "duration": 36.0967,
+      "shortVisualTitle": "Intégration nord-américaine ou souveraineté coûteuse ?",
+      "locationBadge": "DEUX CÔTÉS DE LA MÉDAILLE",
+      "sources": [
+        "Radio-Canada",
+        "BBC News"
+      ],
+      "narration": "Comment réagir à cette fragilité ? Là encore, deux thèses s'affrontent sur la stratégie à adopter. Pour les partisans de la souveraineté numérique et de la résilience, le Québec et le Canada doivent investir massivement dans des infrastructures publiques modernisées, des sauvegardes locales hébergées ici et des solutions logicielles diversifiées pour ne jamais dépendre d'un seul fournisseur étranger. À l'inverse, les défenseurs de l'efficacité économique rappellent que bâtir des réseaux parallèles coûte des milliards aux contribuables, et que s'appuyer sur de grands standards nord-américains intégrés reste beaucoup plus abordable, fluide et performant au quotidien.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : le cadre se scinde en deux architectures visuelles propres. Acte II : à gauche, un réseau maillé décentralisé et autonome s'illumine en émeraude ; à droite, une autoroute centrale unique ultra-rapide brille en cyan. Acte III : les deux architectures restent côte à côte en contraste net, soulignant le choix entre autonomie et coût.",
+      "voiceSync": {
+        "method": "ASR word alignment",
+        "sentences": [
+          {
+            "start": 0.1767,
+            "end": 1.8567,
+            "from": 0,
+            "to": 34,
+            "anchored": true
+          },
+          {
+            "start": 2.1567,
+            "end": 5.4367,
+            "from": 34,
+            "to": 98,
+            "anchored": true
+          },
+          {
+            "start": 5.4367,
+            "end": 21.3567,
+            "from": 98,
+            "to": 403,
+            "anchored": false
+          },
+          {
+            "start": 21.7967,
+            "end": 35.8367,
+            "from": 403,
+            "to": 673,
+            "anchored": true
+          }
+        ]
+      },
+      "wordSync": [
+        {
+          "phrase": "Pour les partisans",
+          "time": 5.4367,
+          "globalTime": 376.56,
+          "matched": true
+        },
+        {
+          "phrase": "À l'inverse",
+          "time": 21.7967,
+          "globalTime": 392.92,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "id": "conclusion-debat-quebec",
+      "chapterId": "ch4",
+      "duration": 38.899125,
+      "shortVisualTitle": "Option A ou Option B : quelle priorité pour nos milliards ?",
+      "locationBadge": "LA QUESTION DU JOUR • FRANC NORD",
+      "sources": [
+        "Débat Citoyen Franc Nord"
+      ],
+      "narration": "Et c'est sur cette question bien concrète que je vous laisse la parole aujourd'hui. Face aux défis climatiques, aux tensions diplomatiques et aux pannes qui révèlent nos dépendances, si vous décidiez des priorités publiques au Québec demain matin, quelle voie choisiriez-vous ? Option A : investir massivement dans notre autonomie — défense, souveraineté numérique et transition climatique locale — même si la facture est lourde pour les contribuables. Ou Option B : rester branchés sur les grands réseaux nord-américains existants pour protéger notre portefeuille à court terme. Écrivez Option A ou Option B dans les commentaires en expliquant votre choix, partagez ce bulletin Franc Nord sur Facebook, et on se retrouve demain!",
+      "motionBrief": "Finale monumentale et épurée : un faisceau lumineux diagonal scinde l'écran noir en deux plans nets (A · AUTONOMIE LOCALE / B · RÉSEAUX INTÉGRÉS) pendant que la boussole Franc Nord pulse doucement au centre jusqu'au fondu final.",
+      "voiceSync": {
+        "method": "ASR word alignment",
+        "sentences": [
+          {
+            "start": 0.26,
+            "end": 3.64,
+            "from": 0,
+            "to": 83,
+            "anchored": true
+          },
+          {
+            "start": 3.9,
+            "end": 13.62,
+            "from": 83,
+            "to": 277,
+            "anchored": true
+          },
+          {
+            "start": 14.08,
+            "end": 23.76,
+            "from": 277,
+            "to": 452,
+            "anchored": true
+          },
+          {
+            "start": 24.28,
+            "end": 30.8,
+            "from": 452,
+            "to": 579,
+            "anchored": false
+          },
+          {
+            "start": 31.3,
+            "end": 38.54,
+            "from": 579,
+            "to": 729,
+            "anchored": false
+          }
+        ]
+      },
+      "wordSync": [
+        {
+          "phrase": "Option A",
+          "time": 14.08,
+          "globalTime": 421.3,
+          "matched": true
+        },
+        {
+          "phrase": "Ou Option B",
+          "time": 24.28,
+          "globalTime": 431.5,
+          "matched": true
+        },
+        {
+          "phrase": "Écrivez",
+          "time": 31.3,
+          "globalTime": 438.52,
+          "matched": true
+        },
+        {
+          "phrase": "partagez",
+          "time": 35.46,
+          "globalTime": 442.68,
+          "matched": true
+        },
+        {
+          "phrase": "retrouve demain",
+          "time": 38.06,
+          "globalTime": 445.28,
+          "matched": true
+        }
+      ]
     }
   ],
+  "productionStatus": {
+    "visuals": "astra-revision-word-aligned",
+    "voice": "word-aligned-episode2",
+    "reason": "Nouvelle voix Épisode2.mp3 ; alignement lexical horodaté.",
+    "previews": "Extraits muets aux durées provisoires ; aucune synchronisation avec le MP3 du pilote.",
+    "rejectedVoiceSha256": "3131d566afa6b7581c3c96464ed206bd7b11a67643235fe9bee57e48c840546e",
+    "completeSilentExports": {
+      "durationSeconds": 510,
+      "fps": 30,
+      "landscape": "franc-nord-COP31-complet-muet-16x9.mp4",
+      "portrait": "franc-nord-COP31-complet-muet-9x16.mp4",
+      "validation": "15300 frames each; full decode passed; no audio"
+    },
+    "voiceSha256": "096ea4b74a7a295768fc320b0b8e08727fd3cc736ae829b4c72c1b4f721189d6",
+    "deliveryDirectory": "livraisons/2026-11-14-Episode-02"
+  },
   "voiceFile": "voix.mp3"
 }

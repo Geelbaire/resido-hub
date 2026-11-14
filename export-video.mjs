@@ -31,7 +31,13 @@ function parseArgs() {
     episode: get('--episode', '2026-11-14'),
     format: get('--format', '16x9'),
     fps: Number(get('--fps', '30')),
-    durationOverride: get('--duration', null) ? Number(get('--duration', null)) : null
+    durationOverride: get('--duration', null) ? Number(get('--duration', null)) : null,
+    silent: args.includes('--silent'),
+    gpu: args.includes('--gpu'),
+    reel: args.includes('--reel'),
+    output: get('--output', null),
+    serverPort: Number(get('--server-port', '4399')),
+    debugPort: Number(get('--debug-port', '9299'))
   };
 }
 
@@ -45,7 +51,7 @@ function findVoiceFile(episodeDir) {
 }
 
 async function main() {
-  const { episode, format, fps, durationOverride } = parseArgs();
+  const { episode, format, fps, durationOverride, silent, gpu, reel, output, serverPort, debugPort } = parseArgs();
   const episodeDir = path.join(__dirname, 'episodes', episode);
   const storyboardPath = path.join(episodeDir, 'storyboard.json');
 
@@ -55,24 +61,32 @@ async function main() {
 
   const storyboard = JSON.parse(fs.readFileSync(storyboardPath, 'utf8'));
   const fullDuration = (storyboard.scenes || []).reduce((acc, s) => acc + (s.duration || 12), 0);
-  const duration = durationOverride || fullDuration;
+  const clips = [];
+  let sceneStart = 0;
+  if (reel) for (const sc of storyboard.scenes) {
+    for (const fraction of [.22, .68]) clips.push({ start: sceneStart + sc.duration * fraction, duration: 2 });
+    sceneStart += sc.duration;
+  }
+  const duration = reel ? clips.reduce((n, c) => n + c.duration, 0) : durationOverride || fullDuration;
+  if (reel && !silent) throw new Error('--reel exige --silent : aperçu discontinu.');
+  if (!silent && storyboard.productionStatus?.voice === 'pending-replacement') {
+    throw new Error('Nouvelle voix attendue : le MP3 actuel appartient au pilote pétrole/taux/hydro. Synchroniser la voix correspondante avant export final.');
+  }
   const totalFrames = Math.ceil(duration * fps);
-  const voiceFile = findVoiceFile(episodeDir);
+  const voiceFile = silent ? null : findVoiceFile(episodeDir);
 
-  const outFile = path.join(episodeDir, `franc-nord-${episode}-${format}.mp4`);
+  const outFile = output ? path.resolve(output) : path.join(episodeDir, `franc-nord-${episode}-${format}.mp4`);
 
   console.log(`🎬 FRANC NORD — Export MP4 (${format}) • Épisode ${episode}`);
   console.log(`   • Durée à rendre : ${duration}s (${totalFrames} images @ ${fps} FPS)`);
   console.log(`   • Piste voix     : ${voiceFile ? path.basename(voiceFile) : 'Aucune (vidéo muette prête à doubler)'}`);
 
-  const serverPort = 4399;
   const server = await startStudioServer(serverPort);
 
-  const debugPort = 9299;
   const userDataDir = `/tmp/franc-nord-chrome-${Date.now()}`;
   const chrome = spawn(CHROME_BIN, [
     '--headless=new',
-    '--disable-gpu',
+    ...(gpu ? ['--enable-gpu', '--use-angle=metal'] : ['--disable-gpu']),
     '--no-first-run',
     '--no-default-browser-check',
     `--remote-debugging-port=${debugPort}`,
@@ -141,6 +155,13 @@ async function main() {
       await new Promise((r) => setTimeout(r, 150));
     }
 
+    const verifiedReady = await cdpEval('Boolean(window.__FRANC_NORD_READY)');
+    if (!verifiedReady?.result?.value) throw new Error('Studio non chargé : export annulé.');
+    const registry = await cdpEval(`import('/episodes/${episode}/scenes-custom.js').then(m=>Object.keys(m.CUSTOM_SCENES))`);
+    const missing = storyboard.scenes.filter(s => !registry?.result?.value?.includes(s.id));
+    if (missing.length) throw new Error('Scènes manquantes : ' + missing.map(s=>s.id).join(', '));
+    await cdpEval('document.fonts.ready');
+
     // Lancement du pipeline FFmpeg
     const ffArgs = [
       '-y',
@@ -169,7 +190,11 @@ async function main() {
     });
 
     for (let f = 0; f < totalFrames; f++) {
-      const t = f / fps;
+      let t = f / fps;
+      if (reel) {
+        const clipIndex = Math.min(clips.length - 1, Math.floor(t / 2));
+        t = clips[clipIndex].start + t - clipIndex * 2;
+      }
       const evalRes = await cdpEval(`
         (() => {
           window.__FRANC_NORD_RENDER_AT(${t.toFixed(4)}, "${format}");
@@ -178,6 +203,7 @@ async function main() {
         })()
       `);
 
+      if (evalRes?.exceptionDetails) throw new Error('Erreur de scène : ' + JSON.stringify(evalRes.exceptionDetails));
       const dataUrl = evalRes?.result?.value;
       if (!dataUrl || !dataUrl.startsWith('data:image/jpeg;base64,')) {
         throw new Error(`Erreur d'extraction de la frame ${f}`);

@@ -1,0 +1,301 @@
+{
+  "matchedWords": 1253,
+  "scriptWords": 1295,
+  "scenes": [
+    {
+      "scene": "intro-sommaire",
+      "start": 0,
+      "end": 29.28,
+      "cues": [
+        {
+          "phrase": "Aujourd'hui",
+          "time": 7.96,
+          "globalTime": 7.96,
+          "matched": true
+        },
+        {
+          "phrase": "Ensuite",
+          "time": 17.76,
+          "globalTime": 17.76,
+          "matched": true
+        },
+        {
+          "phrase": "Enfin",
+          "time": 24.16,
+          "globalTime": 24.16,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "scene": "d1-fait-declencheur",
+      "start": 29.28,
+      "end": 63.14,
+      "cues": [
+        {
+          "phrase": "des milliards",
+          "time": 11.58,
+          "globalTime": 40.86,
+          "matched": true
+        },
+        {
+          "phrase": "En parallèle",
+          "time": 16.96,
+          "globalTime": 46.24,
+          "matched": true
+        },
+        {
+          "phrase": "Au Tchad",
+          "time": 28.84,
+          "globalTime": 58.12,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "scene": "d1-coulisses-geopolitiques",
+      "start": 63.14,
+      "end": 96.89,
+      "cues": [
+        {
+          "phrase": "Les pays en développement",
+          "time": 7.5,
+          "globalTime": 70.64,
+          "matched": true
+        },
+        {
+          "phrase": "De leur côté",
+          "time": 18.46,
+          "globalTime": 81.6,
+          "matched": true
+        },
+        {
+          "phrase": "S'ajoute",
+          "time": 26.92,
+          "globalTime": 90.06,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "scene": "d1-deux-cotes-medaille",
+      "start": 96.89,
+      "end": 131.28,
+      "cues": [
+        {
+          "phrase": "D'un côté",
+          "time": 4.71,
+          "globalTime": 101.6,
+          "matched": true
+        },
+        {
+          "phrase": "De l'autre côté",
+          "time": 19.51,
+          "globalTime": 116.4,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "scene": "d1-impact-quebec",
+      "start": 131.28,
+      "end": 163.4,
+      "cues": [
+        {
+          "phrase": "D'abord sur votre budget",
+          "time": 4.16,
+          "globalTime": 135.44,
+          "matched": true
+        },
+        {
+          "phrase": "Ensuite sur notre économie",
+          "time": 16.66,
+          "globalTime": 147.94,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "scene": "d2-fait-declencheur",
+      "start": 163.4,
+      "end": 196.62,
+      "cues": [
+        {
+          "phrase": "cède la région du Donbass",
+          "time": 13.64,
+          "globalTime": 177.04,
+          "matched": true
+        },
+        {
+          "phrase": "Au même moment",
+          "time": 21.64,
+          "globalTime": 185.04,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "scene": "d2-coulisses-geopolitiques",
+      "start": 196.62,
+      "end": 233.9,
+      "cues": [
+        {
+          "phrase": "Aujourd'hui",
+          "time": 13.76,
+          "globalTime": 210.38,
+          "matched": true
+        },
+        {
+          "phrase": "En parallèle",
+          "time": 23.08,
+          "globalTime": 219.7,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "scene": "d2-deux-cotes-medaille",
+      "start": 233.9,
+      "end": 267.82,
+      "cues": [
+        {
+          "phrase": "Les partisans",
+          "time": 7.22,
+          "globalTime": 241.12,
+          "matched": true
+        },
+        {
+          "phrase": "À l'inverse",
+          "time": 22.86,
+          "globalTime": 256.76,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "scene": "d2-impact-quebec",
+      "start": 267.82,
+      "end": 300.39,
+      "cues": [
+        {
+          "phrase": "Cela touche directement",
+          "time": 16.6,
+          "globalTime": 284.42,
+          "matched": true
+        },
+        {
+          "phrase": "Sur le plan humain",
+          "time": 22.0,
+          "globalTime": 289.82,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "scene": "d3-enjeu-mondial",
+      "start": 300.39,
+      "end": 335.37,
+      "cues": [
+        {
+          "phrase": "D'abord",
+          "time": 10.97,
+          "globalTime": 311.36,
+          "matched": true
+        },
+        {
+          "phrase": "cinquante milliards",
+          "time": 21.7033,
+          "globalTime": 322.0933,
+          "matched": false
+        },
+        {
+          "phrase": "Presque au même moment",
+          "time": 25.87,
+          "globalTime": 326.26,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "scene": "d3-lien-quebec",
+      "start": 335.37,
+      "end": 371.1233,
+      "cues": [
+        {
+          "phrase": "Nos corridors aériens",
+          "time": 6.35,
+          "globalTime": 341.72,
+          "matched": true
+        },
+        {
+          "phrase": "Et côté numérique",
+          "time": 21.57,
+          "globalTime": 356.94,
+          "matched": true
+        },
+        {
+          "phrase": "Une seule défaillance",
+          "time": 28.73,
+          "globalTime": 364.1,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "scene": "d3-deux-cotes-medaille",
+      "start": 371.1233,
+      "end": 407.22,
+      "cues": [
+        {
+          "phrase": "Pour les partisans",
+          "time": 5.4367,
+          "globalTime": 376.56,
+          "matched": true
+        },
+        {
+          "phrase": "À l'inverse",
+          "time": 21.7967,
+          "globalTime": 392.92,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "scene": "conclusion-debat-quebec",
+      "start": 407.22,
+      "end": 446.119125,
+      "cues": [
+        {
+          "phrase": "Option A",
+          "time": 14.08,
+          "globalTime": 421.3,
+          "matched": true
+        },
+        {
+          "phrase": "Ou Option B",
+          "time": 24.28,
+          "globalTime": 431.5,
+          "matched": true
+        },
+        {
+          "phrase": "Écrivez",
+          "time": 31.3,
+          "globalTime": 438.52,
+          "matched": true
+        },
+        {
+          "phrase": "partagez",
+          "time": 35.46,
+          "globalTime": 442.68,
+          "matched": true
+        },
+        {
+          "phrase": "retrouve demain",
+          "time": 38.06,
+          "globalTime": 445.28,
+          "matched": true
+        }
+      ]
+    }
+  ]
+}

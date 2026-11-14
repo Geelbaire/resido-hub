@@ -17,6 +17,7 @@
  */
 
 import fs from 'node:fs';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -40,6 +41,14 @@ const voice = ['voix.m4a', 'voix.wav', 'voix.mp3', 'voix.webm']
   .map((n) => path.join(episodeDir, n))
   .find((p) => fs.existsSync(p));
 if (!voice) throw new Error(`Aucun fichier voix.* dans ${episodeDir}`);
+
+// Prevent the known pilot recording from being attached to the new editorial version.
+const sourceStoryboard = JSON.parse(fs.readFileSync(storyboardPath, 'utf8'));
+const voiceHash = createHash('sha256').update(fs.readFileSync(voice)).digest('hex');
+if (sourceStoryboard.productionStatus?.voice === 'pending-replacement' &&
+    sourceStoryboard.productionStatus.rejectedVoiceSha256 === voiceHash) {
+  throw new Error('Ce fichier voix appartient au pilote pétrole/taux/hydro. Nouvelle voix COP31/Donbass/pannes attendue. Storyboard non modifié.');
+}
 
 // 1. Détection des pauses
 const ff = spawnSync(
@@ -145,6 +154,12 @@ storyboard.scenes.forEach((sc, si) => {
 });
 storyboard.totalDurationSeconds = +total.toFixed(2);
 storyboard.voiceFile = path.basename(voice);
+if (storyboard.productionStatus?.voice === 'pending-replacement') {
+  storyboard.productionStatus.voice = 'aligned-by-silence';
+  storyboard.productionStatus.visuals = 'ready-for-synchronized-review';
+  storyboard.productionStatus.voiceSha256 = voiceHash;
+  storyboard.productionStatus.reason = 'Nouvelle prise alignée sur les pauses ; revue audiovisuelle requise.';
+}
 
 const fmt = (t) => `${String(Math.floor(t / 60)).padStart(2, '0')}:${(t % 60).toFixed(2).padStart(5, '0')}`;
 console.log(`🎙️  FRANC NORD — Synchronisation voix (${path.basename(voice)}, ${audioDuration.toFixed(2)} s)`);

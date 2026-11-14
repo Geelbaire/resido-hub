@@ -381,8 +381,9 @@ copyMotionPromptBtn?.addEventListener('click', async () => {
   const promptText = isCodex
     ? `Examine les images de notre charte dans "/Volumes/Projets/FRANC NORD/identite-visuelle/", étudie le code de référence "/Volumes/Projets/FRANC NORD/episodes/2026-11-14/scenes-custom.js" et lis "/Volumes/Projets/FRANC NORD/2-aval-opus-motion/PROMPT_CODEX_SOL_6_1.md" ainsi que le storyboard.json du jour. Code les 13 scènes dans scenes-custom.js, synchronise avec voix.mp3 et exporte les MP4 16x9 et 9x16. EXIGENCE ABSOLUE : Égale ou surpasse le calibre de l'Épisode #1 (zéro musique, plein écran cinématique) et prouve-moi que tu es le meilleur motion designer de la terre entière.`
     : `Examine les images de notre charte dans "/Volumes/Projets/FRANC NORD/identite-visuelle/", lis "/Volumes/Projets/FRANC NORD/2-aval-opus-motion/PROMPT_OPUS_5_5.md" et le storyboard.json du jour, puis code les 13 scènes dans scenes-custom.js, synchronise avec voix.mp3 et exporte les MP4 16x9 et 9x16. EXIGENCE ABSOLUE : Crée une vidéo de HAUT CALIBRE (zéro musique, plein écran cinématique) et prouve-moi seconde par seconde que tu es le meilleur motion designer de la terre entière.`;
-  await copyTextReliable(promptText);
-  voiceStatusText.textContent = `✓ Copié dans le presse-papiers : ${promptText}`;
+  const deliveryPrompt = `${promptText} LIVRAISON OBLIGATOIRE : prépare la mise à jour de l’épisode complet dans le Studio sur https://resido.ca, puis demande-moi explicitement si je veux le publier (sauf accord déjà donné). Précise si la voix manque. Après accord, suis le déploiement GitHub Pages et vérifie le site. Distingue l’animation du Studio des MP4 locaux : n’annonce pas de MP4 en ligne sans hébergement et liens vérifiés.`;
+  await copyTextReliable(deliveryPrompt);
+  voiceStatusText.textContent = `✓ Copié dans le presse-papiers : ${deliveryPrompt}`;
   const orig = copyMotionPromptBtn.textContent;
   copyMotionPromptBtn.textContent = isCodex ? '✓ Prompt Codex Sol 6.1 copié !' : '✓ Prompt Claude Opus 5.5 copié !';
   setTimeout(() => {
@@ -463,6 +464,13 @@ async function init() {
   customScenes = scenesModule.CUSTOM_SCENES || {};
 
   buildUI();
+  if (storyboard.productionStatus?.voice === 'word-aligned-episode2') {
+    voiceAudioPlayer.src = `../episodes/${episodeDate}/voix.mp3`;
+    voiceAudioPlayer.style.display = 'block';
+    voiceStatusText.textContent = 'Voix de l’épisode 2 chargée · 7 min 26 s';
+    isPlaying = false;
+    playPauseBtn.textContent = 'Lecture';
+  }
   applyFormat(initialFormat);
   updateHudState();
   window.__FRANC_NORD_READY = true;
@@ -472,3 +480,30 @@ async function init() {
 init().catch((err) => {
   console.error('Erreur chargement studio Franc Nord:', err);
 });
+
+
+// The delivered MP4 and the animation studio share the same format selector.
+const finalVideo = document.getElementById('finalVideo');
+const finalPanel = document.getElementById('finalVideoPanel');
+const animationPanel = document.querySelector('.canvas-viewport');
+function selectDeliveredVideo() {
+  const previous = finalVideo.currentTime || 0;
+  finalVideo.src = `../videos/${episodeDate}/Franc-Nord-Episode-02-${currentFormat}.mp4`;
+  finalVideo.addEventListener('loadedmetadata', () => { finalVideo.currentTime = Math.min(previous, finalVideo.duration); }, {once:true});
+}
+document.getElementById('showFinalVideo').addEventListener('click', () => {
+  isPlaying = false;
+  voiceAudioPlayer.pause();
+  playPauseBtn.textContent = 'Lecture';
+  finalPanel.hidden = false;
+  animationPanel.hidden = true;
+  if (!finalVideo.getAttribute('src')) selectDeliveredVideo();
+});
+document.getElementById('showAnimation').addEventListener('click', () => {
+  finalVideo.pause();finalPanel.hidden = true;animationPanel.hidden = false;
+});
+for (const button of [format16x9Btn, format9x16Btn]) button.addEventListener('click', () => {
+  if (!finalPanel.hidden) selectDeliveredVideo();
+});
+finalVideo.addEventListener('error', () => { document.getElementById('finalVideoError').hidden = false; });
+finalVideo.addEventListener('loadeddata', () => { document.getElementById('finalVideoError').hidden = true; });

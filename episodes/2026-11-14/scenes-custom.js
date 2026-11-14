@@ -1,7 +1,7 @@
 /**
  * FRANC NORD — Épisode #1 (2026-11-14) — 13 scènes cinématiques plein écran
  * Motion design 100 % code · Canvas 2D · Zéro musique · Zéro tableau de bord
- * Réalisation : Claude Opus 5.5
+ * Moteur optique : référence Épisode #1 · Nouvelle réalisation : Codex
  *
  * SYNCHRONISATION VOIX
  *   Chaque temps fort est ancré sur un mot repère de la narration.
@@ -1421,917 +1421,6 @@ function sceneIntro(a) {
   });
 }
 
-/** Piste d'états caméra-globe : [[progress, [lon, lat, R/m, dx/w, dy/h], easing?], ...]. */
-function globeTrack(p, kf) {
-  if (p <= kf[0][0]) return kf[0][1];
-  for (let i = 1; i < kf.length; i++) {
-    const [p1, s1, e = eInOutQuart] = kf[i];
-    const [p0, s0] = kf[i - 1];
-    if (p <= p1) return globeLerp(s0, s1, p1 <= p0 ? 1 : e(seg(p, p0, p1)));
-  }
-  return kf[kf.length - 1][1];
-}
-
-function globeFrom(stage, st) {
-  const m = Math.min(stage.w, stage.h);
-  return makeGlobe(st[0], st[1], st[2] * m, stage.cx + st[3] * stage.w, stage.cy + st[4] * stage.h);
-}
-
-/** Pétrolier géant de profil, en lignes de lumière (proue vers la droite). */
-function drawTanker(ctx, x, y, L, o = {}) {
-  const { color = C.amber, alpha = 1, time = 0, wake = 1 } = o;
-  if (alpha <= 0.003) return;
-  ctx.save();
-  ctx.translate(x, y);
-  ctx.globalAlpha *= alpha;
-  // Ligne de flottaison et reflet
-  const wl = L * 0.032;
-  const g = ctx.createLinearGradient(-L * 0.9, 0, L * 0.9, 0);
-  g.addColorStop(0, rgba(color, 0));
-  g.addColorStop(0.5, rgba(color, 0.7));
-  g.addColorStop(1, rgba(color, 0));
-  ctx.fillStyle = g;
-  ctx.fillRect(-L * 0.9, wl, L * 1.8, 1.5);
-  for (let i = 1; i <= 6; i++) {
-    ctx.globalAlpha = alpha * 0.16 * (1 - i / 7);
-    const yy = wl + i * L * 0.012;
-    const off = Math.sin(time * 1.4 + i) * L * 0.01;
-    ctx.fillRect(-L * 0.45 + off, yy, L * 0.9, 1);
-  }
-  ctx.globalAlpha = alpha;
-  // Sillage à la poupe
-  if (wake > 0) {
-    for (let i = 0; i < 18; i++) {
-      const u = ((i / 18 + time * 0.25) % 1);
-      light(ctx, -L * 0.5 - u * L * 0.35, wl + Math.sin(i * 1.7) * L * 0.006, L * 0.02 * (1 - u), C.gold, 0.5 * (1 - u) * wake);
-    }
-  }
-  ctx.strokeStyle = color;
-  ctx.lineWidth = Math.max(1.5, L * 0.0028);
-  ctx.lineJoin = 'round';
-  ctx.shadowColor = color;
-  ctx.shadowBlur = L * 0.02;
-  ctx.fillStyle = 'rgba(3,5,9,0.88)';
-  // Coque
-  ctx.beginPath();
-  ctx.moveTo(-L * 0.5, -L * 0.05);
-  ctx.lineTo(L * 0.44, -L * 0.05);
-  ctx.quadraticCurveTo(L * 0.5, -L * 0.048, L * 0.5, -L * 0.02);
-  ctx.quadraticCurveTo(L * 0.5, L * 0.05, L * 0.43, L * 0.056);
-  ctx.lineTo(-L * 0.47, L * 0.056);
-  ctx.lineTo(-L * 0.5, L * 0.02);
-  ctx.closePath();
-  ctx.fill();
-  ctx.stroke();
-  // Château arrière (passerelle + cheminée)
-  ctx.beginPath();
-  ctx.moveTo(-L * 0.46, -L * 0.05);
-  ctx.lineTo(-L * 0.46, -L * 0.13);
-  ctx.lineTo(-L * 0.37, -L * 0.13);
-  ctx.lineTo(-L * 0.37, -L * 0.05);
-  ctx.moveTo(-L * 0.475, -L * 0.13);
-  ctx.lineTo(-L * 0.355, -L * 0.13);
-  ctx.moveTo(-L * 0.44, -L * 0.13);
-  ctx.lineTo(-L * 0.44, -L * 0.168);
-  ctx.lineTo(-L * 0.415, -L * 0.168);
-  ctx.lineTo(-L * 0.415, -L * 0.13);
-  ctx.stroke();
-  // Hublots de passerelle
-  ctx.shadowBlur = 0;
-  ctx.fillStyle = rgba(C.gold, 0.9);
-  for (let i = 0; i < 6; i++) ctx.fillRect(-L * 0.455 + i * L * 0.014, -L * 0.118, L * 0.008, L * 0.008);
-  // Collecteurs et tuyauteries de pont
-  ctx.strokeStyle = rgba(color, 0.55);
-  ctx.lineWidth = 1;
-  ctx.beginPath();
-  ctx.moveTo(-L * 0.36, -L * 0.062);
-  ctx.lineTo(L * 0.42, -L * 0.062);
-  for (let i = 0; i < 9; i++) {
-    const xx = -L * 0.3 + i * L * 0.085;
-    ctx.moveTo(xx, -L * 0.05);
-    ctx.lineTo(xx, -L * 0.075);
-  }
-  ctx.stroke();
-  ctx.restore();
-}
-
-/** Chiffre roulant façon compteur mécanique (flou de défilement). */
-function rollingDigit(ctx, x, y, size, pos, color) {
-  const d = Math.floor(pos);
-  const f = pos - d;
-  const snap = f < 0.7 ? 0 : eInOut((f - 0.7) / 0.3);
-  ctx.save();
-  ctx.beginPath();
-  ctx.rect(x - size * 0.42, y - size * 0.95, size * 0.84, size * 1.15);
-  ctx.clip();
-  ctx.textAlign = "center";
-  ctx.fillStyle = color;
-  const a = 1 + (d % 9);
-  const b = 1 + ((d + 1) % 9);
-  ctx.globalAlpha *= 1 - snap * 0.5;
-  ctx.fillText(String(a), x, y - snap * size * 1.05);
-  ctx.globalAlpha = 1;
-  ctx.globalAlpha *= 0.5 + snap * 0.5;
-  ctx.fillText(String(b), x, y + (1 - snap) * size * 1.05);
-  ctx.restore();
-}
-
-/* ════════════════════════════════════════════════════════════════════════
- * SCÈNE 02 — d1-fait-declencheur
- * Acte I   : rotation du globe, du Québec vers la mer Rouge et Ormuz
- * Acte II  : plongée — le sillage doré se fige sous l'onde de choc → +38 %
- * Acte III : le supertanker et son surcoût par voyage
- * Acte IV  : recul — le grand détour par le cap de Bonne-Espérance
- * ════════════════════════════════════════════════════════════════════════ */
-
-const ROUTE_GULF = [[50.2, 27.3], [52.5, 26.6], [54.8, 26.3], [56.5, 26.6], [57.4, 25.3], [58.5, 24.2], [60.5, 22.3], [63, 19.4]];
-const ROUTE_CAPE = [[56.6, 26.4], [58.6, 23.4], [60.5, 18], [56, 12.5], [52, 8], [47, 2], [43.5, -3], [42.5, -10], [41.5, -17], [38, -25], [33, -33], [25, -36.5], [18.5, -36], [12, -31], [6, -22], [0, -10], [-8, 0], [-18, 10], [-22, 22], [-16, 33], [-11, 40], [-8, 46], [-4, 49], [2, 50.5], [4.4, 51.9]];
-const ROUTE_SUEZ = [[56.6, 26.4], [58.6, 23.4], [60, 18], [54, 13.5], [47, 12.2], [43.4, 12.6], [41, 16], [38.6, 20], [35.8, 25], [33.6, 28.4], [32.55, 29.95], [30, 32.6], [25, 34], [18, 35], [12, 37.4], [5, 37.8], [-2, 36.2], [-5.6, 36], [-9.6, 38], [-9.6, 43.5], [-5, 47.5], [0, 50], [4.4, 51.9]];
-
-function sceneTrigger(a) {
-  const { ctx, stage, progress: p, globalTime: gt, isVertical: V, scene } = a;
-  const { w, h, cx, cy } = stage;
-  const m = Math.min(w, h);
-  const s1 = 1 / scene.duration;
-  const T = cues(scene, {
-    ici: 'Pendant', rouge: 'mer Rouge', ormuz: 'Ormuz', assur: 'assurance', p38: 'trente-huit',
-    concr: 'Concrètement', cent: 'centaines', arm: 'armateurs', detour: 'détour', sud: 'sud de l', sem: 'deux semaines'
-  });
-
-  frame(a, () => {
-    dust(ctx, stage, gt, { count: 90, alpha: 0.4, color: C.gold });
-
-    // Travelling vertical : 0 = globe, 1 = +38 %, 2 = pétrolier
-    const camY = track(p, [[T.p38 - 0.5 * s1, 0], [T.p38 + 0.7 * s1, 1, eInOutQuart], [T.concr - 0.3 * s1, 1], [T.concr + 0.9 * s1, 2, eInOutQuart]]);
-    const step = h * 0.78;
-    const africa = smooth(seg(p, T.arm - 0.6 * s1, T.arm + 0.9 * s1));
-
-    // ── Globe : actes I et II ──
-    const st = globeTrack(p, [
-      [0.012, [-72, 42, 0.44, 0, 0.03]],
-      [T.ici + 1.4 * s1, [47, 22, 0.5, 0, 0.03]],
-      [T.assur - 0.2 * s1, [50, 22, 0.78, 0, 0.12], smooth],
-      [T.assur + 2.2 * s1, [57, 24, 2.1, 0, 0.02]]
-    ]);
-    const G = globeFrom(stage, st);
-    G.cy -= camY * step;
-    const gA = 1 - smooth(seg(camY, 0.6, 1.2));
-    if (gA > 0.003 && africa < 1) {
-      drawGlobe(ctx, G, { alpha: gA * (1 - africa), color: C.cyan });
-      // Trafic maritime vivant sur les routes (avant la crise)
-      const traffic = gA * (1 - smooth(seg(p, T.assur - 0.3 * s1, T.assur + 0.5 * s1))) * smooth(seg(p, T.ici, T.rouge));
-      if (traffic > 0.01) {
-        for (const route of [ROUTE_SUEZ, ROUTE_GULF]) {
-          const rp = projectAll(G, smoothPath(route, 8));
-          for (let k = 0; k < 7; k++) {
-            const u = (gt * 0.02 + k / 7) % 1;
-            const q = rp[Math.floor(u * (rp.length - 1))];
-            if (q.vis) light(ctx, q.x, q.y, 10, C.gold, 0.7 * traffic);
-          }
-        }
-      }
-      const ql = G.project(-71.5, 47);
-      if (ql.z > 0.05) {
-        beacon(ctx, ql.x, ql.y, { color: C.cyan, time: gt, alpha: (1 - seg(p, 0.03, T.ici + 0.6 * s1)) * gA });
-        mono(ctx, 'ICI', ql.x, ql.y - 34, { size: 18, color: C.cyan, alpha: (1 - seg(p, 0.03, T.ici)) * gA });
-      }
-      const bm = G.project(...PLACES.babElMandeb);
-      const hz = G.project(...PLACES.hormuz);
-      const labA = gA * (1 - smooth(seg(p, T.assur + 0.4 * s1, T.assur + 1.2 * s1)));
-      if (bm.z > 0) {
-        beacon(ctx, bm.x, bm.y, { color: C.coral, time: gt, alpha: seg(p, T.rouge, T.rouge + 0.5 * s1) * labA });
-        mono(ctx, 'MER ROUGE', bm.x - 24, bm.y + 38, { size: m * 0.018, align: 'right', color: C.coral, t: seg(p, T.rouge, T.rouge + 1.2 * s1), alpha: labA });
-      }
-      if (hz.z > 0) {
-        beacon(ctx, hz.x, hz.y, { color: C.amber, time: gt + 0.4, alpha: seg(p, T.ormuz, T.ormuz + 0.5 * s1) * gA });
-        mono(ctx, 'ORMUZ', hz.x + 26, hz.y - 30, { size: m * 0.018, align: 'left', color: C.amber, t: seg(p, T.ormuz, T.ormuz + 0.9 * s1), alpha: labA });
-      }
-      // Sillage doré qui avance… puis se fige
-      const wakeT = 0.62 * eOutCubic(seg(p, T.assur, T.p38 - 0.4 * s1));
-      if (wakeT > 0) {
-        const pts = projectAll(G, smoothPath(ROUTE_GULF, 12));
-        const frozen = smooth(seg(p, T.p38 - 0.9 * s1, T.p38 - 0.3 * s1));
-        const col = mix(C.amber, C.coral, frozen);
-        trail(ctx, pts, wakeT, { color: col, width: Math.max(3, G.R * 0.0028), alpha: gA, head: true });
-        if (frozen > 0 && hz.z > 0) shockwave(ctx, hz.x, hz.y, G.R * 0.22, gt, { color: C.coral, alpha: frozen * gA, period: 1.6 });
-      }
-    }
-
-    // ── +38 % monumental (révélé par le travelling) ──
-    const nY = cy + (1 - camY) * step;
-    const nA = env(camY, 0.35, 1.65, 0.4, 0.4);
-    if (nA > 0.003) {
-      freqWave(ctx, 0, nY - m * 0.1, w, m * 0.36, gt, { bars: V ? 48 : 96, energy: 0.8 * nA, colorA: C.coral, colorB: C.amber, alpha: 0.55, spread: 0.42, seed: 5 });
-      const k = eOutExpo(seg(p, T.p38 - 0.1 * s1, T.p38 + 1.4 * s1));
-      const val = Math.round(38 * k);
-      const size = fitSize(ctx, '+38 %', 900, m * 0.34, w * 0.86);
-      ctx.save();
-      ctx.globalAlpha *= nA;
-      setFont(ctx, 900, size);
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'alphabetic';
-      ctx.shadowColor = rgba(C.amber, 0.7);
-      ctx.shadowBlur = 50;
-      ctx.fillStyle = C.white;
-      ctx.fillText(`+${val} %`, cx, nY + size * 0.3);
-      ctx.restore();
-      mono(ctx, 'ASSURANCE · RISQUE DE GUERRE', cx, nY + size * 0.3 + m * 0.07, { size: m * 0.022, color: C.amber, t: seg(p, T.p38 + 0.5 * s1, T.p38 + 2 * s1), alpha: nA });
-    }
-
-    // ── Acte III : le pétrolier et son surcoût ──
-    const tY = cy + (2 - camY) * step;
-    const shrink = eInOutQuart(seg(p, T.arm - 0.7 * s1, T.arm + 0.6 * s1));
-    const tA = smooth(seg(camY, 1.3, 1.9)) * (1 - shrink);
-    if (tA > 0.003) {
-      const L = (V ? w * 0.92 : w * 0.6) * (1 - shrink * 0.95);
-      const drift = (p - T.concr) * scene.duration * w * 0.004;
-      drawTanker(ctx, cx - L * 0.02 + drift, tY + m * 0.12, L, { time: gt, alpha: tA });
-      const cA = tA * smooth(seg(p, T.cent - 0.4 * s1, T.cent + 0.4 * s1));
-      if (cA > 0.003) {
-        const size = V ? m * 0.12 : m * 0.135;
-        const yy = tY - m * 0.16;
-        ctx.save();
-        ctx.globalAlpha *= cA;
-        setFont(ctx, 900, size);
-        ctx.textBaseline = 'alphabetic';
-        ctx.textAlign = 'left';
-        const pre = '+ ';
-        const suf = '00 000 $';
-        const wPre = ctx.measureText(pre).width;
-        const wDig = ctx.measureText('8').width;
-        const wSuf = ctx.measureText(suf).width;
-        const x0 = cx - (wPre + wDig + wSuf) / 2;
-        ctx.shadowColor = rgba(C.amber, 0.6);
-        ctx.shadowBlur = 36;
-        ctx.fillStyle = C.white;
-        ctx.fillText(pre, x0, yy);
-        ctx.fillText(suf, x0 + wPre + wDig, yy);
-        const tau = Math.max(0, (p - T.cent) * scene.duration);
-        rollingDigit(ctx, x0 + wPre + wDig / 2, yy, size, 14 * (1 - Math.exp(-1.1 * tau)) + 0.9 * tau, C.amber);
-        ctx.restore();
-        mono(ctx, 'PAR VOYAGE', cx, yy + m * 0.065, { size: m * 0.022, color: C.amber, t: seg(p, T.cent + 0.6 * s1, T.cent + 1.6 * s1), alpha: cA });
-      }
-    }
-
-    // ── Acte IV : le grand détour par le sud de l'Afrique ──
-    if (africa > 0.003) {
-      const SA = V ? [24, -2, 0.47, 0, -0.1] : [20, -2, 0.6, 0.15, 0.04];
-      const GA = globeFrom(stage, [SA[0] + (1 - africa) * 20, SA[1], SA[2] * (0.75 + 0.25 * eOutCubic(africa)), SA[3], SA[4]]);
-      drawGlobe(ctx, GA, { alpha: africa, color: C.cyan });
-      const suez = projectAll(GA, smoothPath(ROUTE_SUEZ, 10));
-      trail(ctx, suez, 1, { color: C.coral, width: 2, alpha: africa * 0.5 * seg(p, T.arm, T.arm + 0.8 * s1), dash: [6, 10], head: false, glow: 0 });
-      const bm = GA.project(...PLACES.babElMandeb);
-      if (bm.z > 0) {
-        const xa = africa * seg(p, T.arm + 0.4 * s1, T.arm + 1 * s1);
-        ctx.save();
-        ctx.globalAlpha *= xa;
-        ctx.strokeStyle = C.coral;
-        ctx.lineWidth = 4;
-        ctx.shadowColor = C.coral;
-        ctx.shadowBlur = 14;
-        const q = 14;
-        ctx.beginPath();
-        ctx.moveTo(bm.x - q, bm.y - q);
-        ctx.lineTo(bm.x + q, bm.y + q);
-        ctx.moveTo(bm.x + q, bm.y - q);
-        ctx.lineTo(bm.x - q, bm.y + q);
-        ctx.stroke();
-        ctx.restore();
-      }
-      const cape = projectAll(GA, smoothPath(ROUTE_CAPE, 10));
-      const rt = eInOut(seg(p, T.detour - 0.3 * s1, T.sem + 0.6 * s1));
-      trail(ctx, cape, rt, { color: C.amber, width: Math.max(3, GA.R * 0.006), alpha: africa });
-      if (rt >= 1) {
-        for (let k = 0; k < 6; k++) {
-          const u = (gt * 0.035 + k / 6) % 1;
-          const i0 = Math.floor(u * (cape.length - 1));
-          const q = cape[i0];
-          if (q.vis) light(ctx, q.x, q.y, 16, C.gold, 0.9 * africa);
-        }
-      }
-      const cp = GA.project(...PLACES.cape);
-      mono(ctx, 'CAP DE BONNE-ESPÉRANCE', cp.x - 30, cp.y + 46, { size: m * 0.017, align: V ? 'center' : 'right', color: C.gold, t: seg(p, T.sud, T.sud + 1.4 * s1), alpha: africa });
-      const big = seg(p, T.sem - 0.2 * s1, T.sem + 0.9 * s1);
-      if (V) {
-        kinetic(ctx, '+2 SEMAINES', cx, h * 0.8, { size: m * 0.12, weight: 900, t: big, glow: 30, glowColor: rgba(C.amber, 0.6), maxW: w * 0.86 });
-      } else {
-        kinetic(ctx, '+2', w * 0.07, cy + m * 0.04, { size: m * 0.26, weight: 900, align: 'left', t: big, glow: 40, glowColor: rgba(C.amber, 0.6) });
-        kinetic(ctx, 'SEMAINES', w * 0.075, cy + m * 0.14, { size: m * 0.065, weight: 800, align: 'left', t: seg(p, T.sem + 0.1 * s1, T.sem + 1.1 * s1), spacing: m * 0.008 });
-      }
-    }
-  });
-}
-
-/* ════════════════════════════════════════════════════════════════════════
- * TOPOGRAPHIE PROCÉDURALE : bruit de valeur + lignes de niveau (marching squares)
- * ════════════════════════════════════════════════════════════════════════ */
-
-function hash2(x, y) {
-  const s = Math.sin(x * 127.1 + y * 311.7) * 43758.5453;
-  return s - Math.floor(s);
-}
-function vnoise(x, y) {
-  const xi = Math.floor(x);
-  const yi = Math.floor(y);
-  const xf = x - xi;
-  const yf = y - yi;
-  const u = xf * xf * (3 - 2 * xf);
-  const v = yf * yf * (3 - 2 * yf);
-  const a = hash2(xi, yi);
-  const b = hash2(xi + 1, yi);
-  const c = hash2(xi, yi + 1);
-  const d = hash2(xi + 1, yi + 1);
-  return lerp(lerp(a, b, u), lerp(c, d, u), v) * 2 - 1;
-}
-function fbm(x, y) {
-  let s = 0;
-  let a = 0.5;
-  let f = 1;
-  for (let i = 0; i < 4; i++) {
-    s += a * vnoise(x * f, y * f);
-    f *= 2.03;
-    a *= 0.5;
-  }
-  return s;
-}
-
-/** Lignes de niveau d'un champ scalaire → segments [x1, y1, x2, y2, …] par niveau. */
-function contours(fn, x0, x1, y0, y1, nx, ny, levels) {
-  const W = nx + 1;
-  const vals = new Float32Array(W * (ny + 1));
-  for (let j = 0; j <= ny; j++) for (let i = 0; i <= nx; i++) vals[j * W + i] = fn(x0 + ((x1 - x0) * i) / nx, y0 + ((y1 - y0) * j) / ny);
-  const dx = (x1 - x0) / nx;
-  const dy = (y1 - y0) / ny;
-  return levels.map((L) => {
-    const segs = [];
-    for (let j = 0; j < ny; j++) {
-      for (let i = 0; i < nx; i++) {
-        const a = vals[j * W + i];
-        const b = vals[j * W + i + 1];
-        const c = vals[(j + 1) * W + i + 1];
-        const d = vals[(j + 1) * W + i];
-        const idx = (a > L ? 8 : 0) | (b > L ? 4 : 0) | (c > L ? 2 : 0) | (d > L ? 1 : 0);
-        if (idx === 0 || idx === 15) continue;
-        const X = x0 + i * dx;
-        const Y = y0 + j * dy;
-        const top = [X + dx * ((L - a) / (b - a)), Y];
-        const right = [X + dx, Y + dy * ((L - b) / (c - b))];
-        const bottom = [X + dx * ((L - d) / (c - d)), Y + dy];
-        const left = [X, Y + dy * ((L - a) / (d - a))];
-        const add = (p, q) => segs.push(p[0], p[1], q[0], q[1]);
-        switch (idx) {
-          case 1: case 14: add(left, bottom); break;
-          case 2: case 13: add(bottom, right); break;
-          case 3: case 12: add(left, right); break;
-          case 4: case 11: add(top, right); break;
-          case 6: case 9: add(top, bottom); break;
-          case 7: case 8: add(left, top); break;
-          case 5: add(left, top); add(bottom, right); break;
-          case 10: add(top, right); add(left, bottom); break;
-        }
-      }
-    }
-    return new Float32Array(segs);
-  });
-}
-
-/* ════════════════════════════════════════════════════════════════════════
- * SCÈNE 03 — d1-geopolitique-detroit
- * Acte I   : la topographie se dessine au scanner, la caméra plonge
- * Acte II  : l'étau se referme — 33 KM, comparé à Montréal → Saint-Jérôme
- * Acte III : 21 M barils/jour + 1/5 du GNL : le flux accélère au goulot
- * Acte IV  : aucun pipeline de rechange — −20 % et l'embouteillage
- * ════════════════════════════════════════════════════════════════════════ */
-
-const HZ_N = (x) => -0.36 + 0.29 * Math.exp(-(((x + 0.05) / 0.5) ** 2)) + 0.035 * Math.sin(x * 3.1);
-const HZ_S = (x) => 0.42 - 0.35 * Math.exp(-(((x - 0.06) / 0.16) ** 2)) - 0.05 * Math.exp(-(((x - 0.5) / 0.3) ** 2));
-const HZ_LEVELS = [0, 0.03, 0.065, 0.1, 0.14, 0.19, 0.25, 0.32, 0.4];
-
-function hormuzTopo() {
-  return cached('hormuzTopo', () => {
-    const north = (x, y) => {
-      const d = HZ_N(x) - y;
-      return d + 0.018 * fbm(x * 9 + 2, y * 9) + 0.1 * fbm(x * 2.4 + 5, y * 2.4) * clamp(d * 3) +
-        0.07 * Math.exp(-(((x + 0.4) / 0.2) ** 2) - (((y + 0.15) / 0.028) ** 2));
-    };
-    const south = (x, y) => {
-      const d = y - HZ_S(x);
-      return d + 0.018 * fbm(x * 9 - 4, y * 9 + 1) + 0.1 * fbm(x * 2.4 - 7, y * 2.4 + 3) * clamp(d * 3);
-    };
-    return {
-      north: contours(north, -1.6, 1.6, -1.1, 0.25, 160, 68, HZ_LEVELS),
-      south: contours(south, -1.6, 1.6, -0.2, 1.1, 160, 65, HZ_LEVELS)
-    };
-  });
-}
-
-function drawContourSet(ctx, sets, ox, oy, sweep, unit, tint) {
-  sets.forEach((segs, li) => {
-    const coast = li === 0;
-    ctx.strokeStyle = coast ? C.white : rgba(tint, Math.max(0.12, 0.46 - li * 0.045));
-    ctx.lineWidth = (coast ? 2.2 : 1.1) / unit;
-    if (coast) {
-      ctx.shadowColor = C.cyan;
-      ctx.shadowBlur = 14;
-    }
-    ctx.beginPath();
-    const lim = sweep - li * 0.12;
-    for (let i = 0; i < segs.length; i += 4) {
-      if (segs[i] > lim) continue;
-      ctx.moveTo(segs[i] + ox, segs[i + 1] + oy);
-      ctx.lineTo(segs[i + 2] + ox, segs[i + 3] + oy);
-    }
-    ctx.stroke();
-    ctx.shadowBlur = 0;
-  });
-}
-
-function sceneStrait(a) {
-  const { ctx, stage, progress: p, globalTime: gt, isVertical: V, scene } = a;
-  const { w, h, cx, cy } = stage;
-  const m = Math.min(w, h);
-  const s1 = 1 / scene.duration;
-  const T = cues(scene, {
-    geo: 'géographie', detroit: 'Le détroit', km: 'trente-trois', mtl: 'moins large', pourtant: 'Pourtant',
-    b21: 'vingt-et-un', gnl: 'cinquième', trou: 'trou d', aucun: 'Il n', pipe: 'pipeline', v20: 'vingt pour'
-  });
-
-  // L'étau : les deux masses se rapprochent, puis serrent encore de 20 %
-  const close = eInOutQuart(seg(p, 0.02, T.detroit + 1.2 * s1));
-  const squeeze = eInOutQuart(seg(p, T.v20 - 0.6 * s1, T.v20 + 1.0 * s1));
-  const dyN = -0.3 * (1 - close) + 0.014 * squeeze;
-  const dyS = 0.3 * (1 - close) - 0.014 * squeeze;
-
-  // Caméra : plongée → zoom sur le goulot → recul sur le flux
-  const zoom = track(p, [[0, 0.62], [T.detroit, 1.0, eOutCubic], [T.km - 0.3 * s1, 1.0], [T.km + 1.2 * s1, 1.9, eInOutQuart], [T.b21 - 0.4 * s1, 1.85], [T.b21 + 1.0 * s1, 1.05, eInOutQuart], [T.aucun, 1.08], [T.aucun + 1.4 * s1, 1.0]]);
-  const fx = track(p, [[T.km - 0.3 * s1, 0], [T.km + 1.2 * s1, 0.06], [T.mtl + 0.2 * s1, 0.06], [T.mtl + 1.2 * s1, 0.2], [T.b21 - 0.4 * s1, 0.2], [T.b21 + 1.0 * s1, 0]]);
-  const S = (V ? h : w) / 2.7;
-  const unit = S * zoom;
-  const scr = (u, v) => {
-    const X = (u - fx) * unit;
-    const Y = v * unit;
-    return V ? { x: cx + Y, y: cy - X } : { x: cx + X, y: cy + Y };
-  };
-
-  frame(a, () => {
-    light(ctx, cx, cy, m * 0.9, C.amber, 0.08);
-    const topo = hormuzTopo();
-    const sweep = -1.6 + 4.2 * eInOut(seg(p, 0.0, T.detroit + 0.6 * s1));
-
-    // ── Cartographie (transformée caméra) ──
-    ctx.save();
-    ctx.translate(cx, cy);
-    if (V) ctx.rotate(-Math.PI / 2);
-    ctx.scale(unit, unit);
-    ctx.translate(-fx, 0);
-    // Masses côtières sombres
-    const landFill = (fnY, oy, top) => {
-      ctx.beginPath();
-      ctx.moveTo(-1.7, top ? -1.2 : 1.2);
-      for (let x = -1.7; x <= 1.7; x += 0.02) ctx.lineTo(x, fnY(x) + oy);
-      ctx.lineTo(1.7, top ? -1.2 : 1.2);
-      ctx.closePath();
-      ctx.fillStyle = 'rgba(16,24,38,0.55)';
-      ctx.fill();
-    };
-    landFill(HZ_N, dyN, true);
-    landFill(HZ_S, dyS, false);
-    drawContourSet(ctx, topo.north, 0, dyN, sweep, unit, C.ice);
-    drawContourSet(ctx, topo.south, 0, dyS, sweep, unit, C.ice);
-
-    // Pipelines de contournement (dérisoires)
-    const pipeA = smooth(seg(p, T.pipe - 0.2 * s1, T.pipe + 0.8 * s1));
-    if (pipeA > 0) {
-      ctx.save();
-      ctx.globalAlpha *= pipeA;
-      ctx.setLineDash([0.02, 0.018]);
-      ctx.strokeStyle = C.coral;
-      ctx.lineWidth = 2.5 / unit;
-      ctx.beginPath();
-      ctx.moveTo(-0.95, HZ_S(-0.95) + dyS + 0.04);
-      ctx.bezierCurveTo(-0.5, 0.56 + dyS, 0.25, 0.54 + dyS, 0.62, HZ_S(0.62) + dyS + 0.04);
-      ctx.stroke();
-      ctx.restore();
-    }
-    ctx.restore();
-
-    // ── Faisceau lumineux qui suit l'axe du couloir ──
-    const beamA = smooth(seg(p, T.detroit - 0.4 * s1, T.detroit + 1.2 * s1));
-    if (beamA > 0.01) {
-      ctx.save();
-      ctx.globalCompositeOperation = "lighter";
-      ctx.lineCap = "round";
-      ctx.lineJoin = "round";
-      const beamPath = () => {
-        ctx.beginPath();
-        for (let u = -1.7; u <= 1.7; u += 0.025) {
-          const q = scr(u, (HZ_N(u) + dyN + HZ_S(u) + dyS) / 2);
-          if (u === -1.7) ctx.moveTo(q.x, q.y);
-          else ctx.lineTo(q.x, q.y);
-        }
-      };
-      const wNarrow = (HZ_S(0.06) + dyS - HZ_N(0.06) - dyN) * unit;
-      [[1.7, 0.09, 26], [0.9, 0.12, 12], [0.4, 0.14, 4]].forEach(([k, al, bl]) => {
-        ctx.filter = `blur(${bl}px)`;
-        beamPath();
-        ctx.strokeStyle = rgba(squeeze > 0.2 ? mix(C.amber, C.coral, squeeze) : C.amber, al * beamA);
-        ctx.lineWidth = Math.max(4, wNarrow * k);
-        ctx.stroke();
-      });
-      ctx.filter = "none";
-      beamPath();
-      ctx.strokeStyle = rgba(C.gold, 0.5 * beamA);
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-      ctx.restore();
-    }
-
-    // ── Flux de particules dans le couloir (vitesse ∝ 1 / largeur : effet Venturi) ──
-    const flowA = smooth(seg(p, T.detroit, T.km)) * 0.45 + smooth(seg(p, T.pourtant, T.b21 + 0.5 * s1)) * 0.55;
-    if (flowA > 0.01) {
-      const NS = 64;
-      const us = new Float32Array(NS + 1);
-      const cum = new Float32Array(NS + 1);
-      for (let i = 0; i <= NS; i++) {
-        const u = -1.5 + (3 * i) / NS;
-        us[i] = u;
-        const width = Math.max(0.02, HZ_S(u) + dyS - (HZ_N(u) + dyN));
-        if (i) cum[i] = cum[i - 1] + width;
-      }
-      const total = cum[NS];
-      const uAt = (sv) => {
-        const target = sv * total;
-        let lo = 0;
-        let hi = NS;
-        while (hi - lo > 1) {
-          const mid = (lo + hi) >> 1;
-          if (cum[mid] < target) lo = mid;
-          else hi = mid;
-        }
-        const f = (target - cum[lo]) / Math.max(1e-6, cum[hi] - cum[lo]);
-        return lerp(us[lo], us[hi], f);
-      };
-      const gas = smooth(seg(p, T.gnl - 0.2 * s1, T.gnl + 1 * s1));
-      const jam = squeeze;
-      const parts = cached('hzParts', () => {
-        const r = rng(21);
-        return Array.from({ length: 900 }, () => [r(), 0.1 + r() * 0.8, 0.6 + r() * 0.8, r()]);
-      });
-      const tt = (p * scene.duration) * (1 - 0.55 * jam);
-      ctx.save();
-      ctx.globalCompositeOperation = 'lighter';
-      const dens = flowA * (0.35 + 0.65 * smooth(seg(p, T.b21 - 0.3 * s1, T.b21 + 1.5 * s1)));
-      for (let i = 0; i < parts.length; i++) {
-        const [s0, lane, sp, kind] = parts[i];
-        if (i / parts.length > dens) continue;
-        let sv = (s0 + tt * 0.045 * sp) % 1;
-        if (jam > 0) sv = Math.pow(sv, 1 + jam * 0.9);
-        const u = uAt(sv);
-        const top = HZ_N(u) + dyN + 0.012;
-        const bot = HZ_S(u) + dyS - 0.012;
-        const v = lerp(top, bot, lane);
-        const q = scr(u, v);
-        const isGas = kind < 0.2 * gas;
-        const col = isGas ? C.ice : jam > 0.2 && u < 0.05 ? mix(C.gold, C.coral, jam) : C.gold;
-        const sz = (isGas ? 2.8 : 3.2) * Math.sqrt(zoom);
-        ctx.globalAlpha = 0.9;
-        ctx.fillStyle = col;
-        ctx.fillRect(q.x - sz / 2, q.y - sz / 2, sz, sz);
-        if (i % 6 === 0) light(ctx, q.x, q.y, 16 * zoom, col, 0.4);
-      }
-      ctx.restore();
-    }
-
-    // Filets pipeline : un mince goutte-à-goutte
-    const pipeA2 = smooth(seg(p, T.pipe, T.pipe + 0.8 * s1));
-    if (pipeA2 > 0) {
-      for (let k = 0; k < 3; k++) {
-        const t = ((gt * 0.12 + k / 3) % 1);
-        const bx = (tt) => {
-          const x0 = -0.95, x1 = -0.5, x2 = 0.25, x3 = 0.62;
-          const y0 = HZ_S(-0.95) + dyS + 0.04, y1 = 0.56 + dyS, y2 = 0.54 + dyS, y3 = HZ_S(0.62) + dyS + 0.04;
-          const mt = 1 - tt;
-          return [mt ** 3 * x0 + 3 * mt * mt * tt * x1 + 3 * mt * tt * tt * x2 + tt ** 3 * x3, mt ** 3 * y0 + 3 * mt * mt * tt * y1 + 3 * mt * tt * tt * y2 + tt ** 3 * y3];
-        };
-        const [u, v] = bx(t);
-        const q = scr(u, v);
-        light(ctx, q.x, q.y, 12, C.coral, pipeA2 * 0.9);
-      }
-      const lp = scr(-0.15, 0.6 + dyS);
-      mono(ctx, 'PIPELINES', lp.x, lp.y, { size: m * 0.018, color: C.coral, t: seg(p, T.pipe, T.pipe + 0.8 * s1), alpha: pipeA2 * (1 - seg(p, T.v20 - 0.3 * s1, T.v20)) });
-    }
-
-    // Toponymes
-    const lab = smooth(seg(p, T.detroit, T.detroit + 0.8 * s1)) * (1 - smooth(seg(p, T.km - 0.4 * s1, T.km)));
-    const pI = scr(-0.45, -0.5);
-    const pO = scr(0.35, 0.55);
-    mono(ctx, 'IRAN', pI.x, pI.y, { size: m * 0.02, color: C.slate, alpha: lab * 0.8, spacing: 12 });
-    mono(ctx, 'OMAN', pO.x, pO.y, { size: m * 0.02, color: C.slate, alpha: lab * 0.8, spacing: 12 });
-    const pD = scr(fx, V ? 0.62 : -0.62);
-    mono(ctx, "DÉTROIT D'ORMUZ", V ? cx : cx, V ? h * 0.86 : h * 0.12, { size: m * 0.022, color: C.amber, t: seg(p, T.detroit + 0.2 * s1, T.detroit + 1.6 * s1), alpha: lab });
-    void pD;
-
-    // ── 33 KM : la cote du goulot ──
-    const kmA = env(p, T.km - 0.1 * s1, T.b21 - 0.2 * s1, 0.3 * s1, 0.5 * s1);
-    if (kmA > 0.003) {
-      const u0 = 0.06;
-      const A = scr(u0, HZ_N(u0) + dyN + 0.005);
-      const B = scr(u0, HZ_S(u0) + dyS - 0.005);
-      dimension(ctx, A.x, A.y, B.x, B.y, { color: C.amber, t: seg(p, T.km, T.km + 0.8 * s1), alpha: kmA, tick: 16, width: 3 });
-      const len = Math.hypot(B.x - A.x, B.y - A.y);
-      const tx = V ? (A.x + B.x) / 2 : A.x - m * 0.06;
-      const ty = V ? Math.max(A.y, B.y) + m * 0.2 : (A.y + B.y) / 2 + m * 0.04;
-      kinetic(ctx, '33 KM', tx, ty, { size: m * 0.13, weight: 900, align: V ? 'center' : 'right', t: seg(p, T.km + 0.1 * s1, T.km + 1.1 * s1), alpha: kmA, glow: 30, glowColor: rgba(C.amber, 0.6) });
-      // Échelle comparative : Montréal → Saint-Jérôme ≈ 40 km
-      const cmpA = kmA * smooth(seg(p, T.mtl - 0.2 * s1, T.mtl + 0.6 * s1));
-      if (cmpA > 0.003) {
-        const L2 = len * (40 / 33);
-        const off = m * 0.16;
-        const mx = (A.x + B.x) / 2 + (V ? 0 : off);
-        const my = (A.y + B.y) / 2 + (V ? -off : 0);
-        const dxu = (B.x - A.x) / len;
-        const dyu = (B.y - A.y) / len;
-        dimension(ctx, mx - (dxu * L2) / 2, my - (dyu * L2) / 2, mx + (dxu * L2) / 2, my + (dyu * L2) / 2, { color: C.cyan, t: seg(p, T.mtl, T.mtl + 0.9 * s1), alpha: cmpA, tick: 16, width: 3 });
-        const lx = V ? cx : mx + m * 0.05;
-        const ly = V ? my - L2 / 2 - m * 0.12 : my;
-        mono(ctx, '≈ 40 KM', lx, ly - 18, { size: m * 0.026, align: V ? 'center' : 'left', color: C.cyan, weight: 600, t: seg(p, T.mtl + 0.3 * s1, T.mtl + 1 * s1), alpha: cmpA });
-        mono(ctx, 'MONTRÉAL → SAINT-JÉRÔME', lx, ly + 22, { size: m * 0.017, align: V ? 'center' : 'left', color: C.ice, t: seg(p, T.mtl + 0.5 * s1, T.mtl + 1.6 * s1), alpha: cmpA });
-      }
-    }
-
-    // ── Chiffres du flux ──
-    const bx = cx;
-    const by = V ? h * 0.16 : h * 0.2;
-    const halo = (fnDraw) => {
-      ctx.save();
-      ctx.shadowColor = 'rgba(3,5,9,0.95)';
-      ctx.shadowBlur = 40;
-      fnDraw();
-      ctx.restore();
-    };
-    const b21A = env(p, T.b21 - 0.1 * s1, T.gnl - 0.1 * s1, 0.3 * s1, 0.4 * s1);
-    if (b21A > 0.003) {
-      const k = eOutExpo(seg(p, T.b21, T.b21 + 1.6 * s1));
-      halo(() => kinetic(ctx, `${Math.round(21 * k)} M`, bx, by, { size: m * 0.14, weight: 900, t: 1, alpha: b21A, glow: 34, glowColor: rgba(C.gold, 0.55) }));
-      mono(ctx, 'BARILS / JOUR', bx, by + m * 0.055, { size: m * 0.022, color: C.gold, t: seg(p, T.b21 + 0.4 * s1, T.b21 + 1.4 * s1), alpha: b21A });
-    }
-    const gA = env(p, T.gnl, T.aucun, 0.3 * s1, 0.4 * s1);
-    if (gA > 0.003) {
-      halo(() => kinetic(ctx, '1/5', bx, by, { size: m * 0.14, weight: 900, t: seg(p, T.gnl, T.gnl + 0.9 * s1), alpha: gA, glow: 34, glowColor: rgba(C.ice, 0.6) }));
-      mono(ctx, 'DU GNL MONDIAL', bx, by + m * 0.055, { size: m * 0.022, color: C.ice, t: seg(p, T.gnl + 0.3 * s1, T.gnl + 1.3 * s1), alpha: gA });
-    }
-    const noA = env(p, T.aucun + 0.1 * s1, T.v20 - 0.1 * s1, 0.3 * s1, 0.3 * s1);
-    if (noA > 0.003) {
-      halo(() => kinetic(ctx, 'IRREMPLAÇABLE', bx, by, { size: m * 0.085, weight: 900, t: seg(p, T.aucun + 0.2 * s1, T.aucun + 1.2 * s1), alpha: noA, maxW: w * 0.86 }));
-    }
-    const v20A = smooth(seg(p, T.v20 - 0.1 * s1, T.v20 + 0.4 * s1));
-    if (v20A > 0.003) {
-      halo(() => kinetic(ctx, '−20 %', bx, by, { size: m * 0.15, weight: 900, t: seg(p, T.v20, T.v20 + 0.9 * s1), alpha: v20A, glow: 40, glowColor: rgba(C.coral, 0.7), color: C.white }));
-    }
-  });
-}
-
-/* ════════════════════════════════════════════════════════════════════════
- * PLANS PIVOTANTS 2.5D (grilles de points en vraie perspective)
- *   16:9 → charnière verticale (gauche | droite)
- *   9:16 → charnière horizontale (haut / bas)
- * ════════════════════════════════════════════════════════════════════════ */
-
-function hingeProjector(stage, V, focal = 1500) {
-  return (side, theta, a, b, lift = 0) => {
-    // side = -1 (plan ambre) | +1 (plan cyan) ; a ≥ 0 distance à la charnière ; b le long de la charnière
-    const z = a * Math.sin(theta) - lift;
-    const s = focal / (focal + z);
-    const A = side * a * Math.cos(theta) * s;
-    const B = b * s;
-    return V ? { x: stage.cx + B, y: stage.cy + A, s } : { x: stage.cx + A, y: stage.cy + B, s };
-  };
-}
-
-function dotPlane(ctx, proj, side, theta, W, H, o = {}) {
-  const { color = C.amber, alpha = 1, cols = 24, rows = 16, time = 0, ripple = 0, glow = 0 } = o;
-  if (alpha <= 0.003) return;
-  ctx.save();
-  ctx.globalAlpha *= alpha;
-  ctx.fillStyle = color;
-  for (let i = 0; i < cols; i++) {
-    for (let j = 0; j < rows; j++) {
-      const a = ((i + 0.5) / cols) * W;
-      const b = ((j + 0.5) / rows - 0.5) * H;
-      const lift = ripple * 26 * Math.sin(a * 0.012 - time * 2.2) * Math.cos(b * 0.01 + time * 0.7);
-      const q = proj(side, theta, a, b, lift);
-      const sz = 3.2 * q.s;
-      const fade = Math.pow(1 - i / cols, 0.8) * Math.pow(1 - Math.abs(b) / (H * 0.5), 0.7);
-      ctx.globalAlpha = alpha * fade * (0.55 + 0.45 * Math.max(0, lift / 26 + 0.5));
-      ctx.fillRect(q.x - sz / 2, q.y - sz / 2, sz, sz);
-    }
-  }
-  ctx.restore();
-  // Lumière volumétrique sans bord dur : le plan est un champ, pas une boîte
-  const mid = proj(side, theta, W * 0.35, 0);
-  light(ctx, mid.x, mid.y, W * 0.75 * mid.s, color, alpha * (0.1 + 0.12 * glow));
-  const hinge = proj(side, theta, 0, 0);
-  light(ctx, hinge.x, hinge.y, H * 0.4, color, alpha * 0.08);
-}
-
-/** Médaille 3D à deux faces bicolores qui tourne sur son axe. */
-function medal(ctx, x, y, r, angle, o = {}) {
-  const { alpha = 1, split = 0, V = false } = o;
-  if (alpha <= 0.003) return;
-  const sx = Math.cos(angle);
-  const thick = r * 0.09 * Math.sin(angle);
-  ctx.save();
-  ctx.translate(x, y);
-  ctx.globalAlpha *= alpha;
-  if (split <= 0) {
-    // Tranche
-    ctx.fillStyle = '#3a2a10';
-    ctx.beginPath();
-    ctx.ellipse(thick, 0, Math.max(0.5, Math.abs(sx) * r), r, 0, 0, TAU);
-    ctx.fill();
-    ctx.save();
-    ctx.scale(Math.max(0.02, Math.abs(sx)), 1);
-    const flip = sx < 0;
-    // Face : moitié ambre / moitié cyan (les deux côtés de la médaille)
-    for (const half of [-1, 1]) {
-      const col = (half < 0) !== flip ? C.amber : C.cyan;
-      const g = ctx.createLinearGradient(half * r, -r, 0, r);
-      g.addColorStop(0, mix(col, C.white, 0.35));
-      g.addColorStop(0.6, col);
-      g.addColorStop(1, mix(col, C.night, 0.45));
-      ctx.fillStyle = g;
-      ctx.beginPath();
-      ctx.arc(0, 0, r, half < 0 ? Math.PI / 2 : -Math.PI / 2, half < 0 ? (Math.PI * 3) / 2 : Math.PI / 2);
-      ctx.closePath();
-      ctx.fill();
-    }
-    ctx.strokeStyle = 'rgba(255,255,255,0.55)';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.arc(0, 0, r * 0.84, 0, TAU);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(0, -r);
-    ctx.lineTo(0, r);
-    ctx.stroke();
-    ctx.restore();
-  } else {
-    // Scission : les deux demi-disques s'écartent et deviennent des plans
-    const e = eInOutQuart(split);
-    for (const half of [-1, 1]) {
-      const col = half < 0 ? C.amber : C.cyan;
-      ctx.save();
-      const d = e * r * 1.6 * half;
-      if (V) ctx.translate(0, d);
-      else ctx.translate(d, 0);
-      ctx.globalAlpha *= 1 - e;
-      ctx.fillStyle = col;
-      ctx.beginPath();
-      if (V) ctx.arc(0, 0, r, half < 0 ? Math.PI : 0, half < 0 ? TAU : Math.PI);
-      else ctx.arc(0, 0, r, half < 0 ? Math.PI / 2 : -Math.PI / 2, half < 0 ? (Math.PI * 3) / 2 : Math.PI / 2);
-      ctx.closePath();
-      ctx.fill();
-      ctx.restore();
-    }
-  }
-  ctx.restore();
-  light(ctx, x, y, r * 2.4, C.white, alpha * 0.08 * (1 - split));
-}
-
-/* ════════════════════════════════════════════════════════════════════════
- * SCÈNE 04 — d1-deux-cotes-opep-occident
- * Acte I   : qui paie la facture ? (la courbe grimpe)
- * Acte II  : la médaille tourne — puis se scinde en deux plans
- * Acte III : OPEP+ (plan ambre face caméra) : 3 arguments
- * Acte IV  : importateurs (plan cyan) : rareté, marges au sommet → équilibre
- * ════════════════════════════════════════════════════════════════════════ */
-
-function sceneTwoSidesOil(a) {
-  const { ctx, stage, progress: p, globalTime: gt, isVertical: V, scene } = a;
-  const { w, h, cx, cy } = stage;
-  const m = Math.min(w, h);
-  const s1 = 1 / scene.duration;
-  const T = cues(scene, {
-    fid: 'Fidèles', deux: 'deux côtés', opep: 'Du côté', chine: 'chinoise', trans: 'transition', taxes: 'taxes',
-    inv: "l'inverse", rare: 'rareté', raff: 'raffineries', marges: 'marges', som: 'sommets'
-  });
-
-  frame(a, () => {
-    dust(ctx, stage, gt, { count: 80, alpha: 0.35 });
-
-    // ── Acte I : la facture qui grimpe ──
-    const a1 = 1 - smooth(seg(p, T.fid - 0.3 * s1, T.fid + 0.5 * s1));
-    if (a1 > 0.003) {
-      const pts = [];
-      const N = 90;
-      for (let i = 0; i <= N; i++) {
-        const u = i / N;
-        const x = lerp(w * 0.08, w * 0.92, u);
-        const y = lerp(h * 0.78, h * 0.3, Math.pow(u, 1.6)) + Math.sin(u * 37) * h * 0.012 * (1 - u);
-        pts.push({ x, y, vis: true });
-      }
-      trail(ctx, pts, eInOut(seg(p, 0.01, T.fid - 0.4 * s1)), { color: C.amber, width: 3.5, alpha: a1 });
-      kinetic(ctx, 'QUI EST RESPONSABLE ?', cx, V ? h * 0.2 : h * 0.2, { size: m * 0.085, weight: 900, t: seg(p, 0.02, 0.02 + 1.2 * s1), alpha: a1, maxW: w * 0.86 });
-    }
-
-    // ── Acte II : la médaille ──
-    const medA = smooth(seg(p, T.fid - 0.2 * s1, T.fid + 0.6 * s1));
-    const split = seg(p, T.opep - 0.9 * s1, T.opep + 0.2 * s1);
-    if (medA > 0.003 && split < 1) {
-      const spin = TAU * 2.5 * eOutCubic(seg(p, T.fid - 0.2 * s1, T.opep - 1.0 * s1)) + Math.sin(gt * 1.3) * 0.05;
-      medal(ctx, cx, cy, m * 0.17, spin, { alpha: medA, split, V });
-      kinetic(ctx, 'LES DEUX CÔTÉS', cx, cy + m * 0.32, { size: m * 0.06, weight: 800, t: seg(p, T.deux, T.deux + 1 * s1), alpha: medA * (1 - split), spacing: m * 0.006 });
-    }
-
-    // ── Actes III–IV : les deux plans pivotants ──
-    const planes = smooth(seg(p, T.opep - 0.5 * s1, T.opep + 0.6 * s1));
-    if (planes > 0.003) {
-      const proj = hingeProjector(stage, V, 1500);
-      const W = V ? h * 0.42 : w * 0.44;
-      const H = V ? w * 0.86 : h * 0.72;
-      const open = eOutCubic(planes);
-      const balance = smooth(seg(p, 1 - 1.6 * s1, 1 - 0.5 * s1));
-      const toImp = eInOutQuart(seg(p, T.inv - 0.4 * s1, T.inv + 0.9 * s1));
-      const thL = lerp(Math.PI / 2, lerp(lerp(0.05, 1.25, toImp), 0.5, balance), open);
-      const thR = lerp(Math.PI / 2, lerp(lerp(1.25, 0.05, toImp), 0.5, balance), open);
-      dotPlane(ctx, proj, -1, thL, W, H, { color: C.amber, alpha: planes, time: gt, ripple: 1 - toImp, glow: 1 - toImp });
-      dotPlane(ctx, proj, 1, thR, W, H, { color: C.cyan, alpha: planes, time: gt, ripple: toImp * (1 - balance), glow: toImp });
-
-      // Axe central : la règle d'impartialité
-      ctx.save();
-      ctx.globalCompositeOperation = 'lighter';
-      const axisLen = (V ? w : h) * 0.42 * open;
-      const g = V ? ctx.createLinearGradient(cx - axisLen, cy, cx + axisLen, cy) : ctx.createLinearGradient(cx, cy - axisLen, cx, cy + axisLen);
-      g.addColorStop(0, 'rgba(255,255,255,0)');
-      g.addColorStop(0.5, `rgba(255,255,255,${0.85 * planes})`);
-      g.addColorStop(1, 'rgba(255,255,255,0)');
-      ctx.fillStyle = g;
-      if (V) ctx.fillRect(cx - axisLen, cy - 1, axisLen * 2, 2);
-      else ctx.fillRect(cx - 1, cy - axisLen, 2, axisLen * 2);
-      ctx.restore();
-      light(ctx, cx, cy, m * 0.08, C.white, 0.25 * planes);
-
-      // Contenu éditorial
-      const posL = V ? { x: cx, y: cy - h * 0.22 } : { x: cx - w * 0.24, y: cy };
-      const posR = V ? { x: cx, y: cy + h * 0.22 } : { x: cx + w * 0.24, y: cy };
-      const maxW = V ? w * 0.84 : w * 0.38;
-      const ampA = planes * (1 - toImp) * (1 - balance);
-      const impA = planes * toImp * (1 - balance);
-      mono(ctx, 'PRODUCTEURS', posL.x, posL.y - m * 0.2, { size: m * 0.02, color: C.amber, t: seg(p, T.opep, T.opep + 1 * s1), alpha: ampA });
-      kinetic(ctx, 'OPEP+', posL.x, posL.y - m * 0.1, { size: m * 0.075, weight: 900, t: seg(p, T.opep + 0.1 * s1, T.opep + 1 * s1), alpha: ampA, color: C.amber });
-      const kwL = [
-        [T.chine, T.trans, 'DEMANDE CHINOISE ↓'],
-        [T.trans, T.taxes, 'TRANSITION À FINANCER'],
-        [T.taxes, T.inv, 'TAXES OCCIDENTALES']
-      ];
-      kwL.forEach(([s, e, txt]) => {
-        const al = env(p, s - 0.1 * s1, e - 0.1 * s1, 0.3 * s1, 0.3 * s1) * ampA;
-        if (al > 0.003) kinetic(ctx, txt, posL.x, posL.y + m * 0.06, { size: m * 0.06, weight: 800, t: seg(p, s, s + 0.8 * s1), alpha: al, maxW });
-      });
-      mono(ctx, 'IMPORTATEURS', posR.x, posR.y - m * 0.2, { size: m * 0.02, color: C.cyan, t: seg(p, T.inv, T.inv + 1 * s1), alpha: impA });
-      kinetic(ctx, 'CONSOMMATEURS', posR.x, posR.y - m * 0.1, { size: m * 0.062, weight: 900, t: seg(p, T.inv + 0.1 * s1, T.inv + 1 * s1), alpha: impA, color: C.cyan, maxW });
-      const kwR = [
-        [T.rare, T.raff, 'RARETÉ ARTIFICIELLE'],
-        [T.raff, 1 - 1.6 * s1, 'MARGES DES RAFFINEURS']
-      ];
-      kwR.forEach(([s, e, txt]) => {
-        const al = env(p, s - 0.1 * s1, e, 0.3 * s1, 0.3 * s1) * impA;
-        if (al > 0.003) kinetic(ctx, txt, posR.x, posR.y + m * 0.06, { size: m * 0.058, weight: 800, t: seg(p, s, s + 0.8 * s1), alpha: al, maxW });
-      });
-      // Courbe des marges qui frôle le sommet historique, dessinée sur le plan cyan
-      const mg = seg(p, T.marges - 0.2 * s1, T.som + 0.6 * s1);
-      if (mg > 0 && impA > 0.01) {
-        const pts = [];
-        for (let i = 0; i <= 60; i++) {
-          const u = i / 60;
-          const aa = lerp(W * 0.08, W * 0.92, u);
-          const bb = lerp(H * 0.38, -H * 0.3, Math.pow(u, 0.7)) + Math.sin(u * 23) * H * 0.02;
-          pts.push({ ...proj(1, thR, aa, V ? -bb : bb), vis: true });
-        }
-        const pk = [proj(1, thR, W * 0.05, V ? H * 0.33 : -H * 0.33), proj(1, thR, W * 0.95, V ? H * 0.33 : -H * 0.33)];
-        ctx.save();
-        ctx.globalAlpha *= impA * smooth(seg(p, T.som - 0.2 * s1, T.som + 0.5 * s1));
-        ctx.setLineDash([6, 8]);
-        ctx.strokeStyle = C.white;
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.moveTo(pk[0].x, pk[0].y);
-        ctx.lineTo(pk[1].x, pk[1].y);
-        ctx.stroke();
-        ctx.restore();
-        trail(ctx, pts, eInOut(mg), { color: C.cyan, width: 3, alpha: impA * 0.9 });
-        mono(ctx, 'SOMMETS HISTORIQUES', pk[1].x, pk[1].y - 22, { size: m * 0.016, align: V ? 'right' : 'right', color: C.white, t: seg(p, T.som, T.som + 0.9 * s1), alpha: impA });
-      }
-      // Équilibre final : deux plans, un seul axe
-      if (balance > 0.01) {
-        mono(ctx, 'OPEP+', posL.x, posL.y, { size: m * 0.03, weight: 600, color: C.amber, alpha: balance });
-        mono(ctx, 'CONSOMMATEURS', posR.x, posR.y, { size: m * 0.03, weight: 600, color: C.cyan, alpha: balance });
-      }
-    }
-  });
-}
-
-/** Points de terre en projection plate (cartes régionales), avec culling écran. */
 function drawFlatDots(ctx, P, stage, o = {}) {
   const { color = C.cyan, alpha = 1, step = 1.1, hl = null, hlColor = C.amber } = o;
   if (alpha <= 0.003) return;
@@ -2363,280 +1452,6 @@ function drawFlatDots(ctx, P, stage, o = {}) {
   ctx.restore();
 }
 
-function flatTrack(p, kf) {
-  if (p <= kf[0][0]) return kf[0][1];
-  for (let i = 1; i < kf.length; i++) {
-    const [p1, s1, e = eInOutQuart] = kf[i];
-    const [p0, s0] = kf[i - 1];
-    if (p <= p1) {
-      const t = p1 <= p0 ? 1 : e(seg(p, p0, p1));
-      // zoom exponentiel fluide (interpolation logarithmique de l'échelle)
-      return [lerp(s0[0], s1[0], t), lerp(s0[1], s1[1], t), Math.exp(lerp(Math.log(s0[2]), Math.log(s1[2]), t))];
-    }
-  }
-  return kf[kf.length - 1][1];
-}
-
-/** Flèche chevron orientée (les « flèches directionnelles » de la charte). */
-function arrowHead(ctx, x, y, ang, s, color, alpha = 1) {
-  ctx.save();
-  ctx.translate(x, y);
-  ctx.rotate(ang);
-  ctx.globalAlpha *= alpha;
-  ctx.fillStyle = color;
-  ctx.shadowColor = color;
-  ctx.shadowBlur = s;
-  ctx.beginPath();
-  ctx.moveTo(s, 0);
-  ctx.lineTo(-s * 0.7, -s * 0.75);
-  ctx.lineTo(-s * 0.25, 0);
-  ctx.lineTo(-s * 0.7, s * 0.75);
-  ctx.closePath();
-  ctx.fill();
-  ctx.restore();
-}
-
-/** Camion (porteur + remorque) en lignes de lumière, roulant vers la droite. */
-function drawTruck(ctx, x, y, L, o = {}) {
-  const { color = C.amber, alpha = 1, time = 0, cold = false } = o;
-  if (alpha <= 0.003) return;
-  ctx.save();
-  ctx.translate(x, y);
-  ctx.globalAlpha *= alpha;
-  ctx.strokeStyle = color;
-  ctx.fillStyle = 'rgba(3,5,9,0.9)';
-  ctx.lineWidth = Math.max(1.5, L * 0.008);
-  ctx.lineJoin = 'round';
-  ctx.shadowColor = color;
-  ctx.shadowBlur = L * 0.05;
-  // Remorque
-  ctx.beginPath();
-  ctx.rect(-L * 0.5, -L * 0.3, L * 0.68, L * 0.26);
-  ctx.fill();
-  ctx.stroke();
-  // Cabine
-  ctx.beginPath();
-  ctx.moveTo(L * 0.21, -L * 0.04);
-  ctx.lineTo(L * 0.21, -L * 0.24);
-  ctx.lineTo(L * 0.38, -L * 0.24);
-  ctx.lineTo(L * 0.48, -L * 0.13);
-  ctx.lineTo(L * 0.48, -L * 0.04);
-  ctx.closePath();
-  ctx.fill();
-  ctx.stroke();
-  if (cold) {
-    ctx.beginPath();
-    ctx.rect(-L * 0.47, -L * 0.36, L * 0.12, L * 0.06);
-    ctx.stroke();
-  }
-  // Roues qui tournent
-  for (const wx of [-L * 0.38, -L * 0.24, L * 0.3, L * 0.42]) {
-    ctx.beginPath();
-    ctx.arc(wx, 0, L * 0.045, 0, TAU);
-    ctx.fill();
-    ctx.stroke();
-    const an = time * 9;
-    ctx.beginPath();
-    ctx.moveTo(wx + Math.cos(an) * L * 0.03, Math.sin(an) * L * 0.03);
-    ctx.lineTo(wx - Math.cos(an) * L * 0.03, -Math.sin(an) * L * 0.03);
-    ctx.stroke();
-  }
-  ctx.restore();
-  light(ctx, x + L * 0.5, y - L * 0.06, L * 0.12, C.gold, alpha * 0.7);
-}
-
-/* ════════════════════════════════════════════════════════════════════════
- * SCÈNE 05 — d1-impact-quebec-pompe
- * Acte I   : notre pétrole vient de l'Ouest et des États-Unis… alors pourquoi ?
- * Acte II  : un seul prix mondial — New York ⇄ Londres
- * Acte III : l'Asie et l'Europe surenchérissent sur le brut nord-américain
- * Acte IV  : le fil lumineux Ormuz → Québec, et la pompe : 1,64 $ → 1,75 $
- * ════════════════════════════════════════════════════════════════════════ */
-
-function scenePump(a) {
-  const { ctx, stage, progress: p, globalTime: gt, isVertical: V, scene } = a;
-  const { w, h, cx, cy } = stage;
-  const m = Math.min(w, h);
-  const s1 = 1 / scene.duration;
-  const T = cues(scene, {
-    pq: 'pourquoi', mtl: 'Montréal', ouest: 'Ouest', us: 'États-Unis', rep: 'La réponse', bourse: 'bourse',
-    ny: 'New York', ldn: 'Londres', des: 'Dès que', asie: 'Asie', sur: 'surenchérissent', res: 'Résultat', c812: 'huit à douze', camion: 'camion'
-  });
-
-  let cam = flatTrack(p, [
-    [0, V ? [-82, 46, 0.019 * m] : [-82, 46, 0.029 * m]],
-    [T.rep - 0.2 * s1, V ? [-81, 46, 0.021 * m] : [-81, 46, 0.032 * m], smooth],
-    [T.rep + 1.6 * s1, V ? [-38, 44, 0.009 * m] : [-37, 43, 0.017 * m]],
-    [T.des + 0.2 * s1, V ? [-38, 44, 0.0095 * m] : [-37, 43, 0.018 * m], smooth],
-    [T.asie + 1.2 * s1, V ? [15, 35, 0.0048 * m] : [12, 34, 0.0086 * m]],
-    [T.res - 0.2 * s1, V ? [15, 35, 0.005 * m] : [12, 34, 0.009 * m], smooth]
-  ]);
-  // Acte IV : la caméra suit la tête du fil lumineux sur le grand cercle Ormuz → Québec
-  const threadGeo = cached("threadHzQc", () => arcPts(PLACES.hormuz, PLACES.quebec, 90, 0));
-  const th = eInOut(seg(p, T.res, T.c812 - 0.4 * s1));
-  if (p > T.res - 0.2 * s1) {
-    const head = threadGeo[Math.round(th * 90)];
-    const follow = smooth(seg(p, T.res - 0.2 * s1, T.res + 0.9 * s1));
-    const sc = Math.exp(lerp(Math.log((V ? 0.011 : 0.016) * m), Math.log((V ? 0.06 : 0.07) * m), eInOut(seg(p, T.res + 0.6 * s1, T.c812))));
-    cam = [lerp(cam[0], head[0], follow), lerp(cam[1], head[1], follow), Math.exp(lerp(Math.log(cam[2]), Math.log(sc), follow))];
-  }
-  const P = makeFlat(cam[0], cam[1], cam[2], cx, cy);
-  const pumpA = smooth(seg(p, T.c812 - 0.6 * s1, T.c812 + 0.3 * s1));
-
-  frame(a, () => {
-    // Carte en pointillés
-    drawFlatDots(ctx, P, stage, { color: C.cyan, alpha: 1 - pumpA * 0.75 });
-    const qcA = 1 - smooth(seg(p, T.rep, T.rep + 1 * s1)) + smooth(seg(p, T.c812 - 1.6 * s1, T.c812 - 0.5 * s1)) * (1 - pumpA * 0.6);
-    drawQuebec(ctx, P, { color: C.cyan, alpha: clamp(qcA), draw: seg(p, 0.01, 0.01 + 2.2 * s1), fill: 0.12, line: 2.2 });
-
-    // ── Acte I : approvisionnement réel (Ouest canadien + États-Unis) ──
-    const a1 = 1 - smooth(seg(p, T.rep - 0.2 * s1, T.rep + 0.6 * s1));
-    if (a1 > 0.003) {
-      const mtl = P.project(...PLACES.montreal);
-      const lev = P.project(...PLACES.levis);
-      const west = [PLACES.alberta, [-97, 50], [-87, 47.5], [-82.4, 42.97], [-79, 43.7], PLACES.montreal].map((q) => P.project(q[0], q[1]));
-      const south = [PLACES.texas, [-88, 32], [-80, 36], [-74, 40.7], [-72, 44], PLACES.levis].map((q) => P.project(q[0], q[1]));
-      const curve = (pts) => {
-        const out = [];
-        for (let i = 0; i < pts.length - 1; i++) for (let k = 0; k < 10; k++) {
-          const t = k / 10;
-          out.push({ x: lerp(pts[i].x, pts[i + 1].x, t), y: lerp(pts[i].y, pts[i + 1].y, t), vis: true });
-        }
-        out.push({ ...pts[pts.length - 1], vis: true });
-        return out;
-      };
-      trail(ctx, curve(west), eInOut(seg(p, T.ouest - 0.3 * s1, T.ouest + 1.6 * s1)), { color: C.amber, width: 3, alpha: a1 });
-      trail(ctx, curve(south), eInOut(seg(p, T.us - 0.2 * s1, T.us + 1.6 * s1)), { color: C.gold, width: 3, alpha: a1 });
-      const wl = P.project(-112, 54.8);
-      const sl = P.project(-95, 31.4);
-      mono(ctx, 'OUEST CANADIEN', wl.x, wl.y - 26, { size: m * 0.017, color: C.amber, t: seg(p, T.ouest, T.ouest + 1 * s1), alpha: a1 });
-      mono(ctx, 'ÉTATS-UNIS', sl.x, sl.y + 30, { size: m * 0.017, color: C.gold, t: seg(p, T.us, T.us + 1 * s1), alpha: a1 });
-      beacon(ctx, mtl.x, mtl.y, { color: C.amber, r: 7, time: gt, alpha: a1 * seg(p, T.mtl, T.mtl + 0.4 * s1) });
-      beacon(ctx, lev.x, lev.y, { color: C.amber, r: 7, time: gt + 0.3, alpha: a1 * seg(p, T.mtl + 0.3 * s1, T.mtl + 0.7 * s1) });
-      mono(ctx, 'MONTRÉAL', mtl.x - 20, mtl.y + 32, { size: m * 0.016, align: 'right', color: C.white, t: seg(p, T.mtl, T.mtl + 0.8 * s1), alpha: a1 });
-      mono(ctx, 'LÉVIS', lev.x + 20, lev.y - 26, { size: m * 0.016, align: 'left', color: C.white, t: seg(p, T.mtl + 0.3 * s1, T.mtl + 1 * s1), alpha: a1 });
-      kinetic(ctx, 'POURQUOI PLUS CHER ICI ?', cx, V ? h * 0.14 : h * 0.17, { size: m * 0.07, weight: 900, t: seg(p, T.pq, T.pq + 1.2 * s1), alpha: a1, maxW: w * 0.86 });
-    }
-
-    // ── Acte II : une seule bourse mondiale ──
-    const a2 = env(p, T.rep, T.res + 0.3 * s1, 0.6 * s1, 0.6 * s1);
-    if (a2 > 0.003) {
-      const ny = P.project(...PLACES.newYork);
-      const ld = P.project(...PLACES.london);
-      const mx = (ny.x + ld.x) / 2;
-      const my = Math.min(ny.y, ld.y) - Math.abs(ld.x - ny.x) * 0.22;
-      const arc = [];
-      for (let i = 0; i <= 50; i++) {
-        const t = i / 50;
-        arc.push({ x: (1 - t) ** 2 * ny.x + 2 * (1 - t) * t * mx + t * t * ld.x, y: (1 - t) ** 2 * ny.y + 2 * (1 - t) * t * my + t * t * ld.y, vis: true });
-      }
-      const link = seg(p, T.ny, T.ldn + 0.8 * s1);
-      trail(ctx, arc, eInOut(link), { color: C.white, width: 2.5, alpha: a2 });
-      if (link >= 1) {
-        for (let k = 0; k < 5; k++) {
-          const u = (gt * 0.3 + k / 5) % 1;
-          const q = arc[Math.floor(u * 50)];
-          light(ctx, q.x, q.y, 14, C.amber, a2 * 0.9);
-        }
-      }
-      beacon(ctx, ny.x, ny.y, { color: C.amber, r: 8, time: gt, alpha: a2 * seg(p, T.ny - 0.2 * s1, T.ny + 0.3 * s1) });
-      beacon(ctx, ld.x, ld.y, { color: C.amber, r: 8, time: gt + 0.5, alpha: a2 * seg(p, T.ldn - 0.2 * s1, T.ldn + 0.3 * s1) });
-      mono(ctx, 'NEW YORK', ny.x, ny.y + 34, { size: m * 0.018, color: C.white, t: seg(p, T.ny, T.ny + 0.8 * s1), alpha: a2 });
-      mono(ctx, 'LONDRES', ld.x, ld.y + 34, { size: m * 0.018, color: C.white, t: seg(p, T.ldn, T.ldn + 0.8 * s1), alpha: a2 });
-      const pr = env(p, T.bourse - 0.1 * s1, T.des + 0.2 * s1, 0.4 * s1, 0.4 * s1);
-      kinetic(ctx, 'UN SEUL PRIX MONDIAL', cx, V ? h * 0.82 : h * 0.84, { size: m * 0.07, weight: 900, t: seg(p, T.bourse, T.bourse + 1.1 * s1), alpha: a2 * pr, maxW: w * 0.86 });
-      const wave = Math.max(pr, env(p, T.rep + 0.3 * s1, T.bourse + 0.4 * s1, 0.5 * s1, 0.4 * s1) * 1.6);
-      freqWave(ctx, cx - w * 0.36, V ? h * 0.74 : h * 0.73, w * 0.72, m * 0.1, gt, { bars: 72, energy: clamp(wave) * a2, alpha: 0.75, seed: 9 });
-
-      // ── Acte III : surenchère depuis l'Asie et l'Europe ──
-      const a3 = smooth(seg(p, T.des, T.asie + 0.5 * s1)) * a2;
-      if (a3 > 0.003) {
-        const hz = P.project(...PLACES.hormuz);
-        shockwave(ctx, hz.x, hz.y, m * 0.09, gt, { color: C.coral, alpha: a3 });
-        const target = P.project(-90, 33);
-        const sources = [PLACES.shanghai, PLACES.rotterdam];
-        sources.forEach((src, si) => {
-          const sp = P.project(...src);
-          const ctrlY = Math.min(sp.y, target.y) - m * (0.18 + si * 0.05);
-          const pts = [];
-          for (let i = 0; i <= 60; i++) {
-            const t = i / 60;
-            const midx = (sp.x + target.x) / 2;
-            pts.push({ x: (1 - t) ** 2 * sp.x + 2 * (1 - t) * t * midx + t * t * target.x, y: (1 - t) ** 2 * sp.y + 2 * (1 - t) * t * ctrlY + t * t * target.y, vis: true });
-          }
-          const dr = eInOut(seg(p, T.asie + si * 0.4 * s1, T.sur + 0.4 * s1));
-          trail(ctx, pts, dr, { color: C.amber, width: 2, alpha: a3 * 0.6, head: false, dash: [8, 10], glow: 0 });
-          if (dr > 0.2) {
-            for (let k = 0; k < 4; k++) {
-              const u = ((gt * 0.18 + k / 4 + si * 0.13) % 1) * dr;
-              const i0 = Math.min(59, Math.floor(u * 60));
-              const q = pts[i0];
-              const q2 = pts[i0 + 1];
-              arrowHead(ctx, q.x, q.y, Math.atan2(q2.y - q.y, q2.x - q.x), m * 0.012, C.amber, a3);
-            }
-          }
-          mono(ctx, si ? 'EUROPE' : 'ASIE', sp.x, sp.y + 30, { size: m * 0.017, color: C.amber, t: seg(p, T.asie + si * 0.4 * s1, T.asie + (si * 0.4 + 0.8) * s1), alpha: a3 });
-        });
-        const tg = P.project(-95, 40);
-        beacon(ctx, tg.x, tg.y, { color: C.white, r: 7, time: gt, alpha: a3 });
-        kinetic(ctx, 'SURENCHÈRE', cx, V ? h * 0.18 : h * 0.18, { size: m * 0.09, weight: 900, t: seg(p, T.sur, T.sur + 0.9 * s1), alpha: a3 * env(p, T.sur - 0.1 * s1, T.res + 0.2 * s1, 0.3 * s1, 0.3 * s1), glow: 30, glowColor: rgba(C.amber, 0.6) });
-      }
-    }
-
-    // ── Acte IV : le fil lumineux Ormuz → Québec ──
-    const a4 = smooth(seg(p, T.res - 0.3 * s1, T.res + 0.4 * s1));
-    if (a4 > 0.003) {
-      const thread = threadGeo.map((q) => ({ ...P.project(q[0], q[1]), vis: true }));
-      trail(ctx, thread, th, { color: C.amber, width: 3.5, alpha: a4 * (1 - pumpA * 0.85) });
-      const hz = P.project(...PLACES.hormuz);
-      shockwave(ctx, hz.x, hz.y, m * 0.08, gt, { color: C.coral, alpha: a4 * (1 - seg(p, T.res + 1 * s1, T.res + 2 * s1)) });
-    }
-
-    // La pompe : 1,64 $ → 1,75 $ avec inertie
-    if (pumpA > 0.003) {
-      light(ctx, cx, cy, m * 0.7, C.amber, 0.22 * pumpA);
-      const tau = Math.max(0, (p - T.c812) * scene.duration);
-      const k = tau <= 0 ? 0 : 1 - Math.exp(-2.4 * tau) * Math.cos(3.2 * tau);
-      const val = 1.64 + 0.11 * k;
-      const size = fitSize(ctx, '1,75 $', 900, m * 0.26, w * 0.7);
-      ctx.save();
-      ctx.globalAlpha *= pumpA;
-      setFont(ctx, 900, size);
-      ctx.textBaseline = 'alphabetic';
-      ctx.textAlign = 'center';
-      ctx.shadowColor = rgba(C.amber, 0.75);
-      ctx.shadowBlur = 60;
-      ctx.fillStyle = C.white;
-      const txt = `${frNum(val, 2)} $`;
-      ctx.fillText(txt, cx - size * 0.35, cy + size * 0.32);
-      const tw = ctx.measureText(txt).width;
-      setFont(ctx, 800, size * 0.42);
-      ctx.fillStyle = C.amber;
-      ctx.textAlign = 'left';
-      ctx.fillText('/L', cx - size * 0.35 + tw / 2 + size * 0.06, cy + size * 0.32);
-      ctx.restore();
-      mono(ctx, '+ 8 À 12 ¢ LE LITRE', cx, cy + size * 0.32 + m * 0.08, { size: m * 0.024, weight: 600, color: C.amber, t: seg(p, T.c812 + 0.3 * s1, T.c812 + 1.5 * s1), alpha: pumpA });
-      // Le camion qui renchérit tout ce qu'on achète
-      const tr = smooth(seg(p, T.camion - 0.4 * s1, T.camion + 0.4 * s1));
-      if (tr > 0.003) {
-        const roadY = V ? h * 0.8 : h * 0.86;
-        const g = ctx.createLinearGradient(0, 0, w, 0);
-        g.addColorStop(0, rgba(C.amber, 0));
-        g.addColorStop(0.5, rgba(C.amber, 0.6));
-        g.addColorStop(1, rgba(C.amber, 0));
-        ctx.save();
-        ctx.globalAlpha *= tr;
-        ctx.fillStyle = g;
-        ctx.fillRect(0, roadY + 2, w, 1.5);
-        ctx.restore();
-        const tx = lerp(-w * 0.1, w * 1.1, seg(p, T.camion - 0.4 * s1, 1));
-        drawTruck(ctx, tx, roadY, m * 0.16, { time: gt, alpha: tr });
-      }
-    }
-  });
-}
-
-/** Sphère de points (Fibonacci) en rotation — masses gravitationnelles. */
 function dotSphere(ctx, x, y, r, time, o = {}) {
   const { color = C.cyan, alpha = 1, n = 520, tilt = 0.35, spin = 0.25, glow = 1 } = o;
   if (alpha <= 0.003 || r <= 1) return;
@@ -2679,687 +1494,6 @@ function dotSphere(ctx, x, y, r, time, o = {}) {
   ctx.restore();
 }
 
-/** Orbite inclinée avec satellites : son altitude = le taux directeur. */
-function orbit(ctx, x, y, rx, time, o = {}) {
-  const { color = C.amber, alpha = 1, tilt = -0.25, sats = 3, speed = 0.6 } = o;
-  if (alpha <= 0.003) return;
-  const ry = rx * 0.26;
-  ctx.save();
-  ctx.globalAlpha *= alpha;
-  ctx.strokeStyle = color;
-  ctx.lineWidth = 1.6;
-  ctx.shadowColor = color;
-  ctx.shadowBlur = 12;
-  ctx.beginPath();
-  ctx.ellipse(x, y, rx, ry, tilt, 0, TAU);
-  ctx.stroke();
-  ctx.restore();
-  for (let k = 0; k < sats; k++) {
-    const an = time * speed + (k * TAU) / sats;
-    const ex = Math.cos(an) * rx;
-    const ey = Math.sin(an) * ry;
-    const qx = x + ex * Math.cos(tilt) - ey * Math.sin(tilt);
-    const qy = y + ex * Math.sin(tilt) + ey * Math.cos(tilt);
-    light(ctx, qx, qy, 14, color, alpha * (Math.sin(an) > 0 ? 1 : 0.4));
-  }
-}
-
-/* ════════════════════════════════════════════════════════════════════════
- * SCÈNE 06 — d2-decision-fed-ecart-taux
- * Acte I   : 0,71 $ US tracé au scalpel, la glissade sur la règle
- * Acte II  : la masse américaine grossit — orbite haute (taux élevés)
- * Acte III : la masse canadienne s'essouffle — l'orbite descend
- * Acte IV  : le flux de capitaux quitte le huard pour le billet vert
- * ════════════════════════════════════════════════════════════════════════ */
-
-function sceneFed(a) {
-  const { ctx, stage, progress: p, globalTime: gt, isVertical: V, scene } = a;
-  const { w, h, cx, cy } = stage;
-  const m = Math.min(w, h);
-  const s1 = 1 / scene.duration;
-  const T = cues(scene, {
-    gl: 'glissade', s71: 'soixante', que: 'Que s', us: 'Aux États', fed: 'Réserve', pend: 'Pendant',
-    bdc: 'Banque du', marches: 'Sur les marchés', rapporte: 'rapporte', vend: 'vendent'
-  });
-
-  frame(a, () => {
-    dust(ctx, stage, gt, { count: 100, alpha: 0.4 });
-
-    // ── Acte I : le chiffre chirurgical + la règle de précision ──
-    const a1 = 1 - smooth(seg(p, T.que - 0.2 * s1, T.que + 0.8 * s1));
-    const numY = lerp(cy + m * 0.06, V ? h * 0.12 : h * 0.13, eInOutQuart(seg(p, T.que - 0.2 * s1, T.que + 1 * s1)));
-    const numSize = lerp(m * 0.24, m * 0.075, eInOutQuart(seg(p, T.que - 0.2 * s1, T.que + 1 * s1)));
-    const numA = Math.max(a1, 1 - smooth(seg(p, T.marches - 0.3 * s1, T.marches + 0.3 * s1)));
-    strokeText(ctx, '0,71 $ US', cx, numY, {
-      size: numSize, weight: 800, color: C.white, t: seg(p, 0.01, 0.01 + 2.6 * s1), fill: seg(p, 0.01 + 2.0 * s1, 0.01 + 3.2 * s1),
-      glow: 18, alpha: numA, lw: 1.6
-    });
-    if (a1 > 0.003) {
-      mono(ctx, 'DOLLAR CANADIEN', cx, cy - m * 0.2, { size: m * 0.022, color: C.cyan, t: seg(p, 0.02, 0.02 + 1.2 * s1), alpha: a1 });
-      // Règle graduée 0,70 → 0,76
-      const rx = V ? w * 0.86 : cx + m * 0.62;
-      const top = cy - m * 0.3;
-      const bot = cy + m * 0.3;
-      const val2y = (v) => lerp(bot, top, (v - 0.7) / 0.06);
-      ctx.save();
-      ctx.globalAlpha *= a1 * smooth(seg(p, 0.03, 0.03 + 1 * s1));
-      ctx.strokeStyle = rgba(C.ice, 0.5);
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      for (let k = 0; k <= 60; k++) {
-        const y = lerp(bot, top, k / 60);
-        const len = k % 10 === 0 ? 22 : k % 5 === 0 ? 14 : 7;
-        ctx.moveTo(rx, y);
-        ctx.lineTo(rx - len, y);
-      }
-      ctx.moveTo(rx, top);
-      ctx.lineTo(rx, bot);
-      ctx.stroke();
-      ctx.restore();
-      for (let k = 0; k <= 6; k++) mono(ctx, frNum(0.7 + k * 0.01, 2), rx + 16, val2y(0.7 + k * 0.01), { size: m * 0.014, align: 'left', color: C.ice, alpha: a1 * 0.6, spacing: 1 });
-      const v = lerp(0.752, 0.71, eInOutQuart(seg(p, T.gl - 0.1 * s1, T.s71 + 0.6 * s1)));
-      const my = val2y(v);
-      light(ctx, rx - 10, my, 26, C.cyan, a1);
-      ctx.save();
-      ctx.globalAlpha *= a1;
-      ctx.fillStyle = C.cyan;
-      ctx.beginPath();
-      ctx.moveTo(rx - 34, my);
-      ctx.lineTo(rx - 50, my - 9);
-      ctx.lineTo(rx - 50, my + 9);
-      ctx.closePath();
-      ctx.fill();
-      ctx.restore();
-    }
-
-    // ── Actes II–IV : deux masses gravitationnelles ──
-    const a2 = smooth(seg(p, T.que, T.us + 0.4 * s1));
-    if (a2 > 0.003) {
-      const caPos = V ? { x: cx, y: cy - h * 0.15 } : { x: cx - w * 0.24, y: cy + m * 0.04 };
-      const usPos = V ? { x: cx, y: cy + h * 0.2 } : { x: cx + w * 0.22, y: cy + m * 0.04 };
-      const usGrow = 1 + 0.38 * eOutBack(seg(p, T.us + 0.2 * s1, T.us + 1.6 * s1), 1.2);
-      const caShrink = 1 - 0.18 * eInOut(seg(p, T.pend + 0.2 * s1, T.pend + 1.6 * s1));
-      const rUS = m * 0.15 * usGrow * eOutCubic(a2);
-      const rCA = m * 0.15 * caShrink * eOutCubic(a2);
-      dotSphere(ctx, caPos.x, caPos.y, rCA, gt, { color: C.cyan, alpha: a2, spin: 0.3 });
-      dotSphere(ctx, usPos.x, usPos.y, rUS, gt + 4, { color: C.amber, alpha: a2, spin: 0.22 });
-      // Orbites des taux
-      const usOrbit = rUS * lerp(1.25, 1.75, eOutCubic(seg(p, T.fed, T.fed + 1.4 * s1)));
-      const caOrbit = rCA * lerp(1.7, 1.18, eInOutQuart(seg(p, T.bdc, T.bdc + 1.6 * s1)));
-      orbit(ctx, usPos.x, usPos.y, usOrbit, gt, { color: C.amber, alpha: a2 * seg(p, T.fed - 0.3 * s1, T.fed + 0.5 * s1) });
-      orbit(ctx, caPos.x, caPos.y, caOrbit, gt + 2, { color: C.cyan, alpha: a2 * seg(p, T.pend - 0.2 * s1, T.pend + 0.6 * s1) });
-      const labA = a2 * (1 - smooth(seg(p, T.rapporte - 0.4 * s1, T.rapporte)));
-      const lx = (pos, r) => (V ? pos.x + r + m * 0.08 : pos.x);
-      const ly = (pos, r) => (V ? pos.y : pos.y + r + m * 0.12);
-      mono(ctx, 'ÉTATS-UNIS', lx(usPos, rUS), ly(usPos, rUS), { size: m * 0.02, color: C.amber, align: V ? 'left' : 'center', t: seg(p, T.us, T.us + 1 * s1), alpha: labA });
-      mono(ctx, 'CANADA', lx(caPos, rCA), ly(caPos, rCA), { size: m * 0.02, color: C.cyan, align: V ? 'left' : 'center', t: seg(p, T.pend, T.pend + 0.8 * s1), alpha: labA });
-      const fedA = a2 * env(p, T.fed, T.marches, 0.4 * s1, 0.5 * s1);
-      kinetic(ctx, 'TAUX ↑', usPos.x, usPos.y - usOrbit * 0.3 - rUS - m * 0.06, { size: m * 0.06, weight: 900, t: seg(p, T.fed, T.fed + 0.8 * s1), alpha: fedA, color: C.amber });
-      const bdcA = a2 * env(p, T.bdc, T.marches, 0.4 * s1, 0.5 * s1);
-      kinetic(ctx, 'TAUX ↓', caPos.x, caPos.y - caOrbit * 0.3 - rCA - m * 0.06, { size: m * 0.06, weight: 900, t: seg(p, T.bdc, T.bdc + 0.8 * s1), alpha: bdcA, color: C.cyan });
-
-      // Flux de capitaux : du huard vers le billet vert
-      const flow = smooth(seg(p, T.marches - 0.2 * s1, T.marches + 1 * s1));
-      if (flow > 0.003) {
-        const parts = cached('fedFlow', () => {
-          const r = rng(31);
-          return Array.from({ length: 260 }, () => [r(), r() * 2 - 1, 0.5 + r()]);
-        });
-        const intensity = flow * (0.4 + 0.6 * smooth(seg(p, T.vend - 0.2 * s1, T.vend + 1 * s1)));
-        ctx.save();
-        ctx.globalCompositeOperation = 'lighter';
-        for (let i = 0; i < parts.length; i++) {
-          if (i / parts.length > intensity) continue;
-          const [u0, lane, sp] = parts[i];
-          const u = (u0 + gt * 0.16 * sp) % 1;
-          const e = u * u * (3 - 2 * u) * 0.25 + u * u * 0.75; // accélération gravitationnelle
-          const ax = caPos.x;
-          const ay = caPos.y;
-          const bx = usPos.x;
-          const by = usPos.y;
-          const nx = -(by - ay);
-          const ny = bx - ax;
-          const nl = Math.hypot(nx, ny);
-          const bend = Math.sin(Math.PI * e) * lane * m * 0.16;
-          const x = lerp(ax, bx, e) + (nx / nl) * bend;
-          const y = lerp(ay, by, e) + (ny / nl) * bend;
-          const col = mix(C.cyan, C.amber, e);
-          ctx.globalAlpha = 0.85 * (1 - Math.pow(u, 8));
-          ctx.fillStyle = col;
-          ctx.fillRect(x - 1.6, y - 1.6, 3.2, 3.2);
-          if (i % 7 === 0) light(ctx, x, y, 12, col, 0.4);
-        }
-        ctx.restore();
-        const msgA = env(p, T.rapporte - 0.2 * s1, 1, 0.4 * s1, 0.1 * s1);
-        kinetic(ctx, "L'ARGENT SUIT LE RENDEMENT", cx, V ? h * 0.88 : h * 0.86, { size: m * 0.06, weight: 900, t: seg(p, T.rapporte - 0.1 * s1, T.rapporte + 1.1 * s1), alpha: msgA, maxW: w * 0.86 });
-        mono(ctx, '$ CA  →  $ US', cx, V ? h * 0.025 + h * 0.1 : h * 0.13, { size: m * 0.03, weight: 600, color: C.white, t: seg(p, T.vend, T.vend + 1 * s1), alpha: smooth(seg(p, T.vend - 0.1 * s1, T.vend + 0.4 * s1)) });
-      }
-    }
-  });
-}
-
-/* ════════════════════════════════════════════════════════════════════════
- * SCÈNE 07 — d2-deux-cotes-banques-centrales
- * Acte I   : l'horizon se tend comme une corde — deux écoles
- * Acte II  : camp 1 : le toit québécois respire (hypothèques, exportateurs)
- * Acte III : camp 2 : la flèche de l'inflation importée s'élève
- * ════════════════════════════════════════════════════════════════════════ */
-
-/** Maison québécoise : toit à deux versants avec larmier retroussé (coyau) et lucarnes. */
-function quebecHouse(ctx, x, y, s, o = {}) {
-  const { color = C.cyan, alpha = 1, breathe = 0, light: lit = 1 } = o;
-  if (alpha <= 0.003) return;
-  ctx.save();
-  ctx.translate(x, y);
-  const k = 1 + breathe;
-  ctx.scale(k, k);
-  ctx.globalAlpha *= alpha;
-  ctx.strokeStyle = color;
-  ctx.lineWidth = Math.max(1.6, s * 0.018);
-  ctx.lineJoin = 'round';
-  ctx.lineCap = 'round';
-  ctx.shadowColor = color;
-  ctx.shadowBlur = s * 0.12;
-  ctx.fillStyle = 'rgba(3,5,9,0.85)';
-  const W = s;
-  const wallH = s * 0.42;
-  const ridge = -s * 0.98;
-  // Murs
-  ctx.beginPath();
-  ctx.rect(-W * 0.42, -wallH, W * 0.84, wallH);
-  ctx.fill();
-  ctx.stroke();
-  // Toit à larmier retroussé
-  ctx.beginPath();
-  ctx.moveTo(-W * 0.6, -wallH + s * 0.02);
-  ctx.quadraticCurveTo(-W * 0.42, -wallH - s * 0.06, -W * 0.34, -wallH - s * 0.16);
-  ctx.lineTo(-W * 0.12, ridge);
-  ctx.lineTo(W * 0.12, ridge);
-  ctx.lineTo(W * 0.34, -wallH - s * 0.16);
-  ctx.quadraticCurveTo(W * 0.42, -wallH - s * 0.06, W * 0.6, -wallH + s * 0.02);
-  ctx.closePath();
-  ctx.fill();
-  ctx.stroke();
-  // Lucarnes
-  for (const lx of [-W * 0.18, W * 0.18]) {
-    ctx.beginPath();
-    ctx.moveTo(lx - s * 0.07, -wallH - s * 0.2);
-    ctx.lineTo(lx - s * 0.07, -wallH - s * 0.32);
-    ctx.lineTo(lx, -wallH - s * 0.4);
-    ctx.lineTo(lx + s * 0.07, -wallH - s * 0.32);
-    ctx.lineTo(lx + s * 0.07, -wallH - s * 0.2);
-    ctx.stroke();
-  }
-  // Cheminées
-  ctx.beginPath();
-  ctx.rect(-W * 0.11, ridge - s * 0.12, s * 0.06, s * 0.12);
-  ctx.rect(W * 0.05, ridge - s * 0.12, s * 0.06, s * 0.12);
-  ctx.stroke();
-  // Porte et fenêtres éclairées
-  ctx.shadowBlur = 0;
-  ctx.strokeRect(-s * 0.05, -s * 0.2, s * 0.1, s * 0.2);
-  ctx.fillStyle = rgba(C.gold, 0.85 * lit);
-  for (const fx of [-W * 0.3, -W * 0.18, W * 0.12, W * 0.24]) ctx.fillRect(fx, -wallH * 0.72, s * 0.07, s * 0.1);
-  ctx.restore();
-}
-
-function sceneTwoSchools(a) {
-  const { ctx, stage, progress: p, globalTime: gt, isVertical: V, scene } = a;
-  const { w, h, cx, cy } = stage;
-  const m = Math.min(w, h);
-  const s1 = 1 / scene.duration;
-  const T = cues(scene, { ecoles: 'deux écoles', p1: 'premier camp', baisse: 'baisse rapide', hyp: 'hypothèque', exp: 'exportatrices', p2: 'deuxième camp', infl: 'inflation', elec: 'électronique', nour: 'nourriture' });
-
-  frame(a, () => {
-    const tA = smooth(seg(p, 0.0, 0.0 + 1.0 * s1));
-    // Teintes des deux camps
-    const left = env(p, T.p1, T.p2 + 0.4 * s1, 0.8 * s1, 0.8 * s1);
-    const right = smooth(seg(p, T.p2 - 0.2 * s1, T.p2 + 1 * s1));
-    light(ctx, cx - w * 0.28, cy, m * 0.9, C.cyan, 0.07 + 0.12 * left);
-    light(ctx, cx + w * 0.28, cy, m * 0.9, C.amber, 0.07 + 0.12 * right);
-
-    // Bascule de l'horizon (le camp qui parle « pèse » plus lourd)
-    const settle = smooth(seg(p, 1 - 1.4 * s1, 1 - 0.4 * s1));
-    const tilt = (0.07 * left - 0.07 * right * (1 - settle)) * (1 - settle * 0.0);
-    const span = (V ? w : w) * 0.47 * eOutExpo(seg(p, 0.01, 0.01 + 1.4 * s1));
-    // Corde tendue : onde stationnaire amortie
-    const pluck = Math.max(0, (p - 0.01) * scene.duration);
-    const amp = m * 0.04 * Math.exp(-pluck * 1.4) + m * 0.01 * Math.exp(-Math.max(0, (p - T.p2) * scene.duration) * 1.6) * (p > T.p2 ? 1 : 0);
-    const horizonY = (x) => cy + m * 0.12 + (x - cx) * Math.tan(tilt);
-    ctx.save();
-    ctx.globalAlpha *= tA;
-    ctx.globalCompositeOperation = 'lighter';
-    ctx.lineCap = 'round';
-    for (const [lw, al] of [[8, 0.1], [2, 0.9]]) {
-      ctx.beginPath();
-      for (let i = 0; i <= 120; i++) {
-        const u = i / 120;
-        const x = cx - span + 2 * span * u;
-        const y = horizonY(x) + Math.sin(Math.PI * u) * Math.sin(pluck * 18) * amp;
-        if (i) ctx.lineTo(x, y);
-        else ctx.moveTo(x, y);
-      }
-      const g = ctx.createLinearGradient(cx - span, 0, cx + span, 0);
-      g.addColorStop(0, rgba(C.cyan, 0));
-      g.addColorStop(0.2, rgba(C.cyan, al));
-      g.addColorStop(0.5, rgba(C.white, al));
-      g.addColorStop(0.8, rgba(C.amber, al));
-      g.addColorStop(1, rgba(C.amber, 0));
-      ctx.strokeStyle = g;
-      ctx.lineWidth = lw;
-      ctx.stroke();
-    }
-    ctx.restore();
-    light(ctx, cx, horizonY(cx), m * 0.05, C.white, 0.5 * tA);
-
-    const intro = env(p, 0.01, T.p1 + 0.2 * s1, 0.6 * s1, 0.5 * s1);
-    kinetic(ctx, 'DEUX ÉCOLES', cx, V ? h * 0.3 : h * 0.3, { size: m * 0.1, weight: 900, t: seg(p, T.ecoles, T.ecoles + 1.2 * s1), alpha: intro });
-
-    // ── Camp 1 : la maison québécoise respire ──
-    const hx = cx - (V ? w * 0.24 : w * 0.24);
-    const houseA = smooth(seg(p, T.p1 - 0.2 * s1, T.p1 + 0.8 * s1));
-    if (houseA > 0.003) {
-      const relief = smooth(seg(p, T.hyp - 0.3 * s1, T.hyp + 1.4 * s1));
-      quebecHouse(ctx, hx, horizonY(hx) - 2, m * (V ? 0.26 : 0.3), { color: C.cyan, alpha: houseA, breathe: relief * 0.03 * Math.sin(gt * 2.2), light: 0.4 + 0.6 * relief });
-      if (relief > 0) light(ctx, hx, horizonY(hx) - m * 0.15, m * 0.3, C.cyan, relief * 0.25);
-      // Taux qui descendent : pile de chevrons cyan (miroir de l'inflation)
-      const down = eOutCubic(seg(p, T.baisse - 0.2 * s1, T.baisse + 1.6 * s1)) * (1 - right * 0.7);
-      const dn = Math.round(6 * down);
-      const dx = hx + m * (V ? 0.2 : 0.24);
-      for (let k = 0; k < dn; k++) {
-        const y = horizonY(dx) - m * 0.36 + k * m * 0.05;
-        const sz = m * 0.036;
-        ctx.save();
-        ctx.globalAlpha *= houseA * (1 - k / 7) * down;
-        ctx.strokeStyle = C.cyan;
-        ctx.lineWidth = 4;
-        ctx.lineCap = "round";
-        ctx.lineJoin = "round";
-        ctx.shadowColor = C.cyan;
-        ctx.shadowBlur = 12;
-        ctx.beginPath();
-        ctx.moveTo(dx - sz, y - sz * 0.4);
-        ctx.lineTo(dx, y + sz * 0.3 + Math.sin(gt * 3 + k) * 2);
-        ctx.lineTo(dx + sz, y - sz * 0.4);
-        ctx.stroke();
-        ctx.restore();
-      }
-      // Exportateurs : chevrons qui partent vers l'extérieur
-      const ex = smooth(seg(p, T.exp - 0.2 * s1, T.exp + 0.6 * s1)) * (1 - right);
-      if (ex > 0.003) {
-        for (let k = 0; k < 3; k++) {
-          const u = (gt * 0.4 + k / 3) % 1;
-          chevrons(ctx, hx - m * 0.22 - u * m * 0.25, horizonY(hx) - m * 0.08, m * 0.05, { alpha: ex * (1 - u), dir: -1, colors: [C.cyan, C.ice, C.cyan] });
-        }
-      }
-    }
-    const kwPosL = V ? { x: cx, y: h * 0.24 } : { x: hx, y: h * 0.2 };
-    const kwPosR = V ? { x: cx, y: h * 0.24 } : { x: cx + w * 0.24, y: h * 0.2 };
-    const mW = V ? w * 0.86 : w * 0.42;
-    [
-      [T.p1, T.hyp, 'BAISSER LES TAUX'],
-      [T.hyp, T.exp, 'HYPOTHÈQUES SOULAGÉES'],
-      [T.exp, T.p2, 'EXPORTATEURS GAGNANTS']
-    ].forEach(([s, e, txt]) => {
-      const al = env(p, s - 0.1 * s1, e - 0.1 * s1, 0.3 * s1, 0.3 * s1);
-      if (al > 0.003) kinetic(ctx, txt, kwPosL.x, kwPosL.y, { size: m * 0.058, weight: 900, t: seg(p, s, s + 0.8 * s1), alpha: al, color: C.white, maxW: mW });
-    });
-    mono(ctx, 'CAMP 1', kwPosL.x, kwPosL.y - m * 0.08, { size: m * 0.02, color: C.cyan, alpha: left, t: seg(p, T.p1, T.p1 + 0.6 * s1) });
-
-    // ── Camp 2 : la flèche d'inflation importée ──
-    const ax = cx + w * 0.24;
-    const arrA = smooth(seg(p, T.p2 - 0.1 * s1, T.p2 + 0.6 * s1));
-    if (arrA > 0.003) {
-      const rise = eOutCubic(seg(p, T.p2, T.infl + 1.2 * s1));
-      const n = Math.max(1, Math.round(9 * rise));
-      const base = horizonY(ax) - 10;
-      for (let k = 0; k < n; k++) {
-        const y = base - k * m * 0.055;
-        const col = mix(C.amber, C.coral, k / 9);
-        const s = m * 0.05;
-        ctx.save();
-        ctx.globalAlpha *= arrA * (0.35 + 0.65 * (k / 9));
-        ctx.strokeStyle = col;
-        ctx.lineWidth = 5;
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
-        ctx.shadowColor = col;
-        ctx.shadowBlur = 14;
-        ctx.beginPath();
-        ctx.moveTo(ax - s, y + s * 0.5);
-        ctx.lineTo(ax, y - s * 0.2 - Math.sin(gt * 3 + k) * 2);
-        ctx.lineTo(ax + s, y + s * 0.5);
-        ctx.stroke();
-        ctx.restore();
-      }
-      const topY = base - n * m * 0.055;
-      light(ctx, ax, topY, m * 0.08, C.coral, arrA * 0.7);
-      // Électronique → nourriture
-      const icoY = topY + m * 0.02;
-      const ax0 = ax;
-      { const ax = ax0 + m * (V ? 0.14 : 0.11);
-      const ph = env(p, T.elec - 0.1 * s1, T.nour, 0.3 * s1, 0.3 * s1);
-      const ap = smooth(seg(p, T.nour - 0.1 * s1, T.nour + 0.4 * s1));
-      if (ph > 0.003) {
-        ctx.save();
-        ctx.globalAlpha *= ph * arrA;
-        ctx.strokeStyle = C.white;
-        ctx.lineWidth = 2.5;
-        ctx.beginPath();
-        ctx.roundRect(ax - m * 0.022, icoY - m * 0.04, m * 0.044, m * 0.08, m * 0.008);
-        ctx.stroke();
-        ctx.restore();
-      }
-      if (ap > 0.003) {
-        ctx.save();
-        ctx.globalAlpha *= ap * arrA;
-        ctx.strokeStyle = C.white;
-        ctx.lineWidth = 2.5;
-        ctx.beginPath();
-        ctx.arc(ax - m * 0.014, icoY + m * 0.006, m * 0.026, 0, TAU);
-        ctx.arc(ax + m * 0.014, icoY + m * 0.006, m * 0.026, 0, TAU);
-        ctx.moveTo(ax, icoY - m * 0.02);
-        ctx.quadraticCurveTo(ax + m * 0.01, icoY - m * 0.05, ax + m * 0.03, icoY - m * 0.055);
-        ctx.stroke();
-        ctx.restore();
-      }
-      }
-    }
-    [
-      [T.p2, T.infl, "SONNETTE D'ALARME"],
-      [T.infl, T.elec, 'INFLATION IMPORTÉE'],
-      [T.elec, 1, 'TOUT CE QU’ON IMPORTE']
-    ].forEach(([s, e, txt]) => {
-      const al = env(p, s - 0.1 * s1, e - 0.1 * s1, 0.3 * s1, 0.3 * s1);
-      if (al > 0.003) kinetic(ctx, txt, kwPosR.x, kwPosR.y, { size: m * 0.058, weight: 900, t: seg(p, s, s + 0.8 * s1), alpha: al, color: C.white, maxW: mW });
-    });
-    mono(ctx, 'CAMP 2', kwPosR.x, kwPosR.y - m * 0.08, { size: m * 0.02, color: C.amber, alpha: right, t: seg(p, T.p2, T.p2 + 0.6 * s1) });
-  });
-}
-
-/* ════════════════════════════════════════════════════════════════════════
- * SCÈNE 08 — d2-mecanisme-importations-hiver
- * Acte I   : la roue de l'année — la saison des récoltes s'éteint, le givre
- * Acte II  : 70 % de nos fruits et légumes d'hiver viennent du Sud
- * Acte III : à la frontière, chaque cargaison se libelle en dollars US
- * ════════════════════════════════════════════════════════════════════════ */
-
-function sceneWinterImports(a) {
-  const { ctx, stage, progress: p, globalTime: gt, isVertical: V, scene } = a;
-  const { w, h, cx, cy } = stage;
-  const m = Math.min(w, h);
-  const s1 = 1 / scene.duration;
-  const T = cues(scene, { mi: 'mi-novembre', rec: 'récoltes', nov: 'De novembre', s70: 'soixante-dix', mtl: 'Montréal', cal: 'Californie', ari: 'Arizona', flo: 'Floride', mex: 'Mexique', or: 'Or, même', fact: 'facturé' });
-
-  frame(a, () => {
-    // Givre qui tombe
-    const frost = smooth(seg(p, T.rec - 0.2 * s1, T.rec + 1.4 * s1));
-    if (frost > 0.01) {
-      const flakes = cached('flakes', () => {
-        const r = rng(8);
-        return Array.from({ length: 140 }, () => [r(), r(), 0.3 + r() * 0.7]);
-      });
-      ctx.save();
-      ctx.fillStyle = C.ice;
-      for (const [fx, fy, z] of flakes) {
-        const x = ((fx + Math.sin(gt * 0.4 + fy * 9) * 0.01) % 1) * w;
-        const y = (((fy + gt * 0.035 * z) % 1) + 1) % 1 * h;
-        ctx.globalAlpha = frost * 0.5 * z;
-        ctx.fillRect(x, y, 1.5 + z * 2, 1.5 + z * 2);
-      }
-      ctx.restore();
-    }
-
-    // ── Acte I : la roue de l'année ──
-    const wheelOut = eInOutQuart(seg(p, T.nov + 0.6 * s1, T.s70 + 0.2 * s1));
-    const wR = lerp(m * 0.3, m * 0.12, wheelOut);
-    const wX = lerp(cx, V ? cx : w * 0.16, wheelOut);
-    const wY = lerp(cy, V ? h * 0.13 : h * 0.24, wheelOut);
-    const wA = 1 - smooth(seg(p, T.s70 - 0.2 * s1, T.s70 + 0.6 * s1));
-    if (wA > 0.003) {
-      const mAng = (mo) => -Math.PI / 2 + (mo / 12) * TAU;
-      ctx.save();
-      ctx.globalAlpha *= wA;
-      ctx.strokeStyle = rgba(C.ice, 0.4);
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      for (let d = 0; d < 365; d += 1) {
-        const an = -Math.PI / 2 + (d / 365) * TAU;
-        const len = d % 30 === 0 ? 14 : 5;
-        ctx.moveTo(wX + Math.cos(an) * wR, wY + Math.sin(an) * wR);
-        ctx.lineTo(wX + Math.cos(an) * (wR - len * (wR / (m * 0.3))), wY + Math.sin(an) * (wR - len * (wR / (m * 0.3))));
-      }
-      ctx.stroke();
-      ctx.restore();
-      const letters = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
-      letters.forEach((L, i) => {
-        const an = mAng(i + 0.5);
-        mono(ctx, L, wX + Math.cos(an) * wR * 1.16, wY + Math.sin(an) * wR * 1.16, { size: Math.max(10, wR * 0.07), color: C.slate, alpha: wA * 0.7, spacing: 0 });
-      });
-      // Saison de récolte (mai → octobre) qui s'éteint
-      const grow = smooth(seg(p, 0.01, 0.01 + 1.4 * s1)) * (1 - frost * 0.85);
-      ring(ctx, wX, wY, wR * 0.86, { color: C.emerald, width: wR * 0.05, a0: mAng(4), sweep: (6 / 12) * TAU * eOutCubic(seg(p, 0.01, 0.01 + 1.6 * s1)), alpha: wA * grow, glow: 18 });
-      // Hiver (novembre → avril) qui s'allume en cyan
-      const win = eInOut(seg(p, T.nov - 0.1 * s1, T.nov + 1.4 * s1));
-      ring(ctx, wX, wY, wR * 0.86, { color: C.cyan, width: wR * 0.05, a0: mAng(10), sweep: (6 / 12) * TAU * win, alpha: wA, glow: 22 });
-      // Repère mi-novembre
-      const an = mAng(10.5);
-      const mk = seg(p, T.mi - 0.1 * s1, T.mi + 0.5 * s1);
-      beacon(ctx, wX + Math.cos(an) * wR * 0.86, wY + Math.sin(an) * wR * 0.86, { color: C.white, r: Math.max(4, wR * 0.03), time: gt, alpha: wA * mk });
-      const centerA = wA * (1 - wheelOut);
-      mono(ctx, 'MI-NOVEMBRE', wX, wY - wR * 0.12, { size: m * 0.022, color: C.white, t: seg(p, T.mi, T.mi + 1 * s1), alpha: centerA * (1 - smooth(seg(p, T.rec - 0.2 * s1, T.rec))) });
-      kinetic(ctx, 'RÉCOLTES', wX, wY + wR * 0.02, { size: m * 0.055, weight: 900, t: seg(p, T.rec, T.rec + 0.8 * s1), alpha: centerA, color: C.white });
-      kinetic(ctx, 'TERMINÉES', wX, wY + wR * 0.2, { size: m * 0.055, weight: 900, t: seg(p, T.rec + 0.2 * s1, T.rec + 1 * s1), alpha: centerA, color: C.ice });
-    }
-
-    // ── Acte II : la carte du Sud vers le Saint-Laurent ──
-    const mapA = smooth(seg(p, T.nov + 0.4 * s1, T.s70 + 0.6 * s1));
-    if (mapA > 0.003) {
-      const P = V ? makeFlat(-96, 36, 0.02 * m, cx, cy + h * 0.1) : makeFlat(-96, 34, 0.027 * m, cx - w * 0.1, cy + m * 0.04);
-      drawFlatDots(ctx, P, stage, { color: C.cyan, alpha: mapA * 0.9 });
-      drawQuebec(ctx, P, { color: C.cyan, alpha: mapA * 0.8, fill: 0.08, line: 1.6, glow: 0.6 });
-      const mtl = P.project(...PLACES.montreal);
-      beacon(ctx, mtl.x, mtl.y, { color: C.cyan, r: 8, time: gt, alpha: mapA * seg(p, T.mtl - 0.2 * s1, T.mtl + 0.4 * s1) });
-      mono(ctx, 'MONTRÉAL · QUÉBEC', mtl.x + 24, mtl.y - 30, { size: m * 0.016, align: 'left', color: C.ice, t: seg(p, T.mtl, T.mtl + 1 * s1), alpha: mapA * (1 - smooth(seg(p, T.or, T.or + 0.5 * s1))) });
-      // Frontière canado-américaine (pointillés)
-      const border = [[-123, 49], [-95, 49], [-89, 48], [-84, 46.5], [-82.5, 45], [-79, 43.4], [-76.5, 44.2], [-74.7, 45], [-71.5, 45], [-70.3, 45.9], [-69.2, 47.4], [-67.8, 47.1], [-67.8, 45.6]].map((q) => ({ ...P.project(q[0], q[1]), vis: true }));
-      trail(ctx, border, 1, { color: C.white, width: 1.2, alpha: mapA * 0.35 * smooth(seg(p, T.or - 0.4 * s1, T.or + 0.4 * s1)), dash: [3, 7], head: false, glow: 0 });
-      const origins = [
-        [PLACES.california, T.cal, 'CALIFORNIE'],
-        [PLACES.arizona, T.ari, 'ARIZONA'],
-        [PLACES.florida, T.flo, 'FLORIDE'],
-        [PLACES.mexico, T.mex, 'MEXIQUE']
-      ];
-      origins.forEach(([o, cue, name], i) => {
-        const op = P.project(o[0], o[1]);
-        const ctrl = { x: (op.x + mtl.x) / 2 + (i === 2 ? m * 0.12 : -m * 0.04), y: Math.min(op.y, mtl.y) - m * (0.08 + i * 0.02) };
-        const pts = [];
-        for (let k = 0; k <= 50; k++) {
-          const t = k / 50;
-          pts.push({ x: (1 - t) ** 2 * op.x + 2 * (1 - t) * t * ctrl.x + t * t * mtl.x, y: (1 - t) ** 2 * op.y + 2 * (1 - t) * t * ctrl.y + t * t * mtl.y, vis: true });
-        }
-        const dr = eInOut(seg(p, cue - 0.1 * s1, cue + 1.2 * s1));
-        trail(ctx, pts, dr, { color: C.coral, width: 2.6, alpha: mapA });
-        beacon(ctx, op.x, op.y, { color: C.coral, r: 6, time: gt + i, alpha: mapA * seg(p, cue - 0.1 * s1, cue + 0.3 * s1) });
-        mono(ctx, name, op.x, op.y + 28, { size: m * 0.016, color: C.coral, t: seg(p, cue, cue + 0.7 * s1), alpha: mapA * (1 - smooth(seg(p, T.fact - 0.3 * s1, T.fact))) });
-        // Acte III : cargaisons qui franchissent la frontière et deviennent des $ US
-        const cargo = smooth(seg(p, T.or - 0.2 * s1, T.or + 0.6 * s1)) * (dr >= 1 ? 1 : 0);
-        if (cargo > 0.01) {
-          for (let k = 0; k < 4; k++) {
-            const u = (gt * 0.22 + k / 4 + i * 0.11) % 1;
-            const q = pts[Math.floor(u * 50)];
-            const usd = u > 0.72;
-            if (usd) {
-              ctx.save();
-              ctx.globalAlpha *= cargo * mapA;
-              setFont(ctx, 800, m * 0.024);
-              ctx.textAlign = 'center';
-              ctx.textBaseline = 'middle';
-              ctx.fillStyle = C.amber;
-              ctx.shadowColor = C.amber;
-              ctx.shadowBlur = 12;
-              ctx.fillText('$', q.x, q.y);
-              ctx.restore();
-            } else light(ctx, q.x, q.y, 12, k % 2 ? C.emerald : C.coral, cargo * mapA);
-          }
-        }
-      });
-    }
-
-    // Jauge 70 % : un cercle pur rempli de lumière corail
-    const gA = smooth(seg(p, T.s70 - 0.2 * s1, T.s70 + 0.6 * s1)) * (1 - smooth(seg(p, T.or - 0.3 * s1, T.or + 0.3 * s1)));
-    const gx = V ? cx : w * 0.8;
-    const gy = V ? h * 0.2 : cy - m * 0.04;
-    const gr = m * (V ? 0.12 : 0.16);
-    if (gA > 0.003) {
-      ring(ctx, gx, gy, gr, { color: C.slate, width: 2, alpha: gA * 0.25 });
-      ring(ctx, gx, gy, gr, { color: C.coral, width: gr * 0.1, sweep: TAU * 0.7 * eOutCubic(seg(p, T.s70, T.s70 + 1.6 * s1)), alpha: gA, glow: 26 });
-      const k = eOutExpo(seg(p, T.s70, T.s70 + 1.6 * s1));
-      kinetic(ctx, `${Math.round(70 * k)} %`, gx, gy + gr * 0.18, { size: gr * 0.55, weight: 900, t: 1, alpha: gA });
-      mono(ctx, 'IMPORTÉS', gx, gy + gr * 0.42, { size: m * 0.016, color: C.coral, t: seg(p, T.s70 + 0.4 * s1, T.s70 + 1.2 * s1), alpha: gA });
-    }
-    // Facturé en $ US
-    const fA = smooth(seg(p, T.or + 0.6 * s1, T.or + 1.4 * s1));
-    if (fA > 0.003) {
-      const fx = V ? cx : w * 0.8;
-      const fy = V ? h * 0.2 : cy - m * 0.02;
-      ring(ctx, fx, fy, m * 0.13, { color: C.amber, width: 3, alpha: fA, glow: 24 });
-      ring(ctx, fx, fy, m * 0.115, { color: C.amber, width: 1, alpha: fA * 0.5, dash: [2, 6] });
-      kinetic(ctx, '$ US', fx, fy + m * 0.035, { size: m * 0.085, weight: 900, t: seg(p, T.or + 0.6 * s1, T.or + 1.4 * s1), alpha: fA, color: C.amber });
-      kinetic(ctx, 'FACTURÉ EN DOLLARS US', fx, fy + m * (V ? 0.22 : 0.24), { size: m * (V ? 0.05 : 0.04), weight: 900, t: seg(p, T.fact - 0.2 * s1, T.fact + 0.8 * s1), alpha: fA * smooth(seg(p, T.fact - 0.3 * s1, T.fact + 0.2 * s1)), maxW: V ? w * 0.86 : w * 0.34 });
-    }
-  });
-}
-
-/* ════════════════════════════════════════════════════════════════════════
- * SCÈNE 09 — d2-impact-quebec-familles
- * Acte I   : une seule courbe traverse l'écran
- * Acte II  : le huard perd 5 ¢ — son ombre ambre s'élève en miroir : +7 %
- * Acte III : le camion frigorifique remonte le continent (diesel ↑)
- * Acte IV  : une famille de 4 — plusieurs centaines de dollars par année
- * ════════════════════════════════════════════════════════════════════════ */
-
-function familyFigure(ctx, x, y, s, color, alpha) {
-  ctx.save();
-  ctx.globalAlpha *= alpha;
-  ctx.strokeStyle = color;
-  ctx.lineWidth = Math.max(2, s * 0.06);
-  ctx.lineCap = 'round';
-  ctx.shadowColor = color;
-  ctx.shadowBlur = s * 0.3;
-  ctx.beginPath();
-  ctx.arc(x, y - s * 0.78, s * 0.2, 0, TAU);
-  ctx.moveTo(x - s * 0.36, y);
-  ctx.bezierCurveTo(x - s * 0.36, y - s * 0.5, x + s * 0.36, y - s * 0.5, x + s * 0.36, y);
-  ctx.stroke();
-  ctx.restore();
-}
-
-function sceneFamilies(a) {
-  const { ctx, stage, progress: p, globalTime: gt, isVertical: V, scene } = a;
-  const { w, h, cx, cy } = stage;
-  const m = Math.min(w, h);
-  const s1 = 1 / scene.duration;
-  const T = cues(scene, { quand: 'Quand', c5: 'cinq sous', taxe: 'taxe', s7: 'sept pour', diesel: 'diesel', camions: 'camions', fam: 'Pour une famille', eco: 'économistes', cent: 'centaines' });
-
-  const famShift = eInOutQuart(seg(p, T.fam - 0.5 * s1, T.fam + 0.9 * s1));
-  frame(a, () => {
-    const y0 = (V ? h * 0.42 : cy + m * 0.02) - famShift * m * (V ? 0.12 : 0.18);
-    const drop = eInOutQuart(seg(p, T.c5 - 0.2 * s1, T.c5 + 1.6 * s1));
-    const D = m * 0.16 * drop;
-    const sig = (x) => 1 / (1 + Math.exp(-(x / w - 0.5) * 9));
-    const yC = (x) => y0 + Math.sin(x * 0.006 + gt * 0.6) * m * 0.008 + D * sig(x);
-    const yA = (x) => 2 * y0 - yC(x);
-    const draw = eInOut(seg(p, 0.0, 0.0 + 2.6 * s1));
-    const mirror = eInOut(seg(p, T.taxe - 0.4 * s1, T.s7 + 0.6 * s1));
-    const N = 160;
-
-    // Ruban lumineux entre la courbe du huard et son ombre ambre
-    if (mirror > 0.003) {
-      ctx.save();
-      ctx.beginPath();
-      for (let i = 0; i <= N; i++) {
-        const x = (i / N) * w;
-        ctx.lineTo(x, lerp(y0, yA(x), mirror));
-      }
-      for (let i = N; i >= 0; i--) {
-        const x = (i / N) * w;
-        ctx.lineTo(x, yC(x));
-      }
-      ctx.closePath();
-      const g = ctx.createLinearGradient(0, y0 - D, 0, y0 + D);
-      g.addColorStop(0, rgba(C.amber, 0.28));
-      g.addColorStop(0.5, rgba(C.coral, 0.06));
-      g.addColorStop(1, rgba(C.cyan, 0.18));
-      ctx.fillStyle = g;
-      ctx.fill();
-      ctx.restore();
-      const ptsA = [];
-      for (let i = 0; i <= N; i++) {
-        const x = (i / N) * w;
-        ptsA.push({ x, y: lerp(y0, yA(x), mirror), vis: true });
-      }
-      trail(ctx, ptsA, 1, { color: C.amber, width: 3, alpha: mirror, head: false });
-    }
-    const ptsC = [];
-    for (let i = 0; i <= N; i++) {
-      const x = (i / N) * w;
-      ptsC.push({ x, y: yC(x), vis: true });
-    }
-    trail(ctx, ptsC, draw, { color: C.cyan, width: 3.5, alpha: 1 });
-    mono(ctx, 'HUARD', w * 0.06, y0 - m * 0.04, { size: m * 0.018, align: 'left', color: C.cyan, t: seg(p, 0.02, 0.02 + 1 * s1), alpha: 1 - famShift });
-
-    // −5 ¢ : la cote de la chute
-    const c5A = smooth(seg(p, T.c5, T.c5 + 0.6 * s1)) * (1 - famShift);
-    if (c5A > 0.003) {
-      const xr = w * 0.9;
-      dimension(ctx, xr, y0, xr, yC(xr), { color: C.cyan, t: seg(p, T.c5 + 0.2 * s1, T.c5 + 1.2 * s1), alpha: c5A, tick: 12 });
-      mono(ctx, '−5 ¢', xr - 24, (y0 + yC(xr)) / 2, { size: m * 0.03, weight: 600, align: 'right', color: C.cyan, alpha: c5A, t: seg(p, T.c5 + 0.4 * s1, T.c5 + 1.2 * s1) });
-    }
-    // +7 % : la taxe invisible
-    const txA = env(p, T.taxe - 0.1 * s1, T.fam - 0.2 * s1, 0.4 * s1, 0.5 * s1);
-    if (txA > 0.003) {
-      const tx = V ? cx : w * 0.3;
-      const ty = V ? h * 0.2 : h * 0.22;
-      mono(ctx, 'TAXE INVISIBLE', tx, ty - m * 0.1, { size: m * 0.024, weight: 600, color: C.amber, t: seg(p, T.taxe, T.taxe + 1 * s1), alpha: txA });
-      const k = eOutExpo(seg(p, T.s7 - 0.1 * s1, T.s7 + 1.2 * s1));
-      kinetic(ctx, `+${Math.round(7 * k)} %`, tx, ty + m * 0.06, { size: m * 0.17, weight: 900, t: seg(p, T.s7 - 0.1 * s1, T.s7 + 0.6 * s1), alpha: txA, glow: 40, glowColor: rgba(C.amber, 0.7) });
-    }
-    // Camion frigorifique qui remonte la courbe ambre
-    const trA = env(p, T.diesel - 0.3 * s1, T.fam + 0.3 * s1, 0.4 * s1, 0.5 * s1);
-    if (trA > 0.003) {
-      const u = lerp(0.05, 0.95, seg(p, T.diesel - 0.3 * s1, T.fam + 0.3 * s1));
-      const x = u * w;
-      const y = yA(x);
-      const ang = Math.atan2(yA(x + 6) - yA(x - 6), 12);
-      ctx.save();
-      ctx.translate(x, y - 4);
-      ctx.rotate(ang);
-      drawTruck(ctx, 0, 0, m * 0.13, { time: gt, alpha: trA, cold: true });
-      ctx.restore();
-      for (let k = 0; k < 10; k++) {
-        const uu = (gt * 0.6 + k / 10) % 1;
-        light(ctx, x - m * 0.08 - uu * m * 0.2, y - m * 0.02 - Math.sin(k) * m * 0.02, 7 * (1 - uu), C.ice, trA * (1 - uu));
-      }
-      kinetic(ctx, 'DIESEL ↑', V ? cx : w * 0.72, V ? h * 0.74 : h * 0.84, { size: m * 0.07, weight: 900, t: seg(p, T.diesel, T.diesel + 0.8 * s1), alpha: trA, color: C.white });
-    }
-    // ── Acte IV : la famille ──
-    if (famShift > 0.003) {
-      const fy = V ? h * 0.66 : h * 0.8;
-      const fs = m * 0.1;
-      const xs = [-1.6, -0.55, 0.4, 1.3];
-      const sz = [1, 1, 0.72, 0.62];
-      xs.forEach((dx, i) => familyFigure(ctx, cx + dx * fs * 0.95 - fs * 0.6, fy, fs * sz[i], i < 2 ? C.white : C.ice, famShift * seg(p, T.fam + i * 0.15 * s1, T.fam + (i * 0.15 + 0.5) * s1)));
-      light(ctx, cx - fs * 0.6, fy - fs * 0.4, m * 0.3, C.amber, famShift * 0.12);
-      mono(ctx, 'FAMILLE DE 4 · QUÉBEC', cx, fy + m * 0.06, { size: m * 0.02, color: C.slate, t: seg(p, T.fam, T.fam + 1.2 * s1), alpha: famShift });
-      const cA = smooth(seg(p, T.cent - 0.3 * s1, T.cent + 0.4 * s1));
-      kinetic(ctx, '+ CENTAINES DE $', cx, V ? h * 0.86 : fy - m * 0.24, { size: m * 0.085, weight: 900, t: seg(p, T.cent - 0.2 * s1, T.cent + 0.8 * s1), alpha: cA, glow: 34, glowColor: rgba(C.amber, 0.6), maxW: w * 0.86 });
-      mono(ctx, 'PAR ANNÉE · ÉPICERIE', cx, V ? h * 0.86 + m * 0.06 : fy - m * 0.18, { size: m * 0.02, color: C.amber, t: seg(p, T.cent + 0.3 * s1, T.cent + 1.3 * s1), alpha: cA });
-    }
-  });
-}
-
-/** Bloc isométrique lumineux (centre de données) avec baies de serveurs. */
 function isoCube(ctx, x, y, s, o = {}) {
   const { color = C.emerald, alpha = 1, time = 0, dead = false, glow = 1 } = o;
   if (alpha <= 0.003) return;
@@ -3406,250 +1540,6 @@ function isoCube(ctx, x, y, s, o = {}) {
   if (!dead) light(ctx, x, y, s * 2, color, alpha * 0.18 * glow);
 }
 
-/* ════════════════════════════════════════════════════════════════════════
- * SCÈNE 10 — d3-mur-electrique-ia
- * Acte I   : la grille électrique fonce vers un mur de lumière
- * Acte II  : États-Unis, Irlande, Allemagne — saturation rouge incandescente
- * Acte III : 1 méga-centre IA = une ville de 400 000 habitants
- * Acte IV  : recul : raccordements en attente, retour du charbon
- * ════════════════════════════════════════════════════════════════════════ */
-
-function sceneAIWall(a) {
-  const { ctx, stage, progress: p, globalTime: gt, isVertical: V, scene } = a;
-  const { w, h, cx, cy } = stage;
-  const m = Math.min(w, h);
-  const s1 = 1 / scene.duration;
-  const T = cues(scene, { course: 'course', mur: 'mur physique', us: 'Aux États', irl: 'Irlande', all: 'Allemagne', rupt: 'rupture', un: 'Un seul', q400: 'quatre cent', res: 'Résultat', racc: 'raccorder', charbon: 'charbon' });
-
-  const heat = smooth(seg(p, T.us - 0.3 * s1, T.rupt + 0.8 * s1));
-  const gridA = 1 - smooth(seg(p, T.un - 0.4 * s1, T.un + 0.6 * s1));
-  frame(a, () => {
-    // ── Actes I–II : la grille en perspective ──
-    if (gridA > 0.003) {
-      const hzY = V ? h * 0.42 : h * 0.4;
-      const f = m * 0.9;
-      const camH = m * 0.35;
-      const zWall = 9;
-      const P2 = (X, Z) => ({ x: cx + (X * f) / Z, y: hzY + camH / Z });
-      const tt = p * scene.duration;
-      const speed = 0.6 + 2.6 * smooth(seg(p, 0, T.rupt));
-      const scroll = (tt * speed * 0.5) % 1;
-      const gcol = mix(C.emerald, C.red, heat);
-      ctx.save();
-      ctx.globalAlpha *= gridA;
-      ctx.strokeStyle = rgba(gcol, 0.55);
-      ctx.lineWidth = 1.4;
-      ctx.shadowColor = gcol;
-      ctx.shadowBlur = 8;
-      ctx.beginPath();
-      for (let X = -10; X <= 10; X++) {
-        const a0 = P2(X * 0.5, 0.6);
-        const a1 = P2(X * 0.5, zWall);
-        ctx.moveTo(a0.x, a0.y);
-        ctx.lineTo(a1.x, a1.y);
-      }
-      for (let k = 0; k < 18; k++) {
-        const Z = 0.6 + (k + 1 - scroll) * 0.5;
-        if (Z > zWall) continue;
-        const l = P2(-5, Z);
-        const r = P2(5, Z);
-        ctx.moveTo(l.x, l.y);
-        ctx.lineTo(r.x, r.y);
-      }
-      ctx.stroke();
-      ctx.restore();
-      // Le mur de lumière
-      const wallA = gridA * smooth(seg(p, T.mur - 0.4 * s1, T.mur + 0.4 * s1));
-      const wl = P2(-5, zWall);
-      const wr = P2(5, zWall);
-      if (wallA > 0.003) {
-        // Rideau de lumière : stries verticales aux bords fondus (jamais une boîte)
-        ctx.save();
-        ctx.globalAlpha *= wallA;
-        ctx.globalCompositeOperation = "lighter";
-        const ww = wr.x - wl.x;
-        for (let k = 0; k <= 60; k++) {
-          const u = k / 60;
-          const x = wl.x + u * ww;
-          const edge = Math.pow(Math.sin(Math.PI * u), 1.5);
-          const hh = m * (0.25 + 0.25 * Math.abs(Math.sin(k * 1.37 + gt * (1 + heat * 4))));
-          const g = ctx.createLinearGradient(0, wl.y - hh, 0, wl.y);
-          g.addColorStop(0, rgba(gcol, 0));
-          g.addColorStop(1, rgba(gcol, 0.5 * edge));
-          ctx.fillStyle = g;
-          ctx.fillRect(x - 1.5, wl.y - hh, 3, hh);
-        }
-        const lg = ctx.createLinearGradient(wl.x, 0, wr.x, 0);
-        lg.addColorStop(0, rgba(C.white, 0));
-        lg.addColorStop(0.5, rgba(C.white, 0.9));
-        lg.addColorStop(1, rgba(C.white, 0));
-        ctx.fillStyle = lg;
-        ctx.fillRect(wl.x, wl.y - 1, ww, 2);
-        ctx.restore();
-        light(ctx, cx, wl.y, m * 0.5, gcol, wallA * 0.25);
-      }
-      // Impulsions d'énergie qui foncent vers le mur
-      const pulses = cached('aiPulses', () => {
-        const r = rng(44);
-        return Array.from({ length: 70 }, () => [Math.floor(r() * 21) - 10, r(), 0.6 + r() * 0.8]);
-      });
-      for (const [X, u0, sp] of pulses) {
-        const u = (u0 + tt * 0.12 * sp * speed) % 1;
-        const Z = lerp(0.8, zWall, u);
-        const q = P2(X * 0.5, Z);
-        const q0 = P2(X * 0.5, Math.max(0.7, Z - 0.5 - speed * 0.2));
-        const sz = 10 + 30 / Z;
-        const pc = mix(C.mint, C.coral, heat);
-        ctx.save();
-        ctx.globalCompositeOperation = "lighter";
-        ctx.globalAlpha *= gridA * (0.3 + 0.6 * u);
-        ctx.strokeStyle = pc;
-        ctx.lineWidth = Math.max(1.5, 6 / Z);
-        ctx.lineCap = "round";
-        ctx.beginPath();
-        ctx.moveTo(q0.x, q0.y);
-        ctx.lineTo(q.x, q.y);
-        ctx.stroke();
-        ctx.restore();
-        light(ctx, q.x, q.y, sz, pc, gridA * (0.4 + 0.6 * u));
-        if (u > 0.95 && wallA > 0.1) light(ctx, q.x, wl.y - Math.random() * 0, 50, C.white, gridA * wallA * (u - 0.95) * 14);
-      }
-      // Points chauds : États-Unis, Irlande, Allemagne
-      const hot = [
-        [-2.6, 3.2, T.us, 'ÉTATS-UNIS'],
-        [0.4, 5.2, T.irl, 'IRLANDE'],
-        [2.4, 3.8, T.all, 'ALLEMAGNE']
-      ];
-      hot.forEach(([X, Z, cue, name], i) => {
-        const q = P2(X, Z);
-        const k = smooth(seg(p, cue - 0.2 * s1, cue + 0.5 * s1)) * gridA;
-        if (k <= 0.003) return;
-        const flick = 0.75 + 0.25 * Math.sin(gt * 23 + i * 5) * Math.sin(gt * 7.3 + i);
-        light(ctx, q.x, q.y, m * 0.16 * (0.6 + heat * 0.6), C.red, k * flick * 0.8);
-        light(ctx, q.x, q.y, m * 0.04, C.white, k * flick);
-        shockwave(ctx, q.x, q.y, m * 0.12, gt + i, { color: C.coral, alpha: k * heat, period: 1.1 });
-        mono(ctx, name, q.x, q.y + m * 0.07, { size: m * 0.018, color: C.white, t: seg(p, cue, cue + 0.7 * s1), alpha: k });
-      });
-      if (heat > 0.6) {
-        ctx.save();
-        ctx.globalAlpha = gridA * (heat - 0.6) * 0.25 * (0.6 + 0.4 * Math.sin(gt * 31));
-        ctx.fillStyle = C.red;
-        ctx.globalCompositeOperation = 'lighter';
-        ctx.fillRect(0, 0, w, h);
-        ctx.restore();
-      }
-      const t1 = env(p, T.course - 0.1 * s1, T.mur - 0.1 * s1, 0.4 * s1, 0.3 * s1);
-      kinetic(ctx, "LA COURSE À L'IA", cx, V ? h * 0.18 : h * 0.2, { size: m * 0.085, weight: 900, t: seg(p, T.course, T.course + 1 * s1), alpha: t1 * gridA, maxW: w * 0.86 });
-      const t2 = env(p, T.mur - 0.1 * s1, T.us + 0.2 * s1, 0.3 * s1, 0.4 * s1);
-      kinetic(ctx, 'UN MUR ÉLECTRIQUE', cx, V ? h * 0.18 : h * 0.2, { size: m * 0.095, weight: 900, t: seg(p, T.mur, T.mur + 0.8 * s1), alpha: t2 * gridA, glow: 36, glowColor: rgba(C.mint, 0.6), maxW: w * 0.86 });
-      const t3 = env(p, T.rupt - 0.1 * s1, T.un, 0.3 * s1, 0.3 * s1);
-      kinetic(ctx, 'POINT DE RUPTURE', cx, V ? h * 0.18 : h * 0.2, { size: m * 0.095, weight: 900, t: seg(p, T.rupt, T.rupt + 0.8 * s1), alpha: t3 * gridA, glow: 36, glowColor: rgba(C.red, 0.7), maxW: w * 0.86 });
-    }
-
-    // ── Acte III : 1 centre de données = 400 000 habitants ──
-    const eqA = smooth(seg(p, T.un - 0.2 * s1, T.un + 0.6 * s1));
-    const recede = eInOutQuart(seg(p, T.res - 0.3 * s1, T.res + 1.4 * s1));
-    if (eqA > 0.003) {
-      const L = V ? { x: cx, y: h * 0.3 } : { x: cx - w * 0.24, y: cy };
-      const R = V ? { x: cx, y: h * 0.66 } : { x: cx + w * 0.22, y: cy };
-      const sc = 1 - recede * 0.55;
-      const cubeX = lerp(L.x, V ? cx : cx - w * 0.3, recede);
-      const cubeY = lerp(L.y, V ? h * 0.36 : cy - m * 0.08, recede);
-      isoCube(ctx, cubeX, cubeY + m * 0.04, m * 0.14 * sc, { time: gt, alpha: eqA });
-      mono(ctx, '1 MÉGA-CENTRE IA', cubeX, cubeY + m * 0.24 * sc, { size: m * 0.02, color: C.mint, t: seg(p, T.un, T.un + 1 * s1), alpha: eqA * (1 - recede) });
-      const cityA = eqA * (1 - recede);
-      if (cityA > 0.003) {
-        kinetic(ctx, '=', V ? cx : cx - w * 0.01, V ? h * 0.5 : cy + m * 0.04, { size: m * 0.12, weight: 800, t: seg(p, T.un + 0.4 * s1, T.un + 1 * s1), alpha: cityA });
-        const lights = cached('city400', () => {
-          const r = rng(400);
-          const pts = [];
-          for (let i = 0; i < 400; i++) {
-            const rad = Math.sqrt(-2 * Math.log(1 - r() * 0.999)) * 0.38;
-            const an = r() * TAU;
-            pts.push([Math.cos(an) * rad, Math.sin(an) * rad * 0.62, r()]);
-          }
-          return pts.sort((A, B) => Math.hypot(A[0], A[1] / 0.62) - Math.hypot(B[0], B[1] / 0.62));
-        });
-        const lit = Math.floor(400 * eOutCubic(seg(p, T.un + 0.6 * s1, T.q400 + 0.6 * s1)));
-        ctx.save();
-        ctx.globalCompositeOperation = 'lighter';
-        const cs = m * (V ? 0.36 : 0.42);
-        for (let i = 0; i < lit; i++) {
-          const [lx, ly, tw] = lights[i];
-          const px = R.x + lx * cs;
-          const py = R.y + ly * cs;
-          ctx.globalAlpha = cityA * (0.55 + 0.45 * Math.sin(gt * 2 + tw * 9));
-          ctx.fillStyle = tw > 0.85 ? C.white : C.gold;
-          ctx.fillRect(px - 2, py - 2, 4, 4);
-        }
-        ctx.restore();
-        light(ctx, R.x, R.y, cs * 0.6, C.amber, cityA * 0.25 * (lit / 400));
-        const cnt = Math.round(lit * 1000);
-        mono(ctx, `${frNum(cnt)} HABITANTS`, R.x, R.y + cs * 0.42, { size: m * 0.026, weight: 600, color: C.gold, alpha: cityA * smooth(seg(p, T.un + 0.6 * s1, T.un + 1 * s1)) });
-        const qA = smooth(seg(p, T.q400 - 0.2 * s1, T.q400 + 0.5 * s1)) * cityA;
-        kinetic(ctx, '= UNE VILLE ENTIÈRE', cx, V ? h * 0.88 : h * 0.86, { size: m * 0.06, weight: 900, t: seg(p, T.q400, T.q400 + 0.9 * s1), alpha: qA, maxW: w * 0.86 });
-      }
-      // ── Acte IV : recul — des centres non raccordés, le charbon prolongé ──
-      if (recede > 0.003) {
-        const cols = V ? 3 : 5;
-        const rows = V ? 4 : 2;
-        for (let r = 0; r < rows; r++) {
-          for (let c = 0; c < cols; c++) {
-            const idx = r * cols + c;
-            const gx = (V ? cx - w * 0.28 : cx - w * 0.08) + c * m * (V ? 0.28 : 0.2) + (r % 2) * m * 0.1;
-            const gy = (V ? h * 0.52 : cy - m * 0.12) + r * m * (V ? 0.13 : 0.2);
-            const ap = recede * seg(p, T.res + idx * 0.08 * s1, T.res + (idx * 0.08 + 0.6) * s1);
-            const dead = idx % 3 !== 0 && p > T.racc;
-            isoCube(ctx, gx, gy, m * 0.06, { time: gt + idx, alpha: ap, dead, glow: 0.6 });
-          }
-        }
-        const rA = env(p, T.racc - 0.1 * s1, T.charbon - 0.1 * s1, 0.3 * s1, 0.3 * s1);
-        kinetic(ctx, 'RACCORDEMENTS BLOQUÉS', cx, V ? h * 0.16 : h * 0.2, { size: m * 0.07, weight: 900, t: seg(p, T.racc, T.racc + 0.8 * s1), alpha: rA, maxW: w * 0.86 });
-        // Centrales au charbon : cheminées et panaches
-        const coal = smooth(seg(p, T.charbon - 0.4 * s1, T.charbon + 0.6 * s1));
-        if (coal > 0.003) {
-          const baseY = V ? h * 0.92 : h * 0.9;
-          for (let k = 0; k < 4; k++) {
-            const sx = cx + (k - 1.5) * m * (V ? 0.2 : 0.24);
-            const sh = m * (0.16 + (k % 2) * 0.05) * eOutCubic(coal);
-            ctx.save();
-            ctx.globalAlpha *= coal;
-            ctx.strokeStyle = '#94A3B8';
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            ctx.moveTo(sx - m * 0.03, baseY);
-            ctx.lineTo(sx - m * 0.018, baseY - sh);
-            ctx.lineTo(sx + m * 0.018, baseY - sh);
-            ctx.lineTo(sx + m * 0.03, baseY);
-            ctx.stroke();
-            ctx.restore();
-            for (let j = 0; j < 9; j++) {
-              const u = (gt * 0.18 + j / 9 + k * 0.17) % 1;
-              const px = sx + Math.sin(u * 5 + k) * m * 0.03 + u * m * 0.08;
-              const py = baseY - sh - u * m * 0.3;
-              ctx.save();
-              ctx.globalAlpha *= coal * 0.22 * (1 - u);
-              ctx.fillStyle = '#94A3B8';
-              ctx.beginPath();
-              ctx.arc(px, py, m * (0.015 + u * 0.05), 0, TAU);
-              ctx.fill();
-              ctx.restore();
-            }
-          }
-          kinetic(ctx, 'RETOUR DU CHARBON', cx, V ? h * 0.16 : h * 0.2, { size: m * 0.08, weight: 900, t: seg(p, T.charbon, T.charbon + 0.8 * s1), alpha: coal, color: C.slate, maxW: w * 0.86 });
-        }
-      }
-    }
-  });
-}
-
-/* ════════════════════════════════════════════════════════════════════════
- * SCÈNE 11 — d3-ruee-vers-hydro-quebec
- * Acte I   : les faisceaux saturés du monde convergent… vers le Québec
- * Acte II  : Manic-5 en lignes de lumière — trois atouts, trois voûtes
- * Acte III : le hic : surplus engagés, demande ≫ capacité d'ici 2030
- * ════════════════════════════════════════════════════════════════════════ */
-
 function aurora(ctx, stage, time, alpha, yBase, amp) {
   if (alpha <= 0.003) return;
   const { w } = stage;
@@ -3676,7 +1566,6 @@ function aurora(ctx, stage, time, alpha, yBase, amp) {
   ctx.restore();
 }
 
-/** Barrage Daniel-Johnson (Manic-5) : 13 voûtes, 14 contreforts, voûte centrale géante. */
 function manic5(ctx, cx, baseY, W, H, o = {}) {
   const { alpha = 1, draw = 1, fill = 0, litArches = [], time = 0 } = o;
   if (alpha <= 0.003) return;
@@ -3745,115 +1634,6 @@ function manic5(ctx, cx, baseY, W, H, o = {}) {
   ctx.restore();
 }
 
-function sceneHydroRush(a) {
-  const { ctx, stage, progress: p, globalTime: gt, isVertical: V, scene } = a;
-  const { w, h, cx, cy } = stage;
-  const m = Math.min(w, h);
-  const s1 = 1 / scene.duration;
-  const T = cues(scene, { dev: 'devinez', qc: 'Le Québec', atouts: 'trois atouts', ren: 'renouvelable', tarifs: 'tarifs', climat: 'climat', sauf: 'Sauf', surplus: 'surplus', dem: 'demandes', y2030: 'deux mille trente' });
-
-  const globeA = 1 - smooth(seg(p, T.qc + 0.6 * s1, T.atouts + 0.6 * s1));
-  const damA = smooth(seg(p, T.qc + 0.8 * s1, T.atouts + 1 * s1));
-  frame(a, () => {
-    aurora(ctx, stage, gt, 0.5 + 0.5 * damA, V ? h * 0.22 : h * 0.2, m * 0.3);
-    // ── Acte I : convergence ──
-    if (globeA > 0.003) {
-      const st = V ? [-55, 40, 0.42, 0, 0.02] : [-50, 42, 0.46, 0, 0.04];
-      const G = globeFrom(stage, [st[0] + p * scene.duration * 0.5 - 6, st[1], st[2] * (1 + 0.08 * seg(p, 0, T.qc)), st[3], st[4]]);
-      drawGlobe(ctx, G, { alpha: globeA, color: C.cyan, hl: (lo, la) => (insidePoly(lo, la, QUEBEC[0]) || insidePoly(lo, la, QUEBEC[1]) ? smooth(seg(p, T.qc - 0.2 * s1, T.qc + 0.3 * s1)) : 0), hlColor: C.emerald });
-      const target = [-68.7, 50.6];
-      [[PLACES.virginia, 0], [PLACES.siliconValley, 0.08], [PLACES.dublin, 0.04], [PLACES.frankfurt, 0.12]].forEach(([src, dl], i) => {
-        const pts = projectAll(G, arcPts(src, target, 70, 0.14 + i * 0.03));
-        const t = eInOut(seg(p, T.dev - 0.4 * s1 + dl, T.qc - 0.1 * s1));
-        trail(ctx, pts, t, { color: C.coral, width: 2.5, alpha: globeA });
-        const sp = G.project(src[0], src[1]);
-        if (sp.z > 0) beacon(ctx, sp.x, sp.y, { color: C.red, r: 6, time: gt + i, alpha: globeA * seg(p, 0.01, 0.05) });
-      });
-      const tq = G.project(...target);
-      const impact = smooth(seg(p, T.qc - 0.15 * s1, T.qc + 0.2 * s1));
-      if (impact > 0 && tq.z > 0) {
-        light(ctx, tq.x, tq.y, m * 0.35 * impact, C.emerald, globeA * 0.8);
-        flare(ctx, tq.x, tq.y, m * 0.2, C.mint, globeA * impact * (1 - seg(p, T.qc + 0.3 * s1, T.qc + 1.4 * s1)) + 0.2 * globeA * impact);
-      }
-      kinetic(ctx, 'LE QUÉBEC.', cx, V ? h * 0.84 : h * 0.86, { size: m * 0.12, weight: 900, t: seg(p, T.qc - 0.05 * s1, T.qc + 0.5 * s1), alpha: globeA * impact, glow: 40, glowColor: rgba(C.emerald, 0.7) });
-    }
-    // ── Acte II : Manic-5 ──
-    if (damA > 0.003) {
-      const baseY = V ? h * 0.62 : h * 0.72;
-      const W = V ? w * 0.92 : w * 0.78;
-      const H = V ? h * 0.16 : h * 0.3;
-      const lit = [];
-      if (p > T.ren) lit.push(6);
-      if (p > T.tarifs) lit.push(3, 9);
-      if (p > T.climat) lit.push(1, 11);
-      const fill = eInOut(seg(p, T.surplus - 0.2 * s1, T.surplus + 2.2 * s1)) * 0.96;
-      manic5(ctx, cx, baseY, W, H, { alpha: damA, draw: eInOut(seg(p, T.qc + 0.8 * s1, T.atouts + 1.4 * s1)), litArches: lit, fill, time: gt });
-      // Réservoir (reflets) sous la crête
-      ctx.save();
-      ctx.globalAlpha *= damA * 0.5;
-      for (let k = 1; k <= 5; k++) {
-        const y = baseY + k * m * 0.018;
-        const g = ctx.createLinearGradient(cx - W / 2, 0, cx + W / 2, 0);
-        g.addColorStop(0, rgba(C.cyan, 0));
-        g.addColorStop(0.5, rgba(C.cyan, 0.35 / k));
-        g.addColorStop(1, rgba(C.cyan, 0));
-        ctx.fillStyle = g;
-        ctx.fillRect(cx - W / 2 + Math.sin(gt + k) * 8, y, W, 1.2);
-      }
-      ctx.restore();
-      mono(ctx, 'MANIC-5 · CÔTE-NORD', cx, baseY + m * 0.12, { size: m * 0.018, color: C.ice, t: seg(p, T.atouts, T.atouts + 1.2 * s1), alpha: damA * (1 - smooth(seg(p, T.sauf - 0.3 * s1, T.sauf))) });
-      const ty = V ? h * 0.2 : h * 0.2;
-      [
-        [T.atouts, T.ren, '3 ATOUTS'],
-        [T.ren, T.tarifs, '99 % RENOUVELABLE'],
-        [T.tarifs, T.climat, 'TARIFS PARMI LES PLUS BAS'],
-        [T.climat, T.sauf, 'CLIMAT FROID']
-      ].forEach(([s, e, txt]) => {
-        const al = env(p, s - 0.1 * s1, e - 0.1 * s1, 0.3 * s1, 0.3 * s1) * damA;
-        if (al > 0.003) kinetic(ctx, txt, cx, ty, { size: m * 0.075, weight: 900, t: seg(p, s, s + 0.8 * s1), alpha: al, glow: 30, glowColor: rgba(C.emerald, 0.6), maxW: w * 0.86 });
-      });
-      // ── Acte III : la capacité contre la demande ──
-      const hicA = smooth(seg(p, T.sauf - 0.2 * s1, T.sauf + 0.6 * s1)) * damA;
-      if (hicA > 0.003) {
-        const crestY = baseY - H;
-        mono(ctx, 'CAPACITÉ', cx + W / 2 + m * 0.02, crestY, { size: m * 0.016, align: V ? 'right' : 'left', color: C.mint, alpha: hicA * (V ? 0 : 1) });
-        const sA = env(p, T.surplus - 0.1 * s1, T.dem - 0.1 * s1, 0.3 * s1, 0.3 * s1);
-        kinetic(ctx, 'SURPLUS DÉJÀ ENGAGÉS', cx, ty, { size: m * 0.07, weight: 900, t: seg(p, T.surplus, T.surplus + 0.8 * s1), alpha: sA * hicA, maxW: w * 0.86 });
-        kinetic(ctx, 'UN HIC MAJEUR', cx, ty, { size: m * 0.08, weight: 900, t: seg(p, T.sauf, T.sauf + 0.8 * s1), alpha: env(p, T.sauf - 0.1 * s1, T.surplus - 0.1 * s1, 0.3 * s1, 0.3 * s1) * hicA, maxW: w * 0.86 });
-        const dm = smooth(seg(p, T.dem - 0.2 * s1, T.dem + 1.4 * s1)) * hicA;
-        if (dm > 0.003) {
-          for (let k = 0; k < 4; k++) {
-            const lvl = crestY - (k + 1) * H * 0.42 * eOutCubic(seg(p, T.dem + k * 0.25 * s1, T.dem + (k * 0.25 + 1) * s1));
-            ctx.save();
-            ctx.globalAlpha *= dm * (1 - k * 0.18);
-            ctx.strokeStyle = C.coral;
-            ctx.lineWidth = 2;
-            ctx.shadowColor = C.coral;
-            ctx.shadowBlur = 14;
-            ctx.beginPath();
-            for (let x = cx - W / 2; x <= cx + W / 2; x += 8) {
-              const y = lvl + Math.sin(x * 0.02 + gt * 3 + k) * 6;
-              if (x === cx - W / 2) ctx.moveTo(x, y);
-              else ctx.lineTo(x, y);
-            }
-            ctx.stroke();
-            ctx.restore();
-          }
-          kinetic(ctx, 'DEMANDE ≫ CAPACITÉ', cx, ty, { size: m * 0.08, weight: 900, t: seg(p, T.dem, T.dem + 0.8 * s1), alpha: dm, glow: 34, glowColor: rgba(C.coral, 0.6), maxW: w * 0.86 });
-          mono(ctx, 'HORIZON 2030', cx, ty + m * 0.07, { size: m * 0.024, weight: 600, color: C.coral, t: seg(p, T.y2030 - 0.3 * s1, T.y2030 + 0.6 * s1), alpha: dm });
-        }
-      }
-    }
-  });
-}
-
-/* ════════════════════════════════════════════════════════════════════════
- * SCÈNE 12 — d3-deux-cotes-megawatts
- * Acte I   : un seul flux d'énergie… qui se scinde au cœur du dilemme
- * Acte II  : flux or — tarif premium ×2 à ×3 → hôpitaux, écoles, barrages
- * Acte III : flux émeraude — réseau local : peu d'emplois/MW, tarifs ↑
- * ════════════════════════════════════════════════════════════════════════ */
-
 function iconGlyph(ctx, kind, x, y, s, color, alpha) {
   if (alpha <= 0.003) return;
   ctx.save();
@@ -3912,257 +1692,345 @@ function iconGlyph(ctx, kind, x, y, s, color, alpha) {
   ctx.restore();
 }
 
-function sceneMegawatts(a) {
-  const { ctx, stage, progress: p, globalTime: gt, isVertical: V, scene } = a;
-  const { w, h, cx, cy } = stage;
-  const m = Math.min(w, h);
-  const s1 = 1 / scene.duration;
-  const T = cues(scene, { dil: 'dilemme', c1: 'un côté', x23: 'deux ou trois', mil: 'milliards', hop: 'hôpitaux', eco: 'écoles', bar: 'barrages', c2: 'autre côté', emp: 'emplois', multi: 'multinationales', priv: 'priver', tarifs: 'tarifs résidentiels' });
+/* NOVEMBER 14 · Three systems under pressure.
+ * All movement is a pure function of time: deterministic export and scrubbing.
+ * Each editorial beat has its own geometry and word-timed camera transition.
+ * Diagrammatic geography and flows are explanatory, never statistical data.
+ */
+const GEO = { antalya:[30.71,36.9], chad:[18,15], kyiv:[30.52,50.45], donbass:[38.4,48.2],
+  moscow:[37.62,55.75], beijing:[116.4,39.9], washington:PLACES.washington, montreal:PLACES.montreal };
 
-  // Repère abstrait : u le long de la scission (− : flux or, + : flux local), v perpendiculaire
-  const U = V ? h * 0.5 : w * 0.5;
-  const Vv = V ? w * 0.5 : h * 0.5;
-  const S = (u, v) => (V ? { x: cx + v * Vv, y: cy + u * U } : { x: cx + u * U, y: cy + v * Vv });
-  const bez = (A, B, Cc, n = 40) => {
-    const out = [];
-    for (let i = 0; i <= n; i++) {
-      const t = i / n;
-      out.push({ x: (1 - t) ** 2 * A.x + 2 * (1 - t) * t * B.x + t * t * Cc.x, y: (1 - t) ** 2 * A.y + 2 * (1 - t) * t * B.y + t * t * Cc.y, vis: true });
-    }
-    return out;
-  };
-  const flowDots = (pts, color, alpha, n = 8, speed = 0.35) => {
-    for (let k = 0; k < n; k++) {
-      const u = (gt * speed + k / n) % 1;
-      const q = pts[Math.floor(u * (pts.length - 1))];
-      light(ctx, q.x, q.y, 12, color, alpha);
-    }
-  };
-
-  frame(a, () => {
-    const node = S(0, 0.08);
-    // ── Acte I : le flux unique ──
-    const inPts = bez(S(0, 1.1), S(0, 0.6), node);
-    const inT = eInOut(seg(p, 0.0, T.c1 - 0.2 * s1));
-    trail(ctx, inPts, inT, { color: C.emerald, width: 5, alpha: 1 });
-    if (inT >= 1) flowDots(inPts, C.mint, 1, 8, 0.4);
-    beacon(ctx, node.x, node.y, { color: C.white, r: 9, time: gt, alpha: smooth(seg(p, T.dil - 0.2 * s1, T.dil + 0.4 * s1)) });
-    const dA = env(p, T.dil - 0.1 * s1, T.c1 + 0.3 * s1, 0.4 * s1, 0.4 * s1);
-    kinetic(ctx, 'LE DILEMME', cx, V ? h * 0.075 : h * 0.2, { size: m * 0.1, weight: 900, t: seg(p, T.dil, T.dil + 1 * s1), alpha: dA });
-
-    // ── Acte II : le flux or, multiplié ──
-    const goldA = smooth(seg(p, T.c1 - 0.2 * s1, T.c1 + 0.4 * s1));
-    const mult = S(-0.42, -0.05);
-    const leftPts = bez(node, S(-0.2, 0.08), mult);
-    trail(ctx, leftPts, eInOut(seg(p, T.c1, T.x23 - 0.2 * s1)), { color: C.amber, width: 4, alpha: goldA });
-    const eu = V ? -0.6 : -0.78;
-    const ends = [S(eu, -0.6), S(eu - 0.02, -0.05), S(eu, 0.5)];
-    const kinds = [['hospital', T.hop, 'HÔPITAUX'], ['school', T.eco, 'ÉCOLES'], ['dam', T.bar, 'BARRAGES']];
-    const fork = eInOut(seg(p, T.x23 - 0.1 * s1, T.x23 + 1.2 * s1));
-    if (fork > 0) {
-      ring(ctx, mult.x, mult.y, m * 0.045, { color: C.amber, width: 3, alpha: goldA, glow: 20 });
-      ends.forEach((E, i) => {
-        const pts = bez(mult, S(-0.6, (i - 1) * 0.15), E, 30);
-        trail(ctx, pts, fork, { color: C.gold, width: 3, alpha: goldA });
-        if (fork >= 1) flowDots(pts, C.gold, goldA, 5, 0.5);
-        const [kind, cue, label] = kinds[i];
-        const ia = seg(p, cue - 0.1 * s1, cue + 0.4 * s1) * goldA;
-        iconGlyph(ctx, kind, E.x, E.y, m * 0.08, C.gold, ia);
-        mono(ctx, label, E.x, E.y + m * 0.08, { size: m * 0.016, color: C.gold, t: seg(p, cue, cue + 0.7 * s1), alpha: ia });
-      });
-      kinetic(ctx, '×2 À ×3', mult.x, mult.y - m * 0.08, { size: m * 0.07, weight: 900, t: seg(p, T.x23, T.x23 + 0.8 * s1), alpha: goldA, color: C.amber, glow: 24, glowColor: rgba(C.amber, 0.6) });
-      mono(ctx, 'TARIF PREMIUM', mult.x, mult.y + m * 0.08, { size: m * 0.018, color: C.amber, t: seg(p, T.x23 + 0.3 * s1, T.x23 + 1.2 * s1), alpha: goldA });
-    }
-    const milA = env(p, T.mil - 0.1 * s1, T.c2, 0.3 * s1, 0.4 * s1);
-    kinetic(ctx, 'DES MILLIARDS NEUFS', cx, V ? h * 0.075 : h * 0.2, { size: m * 0.07, weight: 900, t: seg(p, T.mil, T.mil + 0.8 * s1), alpha: milA, maxW: w * 0.86 });
-
-    // ── Acte III : le flux émeraude, réseau local ──
-    const locA = smooth(seg(p, T.c2 - 0.2 * s1, T.c2 + 0.5 * s1));
-    if (locA > 0.003) {
-      const hub = S(0.42, -0.05);
-      const rightPts = bez(node, S(0.2, 0.08), hub);
-      const divert = smooth(seg(p, T.multi - 0.2 * s1, T.priv + 1 * s1));
-      trail(ctx, rightPts, eInOut(seg(p, T.c2, T.c2 + 1.4 * s1)), { color: C.emerald, width: 4, alpha: locA });
-      const grid = cached('localGrid', () => {
-        const r = rng(12);
-        const out = [];
-        for (let i = 0; i < 14; i++) out.push([0.55 + r() * 0.38, -0.7 + r() * 1.35, r() > 0.6 ? 'factory' : 'house']);
-        return out;
-      });
-      grid.forEach(([u, v, kind], i) => {
-        const q = S(u, v);
-        const lineA = locA * seg(p, T.c2 + 0.5 * s1 + i * 0.04 * s1, T.c2 + 1.2 * s1 + i * 0.04 * s1);
-        const dim = 1 - divert * (i % 3 === 0 ? 0.2 : 0.75);
-        ctx.save();
-        ctx.globalAlpha *= lineA * 0.4 * dim;
-        ctx.strokeStyle = C.emerald;
-        ctx.lineWidth = 1.2;
-        ctx.beginPath();
-        ctx.moveTo(hub.x, hub.y);
-        ctx.lineTo(q.x, q.y);
-        ctx.stroke();
-        ctx.restore();
-        const tr = smooth(seg(p, T.tarifs - 0.2 * s1, T.tarifs + 0.6 * s1));
-        const flick = tr > 0 && kind === 'house' ? 0.6 + 0.4 * Math.sin(gt * 13 + i * 2) : 1;
-        iconGlyph(ctx, kind, q.x, q.y, m * 0.045, mix(C.mint, C.amber, tr * (kind === 'house' ? 1 : 0)), lineA * dim * flick);
-      });
-      mono(ctx, 'PME & MAISONS', hub.x, hub.y - m * 0.07, { size: m * 0.018, color: C.mint, t: seg(p, T.c2 + 0.4 * s1, T.c2 + 1.4 * s1), alpha: locA * (1 - divert) });
-      // Le méga-centre qui aspire l'énergie : peu d'emplois par mégawatt
-      const dc = smooth(seg(p, T.emp - 0.4 * s1, T.emp + 0.4 * s1));
-      if (dc > 0.003) {
-        const dpos = S(0.28, V ? 0.55 : 0.55);
-        const dPts = bez(hub, S(0.38, 0.35), dpos, 30);
-        trail(ctx, dPts, eInOut(seg(p, T.emp - 0.3 * s1, T.emp + 0.8 * s1)), { color: C.cyan, width: 2 + 4 * divert, alpha: dc });
-        flowDots(dPts, C.ice, dc * (0.4 + 0.6 * divert), 6 + Math.round(10 * divert), 0.6);
-        isoCube(ctx, dpos.x, dpos.y, m * 0.07, { color: C.cyan, time: gt, alpha: dc });
-        for (let k = 0; k < 3; k++) familyFigure(ctx, dpos.x + m * (0.1 + k * 0.035), dpos.y + m * 0.07, m * 0.028, C.white, dc * seg(p, T.emp + 0.3 * s1, T.emp + 0.8 * s1));
-        mono(ctx, "PEU D'EMPLOIS / MW", dpos.x, dpos.y + m * 0.13, { size: m * 0.018, color: C.ice, t: seg(p, T.emp, T.emp + 1 * s1), alpha: dc });
-      }
-      const kA = env(p, T.multi - 0.1 * s1, T.tarifs - 0.1 * s1, 0.3 * s1, 0.3 * s1);
-      kinetic(ctx, 'MULTINATIONALES ÉTRANGÈRES', cx, V ? h * 0.075 : h * 0.2, { size: m * 0.06, weight: 900, t: seg(p, T.multi, T.multi + 0.8 * s1), alpha: kA, maxW: w * 0.86 });
-      const tA = smooth(seg(p, T.tarifs - 0.1 * s1, T.tarifs + 0.4 * s1));
-      kinetic(ctx, 'TARIFS RÉSIDENTIELS ↑', cx, V ? h * 0.075 : h * 0.2, { size: m * 0.065, weight: 900, t: seg(p, T.tarifs, T.tarifs + 0.8 * s1), alpha: tA, color: C.white, glow: 30, glowColor: rgba(C.amber, 0.6), maxW: w * 0.86 });
-    }
+function line(ctx, pts, color=C.cyan, width=2, alpha=1, reveal=1) {
+  return trail(ctx,pts.map(q=>Array.isArray(q)?{x:q[0],y:q[1],vis:true}:q),clamp(reveal),{color,width,alpha,head:false});
+}
+function bezier(A,B,bend=0.2,n=56) {
+  const dx=B.x-A.x,dy=B.y-A.y;
+  const M={x:(A.x+B.x)/2-dy*bend,y:(A.y+B.y)/2+dx*bend};
+  return Array.from({length:n+1},(_,i)=>{const t=i/n;return{x:(1-t)**2*A.x+2*t*(1-t)*M.x+t*t*B.x,y:(1-t)**2*A.y+2*t*(1-t)*M.y+t*t*B.y,vis:true};});
+}
+function conduit(ctx,pts,t,color=C.cyan,alpha=1,stop=0,width=2) {
+  trail(ctx,pts,1,{color,width,alpha:alpha*.38,head:false});
+  for(let i=0;i<7;i++){
+    const f=((t*.15+i/7)%1+1)%1;
+    const q=pts[Math.round(lerp(f,.53,stop)*(pts.length-1))];
+    if(q.vis!==false)light(ctx,q.x,q.y,11,color,alpha*(1-.65*stop));
+  }
+}
+function word(a,text,alpha=1,color=C.white,y=.27,size=.09,entry=1) {
+  const {ctx,stage:s,isVertical:V}=a,m=Math.min(s.w,s.h);
+  kinetic(ctx,text,s.cx,s.h*(V?y:y-.025),{size:m*size,weight:900,color,alpha,t:entry,maxW:s.w*.84,track:m*.018,glow:12,glowColor:rgba(color,.22)});
+}
+// Named words are resolved to actual ASR timings in scene.wordSync (fallback: sentence interpolation).
+function beat(a,phrase,fallback=.5) {
+  const sc=a.scene;
+  const raw=sc.wordSync?.find(x=>x.phrase.toLocaleLowerCase('fr')===phrase.toLocaleLowerCase('fr'));
+  if(raw)return clamp(raw.time/sc.duration);
+  const normalize=s=>s.toLocaleLowerCase('fr').replace(/[’‘]/g,"'");
+  const narration=normalize(sc.narration||'');
+  const index=narration.indexOf(normalize(phrase));
+  if(index<0)return fallback;
+  const sentence=sc.voiceSync?.sentences?.find(x=>index>=x.from&&index<x.to);
+  return sentence?clamp((sentence.start+(sentence.end-sentence.start)*(index-sentence.from)/Math.max(1,sentence.to-sentence.from))/sc.duration):index/Math.max(1,narration.length);
+}
+function beats(a,phrases){return [0,...phrases.map((s,i)=>beat(a,s,(i+1)/(phrases.length+1))),1];}
+function acts(a,marks,draw) {
+  marks.slice(0,-1).forEach((start,i)=>{
+    const end=marks[i+1];
+    const cross=.45/a.scene.duration;
+    const alpha=smooth((a.progress-start+cross)/cross)*(1-smooth((a.progress-end+cross)/cross));
+    if(alpha>.002){a.ctx.save();a.ctx.globalAlpha*=alpha;draw(i,seg(a.progress,start,end),alpha);a.ctx.restore();}
   });
 }
-
-/* ════════════════════════════════════════════════════════════════════════
- * SCÈNE 13 — conclusion-debat-quebec
- * Acte I   : la boussole hésite — quelle direction ?
- * Acte II  : le faisceau diagonal scinde l'écran — A · vendre au prix fort
- * Acte III : B · réserver au Québec
- * Acte IV  : à vous de trancher — commentaires, partage, à demain
- * ════════════════════════════════════════════════════════════════════════ */
-
-function sceneFinale(a) {
-  const { ctx, stage, progress: p, globalTime: gt, isVertical: V, scene } = a;
-  const { w, h, cx, cy } = stage;
-  const m = Math.min(w, h);
-  const s1 = 1 / scene.duration;
-  const T = cues(scene, { choix: 'choix', disj: 'disjoncteur', dir: 'quelle direction', oa: 'Option A', ob: 'Ou Option B', cent: 'cent pour cent', ecr: 'Écrivez', com: 'commentaires', part: 'partagez', fb: 'Facebook', dem: 'demain pour' });
-
-  frame(a, () => {
-    dust(ctx, stage, gt, { count: 120, alpha: 0.45, color: C.ice });
-    const split = eOutExpo(seg(p, T.oa - 0.3 * s1, T.oa + 0.9 * s1)) * (1 - smooth(seg(p, T.dem - 0.6 * s1, T.dem + 0.4 * s1)));
-    // Diagonale : du coin bas-gauche au coin haut-droit
-    const A0 = { x: 0, y: h };
-    const B0 = { x: w, y: 0 };
-    const dirx = (B0.x - A0.x);
-    const diry = (B0.y - A0.y);
-    const aTint = split * (0.4 + 0.6 * env(p, T.oa, T.ob, 0.5 * s1, 0.6 * s1)) * (1 - smooth(seg(p, 1 - 2.2 * s1, 1 - 1.2 * s1)) * 0.5);
-    const bTint = split * smooth(seg(p, T.ob - 0.4 * s1, T.ob + 0.6 * s1)) * (0.4 + 0.6 * env(p, T.ob, T.ecr, 0.5 * s1, 0.6 * s1)) * (1 - smooth(seg(p, 1 - 2.2 * s1, 1 - 1.2 * s1)) * 0.5);
-    const lateBoth = smooth(seg(p, T.ecr - 0.3 * s1, T.ecr + 0.6 * s1)) * (1 - smooth(seg(p, T.dem - 0.6 * s1, T.dem + 0.4 * s1)));
-    if (split > 0.003) {
-      // Plans teintés (Ambre en haut à gauche, Cyan en bas à droite)
-      ctx.save();
-      ctx.beginPath();
-      ctx.moveTo(0, 0);
-      ctx.lineTo(w, 0);
-      ctx.lineTo(0, h);
-      ctx.closePath();
-      const ga = ctx.createRadialGradient(w * 0.25, h * 0.3, 0, w * 0.25, h * 0.3, m * 0.9);
-      ga.addColorStop(0, rgba(C.amber, 0.2 * Math.max(aTint, lateBoth * 0.6)));
-      ga.addColorStop(1, rgba(C.amber, 0));
-      ctx.fillStyle = ga;
-      ctx.fill();
-      ctx.beginPath();
-      ctx.moveTo(w, 0);
-      ctx.lineTo(w, h);
-      ctx.lineTo(0, h);
-      ctx.closePath();
-      const gb = ctx.createRadialGradient(w * 0.75, h * 0.7, 0, w * 0.75, h * 0.7, m * 0.9);
-      gb.addColorStop(0, rgba(C.cyan, 0.2 * Math.max(bTint, lateBoth * 0.6)));
-      gb.addColorStop(1, rgba(C.cyan, 0));
-      ctx.fillStyle = gb;
-      ctx.fill();
-      ctx.restore();
-      // Faisceau rasoir (cœur blanc, liseré rose)
-      const half = split * 0.5;
-      const p1 = { x: cx - dirx * half, y: cy - diry * half };
-      const p2 = { x: cx + dirx * half, y: cy + diry * half };
-      ctx.save();
-      ctx.globalCompositeOperation = 'lighter';
-      ctx.lineCap = 'round';
-      for (const [lw, col, al] of [[18, C.red, 0.12], [6, C.coral, 0.35], [1.6, C.white, 1]]) {
-        ctx.strokeStyle = rgba(col, al * (1 - lateBoth * 0.3));
-        ctx.lineWidth = lw;
-        ctx.beginPath();
-        ctx.moveTo(p1.x, p1.y);
-        ctx.lineTo(p2.x, p2.y);
-        ctx.stroke();
-      }
-      ctx.restore();
-    }
-
-    // Lettres monumentales A et B
-    const aPos = V ? { x: w * 0.3, y: h * 0.33 } : { x: w * 0.24, y: h * 0.44 };
-    const bPos = V ? { x: w * 0.7, y: h * 0.8 } : { x: w * 0.76, y: h * 0.8 };
-    const lettA = smooth(seg(p, T.oa, T.oa + 0.6 * s1)) * (1 - smooth(seg(p, T.dem - 0.6 * s1, T.dem)));
-    const lettB = smooth(seg(p, T.ob, T.ob + 0.6 * s1)) * (1 - smooth(seg(p, T.dem - 0.6 * s1, T.dem)));
-    kinetic(ctx, 'A', aPos.x, aPos.y, { size: m * 0.34, weight: 900, t: seg(p, T.oa, T.oa + 0.7 * s1), alpha: lettA * (0.35 + 0.65 * Math.max(aTint, lateBoth)), color: C.amber, glow: 50, glowColor: rgba(C.amber, 0.6) });
-    kinetic(ctx, 'B', bPos.x, bPos.y, { size: m * 0.34, weight: 900, t: seg(p, T.ob, T.ob + 0.7 * s1), alpha: lettB * (0.35 + 0.65 * Math.max(bTint, lateBoth)), color: C.cyan, glow: 50, glowColor: rgba(C.cyan, 0.6) });
-    const subA = env(p, T.oa + 0.2 * s1, T.ob, 0.4 * s1, 0.5 * s1);
-    kinetic(ctx, 'VENDRE AU PRIX FORT', aPos.x, aPos.y + m * 0.1, { size: m * 0.046, weight: 900, t: seg(p, T.oa + 0.3 * s1, T.oa + 1.2 * s1), alpha: subA, maxW: V ? w * 0.52 : w * 0.3 });
-    const subB = env(p, T.ob + 0.2 * s1, T.ecr, 0.4 * s1, 0.5 * s1);
-    kinetic(ctx, 'RÉSERVER AU QUÉBEC', bPos.x, bPos.y - m * 0.3, { size: m * 0.046, weight: 900, t: seg(p, T.ob + 0.3 * s1, T.ob + 1.2 * s1), alpha: subB, maxW: V ? w * 0.52 : w * 0.3 });
-    mono(ctx, '100 % DE NOS MÉGAWATTS', bPos.x, bPos.y - m * 0.24, { size: m * 0.018, color: C.cyan, t: seg(p, T.cent, T.cent + 1 * s1), alpha: subB * smooth(seg(p, T.cent - 0.2 * s1, T.cent + 0.3 * s1)) });
-
-    // La boussole Franc Nord au centre : elle hésite, penche vers A, puis vers B
-    const tt = p * scene.duration;
-    const hes = env(p, T.dir - 0.2 * s1, T.oa, 0.3 * s1, 0.4 * s1);
-    const tA = (p - T.dir) * scene.duration;
-    const swing =
-      hes * 0.5 * Math.sin(tA * 4.2) * Math.exp(-Math.max(0, tA) * 0.25) +
-      track(p, [[T.oa - 0.1 * s1, 0], [T.oa + 0.8 * s1, -0.62, eOutBack], [T.ob - 0.1 * s1, -0.62], [T.ob + 0.8 * s1, 0.62, eOutBack], [T.ecr - 0.2 * s1, 0.62], [T.ecr + 0.9 * s1, 0, eOutBack]]) +
-      lateBoth * 0.08 * Math.sin(tt * 1.6);
-    const er = m * lerp(0.15, 0.1, split);
-    const emA = smooth(seg(p, 0.0, 0.0 + 1 * s1)) * (1 - smooth(seg(p, T.dem - 0.5 * s1, T.dem)));
-    light(ctx, cx, cy, er * 3, C.white, 0.12 * emA * (0.8 + 0.2 * Math.sin(tt * 2)));
-    emblem(ctx, cx, cy + er * 0.1, er * (1 + 0.025 * Math.sin(tt * 2.2)), { time: gt, alpha: emA, swing });
-    const cA = env(p, T.choix - 0.1 * s1, T.dir - 0.1 * s1, 0.4 * s1, 0.3 * s1);
-    kinetic(ctx, 'VOTRE CHOIX', cx, V ? h * 0.2 : h * 0.22, { size: m * 0.085, weight: 900, t: seg(p, T.choix, T.choix + 1 * s1), alpha: cA });
-    mono(ctx, 'LA MAIN SUR LE DISJONCTEUR', cx, cy + m * 0.3, { size: m * 0.022, color: C.coral, t: seg(p, T.disj, T.disj + 1.2 * s1), alpha: env(p, T.disj - 0.1 * s1, T.oa - 0.2 * s1, 0.3 * s1, 0.3 * s1) });
-    kinetic(ctx, 'QUELLE DIRECTION ?', cx, V ? h * 0.2 : h * 0.22, { size: m * 0.085, weight: 900, t: seg(p, T.dir, T.dir + 0.9 * s1), alpha: hes });
-
-    // Acte IV : appel à l'action (jamais plus de 6 mots)
-    const comA = env(p, T.ecr, T.part - 0.1 * s1, 0.4 * s1, 0.4 * s1);
-    const ty = V ? h * 0.12 : h * 0.14;
-    kinetic(ctx, 'A OU B ?', cx, ty, { size: m * 0.08, weight: 900, t: seg(p, T.ecr, T.ecr + 0.7 * s1), alpha: comA });
-    mono(ctx, 'DANS LES COMMENTAIRES', cx, ty + m * 0.06, { size: m * 0.024, weight: 600, color: C.white, t: seg(p, T.com - 0.1 * s1, T.com + 1 * s1), alpha: comA });
-    const shA = env(p, T.part - 0.1 * s1, T.dem - 0.3 * s1, 0.4 * s1, 0.4 * s1);
-    kinetic(ctx, 'PARTAGEZ', cx, ty, { size: m * 0.08, weight: 900, t: seg(p, T.part, T.part + 0.7 * s1), alpha: shA });
-    mono(ctx, 'SUR FACEBOOK', cx, ty + m * 0.06, { size: m * 0.024, weight: 600, color: C.cyan, t: seg(p, T.fb - 0.1 * s1, T.fb + 0.8 * s1), alpha: shA });
-    if (shA > 0.01) chevrons(ctx, cx, ty + m * 0.13, m * 0.04, { t: seg(p, T.part, T.part + 1 * s1), alpha: shA });
-
-    // Signature finale : l'emblème, FRANC NORD, à demain
-    const fin = smooth(seg(p, T.dem - 0.3 * s1, T.dem + 0.6 * s1));
-    if (fin > 0.003) {
-      const fr = m * 0.13;
-      const fy = cy - m * 0.08;
-      emblem(ctx, cx, fy, fr, {
-        time: gt, alpha: fin,
-        star: seg(p, T.dem - 0.3 * s1, T.dem + 0.4 * s1), ringT: seg(p, T.dem - 0.2 * s1, T.dem + 0.8 * s1),
-        needle: seg(p, T.dem, T.dem + 0.7 * s1), cardinals: seg(p, T.dem + 0.2 * s1, T.dem + 1 * s1)
-      });
-      kinetic(ctx, 'FRANC NORD', cx, fy + fr * 2.1, { size: m * 0.09, weight: 800, t: seg(p, T.dem + 0.3 * s1, T.dem + 1.3 * s1), track: m * 0.04, spacing: m * 0.005, alpha: fin, glow: 24, glowColor: rgba(C.ice, 0.5) });
-      mono(ctx, 'À DEMAIN', cx, fy + fr * 2.1 + m * 0.07, { size: m * 0.026, weight: 600, color: C.amber, t: seg(p, T.dem + 0.8 * s1, T.dem + 1.6 * s1), alpha: fin });
-    }
-  });
+function atmosphere(a,color=C.cyan) {
+  const {ctx,stage:s,globalTime:t}=a;
+  dust(ctx,s,t,{count:100,alpha:.25,color:C.ice,camX:Math.sin(t*.08)*12});
+  light(ctx,s.cx,s.cy,s.w*.65,color,.065);
+  aurora(ctx,s,t,.28,s.h*.83,s.h*.12);
+}
+function globe(a,lon,lat,R=.41,alpha=1,highlight=null) {
+  const {ctx,stage:s,isVertical:V,globalTime:t}=a,m=Math.min(s.w,s.h);
+  const G=makeGlobe(lon,lat,m*R,s.cx,s.h*(V?.54:.57));
+  drawGlobe(ctx,G,{alpha,step:1.1,dot:2.7,dotAlpha:1.15,hl:highlight,hlColor:C.amber,grat:true,atmo:.7});
+  return G;
+}
+function focal(a,P,loc,col=C.amber,alpha=1) {
+ const q=P.project(...loc);if(q.vis!==false)beacon(a.ctx,q.x,q.y,{color:col,r:5,alpha,time:a.globalTime});return q;
+}
+function route(a,G,A,B,col=C.cyan,alpha=1,height=.13) {
+ const pts=projectAll(G,arcPts(A,B,64,height));conduit(a.ctx,pts,a.globalTime,col,alpha);return pts;
+}
+function quebec(a,alpha=1) {
+ const s=a.stage,m=Math.min(s.w,s.h),P=makeFlat(-69,54,m*.026,s.cx,s.h*.54);
+ drawQuebec(a.ctx,P,{alpha,color:C.cyan,fill:.055,line:2.1,draw:eOutCubic(seg(a.progress,0,.16))});
+ return P;
+}
+function mesh(a,x,y,r,color=C.cyan,mode='mesh',failure=0,alpha=1) {
+ const {ctx,globalTime:t}=a;
+ const nodes=Array.from({length:13},(_,i)=>{const ang=i*2.39996,rr=r*Math.sqrt(i/12);return{x:x+Math.cos(ang+t*.025)*rr,y:y+Math.sin(ang+t*.025)*rr*.72,vis:true};});
+ for(let i=1;i<nodes.length;i++){
+   const targets=mode==='mesh'?[Math.max(0,i-1),Math.max(0,i-3)]:[0];
+   for(const j of targets){const affected=mode==='mesh'?(i===5||j===5):true;conduit(ctx,bezier(nodes[j],nodes[i],.08),t+i,color,alpha*(affected?1-failure*.88:1),affected?failure:0,1.5);}
+ }
+ nodes.forEach((n,i)=>beacon(ctx,n.x,n.y,{r:i?3:8,color:failure>.3&&(mode!=='mesh'||i===5)?C.amber:color,alpha:alpha*(i===5?1-failure*.7:1),time:t+i,pulse:i===0}));
+ return nodes;
+}
+function factory(ctx,x,y,s,col,alpha=1) {iconGlyph(ctx,'factory',x,y,s,col,alpha);}
+function scaleBalance(a,u,color=C.amber) {
+ const {ctx,stage:s,globalTime:t}=a,m=Math.min(s.w,s.h),x=s.cx,y=s.h*.52,R=m*.29;
+ const theta=Math.sin(t*.5)*.025+u*.12;
+ line(ctx,[[x,y-R*.1],[x,y+R*.85],[x-R*.28,y+R*.94],[x+R*.28,y+R*.94]],C.slate,2,.65);
+ ctx.save();ctx.translate(x,y);ctx.rotate(theta);
+ line(ctx,[[-R,0],[R,0]],C.white,3,.85);
+ [-1,1].forEach((side)=>{
+   const X=side*R;
+   line(ctx,[[X,0],[X-R*.24,R*.52],[X+R*.24,R*.52],[X,0]],side<0?color:C.cyan,2,.8);
+   ring(ctx,X,R*.50,R*.24,{color:side<0?color:C.cyan,a0:0,sweep:Math.PI,width:3,glow:12});
+   for(let i=0;i<7;i++)light(ctx,X+(i-3)*R*.045,R*.52,R*.035,side<0?color:C.cyan,.8);
+ });ctx.restore();
+}
+function shield(a,x,y,r,alpha=1) {
+ const pts=Array.from({length:72},(_,i)=>{const v=i/71*Math.PI;return{x:x+Math.cos(v)*r,y:y-Math.sin(v)*r*.72,vis:true};});
+ trail(a.ctx,pts,1,{color:C.cyan,width:3,alpha,head:false});
+ for(let i=1;i<7;i++)line(a.ctx,[[x-r+i*r/4,y],[x-r+i*r/4,y-Math.sin(Math.acos((i-4)/4))*r*.72]],C.cyan,1,alpha*.22);
+ light(a.ctx,x,y-r*.3,r,C.cyan,alpha*.14);
+}
+function jet(ctx,x,y,s,angle,color,alpha=1) {
+ ctx.save();ctx.translate(x,y);ctx.rotate(angle);ctx.globalAlpha*=alpha;
+ ctx.fillStyle=color;ctx.shadowColor=color;ctx.shadowBlur=12;
+ ctx.beginPath();ctx.moveTo(s,0);ctx.lineTo(-s*.65,-s*.2);ctx.lineTo(-s*.85,-s*.7);ctx.lineTo(-s*.95,-s*.7);ctx.lineTo(-s*.8,0);ctx.lineTo(-s*.95,s*.7);ctx.lineTo(-s*.85,s*.7);ctx.lineTo(-s*.65,s*.2);ctx.closePath();ctx.fill();ctx.restore();
+}
+function airTraffic(a,G,freeze=0,col=C.cyan,alpha=1) {
+ const r=rng(17),{ctx,globalTime:t}=a;
+ for(let i=0;i<60;i++){
+  const A=[-124+r()*50,27+r()*23],B=[-123+r()*50,26+r()*24];
+  const pts=projectAll(G,arcPts(A,B,40,.025));
+  trail(ctx,pts,1,{color:freeze>.7?C.amber:col,width:.8,alpha:alpha*.12,head:false,dash:freeze>.7?[3,6]:null});
+  const u=lerp((t*.035+i*.137)%1,.25+(i*.137)% .5,freeze),n=Math.floor(u*39),q=pts[n],q2=pts[n+1];
+  if(q.vis&&q2.vis)jet(ctx,q.x,q.y,4.5,Math.atan2(q2.y-q.y,q2.x-q.x),freeze>.7?C.amber:col,alpha*.8);
+ }
 }
 
-/* ═══ REGISTRE DES SCÈNES ═══ */
+// 01 · Identity → three waves → Québec. The camera passes through the rings.
+function novIntro(a){const {ctx,stage:s,globalTime:t}=a,m=Math.min(s.w,s.h);
+ frame(a,()=>{atmosphere(a);acts(a,beats(a,["Aujourd'hui","Ensuite","Enfin"]),(i,u)=>{
+  if(i===0){const R=m*.16;emblem(ctx,s.cx,s.cy-R*.25,R,{time:t,star:eOutCubic(u*5),ringT:seg(u,.04,.3),needle:seg(u,.12,.42)});word(a,'FRANC NORD',seg(u,.18,.32),C.white,.76,.105,seg(u,.15,.38));}
+  else {const titles=['','COP31','DONBASS','RÉSEAUX FRAGILES'];const col=i===1?C.amber:C.cyan;
+    const G=globe(a,lerp(25,i===3?-85:45,eInOut(u)),30+u*6,.34);
+    for(let j=0;j<3;j++){const ph=(u*.8+j/3)%1;ring(ctx,s.cx,s.h*.54,m*(.18+ph*.8),{color:j===0?C.amber:C.cyan,width:1.5,alpha:(1-ph)*.45});}
+    if(i===1)focal(a,G,GEO.antalya,C.amber);if(i===2){focal(a,G,GEO.donbass);route(a,G,GEO.moscow,GEO.beijing);}
+    if(i===3){airTraffic(a,G,smooth(seg(u,.2,.65)));const P=makeFlat(-69,54,m*.014,s.cx,s.h*.56);drawQuebec(ctx,P,{alpha:smooth(seg(u,.55,.9)),fill:.1});}
+    word(a,titles[i],1,col,.23,.105,seg(u,0,.13));
+  }
+ });});}
+// 02 · Antalya's financial nucleus becomes an AI lattice, then a Sahel heat front.
+function novClimate(a){const {ctx,stage:s,globalTime:t}=a,m=Math.min(s.w,s.h);
+ frame(a,()=>{atmosphere(a,C.amber);acts(a,beats(a,['des milliards','En parallèle','Au Tchad']),(i,u)=>{
+  if(i===0||i===3){const G=globe(a,i===0?30+u*3:18,i===0?37:17,.44,1,i===3?(lo,la)=>Math.exp(-(((la-14)/5)**2))*(lo>-15&&lo<35?1:0):null);
+   focal(a,G,i===0?GEO.antalya:GEO.chad,C.amber);word(a,i===0?'ANTALYA':'SÉCHERESSE',1,i===0?C.white:C.amber,.24,.1,seg(u,0,.12));
+   if(i===3)shockwave(ctx,s.cx,s.h*.56,m*.38,t,{color:C.amber,alpha:.3,period:6});
+  }else if(i===1){const x=s.cx,y=s.h*.55;for(let j=0;j<18;j++){const ang=j*TAU/18;const A={x:x+Math.cos(ang)*m*.42,y:y+Math.sin(ang)*m*.3},B={x,y};conduit(ctx,bezier(A,B,.15),t+j*.4,C.amber,.7);}
+   dotSphere(ctx,x,y,m*.12,t,{color:C.amber,n:400});word(a,'QUI PAIE ?',1,C.white,.24,.11,seg(u,0,.15));
+  }else{for(let j=0;j<7;j++){const ang=j*TAU/7;const x=s.cx+Math.cos(ang+t*.04)*m*.25,y=s.h*.56+Math.sin(ang+t*.04)*m*.2;isoCube(ctx,x,y,m*.045,{color:C.cyan,time:t});conduit(ctx,bezier({x,y},{x:s.cx,y:s.h*.56},.1),t,C.amber,.7);}
+   glyphBolt(ctx,s.cx,s.h*.56,m*.10,t,1);word(a,"L'EMPREINTE DE L'IA",1,C.white,.24,.09,seg(u,0,.16));}
+ });});}
+// 03 · Two hemispheres physically pull apart; energy load deforms their equilibrium.
+function novFinance(a){const {ctx,stage:s,globalTime:t}=a,m=Math.min(s.w,s.h);
+ frame(a,()=>{atmosphere(a,C.amber);acts(a,beats(a,['Les pays en développement','De leur côté',"S'ajoute"]),(i,u)=>{
+  const G=globe(a,20+Math.sin(t*.04)*12,15,.36,1,(lo,la)=>i===1&&la<20?.7:i===2&&la>30?.5:0);
+  const Y=s.h*.55;line(ctx,[[s.cx-m*.4,Y],[s.cx+m*.4,Y]],C.slate,1,.35);
+  if(i===0)word(a,'LA FACTURE CLIMATIQUE',1,C.white,.24,.08,seg(u,0,.16));
+  if(i===1){for(let k=0;k<9;k++){const x=s.cx+(k-4)*m*.055;conduit(ctx,bezier({x,y:Y+m*.24},{x:x+m*.05,y:Y-m*.15},.15),t+k,C.amber,.7);}word(a,'ADAPTER. FINANCER.',1,C.amber,.24,.09,seg(u,0,.16));}
+  if(i===2){ring(ctx,s.cx,Y-m*.1,m*.23,{color:C.amber,sweep:TAU*(.65+.1*Math.sin(t*.3)),width:5,alpha:.8});word(a,'BUDGETS SOUS PRESSION',1,C.white,.24,.08,seg(u,0,.16));}
+  if(i===3){for(let k=0;k<5;k++)isoCube(ctx,s.cx+(k-2)*m*.095,s.h*.65+Math.abs(k-2)*m*.025,m*.042,{time:t,color:C.cyan});
+   const pts=Array.from({length:60},(_,j)=>({x:s.cx-m*.3+j*m*.01,y:s.h*.67-m*.3*(j/59)**2,vis:true}));trail(ctx,pts,eOutCubic(u*2),{color:C.amber,width:3});word(a,'LA DEMANDE ACCÉLÈRE',1,C.amber,.24,.08,seg(u,0,.16));}
+ });});}
+// 04 · Justice and competitiveness are opposing torques, not two text panels.
+function novJustice(a){const {ctx,stage:s,globalTime:t}=a,m=Math.min(s.w,s.h);
+ frame(a,()=>{atmosphere(a);acts(a,beats(a,["D'un côté","De l'autre côté"]),(i,u)=>{
+  scaleBalance(a,i===1?-1:i===2?1:Math.sin(t*.4));
+  if(i===0)word(a,'DEUX LOGIQUES',1,C.white,.24,.10,seg(u,0,.18));
+  if(i===1){word(a,'JUSTICE CLIMATIQUE',1,C.amber,.24,.09,seg(u,0,.15));for(let k=0;k<8;k++)conduit(ctx,bezier({x:s.cx-m*.29,y:s.h*.5},{x:s.cx+m*.2,y:s.h*.75+k*m*.01},.2),t+k,C.amber,.65);}
+  if(i===2){word(a,'COMPÉTITIVITÉ',1,C.cyan,.24,.10,seg(u,0,.15));factory(ctx,s.cx+m*.29,s.h*.64,m*.09,C.cyan);for(let k=0;k<3;k++)ring(ctx,s.cx+m*.29,s.h*.64,m*(.13+k*.025),{color:C.cyan,alpha:.25,a0:t*.1+k,sweep:Math.PI*.75});}
+ });});}
+// 05 · Atlantic ripple → insurance roof → Québec hydro geometry.
+function novClimateQC(a){const {ctx,stage:s,globalTime:t}=a,m=Math.min(s.w,s.h);
+ frame(a,()=>{atmosphere(a);acts(a,beats(a,["D'abord sur votre budget","Ensuite sur notre économie"]),(i,u)=>{
+  if(i===0){const G=globe(a,lerp(20,-65,eInOut(u)),lerp(38,49,u),.43);route(a,G,GEO.antalya,GEO.montreal,C.amber);focal(a,G,GEO.montreal);word(a,"JUSQU'ICI",1,C.white,.23,.12,seg(u,0,.18));}
+  if(i===1){quebec(a,.35);iconGlyph(ctx,'house',s.cx,s.h*.54,m*.20,C.ice,1);for(let k=0;k<4;k++){const y=s.h*.56-m*(.07+k*.065)+Math.sin(t+k)*m*.01;line(ctx,[[s.cx-m*.35,y],[s.cx-m*.13,y-m*.035],[s.cx+m*.3,y-m*.035]],C.amber,2,.6);}
+   word(a,'ASSURANCES ↑',1,C.amber,.23,.10,seg(u,0,.18));}
+  if(i===2){const P=quebec(a,.65);focal(a,P,PLACES.manic5);focal(a,P,PLACES.montreal,C.cyan);conduit(ctx,bezier(P.project(...PLACES.manic5),P.project(...PLACES.montreal),.35),t,C.cyan,.9);
+   manic5(ctx,s.cx,s.h*.76,m*.56,m*.16,{time:t,draw:eOutCubic(u*3),litArches:[4,5,6,7,8],fill:.4});word(a,'UN ATOUT HYDROÉLECTRIQUE',1,C.white,.23,.08,seg(u,0,.16));}
+ });});}
+// 06 · Diplomatic triangle → Donbass boundary → Beijing convergence.
+function novDonbass(a){const {ctx,stage:s,globalTime:t}=a,m=Math.min(s.w,s.h);
+ frame(a,()=>{atmosphere(a);acts(a,beats(a,['cède la région du Donbass','Au même moment']),(i,u)=>{
+  if(i===1){const G=globe(a,36,49,.46,1,(lo,la)=>lo>37&&lo<40&&la>47&&la<50?.9:0);
+   const q=focal(a,G,GEO.donbass,C.amber);ring(ctx,q.x,q.y,m*.095,{color:C.amber,width:2,dash:[5,8],a0:t*.06});shield(a,q.x-m*.14,q.y+m*.12,m*.17,.8);word(a,'DONBASS ↔ OTAN',1,C.white,.24,.10,seg(u,0,.14));
+  }else{const G=globe(a,lerp(35,100,i===2?eInOut(u):.1),48,.4);
+   const locs=[GEO.washington,GEO.moscow,GEO.beijing];locs.forEach((q,k)=>{focal(a,G,q,k===1?C.amber:C.cyan);route(a,G,q,locs[(k+1)%3],k===1?C.amber:C.cyan,.75);});
+   word(a,i===0?'LA TABLE DES PUISSANCES':'CAP SUR PÉKIN',1,C.white,.24,.08,seg(u,0,.14));
+   if(i===2){const q=G.project(...GEO.beijing);shockwave(ctx,q.x,q.y,m*.22,t,{color:C.amber,alpha:.3,period:5});}
+  }
+ });});}
+// 07 · Layers of frontiers → three massive gravitational fields → nuclear orbit.
+function novPower(a){const {ctx,stage:s,globalTime:t}=a,m=Math.min(s.w,s.h);
+ frame(a,()=>{atmosphere(a);acts(a,beats(a,["Aujourd'hui","En parallèle"]),(i,u)=>{
+  if(i===0){for(let k=0;k<7;k++){const pts=Array.from({length:80},(_,j)=>({x:s.cx-m*.42+j*m*.84/79,y:s.h*.54+Math.sin(j*.12+k*.7)*m*.06+(k-3)*m*.045,vis:true}));trail(ctx,pts,eOutCubic(u*2),{color:k===3?C.amber:C.ice,alpha:k===3?.9:.18,width:k===3?3:1,dash:k===3?null:[4,9]});}word(a,'FRONTIÈRES SOUS TENSION',1,C.white,.24,.08,seg(u,0,.14));}
+  else{const centers=Array.from({length:3},(_,j)=>({x:s.cx+Math.cos(j*TAU/3-Math.PI/2+t*.035)*m*.26,y:s.h*.56+Math.sin(j*TAU/3-Math.PI/2+t*.035)*m*.23}));
+   centers.forEach((q,j)=>{dotSphere(ctx,q.x,q.y,m*(j===0?.10:.085),t+j,{color:j===1?C.amber:C.cyan,n:350});conduit(ctx,bezier(q,centers[(j+1)%3],.15),t,C.slate,.5);});
+   if(i===2){for(let j=0;j<3;j++){ctx.save();ctx.translate(s.cx,s.h*.56);ctx.rotate(j*Math.PI/3+t*.06);ctx.scale(1,.34);ring(ctx,0,0,m*.29,{color:C.amber,alpha:.55,width:2});ctx.restore();}beacon(ctx,s.cx,s.h*.56,{time:t,r:8,color:C.white});}
+   word(a,i===1?'LE RAPPORT DE FORCE':'ÉQUILIBRE NUCLÉAIRE',1,i===2?C.amber:C.white,.24,.08,seg(u,0,.14));}
+ });});}
+// 08 · Protective dome versus a fault propagating through territorial lines.
+function novCompromise(a){const {ctx,stage:s,globalTime:t}=a,m=Math.min(s.w,s.h);
+ frame(a,()=>{atmosphere(a);acts(a,beats(a,['Les partisans',"À l'inverse"]),(i,u)=>{
+  const y=s.h*.59;
+  for(let j=0;j<19;j++){const x=s.cx+(j-9)*m*.035;const shift=i===2?smooth(seg(u,j*.023,j*.023+.18))*m*.07*(j%2?1:-1):0;
+   line(ctx,[[x,y-m*.08+shift],[x,y+m*.14+shift]],i===2?C.amber:C.cyan,1.4,.65);}
+  if(i===0){ring(ctx,s.cx,y,m*.24,{color:C.cyan,alpha:.55,sweep:TAU*eOutCubic(u*2)});word(a,'PAIX CONTRE TERRITOIRE ?',1,C.white,.24,.075,seg(u,0,.15));}
+  if(i===1){shield(a,s.cx,y+m*.15,m*.34);word(a,'ARRÊTER LES COMBATS',1,C.cyan,.24,.085,seg(u,0,.15));}
+  if(i===2){const pts=Array.from({length:40},(_,j)=>({x:s.cx+Math.sin(j*1.8)*m*.018,y:y-m*.24+j*m*.48/39,vis:true}));trail(ctx,pts,eOutCubic(u*2),{color:C.amber,width:3});word(a,'QUEL PRÉCÉDENT ?',1,C.amber,.24,.09,seg(u,0,.15));}
+ });});}
+// 09 · Polar camera flight ends on Montréal's aerospace and public budgets.
+function novArctic(a){const {ctx,stage:s,globalTime:t}=a,m=Math.min(s.w,s.h);
+ frame(a,()=>{atmosphere(a);acts(a,beats(a,['Cela touche directement','Sur le plan humain']),(i,u)=>{
+  if(i===0){const G=globe(a,lerp(35,-70,eInOut(u)),72,.43);route(a,G,GEO.moscow,[-75,74],C.cyan);route(a,G,[-75,74],GEO.montreal,C.amber);focal(a,G,[-75,74],C.cyan);word(a,'REGARD VERS L’ARCTIQUE',1,C.white,.23,.075,seg(u,0,.14));}
+  else{const P=quebec(a,.8),q=focal(a,P,GEO.montreal,C.cyan);if(i===1){for(let j=0;j<3;j++)jet(ctx,q.x+m*(.05+j*.055),q.y-m*(.07+j*.09),m*.018,-Math.PI/3,C.ice,.8);route(a,{project:(...v)=>P.project(...v)},GEO.montreal,[-75,64],C.cyan,.5,0);word(a,'MONTRÉAL · AÉROSPATIALE',1,C.white,.23,.08,seg(u,0,.14));}
+   else{shockwave(ctx,q.x,q.y,m*.3,t,{color:C.amber,alpha:.35,period:6});word(a,'DES RETOMBÉES ICI',1,C.amber,.23,.08,seg(u,0,.14));}}
+ });});}
+// 10 · Sixty flight paths arrest; the cloud loses its nodes in a timed cascade.
+function novOutage(a){const {ctx,stage:s,globalTime:t}=a,m=Math.min(s.w,s.h);
+ frame(a,()=>{atmosphere(a);acts(a,beats(a,["D'abord",'cinquante milliards','Presque au même moment']),(i,u)=>{
+  if(i<2){const G=globe(a,-96,39,.45);airTraffic(a,G,i===0?0:smooth(seg(u,.08,.52)),C.cyan);word(a,i===0?'DOUBLE PANNE':'DÉCOLLAGES SUSPENDUS',1,i===0?C.white:C.amber,.23,.085,seg(u,0,.14));}
+  if(i===2){ring(ctx,s.cx,s.h*.55,m*.29,{color:C.amber,width:1.5,sweep:TAU*eOutCubic(u*2)});word(a,'50 G$',1,C.amber,.57,.24,seg(u,0,.15));}
+  if(i===3){for(let j=0;j<9;j++){const x=s.cx+(j%3-1)*m*.18,y=s.h*.48+Math.floor(j/3)*m*.12;const dead=u>.1+j*.043;isoCube(ctx,x,y,m*.046,{color:C.cyan,time:t,dead,alpha:dead?.4:1});}
+   word(a,'24 H',1,C.amber,.25,.19,seg(u,0,.12));
+   if(u>.6)word(a,'CLOUD À L’ARRÊT',smooth(seg(u,.6,.7)),C.white,.83,.065,seg(u,.6,.75));}
+ });});}
+// 11 · Air corridors become external cloud dependencies; one hub fails.
+function novOutageQC(a){const {ctx,stage:s,globalTime:t}=a,m=Math.min(s.w,s.h);
+ frame(a,()=>{atmosphere(a);acts(a,beats(a,['Nos corridors aériens','Et côté numérique','Une seule défaillance']),(i,u)=>{
+  if(i<2){const G=globe(a,-76,44,.45);[PLACES.newYork,[-71,42.36],PLACES.florida].forEach(q=>{const pts=projectAll(G,arcPts(GEO.montreal,q,56,.06));conduit(ctx,pts,t,C.amber,.7,i===1?smooth(u):0);});focal(a,G,GEO.montreal,C.cyan);word(a,i===0?'L’EFFET DOMINO':'RETARDS EN CHAÎNE',1,C.amber,.23,.085,seg(u,0,.15));}
+  else{quebec(a,.5);mesh(a,s.cx,s.h*.55,m*.31,C.cyan,'star',i===3?smooth(seg(u,.1,.5)):0);word(a,i===2?'NOS SERVICES CONNECTÉS':'UN SEUL POINT FAIBLE',1,i===3?C.amber:C.white,.23,.08,seg(u,0,.14));}
+ });});}
+// 12 · Local mesh reroutes around failure; integrated trunk concentrates throughput.
+function novResilience(a){const {ctx,stage:s,globalTime:t,isVertical:V}=a,m=Math.min(s.w,s.h);
+ frame(a,()=>{atmosphere(a);acts(a,beats(a,['Pour les partisans',"À l'inverse"]),(i,u)=>{
+  if(i===0){mesh(a,s.cx,s.h*.56,m*.31,C.cyan,'star',smooth(seg(u,.2,.7)));word(a,'COMMENT RÉAGIR ?',1,C.white,.23,.10,seg(u,0,.15));}
+  if(i===1){mesh(a,s.cx,s.h*.56,m*.33,C.cyan,'mesh',smooth(seg(u,.3,.6)));word(a,'AUTONOMIE LOCALE',1,C.cyan,.23,.09,seg(u,0,.14));
+   ring(ctx,s.cx,s.h*.56,m*.37,{color:C.cyan,width:1,alpha:.25,sweep:TAU*eOutCubic(u*2)});}
+  if(i===2){mesh(a,s.cx,s.h*.56,m*.33,C.amber,'star');for(let j=0;j<4;j++)conduit(ctx,bezier({x:s.cx-m*.4,y:s.h*.56+(j-1.5)*m*.025},{x:s.cx+m*.4,y:s.h*.56+(j-1.5)*m*.025},0),t*2+j,C.amber,.65,0,2.5);word(a,'RÉSEAUX INTÉGRÉS',1,C.amber,.23,.09,seg(u,0,.14));}
+ });});}
+// 13 · Two trajectories around the same compass. One phrase at a time.
+function novFinale(a){const {ctx,stage:s,globalTime:t,isVertical:V}=a,m=Math.min(s.w,s.h);
+ frame(a,()=>{atmosphere(a);acts(a,beats(a,['Option A','Ou Option B','Écrivez','partagez','retrouve demain']),(i,u)=>{
+  if(i<4){const ang=i===1?-.35:i===2?.35:Math.sin(t*.5)*.04;
+   emblem(ctx,s.cx,s.h*.55,m*.16,{time:t,swing:ang});
+   if(i===1||i===2){const col=i===1?C.cyan:C.amber;line(ctx,[[0,s.h],[s.w,0]],col,2,.5);light(ctx,s.w*(i===1?.3:.7),s.h*.55,m*.7,col,.18);}
+   word(a,['QUELLE DIRECTION ?','A · AUTONOMIE','B · INTÉGRATION','A OU B ?'][i],1,i===1?C.cyan:i===2?C.amber:C.white,.25,.095,seg(u,0,.12));
+  }else if(i===4){emblem(ctx,s.cx,s.h*.52,m*.15,{time:t});word(a,'PARTAGEZ FRANC NORD',1,C.white,.77,.085,seg(u,0,.14));}
+  else{emblem(ctx,s.cx,s.h*.47,m*.17,{time:t,star:seg(u,0,.2),ringT:seg(u,0,.3)});word(a,'FRANC NORD',1,C.white,.73,.11,seg(u,.05,.3));word(a,'À DEMAIN',1,C.amber,.80,.035,seg(u,.2,.4));}
+ });});}
+/* ASTRA · Physical editorial stage. Perspective camera, extruded geometry,
+   continuously drawn mechanisms; all timestamps come from the supplied voice. */
+function stage3(a,u,opts={}) {
+ const {w,h}=a.stage,m=Math.min(w,h),V=a.isVertical;
+ const yaw=(opts.yaw??-.35)+Math.sin(u*Math.PI)*.13,tilt=opts.tilt??.64;
+ const zoom=(opts.zoom??1)*.72*(1+.12*eInOut(u));
+ const cx=w*(V?.5:.59)+(opts.pan??0)*m*(u-.5),cy=h*(V?.64:.66);
+ return (x,y,z=0)=>{const X=x*Math.cos(yaw)-y*Math.sin(yaw),Y=x*Math.sin(yaw)+y*Math.cos(yaw),d=3.8+Y*Math.sin(tilt)-z*Math.cos(tilt),k=m*zoom*3.8/d;return{x:cx+X*k,y:cy+(Y*Math.cos(tilt)-z*Math.sin(tilt))*k,vis:true,k};};
+}
+function face(ctx,pts,color,fill=.3,width=1.5){ctx.save();ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.closePath();const ys=pts.map(p=>p.y),xs=pts.map(p=>p.x);const g=ctx.createLinearGradient(Math.min(...xs),Math.min(...ys),Math.max(...xs),Math.max(...ys)+1);g.addColorStop(0,rgba(color,Math.min(1,fill*1.5)));g.addColorStop(.45,rgba(color,fill));g.addColorStop(1,rgba(color,fill*.35));ctx.fillStyle=g;ctx.fill();ctx.strokeStyle=rgba(color,.8);ctx.lineWidth=width;ctx.stroke();ctx.restore();}
+function solid(a,P,x,y,z,wx,wy,h,col=C.cyan){const c=a.ctx;const q=[[x-wx/2,y-wy/2],[x+wx/2,y-wy/2],[x+wx/2,y+wy/2],[x-wx/2,y+wy/2]];const b=q.map(v=>P(...v,z)),t=q.map(v=>P(...v,z+h));face(c,[b[1],b[2],t[2],t[1]],col,.18);face(c,[b[2],b[3],t[3],t[2]],col,.32);face(c,t,col,.56);return P(x,y,z+h);}
+function ribbon(a,P,pts,col,width=.014,reveal=1){const n=Math.max(2,Math.ceil(pts.length*clamp(reveal)));for(let i=1;i<n;i++){let A=pts[i-1],B=pts[i];const dx=B[0]-A[0],dy=B[1]-A[1],l=Math.hypot(dx,dy)||1,nx=-dy/l*width,ny=dx/l*width;face(a.ctx,[P(A[0]+nx,A[1]+ny,A[2]||0),P(B[0]+nx,B[1]+ny,B[2]||0),P(B[0]-nx,B[1]-ny,B[2]||0),P(A[0]-nx,A[1]-ny,A[2]||0)],col,.55,.4);}if(n<pts.length){const q=P(...pts[n-1]);light(a.ctx,q.x,q.y,24,col,.8);}}
+function arrow3(a,P,A,B,col=C.amber,reveal=1){const b=A.map((v,i)=>lerp(v,B[i],clamp(reveal)));const pts=Array.from({length:30},(_,i)=>A.map((v,j)=>lerp(v,b[j],i/29)));ribbon(a,P,pts,col,.009);const d=Math.atan2(b[1]-A[1],b[0]-A[0]),s=.038;face(a.ctx,[P(...b),P(b[0]-Math.cos(d)*s+Math.sin(d)*s*.55,b[1]-Math.sin(d)*s-Math.cos(d)*s*.55,b[2]),P(b[0]-Math.cos(d)*s-Math.sin(d)*s*.55,b[1]-Math.sin(d)*s+Math.cos(d)*s*.55,b[2])],col,.9);}
+function ground(a,P,u,col=C.cyan){const c=a.ctx;for(let j=-10;j<=10;j++){const v=j*.075;line(c,[P(-.8,v,-.03),P(.8,v,-.03)],col,1,.09);line(c,[P(v,-.8,-.03),P(v,.8,-.03)],col,1,.09);}for(let k=0;k<3;k++){const r=.18+((u*.2+k/3)%1)*.65;const pts=Array.from({length:90},(_,i)=>P(Math.cos(i/89*TAU)*r,Math.sin(i/89*TAU)*r,-.02));line(c,pts,col,1,.12);}}
+function terrain(a,P,u,hot=false){const c=a.ctx,N=25,step=1.28/N;const height=(x,y)=>.025+Math.pow(Math.abs(Math.sin(x*8.1+Math.cos(y*7))*Math.cos(y*6.5-x*2)),2)*.12;
+ for(let j=0;j<N;j++)for(let i=0;i<N;i++){const x=-.64+i*step,y=-.55+j*step;const h=height(x,y);const col=hot&&y<.12&&y>-.18?C.amber:C.cyan;face(c,[P(x,y,h),P(x+step,y,height(x+step,y)),P(x+step,y+step,height(x+step,y+step)),P(x,y+step,height(x,y+step))],col,.08+h*.9,.5);}
+}
+function titleA(a,text,kicker,col,u){const {ctx,stage:s,isVertical:V}=a,m=Math.min(s.w,s.h);const x=V?s.w*.09:s.w*.07,y=V?s.h*.20:s.h*.26;
+ const words=text.split('|');words.forEach((v,i)=>kinetic(ctx,v,x,y+i*m*.10,{align:'left',size:m*(V?.079:.098),weight:900,maxW:s.w*(V?.82:.65),color:i?col:C.white,t:clamp(u*6-i*.12),alpha:1}));
+ // Three-word editorial label, no persistent data panels.
+ if(kicker)mono(ctx,kicker,x,y-m*.12,{align:'left',size:m*.014,spacing:2,color:col,t:clamp(u*8),cursor:false});
+ line(ctx,[[x,y+words.length*m*.10-m*.065],[x+m*.13*eOutCubic(u*5),y+words.length*m*.10-m*.065]],col,3,.9);
+}
+function ambianceA(a,u,col){const {ctx,stage:s,globalTime:t}=a;dust(ctx,s,t,{count:160,alpha:.35,camX:u*100,seed:17});light(ctx,s.w*.7,s.h*.56,Math.min(s.w,s.h)*.75,col,.15);
+ // Broad moving atmospheric shafts and a low horizon, not a flat gradient.
+ ctx.save();ctx.globalCompositeOperation='screen';for(let i=0;i<5;i++){const x=s.w*(.1+i*.22)+Math.sin(t*.06+i)*70;const g=ctx.createLinearGradient(x,0,x+s.w*.25,s.h);g.addColorStop(0,rgba(col,0));g.addColorStop(.5,rgba(col,.017));g.addColorStop(1,rgba(col,0));ctx.fillStyle=g;ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x+s.w*.08,0);ctx.lineTo(x+s.w*.5,s.h);ctx.lineTo(x+s.w*.35,s.h);ctx.fill();}ctx.restore();}
+function earthA(a,u,kind){const {ctx,stage:s,isVertical:V,globalTime:t}=a,m=Math.min(s.w,s.h);const spec={world:[15,25],antalya:[30,37],heat:[18,15],atlantic:[-25,43],ukraine:[37,49],polar:[-65,76],air:[-96,39]}[kind]||[15,25];
+ const radius=m*(V?.55:.68)*(1+.17*eInOut(u));const G=makeGlobe(spec[0]+lerp(-12,8,u),spec[1],radius,s.w*(V?.52:.67),s.h*(V?.68:.74));
+ drawGlobe(ctx,G,{step:.75,dot:2.5,alpha:1,atmo:1.5,hl:kind==='heat'?(lo,la)=>la>8&&la<21&&lo>-15&&lo<35?1:0:null,hlColor:C.amber});
+ // Solid illuminated shorelines add readable land mass and an atmospheric limb.
+ ctx.save();ctx.lineWidth=1.1;ctx.strokeStyle=rgba(C.ice,.34);for(const poly of LAND){ctx.beginPath();let pen=false;for(let j=0;j<poly.length;j+=2){const q=G.project(poly[j],poly[j+1],.001);if(q.z>0){pen?ctx.lineTo(q.x,q.y):ctx.moveTo(q.x,q.y);pen=true;}else pen=false;}ctx.stroke();}ctx.restore();
+ const locations=kind==='antalya'?[GEO.antalya]:kind==='ukraine'?[GEO.kyiv,GEO.donbass]:kind==='polar'?[GEO.moscow,[-75,74],GEO.montreal]:kind==='atlantic'?[GEO.antalya,GEO.montreal]:[GEO.washington,GEO.moscow,GEO.beijing];
+ locations.forEach((q,j)=>{const p=G.project(...q);if(p.z>0){beacon(ctx,p.x,p.y,{time:t,r:7,color:C.amber});if(j>0)route(a,G,locations[j-1],q,C.amber,1,.10);}});
+ if(kind==='air')airTraffic(a,G,smooth(seg(u,.3,.55)),C.cyan,1);
+ if(kind==='heat'){const q=G.project(18,15);shockwave(ctx,q.x,q.y,m*.4,t,{color:C.amber,alpha:.6,period:5});}
+ flare(ctx,G.cx-radius*.62,G.cy-radius*.73,m*.14,C.cyan,.65);return G;}
+function financeA(a,u,mode){const P=stage3(a,u,{yaw:-.4,zoom:1.25,pan:.12});ground(a,P,u);
+ const t=a.globalTime;for(let j=0;j<7;j++){const x=(j-3)*.14,h=(mode==='budget'?.08+.045*(6-j):.09+j*.035)*eOutCubic(seg(u,j*.025,.4+j*.025));solid(a,P,x,.20,0,.08,.16,h,j<3?C.amber:C.cyan);}
+ if(mode==='flow'){for(let j=0;j<7;j++){const pts=Array.from({length:45},(_,k)=>{const f=k/44;return[(j-3)*.14*(1-f),.15-f*.67,.11+Math.sin(f*Math.PI)*.2];});ribbon(a,P,pts,j<3?C.amber:C.cyan,.012,eOutCubic(u*3));for(let k=0;k<3;k++){const q=P(...pts[Math.floor(((t*.2+k/3)%1)*44)]);light(a.ctx,q.x,q.y,13,C.gold,.8);}}solid(a,P,0,-.54,0,.22,.22,.18,C.amber);}
+ else{const pts=Array.from({length:65},(_,k)=>{const f=k/64;return[-.49+f*.98,.15,.1+f*f*.40];});ribbon(a,P,pts,C.amber,.012,eOutCubic(u*2));arrow3(a,P,[.3,.15,.35],[.5,.15,.52],C.amber,eOutCubic(u*2));}
+}
+function serversA(a,u,dead=false){const P=stage3(a,u,{yaw:lerp(-.65,.1,u),zoom:1.4,pan:.12}),t=a.globalTime;ground(a,P,u);for(let j=0;j<4;j++)for(let i=0;i<5;i++){const x=(i-2)*.15,y=(j-1.5)*.16,loss=dead&&u>.12+(j*5+i)*.025,col=loss?'#334155':C.cyan,h=.16+.1*Math.sin(i*.8+j*.7)**2;solid(a,P,x,y,0,.09,.10,h,col);for(let k=0;k<5;k++){const A=P(x-.035,y+.052,.025+k*.028),B=P(x+.035,y+.052,.025+k*.028);line(a.ctx,[A,B],loss?'#475569':C.ice,2,loss?.3:.6+.3*Math.sin(t*3+i+k));}if(!loss&&j<3)arrow3(a,P,[x,y+.07,.015],[x,y+.14,.015],C.amber,1);}
+ if(dead){const q=P(0,0,.1);shockwave(a.ctx,q.x,q.y,Math.min(a.stage.w,a.stage.h)*.45,u*5,{color:C.amber,alpha:.35,period:6});}}
+function balanceA(a,u,side){const P=stage3(a,u,{yaw:-.22,zoom:1.25});ground(a,P,u);solid(a,P,0,0,0,.05,.05,.40,C.slate);solid(a,P,0,0,0,.25,.18,.035,C.cyan);const angle=side*.12+Math.sin(u*4)*.025;
+ for(let j=-1;j<=1;j+=2){const h=.36+j*angle;solid(a,P,j*.3,0,h,.25,.23,.025,j<0?C.amber:C.cyan);line(a.ctx,[P(0,0,.4),P(j*.3,0,.4+j*angle),P(j*.3,0,h)],C.slate,3,.8);for(let k=0;k<4;k++)solid(a,P,j*.3+(k%2-.5)*.07,(Math.floor(k/2)-.5)*.07,h+.025,.06,.06,.035*(1+k*.4),j<0?C.amber:C.cyan);}
+ arrow3(a,P,[-.45,.25,.04],[.45,.25,.04],side<0?C.amber:C.cyan,eOutCubic(u*3));}
+function territoryA(a,u,fracture=false){const P=stage3(a,u,{zoom:1.2,yaw:lerp(-.7,-.25,u)});ground(a,P,u);for(let j=0;j<9;j++)for(let i=0;i<12;i++){const x=(i-5.5)*.075,y=(j-4)*.075,gap=fracture?smooth(seg(u,.15+j*.025,.4+j*.025))*.10:0;solid(a,P,x+(i>5?gap:-gap),y,0,.069,.069,.04+(i>5?.03:0),i>5?C.amber:C.cyan);}
+ if(fracture){const pts=Array.from({length:60},(_,i)=>[Math.sin(i*1.7)*.012,-.4+i*.8/59,.08]);ribbon(a,P,pts,C.amber,.008,eOutCubic(u*2));for(let i=0;i<4;i++)arrow3(a,P,[.08,(i-1.5)*.16,.13],[.37,(i-1.5)*.16,.13],C.amber,eOutCubic(u*2));}
+ else{for(let k=0;k<8;k++){const yy=(k-3.5)*.09,pts=Array.from({length:45},(_,i)=>{const f=i/44*Math.PI;return[Math.cos(f)*.48,yy,.05+Math.sin(f)*.35];});line(a.ctx,pts.map(v=>P(...v)),C.cyan,2,.65,eOutCubic(u*2));}}
+}
+function networkA(a,u,mode){const P=stage3(a,u,{yaw:lerp(-.6,.12,u),zoom:1.3});ground(a,P,u);const t=a.globalTime,N=13;const nodes=Array.from({length:N},(_,j)=>j===0?[0,0]:[Math.cos(j*2.4)*(.18+Math.sqrt(j/N)*.34),Math.sin(j*2.4)*(.18+Math.sqrt(j/N)*.34)]);
+ nodes.forEach((q,i)=>{const fail=mode==='fail'&&u>.3;solid(a,P,...q,0,i?.07:.17,i?.07:.17,i?.06:.22,fail&&i===0?C.amber:C.cyan);if(i){const target=mode==='mesh'?nodes[Math.max(0,i-2)]:nodes[0];const pts=Array.from({length:35},(_,k)=>{const f=k/34;return[lerp(q[0],target[0],f),lerp(q[1],target[1],f),.04+Math.sin(f*Math.PI)*.12];});ribbon(a,P,pts,fail?C.amber:C.cyan,.004,1);const pp=P(...pts[Math.floor(((t*.25+i*.11)%1)*34)]);light(a.ctx,pp.x,pp.y,10,fail?C.amber:C.white,.9);if(mode==='mesh'&&i>2)arrow3(a,P,[...q,.07],[...nodes[i-1],.07],C.amber,1);}});
+}
+function hydroA(a,u){const P=stage3(a,u,{yaw:-.3,zoom:1.28});ground(a,P,u);terrain(a,P,u);for(let j=0;j<12;j++)solid(a,P,(j-5.5)*.07,.08,.04,.055,.12,.22,C.cyan);
+ for(let j=0;j<8;j++){const x=(j-3.5)*.09,pts=Array.from({length:35},(_,k)=>[x,.20+k*.012,.07+Math.sin(k*.12+a.globalTime)*.008]);ribbon(a,P,pts,C.cyan,.009,1);arrow3(a,P,[x,.1,.3],[x,.45,.05],C.ice,eOutCubic(u*3));}
+}
+function homeA(a,u){const P=stage3(a,u,{zoom:1.2,yaw:lerp(-.6,-.15,u)});ground(a,P,u);for(let j=0;j<5;j++){const x=(j-2)*.20,y=Math.abs(j-2)*.08;solid(a,P,x,y,0,.14,.14,.12,C.cyan);face(a.ctx,[P(x-.09,y-.09,.12),P(x,y-.09,.22),P(x+.09,y-.09,.12)],C.ice,.5);face(a.ctx,[P(x,y-.09,.22),P(x,y+.09,.22),P(x+.09,y+.09,.12),P(x+.09,y-.09,.12)],C.cyan,.5);arrow3(a,P,[x,y+.12,.02],[x,y+.12,.30],C.amber,eOutCubic(u*2));}}
+function powerA(a,u){const P=stage3(a,u,{zoom:1.22,yaw:lerp(-.7,.2,u)});ground(a,P,u);const nodes=[[-.37,.13],[.36,.14],[0,-.4]];nodes.forEach((v,j)=>{solid(a,P,...v,0,.20,.20,.18+j*.035,j===1?C.amber:C.cyan);const q=P(...v,.27);dotSphere(a.ctx,q.x,q.y,Math.min(a.stage.w,a.stage.h)*.08,a.globalTime+j,{color:j===1?C.amber:C.cyan});arrow3(a,P,[...v,.12],[...nodes[(j+1)%3],.12],j===1?C.amber:C.cyan,eOutCubic(u*3));});}
+const ASTRA_PLANS=[
+ [['LE MONDE|JUSQU’ICI','FRANC NORD','brand'],['QUI PAIE|LE CLIMAT ?','01 · COP31','finance'],['LA TABLE|DES PUISSANCES','02 · DONBASS','power'],['TOUT EST|CONNECTÉ','03 · RÉSEAUX','network']],
+ [['ANTALYA','COP31','antalya'],['QUI PAIE ?','FINANCEMENT','finance'],['L’EMPREINTE|DE L’IA','ÉNERGIE','server'],['L’URGENCE|AU SOL','TCHAD','heat']],
+ [['LA FACTURE|CLIMATIQUE','LE MÉCANISME','budget'],['ADAPTER.|FINANCER.','SUD GLOBAL','finance'],['BUDGETS|SOUS PRESSION','ÉTATS','budget'],['LA DEMANDE|ACCÉLÈRE','INTELLIGENCE ARTIFICIELLE','server']],
+ [['DEUX|LOGIQUES','COP31','balance'],['JUSTICE|CLIMATIQUE','RESPONSABILITÉ','balanceLeft'],['COMPÉTITIVITÉ','EMPLOIS','balanceRight']],
+ [['JUSQU’ICI','MONDE → QUÉBEC','atlantic'],['ASSURANCES ↑','VOTRE BUDGET','home'],['L’ATOUT|HYDROÉLECTRIQUE','QUÉBEC','hydro']],
+ [['LA TABLE|DES PUISSANCES','DIPLOMATIE','power'],['DONBASS|CONTRE OTAN ?','PROPOSITION','territory'],['CAP SUR|PÉKIN','SOMMET À TROIS','power']],
+ [['FRONTIÈRES|SOUS TENSION','EUROPE','fracture'],['LE RAPPORT|DE FORCE','DIPLOMATIE','power'],['ÉQUILIBRE|NUCLÉAIRE','SÉCURITÉ','nuclear']],
+ [['PAIX CONTRE|TERRITOIRE ?','LE DILEMME','territory'],['ARRÊTER|LES COMBATS','COMPROMIS','shield'],['QUEL|PRÉCÉDENT ?','FRONTIÈRES','fracture']],
+ [['REGARD VERS|L’ARCTIQUE','CANADA','polar'],['MONTRÉAL|AÉROSPATIALE','QUÉBEC','aircraft'],['DES RETOMBÉES|ICI','ÉCONOMIE','home']],
+ [['DOUBLE|PANNE','INFRASTRUCTURES','air'],['DÉCOLLAGES|SUSPENDUS','CONTRÔLE AÉRIEN','aircraft'],['50 G$','MODERNISATION','budget50'],['CLOUD|À L’ARRÊT','MICROSOFT','failure']],
+ [['L’EFFET|DOMINO','QUÉBEC','network'],['RETARDS|EN CHAÎNE','CORRIDORS AÉRIENS','air'],['NOS SERVICES|CONNECTÉS','QUÉBEC','network'],['UN SEUL|POINT FAIBLE','DÉPENDANCE','fail']],
+ [['COMMENT|RÉAGIR ?','INFRASTRUCTURES','fail'],['AUTONOMIE|LOCALE','RÉSILIENCE','mesh'],['RÉSEAUX|INTÉGRÉS','COÛTS','network']],
+ [['QUELLE|DIRECTION ?','VOTRE CHOIX','brand'],['A · AUTONOMIE','QUÉBEC','mesh'],['B · INTÉGRATION','RÉSEAUX','network'],['A OU B ?','COMMENTAIRES','brand'],['PARTAGEZ|FRANC NORD','','brand'],['À DEMAIN','','brand']]
+];
+const ASTRA_CUES=[ ["Aujourd'hui","Ensuite","Enfin"],['des milliards','En parallèle','Au Tchad'],['Les pays en développement','De leur côté',"S'ajoute"],["D'un côté","De l'autre côté"],["D'abord sur votre budget","Ensuite sur notre économie"],['cède la région du Donbass','Au même moment'],["Aujourd'hui","En parallèle"],['Les partisans',"À l'inverse"],['Cela touche directement','Sur le plan humain'],["D'abord",'cinquante milliards','Presque au même moment'],['Nos corridors aériens','Et côté numérique','Une seule défaillance'],['Pour les partisans',"À l'inverse"],['Option A','Ou Option B','Écrivez','partagez','retrouve demain'] ];
+function astraScene(a,index){frame(a,()=>acts(a,beats(a,ASTRA_CUES[index]),(i,u)=>{const [text,kicker,kind]=ASTRA_PLANS[index][i],col=index<5?C.amber:C.cyan;ambianceA(a,u,col);
+ switch(kind){case 'world':case 'antalya':case 'heat':case 'atlantic':case 'polar':case 'air':earthA(a,u,kind);break;
+ case 'finance':financeA(a,u,'flow');break;case 'budget':case 'budget50':financeA(a,u,'budget');break;
+ case 'server':case 'failure':serversA(a,u,kind==='failure');break;
+ case 'balance':case 'balanceLeft':case 'balanceRight':balanceA(a,u,kind==='balanceLeft'?-1:kind==='balanceRight'?1:0);break;
+ case 'territory':case 'fracture':case 'shield':territoryA(a,u,kind==='fracture');break;
+ case 'network':case 'mesh':case 'fail':networkA(a,u,kind);break;
+ case 'hydro':hydroA(a,u);break;case 'home':homeA(a,u);break;
+ case 'power':case 'nuclear':powerA(a,u);if(kind==='nuclear'){const s=a.stage;for(let k=0;k<3;k++){a.ctx.save();a.ctx.translate(s.w*(a.isVertical?.5:.59),s.h*.58);a.ctx.rotate(k*Math.PI/3+a.globalTime*.06);a.ctx.scale(1,.35);ring(a.ctx,0,0,Math.min(s.w,s.h)*.32,{color:C.amber,width:2,alpha:.6});a.ctx.restore();}}break;
+ case 'aircraft':{const P=stage3(a,u,{zoom:1.35});ground(a,P,u);for(let j=0;j<7;j++){const y=(j-3)*.12;arrow3(a,P,[-.55,y,0],[.55,y,0],C.cyan,eOutCubic(u*3));const q=P(-.4+((u*.3+j*.12)%1)*.8,y,.08);jet(a.ctx,q.x,q.y,Math.min(a.stage.w,a.stage.h)*.035,-.3,C.ice,1);}break;}
+ default:{const s=a.stage,m=Math.min(s.w,s.h);emblem(a.ctx,s.w*(a.isVertical?.5:.65),s.h*.59,m*.24,{time:a.globalTime,ringT:eOutCubic(u*3),swing:Math.sin(u*2)*.07});for(let j=0;j<3;j++)ring(a.ctx,s.w*(a.isVertical?.5:.65),s.h*.59,m*(.32+j*.08),{color:j%2?C.amber:C.cyan,width:1,alpha:.3,a0:u+j,sweep:Math.PI*.8});}}
+ titleA(a,text,kicker,col,u);
+ }));}
+
 export const CUSTOM_SCENES = {
-  'intro-sommaire': sceneIntro,
-  'd1-fait-declencheur': sceneTrigger,
-  'd1-geopolitique-detroit': sceneStrait,
-  'd1-deux-cotes-opep-occident': sceneTwoSidesOil,
-  'd1-impact-quebec-pompe': scenePump,
-  'd2-decision-fed-ecart-taux': sceneFed,
-  'd2-deux-cotes-banques-centrales': sceneTwoSchools,
-  'd2-mecanisme-importations-hiver': sceneWinterImports,
-  'd2-impact-quebec-familles': sceneFamilies,
-  'd3-mur-electrique-ia': sceneAIWall,
-  'd3-ruee-vers-hydro-quebec': sceneHydroRush,
-  'd3-deux-cotes-megawatts': sceneMegawatts,
-  'conclusion-debat-quebec': sceneFinale
+  'intro-sommaire': a => astraScene(a, 0),
+  'd1-fait-declencheur': a => astraScene(a, 1),
+  'd1-coulisses-geopolitiques': a => astraScene(a, 2),
+  'd1-deux-cotes-medaille': a => astraScene(a, 3),
+  'd1-impact-quebec': a => astraScene(a, 4),
+  'd2-fait-declencheur': a => astraScene(a, 5),
+  'd2-coulisses-geopolitiques': a => astraScene(a, 6),
+  'd2-deux-cotes-medaille': a => astraScene(a, 7),
+  'd2-impact-quebec': a => astraScene(a, 8),
+  'd3-enjeu-mondial': a => astraScene(a, 9),
+  'd3-lien-quebec': a => astraScene(a, 10),
+  'd3-deux-cotes-medaille': a => astraScene(a, 11),
+  'conclusion-debat-quebec': a => astraScene(a, 12)
 };
