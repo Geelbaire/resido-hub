@@ -3,7 +3,7 @@
 Chaque jour, une fois que Gemini Hydrogen a préparé `episodes/YYYY-MM-DD/storyboard.json`, basculez sur **Opus 5.5** et envoyez-lui cette consigne :
 
 > **Prompt Quotidien à copier-coller pour Claude Opus 5.5 :**
-> « Examine les 4 images officielles de notre charte graphique dans `identite-visuelle/` (en particulier `03-brand-board-charte.jpg` et `04-modele-miniature.jpg`), lis `2-aval-opus-motion/PROMPT_OPUS_5_5.md` et `episodes/YYYY-MM-DD/storyboard.json`, puis code `episodes/YYYY-MM-DD/scenes-custom.js`.
+> « Examine les images haute résolution de notre charte graphique dans `identite-visuelle/` (`logo-Officiel.jpeg`, `02-banniere-officielle.jpg`, `03-brand-board-charte.png` et `04-modele-miniature.png`), lis `2-aval-opus-motion/PROMPT_OPUS_5_5.md` et `episodes/YYYY-MM-DD/storyboard.json`, puis code `episodes/YYYY-MM-DD/scenes-custom.js`.
 > **EXIGENCE ABSOLUE : Tu dois créer une vidéo de HAUT CALIBRE fidèle à notre identité visuelle officielle (Abyssal Midnight `#030509`, Boreal Ice Cyan `#38BDF8`, Editorial Amber Gold `#F59E0B`, Pure Slate `#E5E7EB`, cartes en pointillés lumineux, ondes fréquentielles, flèches directionnelles) et me prouver aujourd'hui, seconde par seconde, que tu es le meilleur motion designer de la terre entière.** »
 
 ---
