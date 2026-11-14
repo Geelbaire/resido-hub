@@ -1,6 +1,10 @@
 /**
  * FRANC NORD — Canevas Cinématique Officiel (Basé sur la Charte de Marque Officielle)
  *
+ * RÈGLE AUDIO STRICTE :
+ *  - AUCUNE MUSIQUE ni effet sonore généré (pas de WebAudio / piste musicale).
+ *  - La vidéo finale ne comporte QUE la voix humaine de l'animateur.
+ *
  * Palette Officielle :
  *  - Abyssal Midnight : #030509
  *  - Boreal Ice Cyan  : #38BDF8
