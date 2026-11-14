@@ -1,0 +1,5 @@
+# Vidéos lourdes : hébergées en Release GitHub, jamais dans Git
+episodes/**/*.mp4
+livraisons/**/*.mp4
+# Copies brutes de la narration (voix.mp3 reste suivi)
+episodes/**/Épisode*.mp3

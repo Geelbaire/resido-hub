@@ -1,0 +1,133 @@
+# 🎙️ TÉLÉPROMPTEUR — FRANC NORD (Épisode #3 • 2026-11-14)
+**Titre : Amende de 1,2 G$ contre Meta, colère du logement en Europe et vote du Québec à la Francophonie**
+**Durée totale verrouillée : 8 minutes 30 secondes (510 s • 13 scènes)**
+*(Seuil de monétisation YouTube 8 min+ activé • Découpable en 3 Shorts/Reels/TikTok de ~2 min)*
+
+> 💡 **Astuce ElevenLabs :** Pour copier uniquement le texte pur à faire lire par ElevenLabs sans les titres de scènes, prenez le bloc tout en bas de ce document (ou le fichier `narration-elevenlabs.txt` dans ce même dossier).
+
+---
+
+## CHAPITRE 00 — OUVERTURE & SOMMAIRE (00:00 → 00:30)
+
+### [00:00 → 00:30] Scène 1 — `intro-sommaire` (30 s)
+> « Bienvenue sur **Franc Nord**, le bulletin qui décortique l'actualité mondiale et ce qu'elle change pour nous au Québec, sans filtre et sans commanditaire.
+>
+> Au sommaire de ce troisième épisode : d'abord, l'Italie frappe Meta d'une amende record de un virgule deux milliard de dollars pour avoir accédé aux photos de vingt millions d'usagers. Ensuite, des manifestations monstres au Portugal et en France contre la crise du logement et la vie chère. Enfin, au Sommet de la Francophonie au Cambodge, Québec se dit prêt à voter différemment d'Ottawa. »
+
+---
+
+## CHAPITRE 01 — META : 1,2 G$ D'AMENDE & VOS PHOTOS PERSONNELLES (00:30 → 03:10)
+
+### [00:30 → 01:10] Scène 2 — `d1-fait-declencheur` (40 s)
+> « Commençons en Italie, où les autorités viennent d'infliger une amende historique de huit cent cinq millions d'euros — soit près de **un virgule deux milliard de dollars canadiens** — au géant américain **Meta**, la maison mère de Facebook et d'Instagram.
+>
+> Le motif est lourd : l'entreprise est accusée d'avoir accédé aux photos personnelles de vingt millions d'utilisateurs sans les en informer clairement. Cette sanction tombe au moment même où, aux Nations unies, le Haut-Commissaire aux droits de l'homme presse les États d'imposer des limites strictes aux algorithmes autonomes avant que les machines n'échappent à tout contrôle démocratique. »
+
+### [01:10 → 01:50] Scène 3 — `d1-coulisses-geopolitiques` (40 s)
+> « Pourquoi nos photos de vacances, nos visages et nos publications sont-ils devenus le nerf d'une guerre mondiale ? Parce que les géants de la Silicon Valley ont déjà épuisé presque tout le texte public disponible sur Internet pour nourrir leurs modèles d'intelligence artificielle.
+>
+> Pour franchir la prochaine étape — la reconnaissance visuelle et la vidéo générative —, ils ont un besoin colossal de milliards d'images réelles. L'Union européenne a choisi d'ériger une muraille réglementaire avec des amendes géantes, tandis que Washington défend farouchement ses champions technologiques pour garder son avance stratégique face à la Chine. »
+
+### [01:50 → 02:30] Scène 4 — `d1-deux-cotes-medaille` (40 s)
+> « Dans ce bras de fer sur nos données personnelles, deux visions s'opposent frontalement.
+>
+> **D'un côté**, les défenseurs de la vie privée et des créateurs soutiennent que nos photos intimes et notre image nous appartiennent : aucune multinationale ne devrait pouvoir les aspirer en cachette sans un consentement préalable explicite, sous peine de transformer chaque citoyen en produit gratuit.
+>
+> **De l'autre côté**, les acteurs technologiques et plusieurs économistes rappellent que ce partage de données finance des applications gratuites utilisées par des milliards de personnes, et qu'un excès d'amendes pousse simplement les entreprises à priver certains pays de leurs meilleures innovations. »
+
+### [02:30 → 03:10] Scène 5 — `d1-impact-quebec` (40 s)
+> « Qu'est-ce que cette décision italienne change pour nous au Québec ? Des millions de Québécois publient chaque semaine des photos de leur famille sur Facebook et Instagram.
+>
+> Or, le Québec s'est doté avec la **Loi vingt-cinq** du régime de protection des renseignements personnels et de la biométrie le plus sévère en Amérique du Nord, prévoyant lui aussi des amendes de plusieurs millions de dollars. Mais la question reste entière : après avoir vu Meta bloquer l'accès aux médias canadiens sur ses plateformes pour éviter de payer, jusqu'où Québec et Ottawa sont-ils prêts à aller pour faire respecter la vie privée des citoyens d'ici ? »
+
+---
+
+## CHAPITRE 02 — CRISE DU LOGEMENT & COLÈRE CONTRE LA VIE CHÈRE (03:10 → 05:40)
+
+### [03:10 → 03:48] Scène 6 — `d2-fait-declencheur` (38 s)
+> « Deuxième grand dossier aujourd'hui : la colère sociale autour du logement et du coût de la vie déborde dans les rues européennes.
+>
+> Au **Portugal**, des dizaines de milliers de personnes ont défilé ce samedi à Lisbonne et à Porto lors de la plus vaste manifestation depuis le début du mouvement contre l'explosion du prix des loyers. Au même moment, en **France**, plus de cent mille manifestants ont pris la rue dans une cinquantaine de villes pour l'Acte cinq de la mobilisation contre la vie chère, réunissant étudiants, familles et retraités autour d'un même constat : travailler ne suffit plus pour se loger dignement. »
+
+### [03:48 → 04:25] Scène 7 — `d2-coulisses-geopolitiques` (37 s)
+> « Pourquoi la crise du logement frappe-t-elle simultanément Lisbonne, Paris, Dublin ou Montréal ? Parce qu'en l'espace de dix ans, le logement a changé de nature dans presque toutes les économies occidentales.
+>
+> Longtemps considéré comme un simple toit acheté ou loué avec un salaire local, l'immobilier est devenu un **placement financier international**. Entre l'achat d'immeubles par de grands fonds d'investissement, la transformation d'appartements en locations touristiques de courte durée et la hausse brutale des coûts de construction et des taux d'intérêt, les prix se sont complètement décrochés des revenus des habitants. »
+
+### [04:25 → 05:03] Scène 8 — `d2-deux-cotes-medaille` (38 s)
+> « Comment éteindre cette crise du logement ? Partout en Occident, deux remèdes opposés s'affrontent.
+>
+> **Les mouvements citoyens et la gauche économique** réclament un plafonnement strict des loyers, l'interdiction des locations touristiques commerciales et des milliards en logements sociaux et hors marché pour protéger immédiatement les locataires.
+>
+> **À l'opposé, les économistes de marché et les constructeurs** avertissent que bloquer les loyers fait fuir les investisseurs et paralyse les mises en chantier : selon eux, la seule vraie solution consiste à réduire la bureaucratie municipale et les taxes pour construire des centaines de milliers de logements neufs. »
+
+### [05:03 → 05:40] Scène 9 — `d2-impact-quebec` (37 s)
+> « Ce qui se joue aujourd'hui dans les rues de Lisbonne et de Paris résonne très fort au Québec. Pendant des décennies, notre province se distinguait en Amérique du Nord par ses loyers beaucoup plus abordables qu'à Toronto ou Vancouver.
+>
+> Cet avantage historique fond à vue d'œil : avec des taux d'inoccupation sous la barre critique de **un virgule cinq pour cent** non seulement à Montréal et à Québec, mais aussi à Gatineau, Sherbrooke, Trois-Rivières et Rimouski, se loger absorbe désormais une part record du budget des Québécois, au risque de déclencher ici aussi une grogne sociale durable. »
+
+---
+
+## CHAPITRE 03 — SOMMET DE LA FRANCOPHONIE & PIVOT ASIATIQUE (05:40 → 07:45)
+
+### [05:40 → 06:22] Scène 10 — `d3-enjeu-mondial` (42 s)
+> « Troisième dossier aujourd'hui : cap sur l'Asie du Sud-Est, où s'ouvre à **Phnom Penh, au Cambodge**, le vingtième Sommet de la Francophonie dans une atmosphère électrique.
+>
+> Quatre candidats se disputent le secrétariat général de l'organisation, et la République démocratique du Congo menace ouvertement de quitter la Francophonie si la secrétaire générale sortante, la Rwandaise Louise Mushikiwabo, est reconduite, sur fond de guerre meurtrière dans l'est congolais. En parallèle de cette tournée asiatique, le premier ministre canadien Mark Carney vient de conclure des discussions en vue d'un accord commercial avec les **Philippines** et courtise les onze pays de l'ANASE. »
+
+### [06:22 → 07:04] Scène 11 — `d3-lien-quebec` (42 s)
+> « Or, ce sommet au Cambodge place le Québec au cœur d'un bras de fer diplomatique fascinant. Rappelons que l'Organisation internationale de la Francophonie est la seule grande table mondiale où le premier ministre du Québec siège de plein droit, avec son propre droit de vote, à côté du gouvernement fédéral.
+>
+> Et aujourd'hui, à Phnom Penh, **Québec affirme être prêt à voter indépendamment d'Ottawa** pour l'élection à la tête de la Francophonie. Au-delà du geste politique, le Québec cherche surtout à tisser ses propres liens économiques en Asie et en Afrique francophone pour diversifier ses exportations hors des États-Unis. »
+
+### [07:04 → 07:45] Scène 12 — `d3-deux-cotes-medaille` (41 s)
+> « Faut-il applaudir ou s'inquiéter de voir Québec et Ottawa afficher des positions différentes à l'international ? Là encore, il y a deux côtés à la médaille.
+>
+> **Pour les partisans d'une diplomatie québécoise affirmée**, c'est exactement la raison d'être de notre statut à la Francophonie : défendre nos intérêts propres, notre langue et nos alliances sans être dilués dans la diplomatie canadienne.
+>
+> **À l'inverse, les partisans du pragmatisme fédéral** estiment qu'étaler des divisions à l'étranger affaiblit notre poids diplomatique, alors que pour décrocher des contrats de plusieurs milliards en Asie, nos entreprises ont besoin d'un front commun et de grands traités commerciaux. »
+
+---
+
+## CHAPITRE 04 — LA QUESTION DU JOUR (07:45 → 08:30)
+
+### [07:45 → 08:30] Scène 13 — `conclusion-debat-quebec` (45 s)
+> « Ce qui nous amène à la Question du Jour, et c'est à vous de trancher. Qu'il s'agisse de nos photos personnelles face à Meta, de la flambée des loyers ou de notre place dans le monde, deux philosophies s'affrontent aujourd'hui. Quelle direction le Québec doit-il prendre selon vous ?
+>
+> **Option A** : imposer des règles fermes — plafonner les loyers, punir durement les géants du Web qui touchent à nos données et affirmer une voix politique québécoise distincte.
+>
+> Ou **Option B** : miser d'abord sur le marché et la croissance — couper les règlements pour construire plus vite, attirer les géants technologiques et prioriser les accords commerciaux.
+>
+> Écrivez **Option A** ou **Option B** en commentaire, abonnez-vous à Franc Nord, et à très vite ! »
+
+---
+
+## 📋 TEXTE PUR POUR ELEVENLABS (À copier-coller directement dans ElevenLabs)
+
+```text
+Bienvenue sur Franc Nord, le bulletin qui décortique l'actualité mondiale et ce qu'elle change pour nous au Québec, sans filtre et sans commanditaire. Au sommaire de ce troisième épisode : d'abord, l'Italie frappe Meta d'une amende record de un virgule deux milliard de dollars pour avoir accédé aux photos de vingt millions d'usagers. Ensuite, des manifestations monstres au Portugal et en France contre la crise du logement et la vie chère. Enfin, au Sommet de la Francophonie au Cambodge, Québec se dit prêt à voter différemment d'Ottawa.
+
+Commençons en Italie, où les autorités viennent d'infliger une amende historique de huit cent cinq millions d'euros — soit près de un virgule deux milliard de dollars canadiens — au géant américain Meta, la maison mère de Facebook et d'Instagram. Le motif est lourd : l'entreprise est accusée d'avoir accédé aux photos personnelles de vingt millions d'utilisateurs sans les en informer clairement. Cette sanction tombe au moment même où, aux Nations unies, le Haut-Commissaire aux droits de l'homme presse les États d'imposer des limites strictes aux algorithmes autonomes avant que les machines n'échappent à tout contrôle démocratique.
+
+Pourquoi nos photos de vacances, nos visages et nos publications sont-ils devenus le nerf d'une guerre mondiale ? Parce que les géants de la Silicon Valley ont déjà épuisé presque tout le texte public disponible sur Internet pour nourrir leurs modèles d'intelligence artificielle. Pour franchir la prochaine étape — la reconnaissance visuelle et la vidéo générative —, ils ont un besoin colossal de milliards d'images réelles. L'Union européenne a choisi d'ériger une muraille réglementaire avec des amendes géantes, tandis que Washington défend farouchement ses champions technologiques pour garder son avance stratégique face à la Chine.
+
+Dans ce bras de fer sur nos données personnelles, deux visions s'opposent frontalement. D'un côté, les défenseurs de la vie privée et des créateurs soutiennent que nos photos intimes et notre image nous appartiennent : aucune multinationale ne devrait pouvoir les aspirer en cachette sans un consentement préalable explicite, sous peine de transformer chaque citoyen en produit gratuit. De l'autre côté, les acteurs technologiques et plusieurs économistes rappellent que ce partage de données finance des applications gratuites utilisées par des milliards de personnes, et qu'un excès d'amendes pousse simplement les entreprises à priver certains pays de leurs meilleures innovations.
+
+Qu'est-ce que cette décision italienne change pour nous au Québec ? Des millions de Québécois publient chaque semaine des photos de leur famille sur Facebook et Instagram. Or, le Québec s'est doté avec la Loi vingt-cinq du régime de protection des renseignements personnels et de la biométrie le plus sévère en Amérique du Nord, prévoyant lui aussi des amendes de plusieurs millions de dollars. Mais la question reste entière : après avoir vu Meta bloquer l'accès aux médias canadiens sur ses plateformes pour éviter de payer, jusqu'où Québec et Ottawa sont-ils prêts à aller pour faire respecter la vie privée des citoyens d'ici ?
+
+Deuxième grand dossier aujourd'hui : la colère sociale autour du logement et du coût de la vie déborde dans les rues européennes. Au Portugal, des dizaines de milliers de personnes ont défilé ce samedi à Lisbonne et à Porto lors de la plus vaste manifestation depuis le début du mouvement contre l'explosion du prix des loyers. Au même moment, en France, plus de cent mille manifestants ont pris la rue dans une cinquantaine de villes pour l'Acte cinq de la mobilisation contre la vie chère, réunissant étudiants, familles et retraités autour d'un même constat : travailler ne suffit plus pour se loger dignement.
+
+Pourquoi la crise du logement frappe-t-elle simultanément Lisbonne, Paris, Dublin ou Montréal ? Parce qu'en l'espace de dix ans, le logement a changé de nature dans presque toutes les économies occidentales. Longtemps considéré comme un simple toit acheté ou loué avec un salaire local, l'immobilier est devenu un placement financier international. Entre l'achat d'immeubles par de grands fonds d'investissement, la transformation d'appartements en locations touristiques de courte durée et la hausse brutale des coûts de construction et des taux d'intérêt, les prix se sont complètement décrochés des revenus des habitants.
+
+Comment éteindre cette crise du logement ? Partout en Occident, deux remèdes opposés s'affrontent. Les mouvements citoyens et la gauche économique réclament un plafonnement strict des loyers, l'interdiction des locations touristiques commerciales et des milliards en logements sociaux et hors marché pour protéger immédiatement les locataires. À l'opposé, les économistes de marché et les constructeurs avertissent que bloquer les loyers fait fuir les investisseurs et paralyse les mises en chantier : selon eux, la seule vraie solution consiste à réduire la bureaucratie municipale et les taxes pour construire des centaines de milliers de logements neufs.
+
+Ce qui se joue aujourd'hui dans les rues de Lisbonne et de Paris résonne très fort au Québec. Pendant des décennies, notre province se distinguait en Amérique du Nord par ses loyers beaucoup plus abordables qu'à Toronto ou Vancouver. Cet avantage historique fond à vue d'œil : avec des taux d'inoccupation sous la barre critique de un virgule cinq pour cent non seulement à Montréal et à Québec, mais aussi à Gatineau, Sherbrooke, Trois-Rivières et Rimouski, se loger absorbe désormais une part record du budget des Québécois, au risque de déclencher ici aussi une grogne sociale durable.
+
+Troisième dossier aujourd'hui : cap sur l'Asie du Sud-Est, où s'ouvre à Phnom Penh, au Cambodge, le vingtième Sommet de la Francophonie dans une atmosphère électrique. Quatre candidats se disputent le secrétariat général de l'organisation, et la République démocratique du Congo menace ouvertement de quitter la Francophonie si la secrétaire générale sortante, la Rwandaise Louise Mushikiwabo, est reconduite, sur fond de guerre meurtrière dans l'est congolais. En parallèle de cette tournée asiatique, le premier ministre canadien Mark Carney vient de conclure des discussions en vue d'un accord commercial avec les Philippines et courtise les onze pays de l'ANASE.
+
+Or, ce sommet au Cambodge place le Québec au cœur d'un bras de fer diplomatique fascinant. Rappelons que l'Organisation internationale de la Francophonie est la seule grande table mondiale où le premier ministre du Québec siège de plein droit, avec son propre droit de vote, à côté du gouvernement fédéral. Et aujourd'hui, à Phnom Penh, Québec affirme être prêt à voter indépendamment d'Ottawa pour l'élection à la tête de la Francophonie. Au-delà du geste politique, le Québec cherche surtout à tisser ses propres liens économiques en Asie et en Afrique francophone pour diversifier ses exportations hors des États-Unis.
+
+Faut-il applaudir ou s'inquiéter de voir Québec et Ottawa afficher des positions différentes à l'international ? Là encore, il y a deux côtés à la médaille. Pour les partisans d'une diplomatie québécoise affirmée, c'est exactement la raison d'être de notre statut à la Francophonie : défendre nos intérêts propres, notre langue et nos alliances sans être dilués dans la diplomatie canadienne. À l'inverse, les partisans du pragmatisme fédéral estiment qu'étaler des divisions à l'étranger affaiblit notre poids diplomatique, alors que pour décrocher des contrats de plusieurs milliards en Asie, nos entreprises ont besoin d'un front commun et de grands traités commerciaux.
+
+Ce qui nous amène à la Question du Jour, et c'est à vous de trancher. Qu'il s'agisse de nos photos personnelles face à Meta, de la flambée des loyers ou de notre place dans le monde, deux philosophies s'affrontent aujourd'hui. Quelle direction le Québec doit-il prendre selon vous ? Option A : imposer des règles fermes — plafonner les loyers, punir durement les géants du Web qui touchent à nos données et affirmer une voix politique québécoise distincte. Ou Option B : miser d'abord sur le marché et la croissance — couper les règlements pour construire plus vite, attirer les géants technologiques et prioriser les accords commerciaux. Écrivez Option A ou Option B en commentaire, abonnez-vous à Franc Nord, et à très vite !
+```

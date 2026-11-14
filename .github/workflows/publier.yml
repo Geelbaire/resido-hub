@@ -30,12 +30,13 @@ jobs:
           cp -R studio _site/
           cp -R episodes _site/
 
-      - name: Ajouter les MP4 de l’épisode 2
+      - name: Ajouter les MP4 des épisodes 2 et 3
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          mkdir -p _site/videos/2026-11-14
+          mkdir -p _site/videos/2026-11-14 _site/videos/2026-11-14-Episode-03
           gh release download episode-02-2026-11-14 --repo "$GITHUB_REPOSITORY" --pattern '*.mp4' --dir _site/videos/2026-11-14
+          gh release download episode-03-2026-11-14 --repo "$GITHUB_REPOSITORY" --pattern 'Franc-Nord-Episode-03-*.mp4' --dir _site/videos/2026-11-14-Episode-03
 
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5

@@ -1,0 +1,99 @@
+{
+  "status": "validated-automatically",
+  "episode": 3,
+  "audioDurationSeconds": 458.919125,
+  "finalHoldSeconds": 2.6,
+  "videoDurationSeconds": 461.533333,
+  "fps": 30,
+  "framesPerFullVideo": 13846,
+  "formats": {
+    "16x9": [
+      1920,
+      1080
+    ],
+    "9x16": [
+      1080,
+      1920
+    ]
+  },
+  "audio": "voix.mp3 seule (copie conforme de Épisode3.mp3), vitesse d'origine, aucune musique ni effet",
+  "alignment": "1328/1353 mots du script ancrés sur la transcription horodatée (faster-whisper small) ; repères des 13 scènes calés au mot",
+  "audioSyncCheck": {
+    "method": "corrélation croisée MP4 vs voix.mp3, fenêtres de 1 s, recherche de décalage ±50 ms",
+    "results": {
+      "lengths_s": {
+        "voix": 458.91925,
+        "16x9": 461.519875,
+        "9x16": 461.519875
+      },
+      "16x9": {
+        "5": [
+          0.99997,
+          0.0
+        ],
+        "150": [
+          0.99999,
+          0.0
+        ],
+        "300": [
+          0.99998,
+          0.0
+        ],
+        "450": [
+          0.99998,
+          0.0
+        ]
+      },
+      "9x16": {
+        "5": [
+          0.99997,
+          0.0
+        ],
+        "150": [
+          0.99999,
+          0.0
+        ],
+        "300": [
+          0.99998,
+          0.0
+        ],
+        "450": [
+          0.99998,
+          0.0
+        ]
+      }
+    }
+  },
+  "fullDecode": "passed-both-formats",
+  "visualQA": {
+    "runtimeSweepFrames": 462,
+    "runtimeExceptions": 0,
+    "nearBlackFrames": 0,
+    "reviewedContactSheets": "13 scènes, 16:9 et 9:16"
+  },
+  "shorts": {
+    "Short-1-Meta-Photos-Loi25-Quebec-9x16.mp4": {
+      "chapter": "ch1",
+      "start": 31.34,
+      "end": 172.7,
+      "durationSeconds": 141.366666
+    },
+    "Short-2-Crise-Logement-Loyers-Quebec-9x16.mp4": {
+      "chapter": "ch2",
+      "start": 172.7,
+      "end": 309.58,
+      "durationSeconds": 136.9
+    },
+    "Short-3-Francophonie-Cambodge-Quebec-Ottawa-9x16.mp4": {
+      "chapter": "ch3",
+      "start": 309.58,
+      "end": 418.56,
+      "durationSeconds": 109.0
+    }
+  },
+  "fullHumanListening": false,
+  "studio": {
+    "preparedLocally": true,
+    "published": false
+  }
+}

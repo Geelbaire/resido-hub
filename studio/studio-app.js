@@ -1,7 +1,7 @@
 import { renderBroadcastFrame, resolveTimeline } from './broadcast-canvas.js';
 
 const params = new URLSearchParams(window.location.search);
-const episodeDate = params.get('episode') || '2026-11-14';
+const episodeDate = params.get('episode') || '2026-11-14-Episode-03';
 const initialFormat = params.get('format') === '9x16' ? '9x16' : '16x9';
 
 // Empreinte SHA-256 de "pseudo:motdepasse" (aucun mot de passe en clair dans le code)
@@ -378,10 +378,11 @@ copyGeminiPromptBtn?.addEventListener('click', async () => {
 
 copyMotionPromptBtn?.addEventListener('click', async () => {
   const isCodex = motionAgentSelect?.value === 'codex';
-  const promptText = isCodex
-    ? `Examine les images de notre charte dans "/Volumes/Projets/FRANC NORD/identite-visuelle/", étudie le code de référence "/Volumes/Projets/FRANC NORD/episodes/2026-11-14/scenes-custom.js" et lis "/Volumes/Projets/FRANC NORD/2-aval-opus-motion/PROMPT_CODEX_SOL_6_1.md" ainsi que le storyboard.json du jour. Code les 13 scènes dans scenes-custom.js, synchronise avec voix.mp3 et exporte les MP4 16x9 et 9x16. EXIGENCE ABSOLUE : Égale ou surpasse le calibre de l'Épisode #1 (zéro musique, plein écran cinématique) et prouve-moi que tu es le meilleur motion designer de la terre entière.`
-    : `Examine les images de notre charte dans "/Volumes/Projets/FRANC NORD/identite-visuelle/", lis "/Volumes/Projets/FRANC NORD/2-aval-opus-motion/PROMPT_OPUS_5_5.md" et le storyboard.json du jour, puis code les 13 scènes dans scenes-custom.js, synchronise avec voix.mp3 et exporte les MP4 16x9 et 9x16. EXIGENCE ABSOLUE : Crée une vidéo de HAUT CALIBRE (zéro musique, plein écran cinématique) et prouve-moi seconde par seconde que tu es le meilleur motion designer de la terre entière.`;
-  const deliveryPrompt = `${promptText} LIVRAISON OBLIGATOIRE : prépare la mise à jour de l’épisode complet dans le Studio sur https://resido.ca, puis demande-moi explicitement si je veux le publier (sauf accord déjà donné). Précise si la voix manque. Après accord, suis le déploiement GitHub Pages et vérifie le site. Distingue l’animation du Studio des MP4 locaux : n’annonce pas de MP4 en ligne sans hébergement et liens vérifiés.`;
+  const basePrompt = isCodex
+    ? `Examine les images haute résolution de notre charte dans "/Volumes/Projets/FRANC NORD/identite-visuelle/", étudie le code de référence de l'Épisode 1 dans "/Volumes/Projets/FRANC NORD/episodes/2026-11-14-Episode-01/reference-episode-1/scenes-custom.js", et lis "/Volumes/Projets/FRANC NORD/2-aval-opus-motion/PROMPT_OPUS_5_5.md", "/Volumes/Projets/FRANC NORD/2-aval-opus-motion/PROMPT_CODEX_SOL_6_1.md" et "/Volumes/Projets/FRANC NORD/episodes/2026-11-14/storyboard.json". Code ensuite les 13 scènes dans "/Volumes/Projets/FRANC NORD/episodes/2026-11-14/scenes-custom.js", synchronise avec voix.mp3, exporte les 2 vidéos complètes (16x9 et 9x16) ET découpe automatiquement les 3 Shorts/Reels verticaux (Short-1-*.mp4, Short-2-*.mp4, Short-3-*.mp4 pour les chapitres ch1, ch2, ch3).`
+    : `Examine les images haute résolution de notre charte dans "/Volumes/Projets/FRANC NORD/identite-visuelle/", inspecte la richesse du code de l'Épisode 1 dans "/Volumes/Projets/FRANC NORD/episodes/2026-11-14-Episode-01/reference-episode-1/scenes-custom.js", puis lis "/Volumes/Projets/FRANC NORD/2-aval-opus-motion/PROMPT_OPUS_5_5.md" et "/Volumes/Projets/FRANC NORD/episodes/2026-11-14/storyboard.json". Code ensuite les 13 scènes dans "/Volumes/Projets/FRANC NORD/episodes/2026-11-14/scenes-custom.js", synchronise avec voix.mp3, exporte les 2 vidéos complètes (16x9 et 9x16) ET découpe automatiquement les 3 Shorts/Reels verticaux (Short-1-*.mp4, Short-2-*.mp4, Short-3-*.mp4 pour les chapitres ch1, ch2, ch3).`;
+  const appleStandard = `EXIGENCE ABSOLUE — LA CRÈME DE LA CRÈME (STANDARD APPLE NEWS+) : Imagine qu'Apple a décidé de bonifier APPLE NEWS avec mes vidéos et que tu diriges l'équipe Motion Design de Cupertino. Je veux une vidéo VRAIMENT de calibre PROFESSIONNEL, sans aucun bug, sans aucun texte qui tremble (zéro jitter), sans aucune animation répétitive d'une scène à l'autre pour la même nouvelle, et sans aucun texte statique posé sans beauté. Je veux des typographies cinématiques animées (style Apple Keynote / Apple News+), de vrais mouvements de caméra fluides, des transitions chirurgicales et 13 animations totalement diversifiées, magnifiquement exécutées et 100 % représentatives de ce qui est dit par la narration seconde par seconde (zéro musique, uniquement voix.mp3).`;
+  const deliveryPrompt = `${basePrompt} ${appleStandard} LIVRAISON OBLIGATOIRE : place les 2 MP4 complets (16x9 et 9x16), les 3 MP4 Shorts/Reels verticaux (ch1, ch2, ch3), tous les fichiers de l'épisode ET le fichier KIT-PUBLICATION-EPISODE-NN.md (titres < 85 car., descriptions avec chapitres calés sur voix.mp3, tags, 1er commentaire pour YouTube & Facebook, tant pour les vidéos complètes que pour les 3 Shorts/Reels) dans un dossier daté créé directement sous /Volumes/Projets/FRANC NORD/episodes/ (exemple : 2026-11-14-Episode-03), sans dossier livraisons/. Prépare aussi la mise à jour dans le Studio sur https://resido.ca et demande-moi explicitement si je veux la publier.`;
   await copyTextReliable(deliveryPrompt);
   voiceStatusText.textContent = `✓ Copié dans le presse-papiers : ${deliveryPrompt}`;
   const orig = copyMotionPromptBtn.textContent;
@@ -464,10 +465,11 @@ async function init() {
   customScenes = scenesModule.CUSTOM_SCENES || {};
 
   buildUI();
-  if (storyboard.productionStatus?.voice === 'word-aligned-episode2') {
+  if (String(storyboard.productionStatus?.voice || '').startsWith('word-aligned')) {
     voiceAudioPlayer.src = `../episodes/${episodeDate}/voix.mp3`;
     voiceAudioPlayer.style.display = 'block';
-    voiceStatusText.textContent = 'Voix de l’épisode 2 chargée · 7 min 26 s';
+    const secs = Math.round(storyboard.productionStatus.audioDurationSeconds || totalDuration);
+    voiceStatusText.textContent = `Voix de l’épisode ${storyboard.episodeNumber || ''} chargée · ${Math.floor(secs / 60)} min ${String(secs % 60).padStart(2, '0')} s`;
     isPlaying = false;
     playPauseBtn.textContent = 'Lecture';
   }
@@ -488,7 +490,8 @@ const finalPanel = document.getElementById('finalVideoPanel');
 const animationPanel = document.querySelector('.canvas-viewport');
 function selectDeliveredVideo() {
   const previous = finalVideo.currentTime || 0;
-  finalVideo.src = `../videos/${episodeDate}/Franc-Nord-Episode-02-${currentFormat}.mp4`;
+  const epNum = String(storyboard?.episodeNumber || 3).padStart(2, '0');
+  finalVideo.src = `../videos/${episodeDate}/Franc-Nord-Episode-${epNum}-${currentFormat}.mp4`;
   finalVideo.addEventListener('loadedmetadata', () => { finalVideo.currentTime = Math.min(previous, finalVideo.duration); }, {once:true});
 }
 document.getElementById('showFinalVideo').addEventListener('click', () => {

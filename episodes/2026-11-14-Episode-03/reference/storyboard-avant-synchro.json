@@ -1,0 +1,212 @@
+{
+  "showName": "FRANC NORD",
+  "showTagline": "Le monde expliqué d'ici • Sans filtre ni commanditaire",
+  "contactEmail": "contact.francnord@proton.me",
+  "episodeDate": "2026-11-14",
+  "episodeNumber": 3,
+  "title": "Amende de 1,2 G$ contre Meta, colère du logement en Europe et vote du Québec à la Francophonie",
+  "totalDurationSeconds": 510,
+  "chapters": [
+    {
+      "id": "ch0",
+      "number": "00",
+      "label": "SOMMAIRE",
+      "colorKey": "cyan"
+    },
+    {
+      "id": "ch1",
+      "number": "01",
+      "label": "META & VOS PHOTOS",
+      "colorKey": "amber"
+    },
+    {
+      "id": "ch2",
+      "number": "02",
+      "label": "LOGEMENT & VIE CHÈRE",
+      "colorKey": "cyan"
+    },
+    {
+      "id": "ch3",
+      "number": "03",
+      "label": "FRANCOPHONIE & ASIE",
+      "colorKey": "emerald"
+    },
+    {
+      "id": "ch4",
+      "number": "04",
+      "label": "LA QUESTION",
+      "colorKey": "rose"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "intro-sommaire",
+      "chapterId": "ch0",
+      "duration": 30,
+      "shortVisualTitle": "Franc Nord #3 — Vie privée, crise du toit et diplomatie au Cambodge",
+      "locationBadge": "MONDE → QUÉBEC",
+      "sources": [
+        "BBC News",
+        "France 24",
+        "Al Jazeera",
+        "Radio-Canada"
+      ],
+      "narration": "Bienvenue sur Franc Nord, le bulletin qui décortique l'actualité mondiale et ce qu'elle change pour nous au Québec, sans filtre et sans commanditaire. Au sommaire de ce troisième épisode : d'abord, l'Italie frappe Meta d'une amende record de un virgule deux milliard de dollars pour avoir accédé aux photos de vingt millions d'usagers. Ensuite, des manifestations monstres au Portugal et en France contre la crise du logement et la vie chère. Enfin, au Sommet de la Francophonie au Cambodge, Québec se dit prêt à voter différemment d'Ottawa.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran sur fond Abyssal Midnight (#030509). Acte I : la boussole géométrique Franc Nord s'illumine au centre dans un halo cyan boréal (#38BDF8) et ambre (#F59E0B). Acte II : la caméra traverse trois plans successifs en parallaxe : un prisme numérique de millions de photos, une ligne d'horizon urbaine sous tension, puis un arc diplomatique reliant le Québec à l'Asie du Sud-Est. Acte III : les trois trajectoires convergent vers le contour lumineux du Québec."
+    },
+    {
+      "id": "d1-fait-declencheur",
+      "chapterId": "ch1",
+      "duration": 40,
+      "shortVisualTitle": "Meta frappé d'une amende de 805 M€ (1,2 G$ CA) sur les photos",
+      "locationBadge": "ROME • SILICON VALLEY • ONU",
+      "sources": [
+        "BBC News",
+        "ONU Info"
+      ],
+      "narration": "Commençons en Italie, où les autorités viennent d'infliger une amende historique de huit cent cinq millions d'euros — soit près de un virgule deux milliard de dollars canadiens — au géant américain Meta, la maison mère de Facebook et d'Instagram. Le motif est lourd : l'entreprise est accusée d'avoir accédé aux photos personnelles de vingt millions d'utilisateurs sans les en informer clairement. Cette sanction tombe au moment même où, aux Nations unies, le Haut-Commissaire aux droits de l'homme presse les États d'imposer des limites strictes aux algorithmes autonomes avant que les machines ne échappent à tout contrôle démocratique.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : vue zénithale sombre sur la péninsule italienne où un point focal ambre (#F59E0B) pulse sur Rome et projette le chiffre monumental 805 M€ (1,2 G$). Acte II : une mosaïque aérienne de vingt millions de micro-particules lumineuses représentant des clichés personnels est aspirée vers un noyau algorithmique central. Acte III : un bouclier géométrique cyan (#38BDF8) vient couper net le faisceau d'aspiration."
+    },
+    {
+      "id": "d1-coulisses-geopolitiques",
+      "chapterId": "ch1",
+      "duration": 40,
+      "shortVisualTitle": "Pourquoi nos photos personnelles valent désormais de l'or",
+      "locationBadge": "EUROPE VS GÉANTS TECH US",
+      "sources": [
+        "BBC News",
+        "ONU Info"
+      ],
+      "narration": "Pourquoi nos photos de vacances, nos visages et nos publications sont-ils devenus le nerf d'une guerre mondiale ? Parce que les géants de la Silicon Valley ont déjà épuisé presque tout le texte public disponible sur Internet pour nourrir leurs modèles d'intelligence artificielle. Pour franchir la prochaine étape — la reconnaissance visuelle et la vidéo générative —, ils ont un besoin colossal de milliards d'images réelles. L'Union européenne a choisi d'ériger une muraille réglementaire avec des amendes géantes, tandis que Washington défend farouchement ses champions technologiques pour garder son avance stratégique face à la Chine.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : deux continents lumineux — l'Amérique du Nord et l'Europe — se font face de part et d'autre de l'Atlantique sombre. Acte II : des flux dorés d'images et de données biométriques traversent l'océan vers d'immenses monolithes d'entraînement algorithmique à l'ouest. Acte III : une barrière verticale de lignes de code et de normes européennes s'élève à l'est, créant une onde de friction entre régulation et course technologique."
+    },
+    {
+      "id": "d1-deux-cotes-medaille",
+      "chapterId": "ch1",
+      "duration": 40,
+      "shortVisualTitle": "Vie privée absolue ou carburant de l'innovation gratuite ?",
+      "locationBadge": "DEUX CÔTÉS DE LA MÉDAILLE",
+      "sources": [
+        "BBC News"
+      ],
+      "narration": "Dans ce bras de fer sur nos données personnelles, deux visions s'opposent frontalement. D'un côté, les défenseurs de la vie privée et des créateurs soutiennent que nos photos intimes et notre image nous appartiennent : aucune multinationale ne devrait pouvoir les aspirer en cachette sans un consentement préalable explicite, sous peine de transformer chaque citoyen en produit gratuit. De l'autre côté, les acteurs technologiques et plusieurs économistes rappellent que ce partage de données finance des applications gratuites utilisées par des milliards de personnes, et qu'un excès d'amendes pousse simplement les entreprises à priver certains pays de leurs meilleures innovations.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran sans aucune boîte. Acte I : un faisceau lumineux vertical divise l'espace noir en deux champs symétriques. Acte II : à gauche (Camp A), une empreinte biométrique et un cadre photo sont protégés par un anneau verrouillé ambre ; à droite (Camp B), un réseau ouvert cyan fait circuler instantanément des services et des outils vers des millions de points. Acte III : les deux principes s'équilibrent sur une ligne d'horizon nette."
+    },
+    {
+      "id": "d1-impact-quebec",
+      "chapterId": "ch1",
+      "duration": 40,
+      "shortVisualTitle": "Loi 25 au Québec et bras de fer avec Facebook et Instagram",
+      "locationBadge": "QUÉBEC • LOI 25 & VIE PRIVÉE",
+      "sources": [
+        "BBC News",
+        "Radio-Canada"
+      ],
+      "narration": "Qu'est-ce que cette décision italienne change pour nous au Québec ? Des millions de Québécois publient chaque semaine des photos de leur famille sur Facebook et Instagram. Or, le Québec s'est doté avec la Loi vingt-cinq du régime de protection des renseignements personnels et de la biométrie le plus sévère en Amérique du Nord, prévoyant lui aussi des amendes de plusieurs millions de dollars. Mais la question reste entière : après avoir vu Meta bloquer l'accès aux médias canadiens sur ses plateformes pour éviter de payer, jusqu'où Québec et Ottawa sont-ils prêts à aller pour faire respecter la vie privée des citoyens d'ici ?",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : l'onde partie de Rome traverse l'Atlantique jusqu'à la vallée du Saint-Laurent. Acte II : la carte en pointillés du Québec s'illumine en cyan boréal (#38BDF8) autour d'un bouclier géométrique portant l'inscription épurée LOI 25. Acte III : des faisceaux ambre venus du sud testent la résistance du bouclier québécois, symbolisant le rapport de force avec les géants du Web."
+    },
+    {
+      "id": "d2-fait-declencheur",
+      "chapterId": "ch2",
+      "duration": 38,
+      "shortVisualTitle": "Marées humaines au Portugal et en France contre les loyers et la vie chère",
+      "locationBadge": "LISBONNE • PARIS • EUROPE",
+      "sources": [
+        "Al Jazeera",
+        "France 24"
+      ],
+      "narration": "Deuxième grand dossier aujourd'hui : la colère sociale autour du logement et du coût de la vie déborde dans les rues européennes. Au Portugal, des dizaines de milliers de personnes ont défilé ce samedi à Lisbonne et à Porto lors de la plus vaste manifestation depuis le début du mouvement contre l'explosion du prix des loyers. Au même moment, en France, plus de cent mille manifestants ont pris la rue dans une cinquantaine de villes pour l'Acte cinq de la mobilisation contre la vie chère, réunissant étudiants, familles et retraités autour d'un même constat : travailler ne suffit plus pour se loger dignement.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : la caméra survole l'Europe de l'Ouest dans l'obscurité pendant que deux foyers lumineux intenses s'allument sur le Portugal et la France. Acte II : des milliers de particules ambre et cyan convergent le long des artères de Lisbonne et de cinquante villes françaises comme des fleuves en mouvement. Acte III : des silhouettes d'immeubles résidentiels s'étirent verticalement hors de portée, illustrant la flambée des loyers."
+    },
+    {
+      "id": "d2-coulisses-geopolitiques",
+      "chapterId": "ch2",
+      "duration": 37,
+      "shortVisualTitle": "Comment le logement est devenu un actif financier mondial",
+      "locationBadge": "ÉCONOMIE MONDIALE • IMMOBILIER",
+      "sources": [
+        "Al Jazeera",
+        "France 24"
+      ],
+      "narration": "Pourquoi la crise du logement frappe-t-elle simultanément Lisbonne, Paris, Dublin ou Montréal ? Parce qu'en l'espace de dix ans, le logement a changé de nature dans presque toutes les économies occidentales. Longtemps considéré comme un simple toit acheté ou loué avec un salaire local, l'immobilier est devenu un placement financier international. Entre l'achat d'immeubles par de grands fonds d'investissement, la transformation d'appartements en locations touristiques de courte durée et la hausse brutale des coûts de construction et des taux d'intérêt, les prix se sont complètement décrochés des revenus des habitants.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : un quartier résidentiel stylisé en lignes fines repose sur une base stable. Acte II : des flux de capitaux internationaux en ambre (#F59E0B) enveloppent les immeubles et les transforment en colonnes boursières verticales. Acte III : deux courbes plein écran se séparent radicalement — la courbe ambre des loyers grimpe en flèche tandis que la ligne cyan des salaires locaux reste presque horizontale."
+    },
+    {
+      "id": "d2-deux-cotes-medaille",
+      "chapterId": "ch2",
+      "duration": 38,
+      "shortVisualTitle": "Plafonner les loyers ou déréglementer pour bâtir massivement ?",
+      "locationBadge": "DEUX CÔTÉS DE LA MÉDAILLE",
+      "sources": [
+        "Al Jazeera",
+        "France 24"
+      ],
+      "narration": "Comment éteindre cette crise du logement ? Partout en Occident, deux remèdes opposés s'affrontent. Les mouvements citoyens et la gauche économique réclament un plafonnement strict des loyers, l'interdiction des locations touristiques commerciales et des milliards en logements sociaux et hors marché pour protéger immédiatement les locataires. À l'opposé, les économistes de marché et les constructeurs avertissent que bloquer les loyers fait fuir les investisseurs et paralyse les mises en chantier : selon eux, la seule vraie solution consiste à réduire la bureaucratie municipale et les taxes pour construire des centaines de milliers de logements neufs.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : l'espace sombre est partagé par une diagonale lumineuse. Acte II : à gauche, un plafond horizontal protecteur bloque la hausse d'un édifice résidentiel public ; à droite, des grues géométriques épurées multiplient rapidement de nouvelles tours sous l'effet d'une accélération des chantiers. Acte III : les deux modèles restent face à face, illustrant le dilemme entre protection immédiate et choc d'offre."
+    },
+    {
+      "id": "d2-impact-quebec",
+      "chapterId": "ch2",
+      "duration": 37,
+      "shortVisualTitle": "De Montréal à Rimouski : la fin du Québec aux loyers abordables ?",
+      "locationBadge": "QUÉBEC • LOGEMENT & POUVOIR D'ACHAT",
+      "sources": [
+        "Radio-Canada",
+        "Al Jazeera"
+      ],
+      "narration": "Ce qui se joue aujourd'hui dans les rues de Lisbonne et de Paris résonne très fort au Québec. Pendant des décennies, notre province se distinguait en Amérique du Nord par ses loyers beaucoup plus abordables qu'à Toronto ou Vancouver. Cet avantage historique fond à vue d'œil : avec des taux d'inoccupation sous la barre critique de un virgule cinq pour cent non seulement à Montréal et à Québec, mais aussi à Gatineau, Sherbrooke, Trois-Rivières et Rimouski, se loger absorbe désormais une part record du budget des Québécois, au risque de déclencher ici aussi une grogne sociale durable.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : la caméra traverse l'Atlantique depuis le Portugal jusqu'au fleuve Saint-Laurent. Acte II : le long du corridor Gatineau–Montréal–Sherbrooke–Québec–Rimouski, des repères lumineux passent au rouge-ambre pour signaler un taux d'inoccupation sous 1,5 %. Acte III : la silhouette d'un triplex québécois emblématique à escalier extérieur s'illumine au centre avec une jauge de pression budgétaire."
+    },
+    {
+      "id": "d3-enjeu-mondial",
+      "chapterId": "ch3",
+      "duration": 42,
+      "shortVisualTitle": "Sommet de la Francophonie sous haute tension et offensive en Asie",
+      "locationBadge": "PHNOM PENH • CAMBODGE & ANASE",
+      "sources": [
+        "France 24",
+        "Radio-Canada"
+      ],
+      "narration": "Troisième dossier aujourd'hui : cap sur l'Asie du Sud-Est, où s'ouvre à Phnom Penh, au Cambodge, le vingtième Sommet de la Francophonie dans une atmosphère électrique. Quatre candidats se disputent le secrétariat général de l'organisation, et la République démocratique du Congo menace ouvertement de quitter la Francophonie si la secrétaire générale sortante, la Rwandaise Louise Mushikiwabo, est reconduite, sur fond de guerre meurtrière dans l'est congolais. En parallèle de cette tournée asiatique, le premier ministre canadien Mark Carney vient de conclure des discussions en vue d'un accord commercial avec les Philippines et courtise les onze pays de l'ANASE.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : rotation fluide du globe sombre vers l'Asie du Sud-Est où Phnom Penh s'allume en émeraude (#10B981). Acte II : quatre vecteurs diplomatiques convergent vers le sommet cambodgien tandis qu'une ligne de fracture rouge-ambre relie Kinshasa et Kigali. Acte III : un arc commercial lumineux s'ouvre vers l'archipel des Philippines et les onze nœuds de l'ANASE."
+    },
+    {
+      "id": "d3-lien-quebec",
+      "chapterId": "ch3",
+      "duration": 42,
+      "shortVisualTitle": "À Phnom Penh, Québec prêt à voter différemment d'Ottawa",
+      "locationBadge": "QUÉBEC • OTTAWA • PHNOM PENH",
+      "sources": [
+        "Radio-Canada",
+        "France 24"
+      ],
+      "narration": "Or, ce sommet au Cambodge place le Québec au cœur d'un bras de fer diplomatique fascinant. Rappelons que l'Organisation internationale de la Francophonie est la seule grande table mondiale où le premier ministre du Québec siège de plein droit, avec son propre droit de vote, à côté du gouvernement fédéral. Et aujourd'hui, à Phnom Penh, Québec affirme être prêt à voter indépendamment d'Ottawa pour l'élection à la tête de la Francophonie. Au-delà du geste politique, le Québec cherche surtout à tisser ses propres liens économiques en Asie et en Afrique francophone pour diversifier ses exportations hors des États-Unis.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : depuis la vallée du Saint-Laurent, deux trajectoires distinctes — l'une cyan boréal partant de Québec, l'autre ambre partant d'Ottawa — traversent le Pacifique jusqu'au Cambodge. Acte II : autour d'une table circulaire minimaliste à Phnom Penh, les deux sièges s'illuminent séparément, illustrant le vote autonome du Québec. Acte III : des lignes d'exportation relient les PME québécoises aux marchés d'Afrique francophone et d'Asie."
+    },
+    {
+      "id": "d3-deux-cotes-medaille",
+      "chapterId": "ch3",
+      "duration": 41,
+      "shortVisualTitle": "Voix québécoise distincte ou front uni pour signer des contrats ?",
+      "locationBadge": "DEUX CÔTÉS DE LA MÉDAILLE",
+      "sources": [
+        "Radio-Canada",
+        "France 24"
+      ],
+      "narration": "Faut-il applaudir ou s'inquiéter de voir Québec et Ottawa afficher des positions différentes à l'international ? Là encore, il y a deux côtés à la médaille. Pour les partisans d'une diplomatie québécoise affirmée, c'est exactement la raison d'être de notre statut à la Francophonie : défendre nos intérêts propres, notre langue et nos alliances sans être dilués dans la diplomatie canadienne. À l'inverse, les partisans du pragmatisme fédéral estiment qu'étaler des divisions à l'étranger affaiblit notre poids diplomatique, alors que pour décrocher des contrats de plusieurs milliards en Asie, nos entreprises ont besoin d'un front commun et de grands traités commerciaux.",
+      "motionBrief": "Chorégraphie en 3 actes plein écran. Acte I : le cadre noir se divise en deux perspectives diplomatiques. Acte II : à gauche, un faisceau cyan unique trace un réseau francophone mondial relié directement au Québec ; à droite, un faisceau combiné plus large ouvre des corridors de libre-échange vers les grands ports d'Asie-Pacifique. Acte III : les deux trajectoires se stabilisent en parallèle."
+    },
+    {
+      "id": "conclusion-debat-quebec",
+      "chapterId": "ch4",
+      "duration": 45,
+      "shortVisualTitle": "Option A ou Option B : encadrer fermement ou laisser jouer le marché ?",
+      "locationBadge": "LA QUESTION DU JOUR • FRANC NORD",
+      "sources": [
+        "Débat Citoyen Franc Nord"
+      ],
+      "narration": "Ce qui nous amène à la Question du Jour, et c'est à vous de trancher. Qu'il s'agisse de nos photos personnelles face à Meta, de la flambée des loyers ou de notre place dans le monde, deux philosophies s'affrontent aujourd'hui. Quelle direction le Québec doit-il prendre selon vous ? Option A : imposer des règles fermes — plafonner les loyers, punir durement les géants du Web qui touchent à nos données et affirmer une voix politique québécoise distincte. Ou Option B : miser d'abord sur le marché et la croissance — couper les règlements pour construire plus vite, attirer les géants technologiques et prioriser les accords commerciaux. Écrivez Option A ou Option B en commentaire, abonnez-vous à Franc Nord, et à très vite !",
+      "motionBrief": "Finale monumentale et épurée : un faisceau lumineux diagonal scinde l'écran noir (#030509) en deux plans nets — à gauche en ambre chaud (OPTION A · ENCADRER & PROTÉGER), à droite en cyan boréal (OPTION B · CONSTRUIRE & OUVRIR) — tandis que l'emblème boussole Franc Nord pulse au centre en laissant le coin inférieur droit libre pour le filigrane YouTube."
+    }
+  ]
+}
