@@ -151,7 +151,7 @@ async function main() {
     ];
 
     if (voiceFile) {
-      ffArgs.push('-i', voiceFile, '-c:a', 'aac', '-b:a', '192k', '-shortest');
+      ffArgs.push('-i', voiceFile, '-af', 'apad', '-c:a', 'aac', '-b:a', '192k', '-shortest');
     }
 
     ffArgs.push(

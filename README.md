@@ -51,3 +51,4 @@ Système quotidien à **2 Agents IA + Voix Humaine** pour produire un bulletin d
   - `PROMPT_OPUS_5_5.md` : Prompt prêt à copier-coller pour Opus 5.5 afin qu'il code `scenes-custom.js` dans le canevas de l'émission.
 - `server.mjs` : Serveur local léger pour ouvrir le Studio et le Téléprompteur.
 - `export-video.mjs` : Exporteur vidéo `.mp4` 100 % en code (via Chrome Headless + `FFmpeg` `h264_videotoolbox`) qui fusionne automatiquement votre voix.
+- `sync-voix.mjs` : Synchronisation automatique voix ⇄ vidéo. Déposez `episodes/YYYY-MM-DD/voix.m4a` (ou `.wav`/`.mp3`), puis lancez `node sync-voix.mjs --episode YYYY-MM-DD` : les pauses de votre lecture sont détectées, chaque phrase est alignée, et `storyboard.json` reçoit les durées réelles des scènes (`duration`) et le minutage de chaque phrase (`voiceSync`). Les temps forts de `scenes-custom.js` se recalent seuls sur votre voix. Option `--dry` pour prévisualiser sans écrire.
