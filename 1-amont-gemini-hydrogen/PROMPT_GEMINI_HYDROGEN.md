@@ -1,4 +1,4 @@
-# Guide Agent 1 — GEMINI HYDROGEN (Rédaction en Chef & Storyboard)
+# Guide Agent 1 — GEMINI HYDROGEN (Rédaction en Chef & Storyboard 8 min 30 s)
 
 Chaque jour, sélectionnez **Gemini Hydrogen** et envoyez-lui cette consigne :
 
@@ -6,17 +6,21 @@ Chaque jour, sélectionnez **Gemini Hydrogen** et envoyez-lui cette consigne :
 > « Agis comme Rédacteur en chef du bulletin *FRANC NORD*.
 > 1. Exécute `node 1-amont-gemini-hydrogen/collect-news.mjs` (ou lis les actualités mondiales du jour).
 > 2. Sélectionne les **3 nouvelles mondiales les plus importantes** aujourd'hui qui ont un impact réel ou un intérêt fort pour les Québécois.
-> 3. Pour chaque nouvelle, croise les sources internationales pour garantir une **impartialité totale** (Faits vérifiés, Point de vue du Camp A, Point de vue du Camp B, et Impact concret au Québec).
-> 4. Si une photo réelle libre de droits est pertinente, cherche-la via `node 1-amont-gemini-hydrogen/collect-news.mjs --wikimedia "<mot-clé en anglais>"` (Wikimedia Commons uniquement, avec auteur et licence).
-> 5. Génère dans `episodes/YYYY-MM-DD/` :
->    - `storyboard.json` (en respectant strictement la structure de `episodes/2026-11-14/storyboard.json` avec des directives précises de Motion Design pour Opus 5.5).
->    - `teleprompteur.md` (mon script prêt à lire au micro en français québécois naturel, dynamique et sans jargon). »
+> 3. Construis un bulletin complet de **8 minutes 30 secondes (510 secondes • 13 scènes de 35 à 45 s)** pour dépasser le seuil de monétisation mid-roll de YouTube (8 min+) :
+>    - **Scène 1 (30 s)** : Ouverture & Sommaire percutant des 3 grands dossiers.
+>    - **Dossier 1 (4 scènes • ~2 min 40 s)** : Fait déclencheur → Coulisses géopolitiques/historiques → Les 2 côtés de la médaille (Camp A vs Camp B) → Effet domino concret au Québec.
+>    - **Dossier 2 (4 scènes • ~2 min 30 s)** : Même structure approfondie en 4 temps.
+>    - **Dossier 3 (3 scènes • ~2 min 05 s)** : Enjeu mondial → Lien stratégique avec le Québec → Les 2 côtés de la médaille.
+>    - **Scène 13 (45 s)** : La Question du Jour (Débat Option A vs Option B) pour maximiser les commentaires sur Facebook et YouTube.
+> 4. Génère dans `episodes/YYYY-MM-DD/` :
+>    - `storyboard.json` (13 scènes détaillées avec un `motionBrief` cinématique plein écran par scène pour Claude Opus, sans aucun bandeau défilant ni boîte de tableau de bord).
+>    - `teleprompteur.md` (environ 1 250 à 1 350 mots en français québécois naturel, fluide, précis et captivant). »
 
 ---
 
 ## Règles Éditoriales Obligatoires (Agent 1)
 
-1. **Zéro parti pris** : Toujours exposer clairement les deux arguments principaux (`sideA` vs `sideB`) avec la même rigueur.
-2. **Pont avec le Québec** : Chaque nouvelle mondiale doit répondre à la question : *« Qu'est-ce que ça change pour une famille, un travailleur ou une entreprise au Québec ? »*
-3. **Ton Québécois Authentique** : Pas d'expressions typiquement françaises (« du coup », « faire les courses » → « faire l'épicerie », « essence / gaz », « hypothèque », etc.), ton direct, intelligent, accessible et rythmé.
-4. **Cahier des charges Motion Design (`motionBrief`)** : Pour chaque scène, décrire précisément l'animation géométrique/vectorielle attendue pour qu'Opus 5.5 puisse coder une scène unique et spectaculaire dans `scenes-custom.js`.
+1. **Durée verrouillée (8 min 15 s à 9 min 00 s)** : Chaque scène de 40 secondes doit contenir environ **95 à 105 mots** à lire au micro (rythme naturel de 150 mots/minute).
+2. **Zéro parti pris** : Chaque dossier comporte obligatoirement une scène dédiée aux **deux côtés de la médaille** exposant avec la même rigueur les arguments du Camp A et du Camp B.
+3. **Pont concret avec le Québec** : Expliquer clairement comment l'événement mondial se répercute sur le portefeuille, l'énergie, l'emploi ou le quotidien au Québec.
+4. **Cahier des charges Motion Design (`motionBrief`)** : Décrire pour chaque scène une chorégraphie plein écran en 3 actes pour Claude Opus (zéro tableau de bord, zéro mur de texte, 1 seule métaphore visuelle forte par plan).

@@ -3,64 +3,145 @@
   "showTagline": "Le monde expliqué d'ici • Sans filtre ni commanditaire",
   "episodeDate": "2026-11-14",
   "episodeNumber": 1,
-  "title": "Pétrole bloqué en mer, dollar sous pression et ruée mondiale sur Hydro-Québec",
-  "totalDurationSeconds": 65,
+  "title": "Pétrole sous tension en mer, dollar canadien à 71 ¢ US et ruée mondiale sur Hydro-Québec",
+  "totalDurationSeconds": 510,
   "chapters": [
+    { "id": "ch0", "number": "00", "label": "SOMMAIRE", "colorKey": "cyan" },
     { "id": "ch1", "number": "01", "label": "DÉTROIT D'ORMUZ", "colorKey": "amber" },
-    { "id": "ch2", "number": "02", "label": "DEVISES & ÉPICERIE", "colorKey": "cyan" },
+    { "id": "ch2", "number": "02", "label": "DOLLAR & ÉPICERIE", "colorKey": "cyan" },
     { "id": "ch3", "number": "03", "label": "IA & HYDRO-QUÉBEC", "colorKey": "emerald" },
     { "id": "ch4", "number": "04", "label": "LA QUESTION", "colorKey": "rose" }
   ],
   "scenes": [
     {
-      "id": "sujet-1-ormuz-essence",
-      "chapterId": "ch1",
-      "duration": 14,
-      "shortVisualTitle": "Le goulot d'étranglement pétrolier",
-      "locationBadge": "DÉTROIT D'ORMUZ → QUÉBEC",
-      "sources": ["Reuters", "AP", "AIE"],
-      "narration": "Pendant qu'on a les yeux rivés sur nos affaires ici, un goulot d'étranglement majeur ralentit les pétroliers entre le Moyen-Orient et l'Atlantique. Les primes d'assurance maritime viennent de bondir de trente-huit pour cent. Et même si le Québec n'achète pas tout son pétrole là-bas, le prix du baril est fixé sur un marché mondial unique : résultat, chaque secousse là-bas ajoute rapidement huit à douze sous le litre dans nos stations-service d'ici.",
-      "motionBrief": "Plein écran cinématique épuré : caméra qui glisse le long d'un tracé lumineux minimaliste du détroit d'Ormuz dans le noir profond, puis morphing fluide du tracé maritime en une seule grande donnée monumentale (+38 % → 1,75 $/L) avec beaucoup d'espace négatif."
+      "id": "intro-sommaire",
+      "chapterId": "ch0",
+      "duration": 30,
+      "shortVisualTitle": "Franc Nord — Les 3 ondes de choc du jour",
+      "locationBadge": "MONDE → QUÉBEC",
+      "sources": ["Reuters", "AP", "AFP"],
+      "narration": "Bienvenue sur Franc Nord, le bulletin qui décortique ce qui se passe vraiment sur la planète et ce que ça change concrètement pour nous au Québec, sans commanditaire et sans filtre. Aujourd'hui, trois grandes ondes de choc mondiales : d'abord, un goulot d'étranglement sur les routes pétrolières qui menace directement le prix à nos pompes. Ensuite, la chute de notre dollar autour de soixante-et-onze sous américains juste avant l'hiver, qui frappe le panier d'épicerie. Et enfin, la panne sèche électrique de l'intelligence artificielle mondiale qui pousse les géants américains à cogner à la porte d'Hydro-Québec.",
+      "motionBrief": "Ouverture cinématique plein écran : dans l'obscurité abyssale, la boussole géométrique Franc Nord s'illumine au centre, puis la caméra plonge à travers trois anneaux d'ondes lumineuses (Ambre, Cyan, Émeraude) qui révèlent tour à tour les 3 symboles minimalistes de l'épisode."
     },
     {
-      "id": "sujet-1-impartialite",
+      "id": "d1-fait-declencheur",
       "chapterId": "ch1",
-      "duration": 13,
-      "shortVisualTitle": "Les deux thèses face à face",
-      "locationBadge": "PRODUCTEURS VS IMPORTATEURS",
-      "sources": ["AFP", "BBC World"],
-      "narration": "Pour bien comprendre sans parti pris, il faut écouter les deux camps. D'un côté, les pays producteurs de l'OPEP affirment qu'ils limitent la production uniquement pour éviter un krach des prix et financer leurs infrastructures. De l'autre côté, les pays consommateurs dénoncent une rareté artificielle maintenue au pire moment, et accusent aussi les grandes raffineries d'en profiter pour gonfler leurs marges.",
-      "motionBrief": "Composition minimaliste à deux forces géométriques opposées (lumière ambre vs lumière cyan) qui s'équilibrent dans l'espace vide, avec apparition séquentielle de 2 mots-clés très sobres par camp (jamais de pavé de texte)."
+      "duration": 40,
+      "shortVisualTitle": "+38 % sur les assurances des pétroliers",
+      "locationBadge": "GOLFE PERSIQUE & MER ROUGE",
+      "sources": ["Reuters Maritime", "Lloyd's Market"],
+      "narration": "Commençons au Moyen-Orient. Pendant qu'ici on parle de nos enjeux locaux, une crise silencieuse vient de franchir un cap en mer Rouge et aux abords du détroit d'Ormuz. En l'espace de quelques jours, les grandes compagnies d'assurance maritime de Londres ont fait bondir leurs primes de risque de guerre de trente-huit pour cent pour chaque supertanker qui traverse la zone. Concrètement, assurer un seul navire géant coûte maintenant des centaines de milliers de dollars supplémentaires par voyage, et plusieurs armateurs préfèrent carrément faire le grand détour par le sud de l'Afrique, ce qui rallonge la route de deux semaines entières.",
+      "motionBrief": "Caméra virtuelle en plongée au-dessus d'une mer noire minimaliste : un sillage lumineux doré avance lentement puis se fige face à une onde de choc concentrique rouge corail ; l'écran bascule en un travelling vertical révélant le chiffre monumental +38 %."
     },
     {
-      "id": "sujet-2-taux-epicerie",
+      "id": "d1-geopolitique-detroit",
+      "chapterId": "ch1",
+      "duration": 40,
+      "shortVisualTitle": "33 kilomètres qui tiennent l'économie mondiale",
+      "locationBadge": "DÉTROIT D'ORMUZ • 21 M BARILS/JOUR",
+      "sources": ["Agence Internationale de l'Énergie", "EIA"],
+      "narration": "Pour saisir pourquoi toute la planète retient son souffle, il faut regarder la géographie pure. Le détroit d'Ormuz, dans sa partie navigable, c'est un couloir maritime large d'à peine trente-trois kilomètres. C'est moins large que la distance entre Montréal et Saint-Jérôme. Pourtant, chaque jour, vingt-et-un millions de barils de pétrole brut et un cinquième du gaz naturel liquéfié de la planète entière doivent absolument passer par ce trou d'aiguille. Il n'existe aucun pipeline capable de remplacer un tel volume si jamais le passage ralentit ne serait-ce que de vingt pour cent.",
+      "motionBrief": "Carte topographique vectorielle ultra-épurée plein écran : deux masses côtières sombres se resserrent comme un étau autour d'un faisceau lumineux de 33 km où circulent des particules d'or, avec une échelle comparative minimaliste."
+    },
+    {
+      "id": "d1-deux-cotes-opep-occident",
+      "chapterId": "ch1",
+      "duration": 40,
+      "shortVisualTitle": "Producteurs vs Consommateurs : les 2 thèses",
+      "locationBadge": "LES DEUX CÔTÉS DE LA MÉDAILLE",
+      "sources": ["AFP", "OPEP+", "G7 Énergie"],
+      "narration": "Mais qui est vraiment responsable de la facture qui grimpe ? Fidèles à notre règle sur Franc Nord, écoutons les deux côtés de la médaille. Du côté des pays producteurs de l'OPEP+, l'argument est clair : ils refusent d'augmenter leur production parce qu'ils estiment que la demande chinoise ralentit, qu'ils doivent financer la transition de leurs propres économies et que ce sont surtout les taxes occidentales qui gonflent le prix final. À l'inverse, du côté des pays importateurs et des associations de consommateurs, on dénonce une rareté maintenue artificiellement pour garder le baril cher, tout en pointant du doigt les grandes raffineries nord-américaines dont les marges restent proches des sommets historiques.",
+      "motionBrief": "Chorégraphie géométrique d'équilibre : deux plans lumineux opposés (Ambre chaud à gauche pour l'OPEP+, Bleu glacé à droite pour les importateurs) pivotent en 2.5D autour d'un axe central pur, affichant uniquement 2 mots-clés monumentaux à la fois."
+    },
+    {
+      "id": "d1-impact-quebec-pompe",
+      "chapterId": "ch1",
+      "duration": 40,
+      "shortVisualTitle": "Pourquoi le Québec paie pour un détroit à 10 000 km",
+      "locationBadge": "MONTRÉAL • QUÉBEC • RÉGIONS",
+      "sources": ["Régie de l'énergie du Québec", "CAA-Québec"],
+      "narration": "Et c'est là que plusieurs Québécois posent une question légitime : pourquoi est-ce qu'on paierait plus cher ici alors que le pétrole raffiné à Montréal et à Lévis vient presque entièrement de l'Ouest canadien et des États-Unis ? La réponse tient en un mécanisme implacable : le pétrole est une marchandise cotée sur une bourse mondiale unique, à New York et à Londres. Dès que l'Asie ou l'Europe craint de manquer de barils au Moyen-Orient, les acheteurs mondiaux surenchérissent sur le pétrole nord-américain. Résultat direct : chaque secousse là-bas se traduit ici par huit à douze sous de plus le litre à la pompe, et renchérit le transport par camion de tout ce qu'on achète.",
+      "motionBrief": "Un fil lumineux continu relie l'épicentre maritime à une silhouette épurée du Québec ; la caméra zoome sur le compteur minimaliste géant qui grimpe avec inertie de 1,64 $ à 1,75 $/L dans un halo ambre."
+    },
+    {
+      "id": "d2-decision-fed-ecart-taux",
       "chapterId": "ch2",
-      "duration": 14,
-      "shortVisualTitle": "0,71 $ US — La taxe invisible sur l'épicerie",
-      "locationBadge": "BANQUES CENTRALES → QUÉBEC",
-      "sources": ["Banque du Canada", "Statistique Canada"],
-      "narration": "Deuxième nouvelle majeure aujourd'hui : l'écart de taux d'intérêt entre les États-Unis et le Canada met notre dollar sous pression autour de soixante-et-onze sous américains. Pourquoi ça nous touche directement au Québec ? Parce qu'en plein automne et en hiver, plus de soixante-dix pour cent de nos fruits et légumes frais sont payés en dollars américains par les grossistes. Un huard plus faible, c'est une taxe invisible sur chaque panier d'épicerie.",
-      "motionBrief": "Une seule courbe lumineuse pure qui traverse tout l'écran noir avec suivi de caméra cinématique sur la pointe de la courbe (0,71 $ US), suivie d'une révélation géométrique minimaliste de la proportion 70 %."
+      "duration": 38,
+      "shortVisualTitle": "L'aimant américain : pourquoi le huard recule",
+      "locationBadge": "WASHINGTON → OTTAWA",
+      "sources": ["Réserve fédérale US", "Banque du Canada"],
+      "narration": "Passons maintenant à notre deuxième grand dossier : la glissade du dollar canadien autour de soixante-et-onze sous américains. Que s'est-il passé cette semaine ? Aux États-Unis, l'économie reste étonnamment vigoureuse, ce qui pousse la Réserve fédérale américaine à maintenir ses taux d'intérêt plus élevés plus longtemps. Pendant ce temps, au Canada, la croissance s'essouffle et la Banque du Canada a dû baisser ses taux plus vite pour éviter d'étouffer les emprunteurs. Sur les marchés financiers mondiaux, l'argent va toujours là où il rapporte le plus : les grands fonds d'investissement vendent donc leurs dollars canadiens pour acheter des dollars américains.",
+      "motionBrief": "Deux masses gravitationnelles lumineuses dans l'espace noir : la sphère américaine grandit et attire vers elle un flux de particules lumineuses quittant la sphère canadienne, tandis que le chiffre 0,71 $ US se dessine avec une netteté chirurgicale."
     },
     {
-      "id": "sujet-3-ia-hydro-quebec",
+      "id": "d2-deux-cotes-banques-centrales",
+      "chapterId": "ch2",
+      "duration": 37,
+      "shortVisualTitle": "Hypothèques vs Devise : le dilemme impossible",
+      "locationBadge": "LES DEUX CÔTÉS DE LA MÉDAILLE",
+      "sources": ["Reuters Economics", "Institut du Québec"],
+      "narration": "Là encore, il y a deux écoles qui s'affrontent durement sur la stratégie à suivre. Le premier camp applaudit la baisse rapide des taux au Canada : selon eux, la priorité absolue est de sauver les familles québécoises et canadiennes qui doivent renouveler leur hypothèque cette année et d'aider nos entreprises exportatrices qui profitent d'un dollar plus bas. Mais le deuxième camp tire la sonnette d'alarme : en laissant le dollar canadien s'affaiblir autant face au billet vert, on importe une nouvelle vague d'inflation sur tout ce qu'on achète de l'étranger, de l'électronique jusqu'à la nourriture.",
+      "motionBrief": "Bascule géométrique minimale sur fond bleu nuit : d'un côté l'icône architecturale d'un toit québécois qui respire (soulagement hypothécaire), de l'autre une flèche d'inflation importée qui s'élève, arbitrée par une ligne d'horizon tendue."
+    },
+    {
+      "id": "d2-mecanisme-importations-hiver",
+      "chapterId": "ch2",
+      "duration": 38,
+      "shortVisualTitle": "70 % de nos fruits et légumes d'hiver payés en USD",
+      "locationBadge": "CALIFORNIE & MEXIQUE → MARCHÉ CENTRAL",
+      "sources": ["Statistique Canada", "MAPAQ"],
+      "narration": "Et pourquoi ce détail monétaire devient critique précisément à la mi-novembre au Québec ? Parce que la saison de nos récoltes locales en plein champ est terminée. De novembre jusqu'au mois d'avril, plus de soixante-dix pour cent des fruits et légumes frais qui entrent dans les entrepôts de distribution de Montréal et de Québec arrivent de la Californie, de l'Arizona, de la Floride et du Mexique. Or, même quand un grossiste québécois achète des petits fruits ou des brocolis au Mexique, le contrat international est presque toujours facturé en dollars américains.",
+      "motionBrief": "Projection cartographique nord-américaine dans le noir : trois trajectoires lumineuses partent de Californie, Floride et Mexique et convergent vers le Saint-Laurent ; l'écran révèle un cercle pur rempli à 70 % d'une lueur corail."
+    },
+    {
+      "id": "d2-impact-quebec-familles",
+      "chapterId": "ch2",
+      "duration": 37,
+      "shortVisualTitle": "La taxe invisible sur chaque panier d'épicerie",
+      "locationBadge": "PORTFEUILLE DES MÉNAGES QUÉBÉCOIS",
+      "sources": ["Laboratoire de sciences analytiques en agroalimentaire"],
+      "narration": "Le calcul est donc impitoyable pour nos épiceries cet hiver. Quand le dollar canadien perd cinq sous par rapport au dollar américain, c'est exactement comme si on ajoutait du jour au lendemain une taxe douanière invisible de sept pour cent sur tous les produits frais importés, à laquelle s'ajoute en plus la hausse du diesel pour les camions frigorifiques qui remontent le continent. Pour une famille de quatre personnes au Québec, les économistes estiment que la seule faiblesse de notre devise peut représenter plusieurs centaines de dollars de plus sur la facture alimentaire annuelle.",
+      "motionBrief": "Une courbe unique ultra-fluide traverse le plein écran : à mesure que la ligne cyan du huard descend, une ombre lumineuse ambre/corail s'élève en miroir (+7 % de surcoût d'importation) dans un cadrage minimaliste monumental."
+    },
+    {
+      "id": "d3-mur-electrique-ia",
       "chapterId": "ch3",
-      "duration": 14,
-      "shortVisualTitle": "La ruée mondiale vers nos mégawatts",
-      "locationBadge": "MONDE → HYDRO-QUÉBEC",
-      "sources": ["AIE", "Financial Times", "Radio-Canada"],
-      "narration": "Troisième grand dossier : la course mondiale à l'intelligence artificielle frappe un mur inattendu, celui de l'électricité. Aux États-Unis et en Europe, les réseaux électriques saturent devant l'appétit géant des centres de données. Résultat : l'hydroélectricité propre et froide du Québec devient l'une des ressources les plus convoitées au monde. Mais ça pose une vraie question : nos propres surplus sont limités d'ici deux mille trente.",
-      "motionBrief": "Faisceaux lumineux épurés qui traversent l'obscurité depuis les continents saturés et convergent vers un point focal émeraude unique (Québec), puis silhouette architecturale minimaliste des voûtes de Manic-5 en lignes de lumière fines."
+      "duration": 42,
+      "shortVisualTitle": "La panne sèche électrique de l'intelligence artificielle",
+      "locationBadge": "VIRGINIE • SILICON VALLEY • FRANCFORT",
+      "sources": ["Agence Internationale de l'Énergie", "Financial Times"],
+      "narration": "Troisième grand dossier mondial aujourd'hui, et c'est sans doute celui qui va le plus façonner l'avenir économique du Québec : la course mondiale à l'intelligence artificielle vient de frapper un mur physique, celui de l'électricité. Aux États-Unis, en Irlande et en Allemagne, les réseaux électriques sont rendus au point de rupture. Un seul méga-centre de données d'entraînement d'IA de nouvelle génération demande aujourd'hui autant de puissance électrique en continu qu'une ville de quatre cent mille habitants. Résultat : plusieurs États américains n'arrivent même plus à raccorder les nouveaux serveurs et vont jusqu'à prolonger la vie de vieilles centrales au charbon ou au gaz.",
+      "motionBrief": "Dans le noir profond, une grille électrique géométrique pulse de plus en plus vite jusqu'à la saturation rouge incandescente ; la caméra recule pour montrer l'ampleur monumentale de la demande en gigawatts."
+    },
+    {
+      "id": "d3-ruee-vers-hydro-quebec",
+      "chapterId": "ch3",
+      "duration": 42,
+      "shortVisualTitle": "Pourquoi la planète lorgne sur l'or bleu québécois",
+      "locationBadge": "MANIC-5 & BAIE-JAMES • QUÉBEC",
+      "sources": ["Hydro-Québec", "Ministère de l'Économie et de l'Énergie"],
+      "narration": "Face à cette pénurie mondiale, devinez vers quel territoire tous les regards de la planète technologique se tournent ? Le Québec. Nous avons trois atouts que presque personne d'autre ne possède en même temps en Occident : une électricité renouvelable propre à quatre-vingt-dix-neuf pour cent, des tarifs industriels parmi les plus bas du continent, et un climat nordique froid qui réduit énormément les coûts de climatisation des serveurs. Sauf qu'il y a un hic majeur : les fameux surplus historiques d'Hydro-Québec sont déjà presque tous engagés, et les demandes de branchement dépassent de plusieurs fois notre capacité disponible d'ici deux mille trente.",
+      "motionBrief": "Les faisceaux saturés du monde entier traversent l'obscurité et convergent vers une silhouette architecturale monumentale et épurée des voûtes du barrage Manic-5 dessinée en lignes de lumière émeraude et bleu boréal."
+    },
+    {
+      "id": "d3-deux-cotes-megawatts",
+      "chapterId": "ch3",
+      "duration": 41,
+      "shortVisualTitle": "Jackpot financier vs Souveraineté énergétique",
+      "locationBadge": "LES DEUX CÔTÉS DE LA MÉDAILLE",
+      "sources": ["Chambre de commerce", "Regroupements industriels & citoyens"],
+      "narration": "Ce qui nous amène au cœur du dilemme qui divise les experts économiques. D'un côté, les partisans de l'ouverture disent que le Québec a une occasion historique unique : au lieu de vendre notre électricité au rabais, on pourrait la facturer deux ou trois fois plus cher à ces géants mondiaux de l'IA et utiliser ces milliards de profits neufs pour financer nos hôpitaux, nos écoles et nos nouveaux barrages. De l'autre côté, les opposants rappellent que les centres de données créent très peu d'emplois permanents par mégawatt consommé, et qu'accorder nos précieux blocs d'énergie à des multinationales étrangères risque de priver nos propres entreprises québécoises et de faire grimper les tarifs résidentiels.",
+      "motionBrief": "Deux flux d'énergie émeraude et or se séparent au centre de l'écran dans une chorégraphie symétrique : à gauche la multiplication de valeur financière (Tarif Premium), à droite le réseau local québécois (PME & Maisons)."
     },
     {
       "id": "conclusion-debat-quebec",
       "chapterId": "ch4",
-      "duration": 10,
-      "shortVisualTitle": "Vendre au prix fort ou garder nos mégawatts ?",
-      "locationBadge": "LA QUESTION DU JOUR",
-      "sources": ["Communauté Franc Nord"],
-      "narration": "Et je vous laisse sur cette question aujourd'hui : selon vous, est-ce que le Québec devrait vendre son électricité au prix fort aux géants mondiaux de l'IA pour encaisser des milliards, ou réserver chaque mégawatt en priorité pour nos entreprises et nos maisons d'ici ? Dites-moi si vous êtes Option A ou Option B dans les commentaires, et partagez le bulletin autour de vous !",
-      "motionBrief": "Finale sobre et monumentale : l'écran se fend en deux plans obliques épurés (A · VENDRE AU PRIX FORT / B · RÉSERVER AU QUÉBEC) avec typographie géante et respiration maximale."
+      "duration": 45,
+      "shortVisualTitle": "Option A ou Option B : que doit faire le Québec ?",
+      "locationBadge": "LA QUESTION DU JOUR • FRANC NORD",
+      "sources": ["Débat Citoyen Franc Nord"],
+      "narration": "Et c'est sur ce choix stratégique que je vous laisse la parole aujourd'hui. Si c'était vous qui aviez la main sur le disjoncteur d'Hydro-Québec demain matin, quelle direction prendriez-vous ? Option A : on vend notre électricité au prix fort aux géants mondiaux de l'IA pour encaisser le maximum de milliards pour l'État québécois. Ou Option B : on ferme la porte aux méga-centres de données étrangers et on réserve cent pour cent de nos mégawatts pour nos ménages et nos entreprises d'ici. Écrivez Option A ou Option B dans les commentaires en expliquant pourquoi, partagez ce bulletin Franc Nord sur Facebook pour lancer la discussion autour de vous, et on se retrouve demain pour décoder le monde d'ici !",
+      "motionBrief": "Finale monumentale et épurée : un faisceau lumineux diagonal scinde l'écran noir en deux plans majestueux (A · VENDRE AU PRIX FORT / B · RÉSERVER AU QUÉBEC) avec la boussole Franc Nord qui pulse doucement au centre."
     }
   ]
 }
