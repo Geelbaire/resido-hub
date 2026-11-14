@@ -491,7 +491,8 @@ const animationPanel = document.querySelector('.canvas-viewport');
 function selectDeliveredVideo() {
   const previous = finalVideo.currentTime || 0;
   const epNum = String(storyboard?.episodeNumber || 3).padStart(2, '0');
-  finalVideo.src = `../videos/${episodeDate}/Franc-Nord-Episode-${epNum}-${currentFormat}.mp4`;
+  // Le site n'héberge que la version 16:9 du dernier épisode (9:16 : lien de téléchargement Release).
+  finalVideo.src = `../videos/${episodeDate}/Franc-Nord-Episode-${epNum}-16x9.mp4`;
   finalVideo.addEventListener('loadedmetadata', () => { finalVideo.currentTime = Math.min(previous, finalVideo.duration); }, {once:true});
 }
 document.getElementById('showFinalVideo').addEventListener('click', () => {

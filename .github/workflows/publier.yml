@@ -30,13 +30,19 @@ jobs:
           cp -R studio _site/
           cp -R episodes _site/
 
-      - name: Ajouter les MP4 des épisodes 2 et 3
+      # Seul le dernier épisode est en ligne, en 16:9 uniquement (site < 1 Go).
+      # Les épisodes précédents et les versions 9:16 restent sur le SSD et dans les Releases GitHub.
+      # À chaque nouvel épisode : mettre à jour ces trois valeurs.
+      - name: Ajouter le MP4 16:9 du dernier épisode
         env:
           GH_TOKEN: ${{ github.token }}
+          DERNIER_DOSSIER: 2026-11-14-Episode-03
+          DERNIERE_RELEASE: episode-03-2026-11-14
+          DERNIER_MP4: Franc-Nord-Episode-03-16x9.mp4
         run: |
-          mkdir -p _site/videos/2026-11-14 _site/videos/2026-11-14-Episode-03
-          gh release download episode-02-2026-11-14 --repo "$GITHUB_REPOSITORY" --pattern '*.mp4' --dir _site/videos/2026-11-14
-          gh release download episode-03-2026-11-14 --repo "$GITHUB_REPOSITORY" --pattern 'Franc-Nord-Episode-03-*.mp4' --dir _site/videos/2026-11-14-Episode-03
+          mkdir -p "_site/videos/$DERNIER_DOSSIER"
+          gh release download "$DERNIERE_RELEASE" --repo "$GITHUB_REPOSITORY" --pattern "$DERNIER_MP4" --dir "_site/videos/$DERNIER_DOSSIER"
+          du -sh _site
 
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
