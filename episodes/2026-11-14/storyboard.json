@@ -1,0 +1,66 @@
+{
+  "showName": "FRANC NORD",
+  "showTagline": "Le monde expliqué d'ici • Sans filtre ni commanditaire",
+  "episodeDate": "2026-11-14",
+  "episodeNumber": 1,
+  "title": "Pétrole bloqué en mer, dollar sous pression et ruée mondiale sur Hydro-Québec",
+  "totalDurationSeconds": 65,
+  "chapters": [
+    { "id": "ch1", "number": "01", "label": "DÉTROIT D'ORMUZ", "colorKey": "amber" },
+    { "id": "ch2", "number": "02", "label": "DEVISES & ÉPICERIE", "colorKey": "cyan" },
+    { "id": "ch3", "number": "03", "label": "IA & HYDRO-QUÉBEC", "colorKey": "emerald" },
+    { "id": "ch4", "number": "04", "label": "LA QUESTION", "colorKey": "rose" }
+  ],
+  "scenes": [
+    {
+      "id": "sujet-1-ormuz-essence",
+      "chapterId": "ch1",
+      "duration": 14,
+      "shortVisualTitle": "Le goulot d'étranglement pétrolier",
+      "locationBadge": "DÉTROIT D'ORMUZ → QUÉBEC",
+      "sources": ["Reuters", "AP", "AIE"],
+      "narration": "Pendant qu'on a les yeux rivés sur nos affaires ici, un goulot d'étranglement majeur ralentit les pétroliers entre le Moyen-Orient et l'Atlantique. Les primes d'assurance maritime viennent de bondir de trente-huit pour cent. Et même si le Québec n'achète pas tout son pétrole là-bas, le prix du baril est fixé sur un marché mondial unique : résultat, chaque secousse là-bas ajoute rapidement huit à douze sous le litre dans nos stations-service d'ici.",
+      "motionBrief": "Plein écran cinématique épuré : caméra qui glisse le long d'un tracé lumineux minimaliste du détroit d'Ormuz dans le noir profond, puis morphing fluide du tracé maritime en une seule grande donnée monumentale (+38 % → 1,75 $/L) avec beaucoup d'espace négatif."
+    },
+    {
+      "id": "sujet-1-impartialite",
+      "chapterId": "ch1",
+      "duration": 13,
+      "shortVisualTitle": "Les deux thèses face à face",
+      "locationBadge": "PRODUCTEURS VS IMPORTATEURS",
+      "sources": ["AFP", "BBC World"],
+      "narration": "Pour bien comprendre sans parti pris, il faut écouter les deux camps. D'un côté, les pays producteurs de l'OPEP affirment qu'ils limitent la production uniquement pour éviter un krach des prix et financer leurs infrastructures. De l'autre côté, les pays consommateurs dénoncent une rareté artificielle maintenue au pire moment, et accusent aussi les grandes raffineries d'en profiter pour gonfler leurs marges.",
+      "motionBrief": "Composition minimaliste à deux forces géométriques opposées (lumière ambre vs lumière cyan) qui s'équilibrent dans l'espace vide, avec apparition séquentielle de 2 mots-clés très sobres par camp (jamais de pavé de texte)."
+    },
+    {
+      "id": "sujet-2-taux-epicerie",
+      "chapterId": "ch2",
+      "duration": 14,
+      "shortVisualTitle": "0,71 $ US — La taxe invisible sur l'épicerie",
+      "locationBadge": "BANQUES CENTRALES → QUÉBEC",
+      "sources": ["Banque du Canada", "Statistique Canada"],
+      "narration": "Deuxième nouvelle majeure aujourd'hui : l'écart de taux d'intérêt entre les États-Unis et le Canada met notre dollar sous pression autour de soixante-et-onze sous américains. Pourquoi ça nous touche directement au Québec ? Parce qu'en plein automne et en hiver, plus de soixante-dix pour cent de nos fruits et légumes frais sont payés en dollars américains par les grossistes. Un huard plus faible, c'est une taxe invisible sur chaque panier d'épicerie.",
+      "motionBrief": "Une seule courbe lumineuse pure qui traverse tout l'écran noir avec suivi de caméra cinématique sur la pointe de la courbe (0,71 $ US), suivie d'une révélation géométrique minimaliste de la proportion 70 %."
+    },
+    {
+      "id": "sujet-3-ia-hydro-quebec",
+      "chapterId": "ch3",
+      "duration": 14,
+      "shortVisualTitle": "La ruée mondiale vers nos mégawatts",
+      "locationBadge": "MONDE → HYDRO-QUÉBEC",
+      "sources": ["AIE", "Financial Times", "Radio-Canada"],
+      "narration": "Troisième grand dossier : la course mondiale à l'intelligence artificielle frappe un mur inattendu, celui de l'électricité. Aux États-Unis et en Europe, les réseaux électriques saturent devant l'appétit géant des centres de données. Résultat : l'hydroélectricité propre et froide du Québec devient l'une des ressources les plus convoitées au monde. Mais ça pose une vraie question : nos propres surplus sont limités d'ici deux mille trente.",
+      "motionBrief": "Faisceaux lumineux épurés qui traversent l'obscurité depuis les continents saturés et convergent vers un point focal émeraude unique (Québec), puis silhouette architecturale minimaliste des voûtes de Manic-5 en lignes de lumière fines."
+    },
+    {
+      "id": "conclusion-debat-quebec",
+      "chapterId": "ch4",
+      "duration": 10,
+      "shortVisualTitle": "Vendre au prix fort ou garder nos mégawatts ?",
+      "locationBadge": "LA QUESTION DU JOUR",
+      "sources": ["Communauté Franc Nord"],
+      "narration": "Et je vous laisse sur cette question aujourd'hui : selon vous, est-ce que le Québec devrait vendre son électricité au prix fort aux géants mondiaux de l'IA pour encaisser des milliards, ou réserver chaque mégawatt en priorité pour nos entreprises et nos maisons d'ici ? Dites-moi si vous êtes Option A ou Option B dans les commentaires, et partagez le bulletin autour de vous !",
+      "motionBrief": "Finale sobre et monumentale : l'écran se fend en deux plans obliques épurés (A · VENDRE AU PRIX FORT / B · RÉSERVER AU QUÉBEC) avec typographie géante et respiration maximale."
+    }
+  ]
+}
