@@ -5,7 +5,7 @@ const episodeDate = params.get('episode') || '2026-11-14';
 const initialFormat = params.get('format') === '9x16' ? '9x16' : '16x9';
 
 // Empreinte SHA-256 de "pseudo:motdepasse" (aucun mot de passe en clair dans le code)
-const EXPECTED_AUTH_SHA256 = 'e688543b8887667a22d51f611df240ce860cd0fa55af473d2114d038458a9f22';
+const EXPECTED_AUTH_SHA256 = '023bb274c32730b8630f72e794daba04dd57533598c91d669c3667bbac6f2738';
 const AUTH_STORAGE_KEY = 'franc_nord_studio_token';
 
 const authGateOverlay = document.getElementById('authGateOverlay');
