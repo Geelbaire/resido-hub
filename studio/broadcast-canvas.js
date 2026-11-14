@@ -298,16 +298,16 @@ export function renderBroadcastFrame({
   const margin = isVertical ? 48 : 64;
   drawOfficialBrandCorner(ctx, margin, margin, chapter, globalTime);
 
-  // 5. Crédit source discret en bas à droite (IBM Plex Mono / Monospace technique)
+  // 5. Crédit source discret en bas à gauche (laisse le coin inférieur droit libre pour le filigrane YouTube)
   if (scene.sources?.length) {
     ctx.save();
     ctx.font = '500 12px "IBM Plex Mono", "SF Mono", monospace';
     ctx.fillStyle = 'rgba(229, 231, 235, 0.42)';
-    ctx.textAlign = 'right';
+    ctx.textAlign = 'left';
     ctx.textBaseline = 'bottom';
     ctx.fillText(
       `SOURCES // ${scene.sources.join(' · ').toUpperCase()}`,
-      width - margin,
+      margin,
       height - margin * 0.6
     );
     ctx.restore();
