@@ -1,0 +1,89 @@
+{
+  "transcript": "voice-transcript-reportage.json",
+  "scriptWords": 1331,
+  "recognizedWords": 1303,
+  "matchedWords": 1286,
+  "audioDurationSeconds": 446.511,
+  "finalHoldSeconds": 2.6,
+  "totalDurationSeconds": 449.111,
+  "scenes": [
+    {
+      "id": "rep-ouverture-choc",
+      "chapterId": "ch0",
+      "start": 0,
+      "end": 30.7
+    },
+    {
+      "id": "rep-etiquettes-electroniques",
+      "chapterId": "ch1",
+      "start": 30.7,
+      "end": 66.54
+    },
+    {
+      "id": "rep-scandale-instacart-23pct",
+      "chapterId": "ch1",
+      "start": 66.54,
+      "end": 103.54
+    },
+    {
+      "id": "rep-cartes-fidelite-ia-canada",
+      "chapterId": "ch1",
+      "start": 103.54,
+      "end": 137.22
+    },
+    {
+      "id": "rep-deux-cotes-etiquettes",
+      "chapterId": "ch1",
+      "start": 137.22,
+      "end": 171.44
+    },
+    {
+      "id": "rep-oligopole-89pct",
+      "chapterId": "ch2",
+      "start": 171.44,
+      "end": 206.86
+    },
+    {
+      "id": "rep-baux-secrets-concurrence",
+      "chapterId": "ch2",
+      "start": 206.86,
+      "end": 243.44
+    },
+    {
+      "id": "rep-impact-quartiers-quebec",
+      "chapterId": "ch2",
+      "start": 243.44,
+      "end": 275.46
+    },
+    {
+      "id": "rep-deux-cotes-baux",
+      "chapterId": "ch2",
+      "start": 275.46,
+      "end": 308.06
+    },
+    {
+      "id": "rep-erreurs-caisse-la-facture",
+      "chapterId": "ch3",
+      "start": 308.06,
+      "end": 341.6
+    },
+    {
+      "id": "rep-regle-15-dollars-opc",
+      "chapterId": "ch3",
+      "start": 341.6,
+      "end": 373.54
+    },
+    {
+      "id": "rep-lois-monde-vs-quebec",
+      "chapterId": "ch3",
+      "start": 373.54,
+      "end": 407.68
+    },
+    {
+      "id": "rep-conclusion-debat",
+      "chapterId": "ch4",
+      "start": 407.68,
+      "end": 449.111
+    }
+  ]
+}

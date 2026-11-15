@@ -1,0 +1,106 @@
+{
+  "status": "validated-automatically",
+  "episode": 4,
+  "type": "special-reportage",
+  "audioDurationSeconds": 446.511,
+  "finalHoldSeconds": 2.6,
+  "videoDurationSeconds": 449.133333,
+  "fps": 30,
+  "framesPerFullVideo": 13474,
+  "formats": {
+    "16x9": [
+      1920,
+      1080
+    ],
+    "9x16": [
+      1080,
+      1920
+    ]
+  },
+  "audio": "voix.mp3 seule (copie conforme de Épisode4.mp3), vitesse d'origine, aucune musique ni effet",
+  "alignment": "1286/1331 mots du script ancrés sur la transcription horodatée (faster-whisper small, local) ; repères des 13 scènes calés au mot",
+  "audioSyncCheck": {
+    "method": "corrélation MP4 ↔ voix.mp3, fenêtres de 1 s, recherche de décalage ±50 ms",
+    "16x9": {
+      "5": [
+        0.99998,
+        0.0
+      ],
+      "120": [
+        0.99999,
+        0.0
+      ],
+      "240": [
+        0.99998,
+        0.0
+      ],
+      "360": [
+        0.99999,
+        0.0
+      ],
+      "440": [
+        0.99999,
+        0.0
+      ]
+    },
+    "9x16": {
+      "5": [
+        0.99998,
+        0.0
+      ],
+      "120": [
+        0.99999,
+        0.0
+      ],
+      "240": [
+        0.99998,
+        0.0
+      ],
+      "360": [
+        0.99999,
+        0.0
+      ],
+      "440": [
+        0.99999,
+        0.0
+      ]
+    }
+  },
+  "fullDecode": "passed-both-formats",
+  "blackSegments": {
+    "16x9": [],
+    "9x16": []
+  },
+  "visualQA": {
+    "perSceneContactSheets": "13 scènes × 2 formats, 7 à 12 instants par scène, inspectées avant export (controle-visuel/)",
+    "finalSweepFrames": 312,
+    "runtimeExceptions": 0,
+    "missingVoiceCues": 0,
+    "textJitterGuard": "tailles de police constantes ; zooms par transformation ; compteurs par chiffre"
+  },
+  "shorts": {
+    "Short-1-Etiquettes-Electroniques-Prix-Personnalises-9x16.mp4": {
+      "chapter": "ch1",
+      "start": 30.7,
+      "end": 171.44,
+      "durationSeconds": 140.766667
+    },
+    "Short-2-Baux-Secrets-Oligopole-Epicerie-9x16.mp4": {
+      "chapter": "ch2",
+      "start": 171.44,
+      "end": 308.06,
+      "durationSeconds": 136.633333
+    },
+    "Short-3-Regle-15-Dollars-Caisse-Quebec-9x16.mp4": {
+      "chapter": "ch3",
+      "start": 308.06,
+      "end": 407.68,
+      "durationSeconds": 99.633333
+    }
+  },
+  "fullHumanListening": false,
+  "studio": {
+    "preparedLocally": true,
+    "published": false
+  }
+}

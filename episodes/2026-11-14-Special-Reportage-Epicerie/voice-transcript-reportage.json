@@ -1,0 +1,7360 @@
+[
+ {
+  "start": 0.0,
+  "end": 5.26,
+  "text": " Bienvenue dans cette édition spéciale reportage de Fraenor, sans filtre et sans commanditaires.",
+  "words": [
+   {
+    "start": 0.0,
+    "end": 0.5,
+    "word": " Bienvenue"
+   },
+   {
+    "start": 0.5,
+    "end": 0.68,
+    "word": " dans"
+   },
+   {
+    "start": 0.68,
+    "end": 0.84,
+    "word": " cette"
+   },
+   {
+    "start": 0.84,
+    "end": 1.2,
+    "word": " édition"
+   },
+   {
+    "start": 1.2,
+    "end": 1.8,
+    "word": " spéciale"
+   },
+   {
+    "start": 1.8,
+    "end": 2.36,
+    "word": " reportage"
+   },
+   {
+    "start": 2.36,
+    "end": 2.5,
+    "word": " de"
+   },
+   {
+    "start": 2.5,
+    "end": 3.06,
+    "word": " Fraenor,"
+   },
+   {
+    "start": 3.36,
+    "end": 3.58,
+    "word": " sans"
+   },
+   {
+    "start": 3.58,
+    "end": 4.08,
+    "word": " filtre"
+   },
+   {
+    "start": 4.08,
+    "end": 4.26,
+    "word": " et"
+   },
+   {
+    "start": 4.26,
+    "end": 4.46,
+    "word": " sans"
+   },
+   {
+    "start": 4.46,
+    "end": 5.26,
+    "word": " commanditaires."
+   }
+  ]
+ },
+ {
+  "start": 5.64,
+  "end": 10.04,
+  "text": " Aujourd'hui, on ouvre un dossier qui touche chaque famille québécoise à chaque semaine,",
+  "words": [
+   {
+    "start": 5.64,
+    "end": 5.82,
+    "word": " Aujourd"
+   },
+   {
+    "start": 5.82,
+    "end": 6.2,
+    "word": "'hui,"
+   },
+   {
+    "start": 6.44,
+    "end": 6.6,
+    "word": " on"
+   },
+   {
+    "start": 6.6,
+    "end": 6.88,
+    "word": " ouvre"
+   },
+   {
+    "start": 6.88,
+    "end": 6.98,
+    "word": " un"
+   },
+   {
+    "start": 6.98,
+    "end": 7.32,
+    "word": " dossier"
+   },
+   {
+    "start": 7.32,
+    "end": 7.46,
+    "word": " qui"
+   },
+   {
+    "start": 7.46,
+    "end": 7.82,
+    "word": " touche"
+   },
+   {
+    "start": 7.82,
+    "end": 8.14,
+    "word": " chaque"
+   },
+   {
+    "start": 8.14,
+    "end": 8.48,
+    "word": " famille"
+   },
+   {
+    "start": 8.48,
+    "end": 9.18,
+    "word": " québécoise"
+   },
+   {
+    "start": 9.18,
+    "end": 9.38,
+    "word": " à"
+   },
+   {
+    "start": 9.38,
+    "end": 9.64,
+    "word": " chaque"
+   },
+   {
+    "start": 9.64,
+    "end": 10.04,
+    "word": " semaine,"
+   }
+  ]
+ },
+ {
+  "start": 10.46,
+  "end": 13.54,
+  "text": " et dont on ne vous explique presque jamais la mécanique complète,",
+  "words": [
+   {
+    "start": 10.46,
+    "end": 10.5,
+    "word": " et"
+   },
+   {
+    "start": 10.5,
+    "end": 10.68,
+    "word": " dont"
+   },
+   {
+    "start": 10.68,
+    "end": 10.82,
+    "word": " on"
+   },
+   {
+    "start": 10.82,
+    "end": 10.92,
+    "word": " ne"
+   },
+   {
+    "start": 10.92,
+    "end": 11.0,
+    "word": " vous"
+   },
+   {
+    "start": 11.0,
+    "end": 11.44,
+    "word": " explique"
+   },
+   {
+    "start": 11.44,
+    "end": 11.7,
+    "word": " presque"
+   },
+   {
+    "start": 11.7,
+    "end": 12.28,
+    "word": " jamais"
+   },
+   {
+    "start": 12.28,
+    "end": 12.52,
+    "word": " la"
+   },
+   {
+    "start": 12.52,
+    "end": 12.92,
+    "word": " mécanique"
+   },
+   {
+    "start": 12.92,
+    "end": 13.54,
+    "word": " complète,"
+   }
+  ]
+ },
+ {
+  "start": 13.9,
+  "end": 17.74,
+  "text": " ce qui se cache vraiment derrière l'explosion de votre facture d'épicerie.",
+  "words": [
+   {
+    "start": 13.9,
+    "end": 14.04,
+    "word": " ce"
+   },
+   {
+    "start": 14.04,
+    "end": 14.16,
+    "word": " qui"
+   },
+   {
+    "start": 14.16,
+    "end": 14.3,
+    "word": " se"
+   },
+   {
+    "start": 14.3,
+    "end": 14.48,
+    "word": " cache"
+   },
+   {
+    "start": 14.48,
+    "end": 14.98,
+    "word": " vraiment"
+   },
+   {
+    "start": 14.98,
+    "end": 15.36,
+    "word": " derrière"
+   },
+   {
+    "start": 15.36,
+    "end": 15.72,
+    "word": " l"
+   },
+   {
+    "start": 15.72,
+    "end": 16.14,
+    "word": "'explosion"
+   },
+   {
+    "start": 16.14,
+    "end": 16.5,
+    "word": " de"
+   },
+   {
+    "start": 16.5,
+    "end": 16.68,
+    "word": " votre"
+   },
+   {
+    "start": 16.68,
+    "end": 17.22,
+    "word": " facture"
+   },
+   {
+    "start": 17.22,
+    "end": 17.36,
+    "word": " d"
+   },
+   {
+    "start": 17.36,
+    "end": 17.74,
+    "word": "'épicerie."
+   }
+  ]
+ },
+ {
+  "start": 18.14,
+  "end": 21.92,
+  "text": " Etiquette électronique connectée, dossier client de 60 pages,",
+  "words": [
+   {
+    "start": 18.14,
+    "end": 18.52,
+    "word": " Etiquette"
+   },
+   {
+    "start": 18.52,
+    "end": 19.1,
+    "word": " électronique"
+   },
+   {
+    "start": 19.1,
+    "end": 19.68,
+    "word": " connectée,"
+   },
+   {
+    "start": 20.02,
+    "end": 20.36,
+    "word": " dossier"
+   },
+   {
+    "start": 20.36,
+    "end": 20.68,
+    "word": " client"
+   },
+   {
+    "start": 20.68,
+    "end": 20.9,
+    "word": " de"
+   },
+   {
+    "start": 20.9,
+    "end": 21.42,
+    "word": " 60"
+   },
+   {
+    "start": 21.42,
+    "end": 21.92,
+    "word": " pages,"
+   }
+  ]
+ },
+ {
+  "start": 22.18,
+  "end": 26.72,
+  "text": " close secret dans les beaux commerciaux et règle méconnue des 15 dollars à la caisse.",
+  "words": [
+   {
+    "start": 22.18,
+    "end": 22.42,
+    "word": " close"
+   },
+   {
+    "start": 22.42,
+    "end": 22.86,
+    "word": " secret"
+   },
+   {
+    "start": 22.86,
+    "end": 23.1,
+    "word": " dans"
+   },
+   {
+    "start": 23.1,
+    "end": 23.24,
+    "word": " les"
+   },
+   {
+    "start": 23.24,
+    "end": 23.42,
+    "word": " beaux"
+   },
+   {
+    "start": 23.42,
+    "end": 24.0,
+    "word": " commerciaux"
+   },
+   {
+    "start": 24.0,
+    "end": 24.32,
+    "word": " et"
+   },
+   {
+    "start": 24.32,
+    "end": 24.58,
+    "word": " règle"
+   },
+   {
+    "start": 24.58,
+    "end": 25.24,
+    "word": " méconnue"
+   },
+   {
+    "start": 25.24,
+    "end": 25.42,
+    "word": " des"
+   },
+   {
+    "start": 25.42,
+    "end": 25.74,
+    "word": " 15"
+   },
+   {
+    "start": 25.74,
+    "end": 26.0,
+    "word": " dollars"
+   },
+   {
+    "start": 26.0,
+    "end": 26.2,
+    "word": " à"
+   },
+   {
+    "start": 26.2,
+    "end": 26.32,
+    "word": " la"
+   },
+   {
+    "start": 26.32,
+    "end": 26.72,
+    "word": " caisse."
+   }
+  ]
+ },
+ {
+  "start": 26.72,
+  "end": 30.48,
+  "text": " Voici notre enquête sur la nouvelle machine des géants alimentaires.",
+  "words": [
+   {
+    "start": 26.72,
+    "end": 27.36,
+    "word": " Voici"
+   },
+   {
+    "start": 27.36,
+    "end": 27.58,
+    "word": " notre"
+   },
+   {
+    "start": 27.58,
+    "end": 28.0,
+    "word": " enquête"
+   },
+   {
+    "start": 28.0,
+    "end": 28.32,
+    "word": " sur"
+   },
+   {
+    "start": 28.32,
+    "end": 28.46,
+    "word": " la"
+   },
+   {
+    "start": 28.46,
+    "end": 28.68,
+    "word": " nouvelle"
+   },
+   {
+    "start": 28.68,
+    "end": 29.18,
+    "word": " machine"
+   },
+   {
+    "start": 29.18,
+    "end": 29.38,
+    "word": " des"
+   },
+   {
+    "start": 29.38,
+    "end": 29.74,
+    "word": " géants"
+   },
+   {
+    "start": 29.74,
+    "end": 30.48,
+    "word": " alimentaires."
+   }
+  ]
+ },
+ {
+  "start": 31.02,
+  "end": 35.24,
+  "text": " Commençons par un objet banal que vous croisez désormais partout chez Maxi,",
+  "words": [
+   {
+    "start": 31.02,
+    "end": 31.54,
+    "word": " Commençons"
+   },
+   {
+    "start": 31.54,
+    "end": 31.74,
+    "word": " par"
+   },
+   {
+    "start": 31.74,
+    "end": 31.92,
+    "word": " un"
+   },
+   {
+    "start": 31.92,
+    "end": 32.18,
+    "word": " objet"
+   },
+   {
+    "start": 32.18,
+    "end": 32.66,
+    "word": " banal"
+   },
+   {
+    "start": 32.66,
+    "end": 32.86,
+    "word": " que"
+   },
+   {
+    "start": 32.86,
+    "end": 33.0,
+    "word": " vous"
+   },
+   {
+    "start": 33.0,
+    "end": 33.38,
+    "word": " croisez"
+   },
+   {
+    "start": 33.38,
+    "end": 33.82,
+    "word": " désormais"
+   },
+   {
+    "start": 33.82,
+    "end": 34.32,
+    "word": " partout"
+   },
+   {
+    "start": 34.32,
+    "end": 34.64,
+    "word": " chez"
+   },
+   {
+    "start": 34.64,
+    "end": 35.24,
+    "word": " Maxi,"
+   }
+  ]
+ },
+ {
+  "start": 35.44,
+  "end": 40.9,
+  "text": " Provigo, Metro, Super C ou IGA, la petite étiquette électronique sur la tablette.",
+  "words": [
+   {
+    "start": 35.44,
+    "end": 35.86,
+    "word": " Provigo,"
+   },
+   {
+    "start": 36.22,
+    "end": 36.54,
+    "word": " Metro,"
+   },
+   {
+    "start": 36.96,
+    "end": 37.14,
+    "word": " Super"
+   },
+   {
+    "start": 37.14,
+    "end": 37.48,
+    "word": " C"
+   },
+   {
+    "start": 37.48,
+    "end": 37.7,
+    "word": " ou"
+   },
+   {
+    "start": 37.7,
+    "end": 38.1,
+    "word": " IGA,"
+   },
+   {
+    "start": 38.52,
+    "end": 38.68,
+    "word": " la"
+   },
+   {
+    "start": 38.68,
+    "end": 38.96,
+    "word": " petite"
+   },
+   {
+    "start": 38.96,
+    "end": 39.48,
+    "word": " étiquette"
+   },
+   {
+    "start": 39.48,
+    "end": 40.06,
+    "word": " électronique"
+   },
+   {
+    "start": 40.06,
+    "end": 40.26,
+    "word": " sur"
+   },
+   {
+    "start": 40.26,
+    "end": 40.4,
+    "word": " la"
+   },
+   {
+    "start": 40.4,
+    "end": 40.9,
+    "word": " tablette."
+   }
+  ]
+ },
+ {
+  "start": 41.28,
+  "end": 46.6,
+  "text": " Officiellement, elle remplace le papier pour économiser du temps aux employés et éviter les erreurs.",
+  "words": [
+   {
+    "start": 41.28,
+    "end": 41.92,
+    "word": " Officiellement,"
+   },
+   {
+    "start": 42.2,
+    "end": 42.3,
+    "word": " elle"
+   },
+   {
+    "start": 42.3,
+    "end": 42.66,
+    "word": " remplace"
+   },
+   {
+    "start": 42.66,
+    "end": 42.86,
+    "word": " le"
+   },
+   {
+    "start": 42.86,
+    "end": 43.18,
+    "word": " papier"
+   },
+   {
+    "start": 43.18,
+    "end": 43.44,
+    "word": " pour"
+   },
+   {
+    "start": 43.44,
+    "end": 43.96,
+    "word": " économiser"
+   },
+   {
+    "start": 43.96,
+    "end": 44.16,
+    "word": " du"
+   },
+   {
+    "start": 44.16,
+    "end": 44.36,
+    "word": " temps"
+   },
+   {
+    "start": 44.36,
+    "end": 44.5,
+    "word": " aux"
+   },
+   {
+    "start": 44.5,
+    "end": 45.04,
+    "word": " employés"
+   },
+   {
+    "start": 45.04,
+    "end": 45.28,
+    "word": " et"
+   },
+   {
+    "start": 45.28,
+    "end": 45.66,
+    "word": " éviter"
+   },
+   {
+    "start": 45.66,
+    "end": 45.84,
+    "word": " les"
+   },
+   {
+    "start": 45.84,
+    "end": 46.6,
+    "word": " erreurs."
+   }
+  ]
+ },
+ {
+  "start": 46.68,
+  "end": 50.74,
+  "text": " Mais sur le plan technique, ces écrans sont reliés sans fil à un serveur central.",
+  "words": [
+   {
+    "start": 46.68,
+    "end": 46.8,
+    "word": " Mais"
+   },
+   {
+    "start": 46.8,
+    "end": 46.96,
+    "word": " sur"
+   },
+   {
+    "start": 46.96,
+    "end": 47.1,
+    "word": " le"
+   },
+   {
+    "start": 47.1,
+    "end": 47.28,
+    "word": " plan"
+   },
+   {
+    "start": 47.28,
+    "end": 47.6,
+    "word": " technique,"
+   },
+   {
+    "start": 48.08,
+    "end": 48.18,
+    "word": " ces"
+   },
+   {
+    "start": 48.18,
+    "end": 48.54,
+    "word": " écrans"
+   },
+   {
+    "start": 48.54,
+    "end": 48.72,
+    "word": " sont"
+   },
+   {
+    "start": 48.72,
+    "end": 49.12,
+    "word": " reliés"
+   },
+   {
+    "start": 49.12,
+    "end": 49.36,
+    "word": " sans"
+   },
+   {
+    "start": 49.36,
+    "end": 49.68,
+    "word": " fil"
+   },
+   {
+    "start": 49.68,
+    "end": 49.88,
+    "word": " à"
+   },
+   {
+    "start": 49.88,
+    "end": 50.02,
+    "word": " un"
+   },
+   {
+    "start": 50.02,
+    "end": 50.42,
+    "word": " serveur"
+   },
+   {
+    "start": 50.42,
+    "end": 50.74,
+    "word": " central."
+   }
+  ]
+ },
+ {
+  "start": 51.38,
+  "end": 55.62,
+  "text": " En quelques secondes, un algorithme peut changer le prix de milliers de produits",
+  "words": [
+   {
+    "start": 51.38,
+    "end": 51.54,
+    "word": " En"
+   },
+   {
+    "start": 51.54,
+    "end": 51.86,
+    "word": " quelques"
+   },
+   {
+    "start": 51.86,
+    "end": 52.48,
+    "word": " secondes,"
+   },
+   {
+    "start": 52.64,
+    "end": 52.78,
+    "word": " un"
+   },
+   {
+    "start": 52.78,
+    "end": 53.42,
+    "word": " algorithme"
+   },
+   {
+    "start": 53.42,
+    "end": 53.62,
+    "word": " peut"
+   },
+   {
+    "start": 53.62,
+    "end": 53.92,
+    "word": " changer"
+   },
+   {
+    "start": 53.92,
+    "end": 54.14,
+    "word": " le"
+   },
+   {
+    "start": 54.14,
+    "end": 54.36,
+    "word": " prix"
+   },
+   {
+    "start": 54.36,
+    "end": 54.54,
+    "word": " de"
+   },
+   {
+    "start": 54.54,
+    "end": 55.08,
+    "word": " milliers"
+   },
+   {
+    "start": 55.08,
+    "end": 55.2,
+    "word": " de"
+   },
+   {
+    "start": 55.2,
+    "end": 55.62,
+    "word": " produits"
+   }
+  ]
+ },
+ {
+  "start": 55.62,
+  "end": 60.38,
+  "text": " dans une seule sucursale à une heure précise de la journée ou selon la météo.",
+  "words": [
+   {
+    "start": 55.62,
+    "end": 56.02,
+    "word": " dans"
+   },
+   {
+    "start": 56.02,
+    "end": 56.36,
+    "word": " une"
+   },
+   {
+    "start": 56.36,
+    "end": 56.62,
+    "word": " seule"
+   },
+   {
+    "start": 56.62,
+    "end": 57.36,
+    "word": " sucursale"
+   },
+   {
+    "start": 57.36,
+    "end": 57.66,
+    "word": " à"
+   },
+   {
+    "start": 57.66,
+    "end": 57.8,
+    "word": " une"
+   },
+   {
+    "start": 57.8,
+    "end": 57.98,
+    "word": " heure"
+   },
+   {
+    "start": 57.98,
+    "end": 58.5,
+    "word": " précise"
+   },
+   {
+    "start": 58.5,
+    "end": 58.64,
+    "word": " de"
+   },
+   {
+    "start": 58.64,
+    "end": 58.74,
+    "word": " la"
+   },
+   {
+    "start": 58.74,
+    "end": 59.12,
+    "word": " journée"
+   },
+   {
+    "start": 59.12,
+    "end": 59.54,
+    "word": " ou"
+   },
+   {
+    "start": 59.54,
+    "end": 59.84,
+    "word": " selon"
+   },
+   {
+    "start": 59.84,
+    "end": 60.0,
+    "word": " la"
+   },
+   {
+    "start": 60.0,
+    "end": 60.38,
+    "word": " météo."
+   }
+  ]
+ },
+ {
+  "start": 60.8,
+  "end": 64.66,
+  "text": " L'infrastructure du prix variable, comme chez Uber ou les compagnies aériennes,",
+  "words": [
+   {
+    "start": 60.8,
+    "end": 60.92,
+    "word": " L"
+   },
+   {
+    "start": 60.92,
+    "end": 61.5,
+    "word": "'infrastructure"
+   },
+   {
+    "start": 61.5,
+    "end": 61.72,
+    "word": " du"
+   },
+   {
+    "start": 61.72,
+    "end": 61.9,
+    "word": " prix"
+   },
+   {
+    "start": 61.9,
+    "end": 62.42,
+    "word": " variable,"
+   },
+   {
+    "start": 62.62,
+    "end": 62.82,
+    "word": " comme"
+   },
+   {
+    "start": 62.82,
+    "end": 63.0,
+    "word": " chez"
+   },
+   {
+    "start": 63.0,
+    "end": 63.32,
+    "word": " Uber"
+   },
+   {
+    "start": 63.32,
+    "end": 63.66,
+    "word": " ou"
+   },
+   {
+    "start": 63.66,
+    "end": 63.76,
+    "word": " les"
+   },
+   {
+    "start": 63.76,
+    "end": 64.18,
+    "word": " compagnies"
+   },
+   {
+    "start": 64.18,
+    "end": 64.66,
+    "word": " aériennes,"
+   }
+  ]
+ },
+ {
+  "start": 64.92,
+  "end": 68.3,
+  "text": " est déjà installée dans nos allées. Est-ce de la science-fiction ?",
+  "words": [
+   {
+    "start": 64.92,
+    "end": 65.06,
+    "word": " est"
+   },
+   {
+    "start": 65.06,
+    "end": 65.42,
+    "word": " déjà"
+   },
+   {
+    "start": 65.42,
+    "end": 65.86,
+    "word": " installée"
+   },
+   {
+    "start": 65.86,
+    "end": 66.0,
+    "word": " dans"
+   },
+   {
+    "start": 66.0,
+    "end": 66.16,
+    "word": " nos"
+   },
+   {
+    "start": 66.16,
+    "end": 66.46,
+    "word": " allées."
+   },
+   {
+    "start": 66.86,
+    "end": 67.02,
+    "word": " Est"
+   },
+   {
+    "start": 67.02,
+    "end": 67.06,
+    "word": "-ce"
+   },
+   {
+    "start": 67.06,
+    "end": 67.18,
+    "word": " de"
+   },
+   {
+    "start": 67.18,
+    "end": 67.26,
+    "word": " la"
+   },
+   {
+    "start": 67.26,
+    "end": 67.46,
+    "word": " science"
+   },
+   {
+    "start": 67.46,
+    "end": 67.72,
+    "word": "-fiction"
+   },
+   {
+    "start": 67.72,
+    "end": 68.3,
+    "word": " ?"
+   }
+  ]
+ },
+ {
+  "start": 68.3,
+  "end": 71.92,
+  "text": " Non, ça vient d'être pris sur le fait juste au sud de notre frontière.",
+  "words": [
+   {
+    "start": 68.3,
+    "end": 68.52,
+    "word": " Non,"
+   },
+   {
+    "start": 68.88,
+    "end": 69.0,
+    "word": " ça"
+   },
+   {
+    "start": 69.0,
+    "end": 69.22,
+    "word": " vient"
+   },
+   {
+    "start": 69.22,
+    "end": 69.34,
+    "word": " d"
+   },
+   {
+    "start": 69.34,
+    "end": 69.42,
+    "word": "'être"
+   },
+   {
+    "start": 69.42,
+    "end": 69.7,
+    "word": " pris"
+   },
+   {
+    "start": 69.7,
+    "end": 69.86,
+    "word": " sur"
+   },
+   {
+    "start": 69.86,
+    "end": 70.02,
+    "word": " le"
+   },
+   {
+    "start": 70.02,
+    "end": 70.24,
+    "word": " fait"
+   },
+   {
+    "start": 70.24,
+    "end": 70.66,
+    "word": " juste"
+   },
+   {
+    "start": 70.66,
+    "end": 70.94,
+    "word": " au"
+   },
+   {
+    "start": 70.94,
+    "end": 71.06,
+    "word": " sud"
+   },
+   {
+    "start": 71.06,
+    "end": 71.2,
+    "word": " de"
+   },
+   {
+    "start": 71.2,
+    "end": 71.36,
+    "word": " notre"
+   },
+   {
+    "start": 71.36,
+    "end": 71.92,
+    "word": " frontière."
+   }
+  ]
+ },
+ {
+  "start": 72.46,
+  "end": 77.44,
+  "text": " En décembre 2025, une enquête choc de Consumer Reports a démontré que sur la",
+  "words": [
+   {
+    "start": 72.46,
+    "end": 72.6,
+    "word": " En"
+   },
+   {
+    "start": 72.6,
+    "end": 73.02,
+    "word": " décembre"
+   },
+   {
+    "start": 73.02,
+    "end": 73.54,
+    "word": " 2025,"
+   },
+   {
+    "start": 74.2,
+    "end": 74.32,
+    "word": " une"
+   },
+   {
+    "start": 74.32,
+    "end": 74.64,
+    "word": " enquête"
+   },
+   {
+    "start": 74.64,
+    "end": 74.98,
+    "word": " choc"
+   },
+   {
+    "start": 74.98,
+    "end": 75.22,
+    "word": " de"
+   },
+   {
+    "start": 75.22,
+    "end": 75.6,
+    "word": " Consumer"
+   },
+   {
+    "start": 75.6,
+    "end": 76.2,
+    "word": " Reports"
+   },
+   {
+    "start": 76.2,
+    "end": 76.52,
+    "word": " a"
+   },
+   {
+    "start": 76.52,
+    "end": 76.96,
+    "word": " démontré"
+   },
+   {
+    "start": 76.96,
+    "end": 77.1,
+    "word": " que"
+   },
+   {
+    "start": 77.1,
+    "end": 77.28,
+    "word": " sur"
+   },
+   {
+    "start": 77.28,
+    "end": 77.44,
+    "word": " la"
+   }
+  ]
+ },
+ {
+  "start": 77.44,
+  "end": 82.02,
+  "text": " plateforme Instacart, deux acheteurs commandant exactement les mêmes articles",
+  "words": [
+   {
+    "start": 77.44,
+    "end": 77.9,
+    "word": " plateforme"
+   },
+   {
+    "start": 77.9,
+    "end": 78.64,
+    "word": " Instacart,"
+   },
+   {
+    "start": 79.02,
+    "end": 79.18,
+    "word": " deux"
+   },
+   {
+    "start": 79.18,
+    "end": 79.68,
+    "word": " acheteurs"
+   },
+   {
+    "start": 79.68,
+    "end": 80.24,
+    "word": " commandant"
+   },
+   {
+    "start": 80.24,
+    "end": 80.88,
+    "word": " exactement"
+   },
+   {
+    "start": 80.88,
+    "end": 81.28,
+    "word": " les"
+   },
+   {
+    "start": 81.28,
+    "end": 81.5,
+    "word": " mêmes"
+   },
+   {
+    "start": 81.5,
+    "end": 82.02,
+    "word": " articles"
+   }
+  ]
+ },
+ {
+  "start": 82.02,
+  "end": 85.22,
+  "text": " dans le même magasin se voyaient afficher des prix différents.",
+  "words": [
+   {
+    "start": 82.02,
+    "end": 82.28,
+    "word": " dans"
+   },
+   {
+    "start": 82.28,
+    "end": 82.4,
+    "word": " le"
+   },
+   {
+    "start": 82.4,
+    "end": 82.68,
+    "word": " même"
+   },
+   {
+    "start": 82.68,
+    "end": 83.3,
+    "word": " magasin"
+   },
+   {
+    "start": 83.3,
+    "end": 83.62,
+    "word": " se"
+   },
+   {
+    "start": 83.62,
+    "end": 83.9,
+    "word": " voyaient"
+   },
+   {
+    "start": 83.9,
+    "end": 84.28,
+    "word": " afficher"
+   },
+   {
+    "start": 84.28,
+    "end": 84.48,
+    "word": " des"
+   },
+   {
+    "start": 84.48,
+    "end": 84.68,
+    "word": " prix"
+   },
+   {
+    "start": 84.68,
+    "end": 85.22,
+    "word": " différents."
+   }
+  ]
+ },
+ {
+  "start": 85.22,
+  "end": 88.44,
+  "text": " Avec des écarts allant jusqu'à 23%.",
+  "words": [
+   {
+    "start": 85.22,
+    "end": 85.72,
+    "word": " Avec"
+   },
+   {
+    "start": 85.72,
+    "end": 85.98,
+    "word": " des"
+   },
+   {
+    "start": 85.98,
+    "end": 86.3,
+    "word": " écarts"
+   },
+   {
+    "start": 86.3,
+    "end": 86.68,
+    "word": " allant"
+   },
+   {
+    "start": 86.68,
+    "end": 86.88,
+    "word": " jusqu"
+   },
+   {
+    "start": 86.88,
+    "end": 87.12,
+    "word": "'à"
+   },
+   {
+    "start": 87.12,
+    "end": 88.44,
+    "word": " 23%."
+   }
+  ]
+ },
+ {
+  "start": 88.44,
+  "end": 92.8,
+  "text": " Une autre enquête sur Kroger a révélé des dossiers clients de 60 pages,",
+  "words": [
+   {
+    "start": 88.44,
+    "end": 88.82,
+    "word": " Une"
+   },
+   {
+    "start": 88.82,
+    "end": 89.02,
+    "word": " autre"
+   },
+   {
+    "start": 89.02,
+    "end": 89.36,
+    "word": " enquête"
+   },
+   {
+    "start": 89.36,
+    "end": 89.56,
+    "word": " sur"
+   },
+   {
+    "start": 89.56,
+    "end": 90.06,
+    "word": " Kroger"
+   },
+   {
+    "start": 90.06,
+    "end": 90.36,
+    "word": " a"
+   },
+   {
+    "start": 90.36,
+    "end": 90.68,
+    "word": " révélé"
+   },
+   {
+    "start": 90.68,
+    "end": 90.88,
+    "word": " des"
+   },
+   {
+    "start": 90.88,
+    "end": 91.22,
+    "word": " dossiers"
+   },
+   {
+    "start": 91.22,
+    "end": 91.56,
+    "word": " clients"
+   },
+   {
+    "start": 91.56,
+    "end": 91.74,
+    "word": " de"
+   },
+   {
+    "start": 91.74,
+    "end": 92.3,
+    "word": " 60"
+   },
+   {
+    "start": 92.3,
+    "end": 92.8,
+    "word": " pages,"
+   }
+  ]
+ },
+ {
+  "start": 93.0,
+  "end": 96.94,
+  "text": " compilant revenu estimé, taille de la famille et géolocalisation.",
+  "words": [
+   {
+    "start": 93.0,
+    "end": 93.44,
+    "word": " compilant"
+   },
+   {
+    "start": 93.44,
+    "end": 93.9,
+    "word": " revenu"
+   },
+   {
+    "start": 93.9,
+    "end": 94.5,
+    "word": " estimé,"
+   },
+   {
+    "start": 94.78,
+    "end": 94.98,
+    "word": " taille"
+   },
+   {
+    "start": 94.98,
+    "end": 95.08,
+    "word": " de"
+   },
+   {
+    "start": 95.08,
+    "end": 95.2,
+    "word": " la"
+   },
+   {
+    "start": 95.2,
+    "end": 95.58,
+    "word": " famille"
+   },
+   {
+    "start": 95.58,
+    "end": 95.92,
+    "word": " et"
+   },
+   {
+    "start": 95.92,
+    "end": 96.94,
+    "word": " géolocalisation."
+   }
+  ]
+ },
+ {
+  "start": 97.38,
+  "end": 103.14,
+  "text": " Résultat, la FTC américaine a lancé des ordonnances contre Instacart, Wal-Mart et Target.",
+  "words": [
+   {
+    "start": 97.38,
+    "end": 97.94,
+    "word": " Résultat,"
+   },
+   {
+    "start": 98.36,
+    "end": 98.44,
+    "word": " la"
+   },
+   {
+    "start": 98.44,
+    "end": 98.8,
+    "word": " FTC"
+   },
+   {
+    "start": 98.8,
+    "end": 99.54,
+    "word": " américaine"
+   },
+   {
+    "start": 99.54,
+    "end": 99.7,
+    "word": " a"
+   },
+   {
+    "start": 99.7,
+    "end": 100.02,
+    "word": " lancé"
+   },
+   {
+    "start": 100.02,
+    "end": 100.14,
+    "word": " des"
+   },
+   {
+    "start": 100.14,
+    "end": 100.76,
+    "word": " ordonnances"
+   },
+   {
+    "start": 100.76,
+    "end": 101.06,
+    "word": " contre"
+   },
+   {
+    "start": 101.06,
+    "end": 101.78,
+    "word": " Instacart,"
+   },
+   {
+    "start": 102.06,
+    "end": 102.28,
+    "word": " Wal"
+   },
+   {
+    "start": 102.28,
+    "end": 102.56,
+    "word": "-Mart"
+   },
+   {
+    "start": 102.56,
+    "end": 102.84,
+    "word": " et"
+   },
+   {
+    "start": 102.84,
+    "end": 103.14,
+    "word": " Target."
+   }
+  ]
+ },
+ {
+  "start": 103.86,
+  "end": 107.48,
+  "text": " Et au Canada ? Chaque fois que vous scannez votre carte PC Optimum,",
+  "words": [
+   {
+    "start": 103.86,
+    "end": 103.96,
+    "word": " Et"
+   },
+   {
+    "start": 103.96,
+    "end": 104.12,
+    "word": " au"
+   },
+   {
+    "start": 104.12,
+    "end": 104.32,
+    "word": " Canada"
+   },
+   {
+    "start": 104.32,
+    "end": 104.86,
+    "word": " ?"
+   },
+   {
+    "start": 104.86,
+    "end": 105.16,
+    "word": " Chaque"
+   },
+   {
+    "start": 105.16,
+    "end": 105.3,
+    "word": " fois"
+   },
+   {
+    "start": 105.3,
+    "end": 105.44,
+    "word": " que"
+   },
+   {
+    "start": 105.44,
+    "end": 105.56,
+    "word": " vous"
+   },
+   {
+    "start": 105.56,
+    "end": 105.92,
+    "word": " scannez"
+   },
+   {
+    "start": 105.92,
+    "end": 106.06,
+    "word": " votre"
+   },
+   {
+    "start": 106.06,
+    "end": 106.42,
+    "word": " carte"
+   },
+   {
+    "start": 106.42,
+    "end": 106.78,
+    "word": " PC"
+   },
+   {
+    "start": 106.78,
+    "end": 107.48,
+    "word": " Optimum,"
+   }
+  ]
+ },
+ {
+  "start": 107.76,
+  "end": 111.22,
+  "text": " MOA ou ZenPlus, vous ne récoltez pas seulement quelques sous-drabets.",
+  "words": [
+   {
+    "start": 107.76,
+    "end": 108.02,
+    "word": " MOA"
+   },
+   {
+    "start": 108.02,
+    "end": 108.22,
+    "word": " ou"
+   },
+   {
+    "start": 108.22,
+    "end": 108.72,
+    "word": " ZenPlus,"
+   },
+   {
+    "start": 109.16,
+    "end": 109.2,
+    "word": " vous"
+   },
+   {
+    "start": 109.2,
+    "end": 109.3,
+    "word": " ne"
+   },
+   {
+    "start": 109.3,
+    "end": 109.62,
+    "word": " récoltez"
+   },
+   {
+    "start": 109.62,
+    "end": 109.84,
+    "word": " pas"
+   },
+   {
+    "start": 109.84,
+    "end": 110.12,
+    "word": " seulement"
+   },
+   {
+    "start": 110.12,
+    "end": 110.5,
+    "word": " quelques"
+   },
+   {
+    "start": 110.5,
+    "end": 110.82,
+    "word": " sous"
+   },
+   {
+    "start": 110.82,
+    "end": 111.22,
+    "word": "-drabets."
+   }
+  ]
+ },
+ {
+  "start": 111.22,
+  "end": 115.56,
+  "text": " Vous nourricez l'une des plus vastes bases de données comportementales du pays.",
+  "words": [
+   {
+    "start": 111.22,
+    "end": 111.72,
+    "word": " Vous"
+   },
+   {
+    "start": 111.72,
+    "end": 112.34,
+    "word": " nourricez"
+   },
+   {
+    "start": 112.34,
+    "end": 112.48,
+    "word": " l"
+   },
+   {
+    "start": 112.48,
+    "end": 112.54,
+    "word": "'une"
+   },
+   {
+    "start": 112.54,
+    "end": 112.72,
+    "word": " des"
+   },
+   {
+    "start": 112.72,
+    "end": 112.9,
+    "word": " plus"
+   },
+   {
+    "start": 112.9,
+    "end": 113.42,
+    "word": " vastes"
+   },
+   {
+    "start": 113.42,
+    "end": 113.76,
+    "word": " bases"
+   },
+   {
+    "start": 113.76,
+    "end": 113.94,
+    "word": " de"
+   },
+   {
+    "start": 113.94,
+    "end": 114.18,
+    "word": " données"
+   },
+   {
+    "start": 114.18,
+    "end": 115.12,
+    "word": " comportementales"
+   },
+   {
+    "start": 115.12,
+    "end": 115.32,
+    "word": " du"
+   },
+   {
+    "start": 115.32,
+    "end": 115.56,
+    "word": " pays."
+   }
+  ]
+ },
+ {
+  "start": 116.0,
+  "end": 118.7,
+  "text": " Ajoutez maintenant l'arrivée de l'intelligence artificielle,",
+  "words": [
+   {
+    "start": 116.0,
+    "end": 116.34,
+    "word": " Ajoutez"
+   },
+   {
+    "start": 116.34,
+    "end": 116.7,
+    "word": " maintenant"
+   },
+   {
+    "start": 116.7,
+    "end": 116.88,
+    "word": " l"
+   },
+   {
+    "start": 116.88,
+    "end": 117.2,
+    "word": "'arrivée"
+   },
+   {
+    "start": 117.2,
+    "end": 117.32,
+    "word": " de"
+   },
+   {
+    "start": 117.32,
+    "end": 117.44,
+    "word": " l"
+   },
+   {
+    "start": 117.44,
+    "end": 117.86,
+    "word": "'intelligence"
+   },
+   {
+    "start": 117.86,
+    "end": 118.7,
+    "word": " artificielle,"
+   }
+  ]
+ },
+ {
+  "start": 118.86,
+  "end": 123.14,
+  "text": " comme le partenariat entre LaBla et ChatGPT pour générer des listes d'épiceries.",
+  "words": [
+   {
+    "start": 118.86,
+    "end": 119.04,
+    "word": " comme"
+   },
+   {
+    "start": 119.04,
+    "end": 119.18,
+    "word": " le"
+   },
+   {
+    "start": 119.18,
+    "end": 119.66,
+    "word": " partenariat"
+   },
+   {
+    "start": 119.66,
+    "end": 120.0,
+    "word": " entre"
+   },
+   {
+    "start": 120.0,
+    "end": 120.46,
+    "word": " LaBla"
+   },
+   {
+    "start": 120.46,
+    "end": 120.74,
+    "word": " et"
+   },
+   {
+    "start": 120.74,
+    "end": 121.52,
+    "word": " ChatGPT"
+   },
+   {
+    "start": 121.52,
+    "end": 121.76,
+    "word": " pour"
+   },
+   {
+    "start": 121.76,
+    "end": 122.14,
+    "word": " générer"
+   },
+   {
+    "start": 122.14,
+    "end": 122.32,
+    "word": " des"
+   },
+   {
+    "start": 122.32,
+    "end": 122.64,
+    "word": " listes"
+   },
+   {
+    "start": 122.64,
+    "end": 122.76,
+    "word": " d"
+   },
+   {
+    "start": 122.76,
+    "end": 123.14,
+    "word": "'épiceries."
+   }
+  ]
+ },
+ {
+  "start": 123.7,
+  "end": 128.36,
+  "text": " Officiellement, les bannières jurent qu'elles n'utilisent pas de tarifications personnalisées en magasin.",
+  "words": [
+   {
+    "start": 123.7,
+    "end": 124.26,
+    "word": " Officiellement,"
+   },
+   {
+    "start": 124.58,
+    "end": 124.66,
+    "word": " les"
+   },
+   {
+    "start": 124.66,
+    "end": 125.04,
+    "word": " bannières"
+   },
+   {
+    "start": 125.04,
+    "end": 125.54,
+    "word": " jurent"
+   },
+   {
+    "start": 125.54,
+    "end": 125.62,
+    "word": " qu"
+   },
+   {
+    "start": 125.62,
+    "end": 125.68,
+    "word": "'elles"
+   },
+   {
+    "start": 125.68,
+    "end": 125.78,
+    "word": " n"
+   },
+   {
+    "start": 125.78,
+    "end": 126.14,
+    "word": "'utilisent"
+   },
+   {
+    "start": 126.14,
+    "end": 126.28,
+    "word": " pas"
+   },
+   {
+    "start": 126.28,
+    "end": 126.4,
+    "word": " de"
+   },
+   {
+    "start": 126.4,
+    "end": 126.84,
+    "word": " tarifications"
+   },
+   {
+    "start": 126.84,
+    "end": 127.8,
+    "word": " personnalisées"
+   },
+   {
+    "start": 127.8,
+    "end": 127.9,
+    "word": " en"
+   },
+   {
+    "start": 127.9,
+    "end": 128.36,
+    "word": " magasin."
+   }
+  ]
+ },
+ {
+  "start": 128.74,
+  "end": 130.86,
+  "text": " Mais les chercheurs et les élus sonnent l'alarme.",
+  "words": [
+   {
+    "start": 128.74,
+    "end": 128.82,
+    "word": " Mais"
+   },
+   {
+    "start": 128.82,
+    "end": 128.96,
+    "word": " les"
+   },
+   {
+    "start": 128.96,
+    "end": 129.4,
+    "word": " chercheurs"
+   },
+   {
+    "start": 129.4,
+    "end": 129.54,
+    "word": " et"
+   },
+   {
+    "start": 129.54,
+    "end": 129.72,
+    "word": " les"
+   },
+   {
+    "start": 129.72,
+    "end": 129.94,
+    "word": " élus"
+   },
+   {
+    "start": 129.94,
+    "end": 130.36,
+    "word": " sonnent"
+   },
+   {
+    "start": 130.36,
+    "end": 130.46,
+    "word": " l"
+   },
+   {
+    "start": 130.46,
+    "end": 130.86,
+    "word": "'alarme."
+   }
+  ]
+ },
+ {
+  "start": 131.18,
+  "end": 137.18,
+  "text": " Aucune loi québécoise n'interdit encore explicitement à un épicier de moduler ses prix grâce à vos données.",
+  "words": [
+   {
+    "start": 131.18,
+    "end": 131.6,
+    "word": " Aucune"
+   },
+   {
+    "start": 131.6,
+    "end": 131.82,
+    "word": " loi"
+   },
+   {
+    "start": 131.82,
+    "end": 132.48,
+    "word": " québécoise"
+   },
+   {
+    "start": 132.48,
+    "end": 132.6,
+    "word": " n"
+   },
+   {
+    "start": 132.6,
+    "end": 132.98,
+    "word": "'interdit"
+   },
+   {
+    "start": 132.98,
+    "end": 133.22,
+    "word": " encore"
+   },
+   {
+    "start": 133.22,
+    "end": 134.28,
+    "word": " explicitement"
+   },
+   {
+    "start": 134.28,
+    "end": 134.4,
+    "word": " à"
+   },
+   {
+    "start": 134.4,
+    "end": 134.52,
+    "word": " un"
+   },
+   {
+    "start": 134.52,
+    "end": 135.06,
+    "word": " épicier"
+   },
+   {
+    "start": 135.06,
+    "end": 135.36,
+    "word": " de"
+   },
+   {
+    "start": 135.36,
+    "end": 135.78,
+    "word": " moduler"
+   },
+   {
+    "start": 135.78,
+    "end": 136.04,
+    "word": " ses"
+   },
+   {
+    "start": 136.04,
+    "end": 136.28,
+    "word": " prix"
+   },
+   {
+    "start": 136.28,
+    "end": 136.6,
+    "word": " grâce"
+   },
+   {
+    "start": 136.6,
+    "end": 136.8,
+    "word": " à"
+   },
+   {
+    "start": 136.8,
+    "end": 136.92,
+    "word": " vos"
+   },
+   {
+    "start": 136.92,
+    "end": 137.18,
+    "word": " données."
+   }
+  ]
+ },
+ {
+  "start": 137.42,
+  "end": 141.14,
+  "text": " Faut-il bannir ses étiquettes électroniques et lia en épicerie ?",
+  "words": [
+   {
+    "start": 137.42,
+    "end": 137.56,
+    "word": " Faut"
+   },
+   {
+    "start": 137.56,
+    "end": 137.74,
+    "word": "-il"
+   },
+   {
+    "start": 137.74,
+    "end": 138.24,
+    "word": " bannir"
+   },
+   {
+    "start": 138.24,
+    "end": 138.42,
+    "word": " ses"
+   },
+   {
+    "start": 138.42,
+    "end": 138.88,
+    "word": " étiquettes"
+   },
+   {
+    "start": 138.88,
+    "end": 139.58,
+    "word": " électroniques"
+   },
+   {
+    "start": 139.58,
+    "end": 139.76,
+    "word": " et"
+   },
+   {
+    "start": 139.76,
+    "end": 140.16,
+    "word": " lia"
+   },
+   {
+    "start": 140.16,
+    "end": 140.36,
+    "word": " en"
+   },
+   {
+    "start": 140.36,
+    "end": 140.78,
+    "word": " épicerie"
+   },
+   {
+    "start": 140.78,
+    "end": 141.14,
+    "word": " ?"
+   }
+  ]
+ },
+ {
+  "start": 141.14,
+  "end": 143.7,
+  "text": " Regardons les deux côtés de la médaille avec rigueur.",
+  "words": [
+   {
+    "start": 141.14,
+    "end": 141.68,
+    "word": " Regardons"
+   },
+   {
+    "start": 141.68,
+    "end": 141.84,
+    "word": " les"
+   },
+   {
+    "start": 141.84,
+    "end": 142.06,
+    "word": " deux"
+   },
+   {
+    "start": 142.06,
+    "end": 142.36,
+    "word": " côtés"
+   },
+   {
+    "start": 142.36,
+    "end": 142.42,
+    "word": " de"
+   },
+   {
+    "start": 142.42,
+    "end": 142.52,
+    "word": " la"
+   },
+   {
+    "start": 142.52,
+    "end": 142.92,
+    "word": " médaille"
+   },
+   {
+    "start": 142.92,
+    "end": 143.18,
+    "word": " avec"
+   },
+   {
+    "start": 143.18,
+    "end": 143.7,
+    "word": " rigueur."
+   }
+  ]
+ },
+ {
+  "start": 144.16,
+  "end": 148.76,
+  "text": " D'un côté, les détaillants rappellent que les étiquettes numériques éliminent des tonnes de papier,",
+  "words": [
+   {
+    "start": 144.16,
+    "end": 144.22,
+    "word": " D"
+   },
+   {
+    "start": 144.22,
+    "end": 144.3,
+    "word": "'un"
+   },
+   {
+    "start": 144.3,
+    "end": 144.6,
+    "word": " côté,"
+   },
+   {
+    "start": 144.98,
+    "end": 145.14,
+    "word": " les"
+   },
+   {
+    "start": 145.14,
+    "end": 145.58,
+    "word": " détaillants"
+   },
+   {
+    "start": 145.58,
+    "end": 146.06,
+    "word": " rappellent"
+   },
+   {
+    "start": 146.06,
+    "end": 146.16,
+    "word": " que"
+   },
+   {
+    "start": 146.16,
+    "end": 146.32,
+    "word": " les"
+   },
+   {
+    "start": 146.32,
+    "end": 146.7,
+    "word": " étiquettes"
+   },
+   {
+    "start": 146.7,
+    "end": 147.26,
+    "word": " numériques"
+   },
+   {
+    "start": 147.26,
+    "end": 147.74,
+    "word": " éliminent"
+   },
+   {
+    "start": 147.74,
+    "end": 147.9,
+    "word": " des"
+   },
+   {
+    "start": 147.9,
+    "end": 148.26,
+    "word": " tonnes"
+   },
+   {
+    "start": 148.26,
+    "end": 148.44,
+    "word": " de"
+   },
+   {
+    "start": 148.44,
+    "end": 148.76,
+    "word": " papier,"
+   }
+  ]
+ },
+ {
+  "start": 149.1,
+  "end": 153.96,
+  "text": " réduisent les erreurs humaines d'affichage et permettent d'appliquer instantanément des rabais à la baisse",
+  "words": [
+   {
+    "start": 149.1,
+    "end": 149.52,
+    "word": " réduisent"
+   },
+   {
+    "start": 149.52,
+    "end": 149.66,
+    "word": " les"
+   },
+   {
+    "start": 149.66,
+    "end": 149.98,
+    "word": " erreurs"
+   },
+   {
+    "start": 149.98,
+    "end": 150.24,
+    "word": " humaines"
+   },
+   {
+    "start": 150.24,
+    "end": 150.38,
+    "word": " d"
+   },
+   {
+    "start": 150.38,
+    "end": 150.86,
+    "word": "'affichage"
+   },
+   {
+    "start": 150.86,
+    "end": 151.24,
+    "word": " et"
+   },
+   {
+    "start": 151.24,
+    "end": 151.6,
+    "word": " permettent"
+   },
+   {
+    "start": 151.6,
+    "end": 151.7,
+    "word": " d"
+   },
+   {
+    "start": 151.7,
+    "end": 152.02,
+    "word": "'appliquer"
+   },
+   {
+    "start": 152.02,
+    "end": 152.9,
+    "word": " instantanément"
+   },
+   {
+    "start": 152.9,
+    "end": 153.14,
+    "word": " des"
+   },
+   {
+    "start": 153.14,
+    "end": 153.46,
+    "word": " rabais"
+   },
+   {
+    "start": 153.46,
+    "end": 153.58,
+    "word": " à"
+   },
+   {
+    "start": 153.58,
+    "end": 153.68,
+    "word": " la"
+   },
+   {
+    "start": 153.68,
+    "end": 153.96,
+    "word": " baisse"
+   }
+  ]
+ },
+ {
+  "start": 153.96,
+  "end": 158.78,
+  "text": " sur les viandes ou les pains près de leur date limite, réduisant ainsi le gaspillage alimentaire.",
+  "words": [
+   {
+    "start": 153.96,
+    "end": 154.2,
+    "word": " sur"
+   },
+   {
+    "start": 154.2,
+    "end": 154.36,
+    "word": " les"
+   },
+   {
+    "start": 154.36,
+    "end": 154.76,
+    "word": " viandes"
+   },
+   {
+    "start": 154.76,
+    "end": 154.88,
+    "word": " ou"
+   },
+   {
+    "start": 154.88,
+    "end": 155.06,
+    "word": " les"
+   },
+   {
+    "start": 155.06,
+    "end": 155.26,
+    "word": " pains"
+   },
+   {
+    "start": 155.26,
+    "end": 155.56,
+    "word": " près"
+   },
+   {
+    "start": 155.56,
+    "end": 155.68,
+    "word": " de"
+   },
+   {
+    "start": 155.68,
+    "end": 155.78,
+    "word": " leur"
+   },
+   {
+    "start": 155.78,
+    "end": 155.96,
+    "word": " date"
+   },
+   {
+    "start": 155.96,
+    "end": 156.26,
+    "word": " limite,"
+   },
+   {
+    "start": 156.58,
+    "end": 157.1,
+    "word": " réduisant"
+   },
+   {
+    "start": 157.1,
+    "end": 157.4,
+    "word": " ainsi"
+   },
+   {
+    "start": 157.4,
+    "end": 157.58,
+    "word": " le"
+   },
+   {
+    "start": 157.58,
+    "end": 158.1,
+    "word": " gaspillage"
+   },
+   {
+    "start": 158.1,
+    "end": 158.78,
+    "word": " alimentaire."
+   }
+  ]
+ },
+ {
+  "start": 159.24,
+  "end": 165.36,
+  "text": " De l'autre côté, les groupes de consommateurs soulignent que l'alimentation est un bien essentiel, pas un billet de concert.",
+  "words": [
+   {
+    "start": 159.24,
+    "end": 159.32,
+    "word": " De"
+   },
+   {
+    "start": 159.32,
+    "end": 159.42,
+    "word": " l"
+   },
+   {
+    "start": 159.42,
+    "end": 159.54,
+    "word": "'autre"
+   },
+   {
+    "start": 159.54,
+    "end": 159.94,
+    "word": " côté,"
+   },
+   {
+    "start": 160.38,
+    "end": 160.48,
+    "word": " les"
+   },
+   {
+    "start": 160.48,
+    "end": 160.72,
+    "word": " groupes"
+   },
+   {
+    "start": 160.72,
+    "end": 160.82,
+    "word": " de"
+   },
+   {
+    "start": 160.82,
+    "end": 161.46,
+    "word": " consommateurs"
+   },
+   {
+    "start": 161.46,
+    "end": 161.96,
+    "word": " soulignent"
+   },
+   {
+    "start": 161.96,
+    "end": 162.08,
+    "word": " que"
+   },
+   {
+    "start": 162.08,
+    "end": 162.22,
+    "word": " l"
+   },
+   {
+    "start": 162.22,
+    "end": 162.88,
+    "word": "'alimentation"
+   },
+   {
+    "start": 162.88,
+    "end": 163.08,
+    "word": " est"
+   },
+   {
+    "start": 163.08,
+    "end": 163.24,
+    "word": " un"
+   },
+   {
+    "start": 163.24,
+    "end": 163.4,
+    "word": " bien"
+   },
+   {
+    "start": 163.4,
+    "end": 164.3,
+    "word": " essentiel,"
+   },
+   {
+    "start": 164.5,
+    "end": 164.66,
+    "word": " pas"
+   },
+   {
+    "start": 164.66,
+    "end": 164.82,
+    "word": " un"
+   },
+   {
+    "start": 164.82,
+    "end": 165.0,
+    "word": " billet"
+   },
+   {
+    "start": 165.0,
+    "end": 165.1,
+    "word": " de"
+   },
+   {
+    "start": 165.1,
+    "end": 165.36,
+    "word": " concert."
+   }
+  ]
+ },
+ {
+  "start": 165.36,
+  "end": 171.22,
+  "text": " Si l'outil permet de baisser les prix, il permet tout autant de les gonfler à 17h un vendredi soir.",
+  "words": [
+   {
+    "start": 165.36,
+    "end": 166.14,
+    "word": " Si"
+   },
+   {
+    "start": 166.14,
+    "end": 166.26,
+    "word": " l"
+   },
+   {
+    "start": 166.26,
+    "end": 166.42,
+    "word": "'outil"
+   },
+   {
+    "start": 166.42,
+    "end": 166.78,
+    "word": " permet"
+   },
+   {
+    "start": 166.78,
+    "end": 166.94,
+    "word": " de"
+   },
+   {
+    "start": 166.94,
+    "end": 167.26,
+    "word": " baisser"
+   },
+   {
+    "start": 167.26,
+    "end": 167.44,
+    "word": " les"
+   },
+   {
+    "start": 167.44,
+    "end": 167.68,
+    "word": " prix,"
+   },
+   {
+    "start": 168.02,
+    "end": 168.1,
+    "word": " il"
+   },
+   {
+    "start": 168.1,
+    "end": 168.36,
+    "word": " permet"
+   },
+   {
+    "start": 168.36,
+    "end": 168.62,
+    "word": " tout"
+   },
+   {
+    "start": 168.62,
+    "end": 169.0,
+    "word": " autant"
+   },
+   {
+    "start": 169.0,
+    "end": 169.1,
+    "word": " de"
+   },
+   {
+    "start": 169.1,
+    "end": 169.2,
+    "word": " les"
+   },
+   {
+    "start": 169.2,
+    "end": 169.62,
+    "word": " gonfler"
+   },
+   {
+    "start": 169.62,
+    "end": 169.78,
+    "word": " à"
+   },
+   {
+    "start": 169.78,
+    "end": 170.38,
+    "word": " 17h"
+   },
+   {
+    "start": 170.38,
+    "end": 170.58,
+    "word": " un"
+   },
+   {
+    "start": 170.58,
+    "end": 170.94,
+    "word": " vendredi"
+   },
+   {
+    "start": 170.94,
+    "end": 171.22,
+    "word": " soir."
+   }
+  ]
+ },
+ {
+  "start": 171.76,
+  "end": 173.44,
+  "text": " Mais la technologie n'explique pas tout.",
+  "words": [
+   {
+    "start": 171.76,
+    "end": 171.86,
+    "word": " Mais"
+   },
+   {
+    "start": 171.86,
+    "end": 172.0,
+    "word": " la"
+   },
+   {
+    "start": 172.0,
+    "end": 172.58,
+    "word": " technologie"
+   },
+   {
+    "start": 172.58,
+    "end": 172.74,
+    "word": " n"
+   },
+   {
+    "start": 172.74,
+    "end": 173.08,
+    "word": "'explique"
+   },
+   {
+    "start": 173.08,
+    "end": 173.26,
+    "word": " pas"
+   },
+   {
+    "start": 173.26,
+    "end": 173.44,
+    "word": " tout."
+   }
+  ]
+ },
+ {
+  "start": 173.82,
+  "end": 179.18,
+  "text": " Pour comprendre pourquoi votre marge de manœuvre est si mince, il faut remonter à la structure même du marché.",
+  "words": [
+   {
+    "start": 173.82,
+    "end": 173.92,
+    "word": " Pour"
+   },
+   {
+    "start": 173.92,
+    "end": 174.32,
+    "word": " comprendre"
+   },
+   {
+    "start": 174.32,
+    "end": 174.9,
+    "word": " pourquoi"
+   },
+   {
+    "start": 174.9,
+    "end": 175.2,
+    "word": " votre"
+   },
+   {
+    "start": 175.2,
+    "end": 175.52,
+    "word": " marge"
+   },
+   {
+    "start": 175.52,
+    "end": 175.64,
+    "word": " de"
+   },
+   {
+    "start": 175.64,
+    "end": 176.0,
+    "word": " manœuvre"
+   },
+   {
+    "start": 176.0,
+    "end": 176.12,
+    "word": " est"
+   },
+   {
+    "start": 176.12,
+    "end": 176.34,
+    "word": " si"
+   },
+   {
+    "start": 176.34,
+    "end": 176.74,
+    "word": " mince,"
+   },
+   {
+    "start": 176.96,
+    "end": 177.04,
+    "word": " il"
+   },
+   {
+    "start": 177.04,
+    "end": 177.2,
+    "word": " faut"
+   },
+   {
+    "start": 177.2,
+    "end": 177.62,
+    "word": " remonter"
+   },
+   {
+    "start": 177.62,
+    "end": 177.78,
+    "word": " à"
+   },
+   {
+    "start": 177.78,
+    "end": 177.88,
+    "word": " la"
+   },
+   {
+    "start": 177.88,
+    "end": 178.18,
+    "word": " structure"
+   },
+   {
+    "start": 178.18,
+    "end": 178.64,
+    "word": " même"
+   },
+   {
+    "start": 178.64,
+    "end": 178.86,
+    "word": " du"
+   },
+   {
+    "start": 178.86,
+    "end": 179.18,
+    "word": " marché."
+   }
+  ]
+ },
+ {
+  "start": 179.66,
+  "end": 181.2,
+  "text": " Au Canada, 3 géants.",
+  "words": [
+   {
+    "start": 179.66,
+    "end": 179.78,
+    "word": " Au"
+   },
+   {
+    "start": 179.78,
+    "end": 180.06,
+    "word": " Canada,"
+   },
+   {
+    "start": 180.6,
+    "end": 180.82,
+    "word": " 3"
+   },
+   {
+    "start": 180.82,
+    "end": 181.2,
+    "word": " géants."
+   }
+  ]
+ },
+ {
+  "start": 181.58,
+  "end": 188.8,
+  "text": " Lobla, Empire Sobies et Metro contrôlent près de 89% du marché des supermarchés et épiceries traditionnelles,",
+  "words": [
+   {
+    "start": 181.58,
+    "end": 181.96,
+    "word": " Lobla,"
+   },
+   {
+    "start": 182.26,
+    "end": 182.56,
+    "word": " Empire"
+   },
+   {
+    "start": 182.56,
+    "end": 183.08,
+    "word": " Sobies"
+   },
+   {
+    "start": 183.08,
+    "end": 183.42,
+    "word": " et"
+   },
+   {
+    "start": 183.42,
+    "end": 183.76,
+    "word": " Metro"
+   },
+   {
+    "start": 183.76,
+    "end": 184.54,
+    "word": " contrôlent"
+   },
+   {
+    "start": 184.54,
+    "end": 184.68,
+    "word": " près"
+   },
+   {
+    "start": 184.68,
+    "end": 184.88,
+    "word": " de"
+   },
+   {
+    "start": 184.88,
+    "end": 185.4,
+    "word": " 89"
+   },
+   {
+    "start": 185.4,
+    "end": 185.84,
+    "word": "%"
+   },
+   {
+    "start": 185.84,
+    "end": 186.12,
+    "word": " du"
+   },
+   {
+    "start": 186.12,
+    "end": 186.4,
+    "word": " marché"
+   },
+   {
+    "start": 186.4,
+    "end": 186.56,
+    "word": " des"
+   },
+   {
+    "start": 186.56,
+    "end": 187.4,
+    "word": " supermarchés"
+   },
+   {
+    "start": 187.4,
+    "end": 187.58,
+    "word": " et"
+   },
+   {
+    "start": 187.58,
+    "end": 187.98,
+    "word": " épiceries"
+   },
+   {
+    "start": 187.98,
+    "end": 188.8,
+    "word": " traditionnelles,"
+   }
+  ]
+ },
+ {
+  "start": 188.96,
+  "end": 190.46,
+  "text": " aux côtés de Costco et Walmart.",
+  "words": [
+   {
+    "start": 188.96,
+    "end": 189.1,
+    "word": " aux"
+   },
+   {
+    "start": 189.1,
+    "end": 189.36,
+    "word": " côtés"
+   },
+   {
+    "start": 189.36,
+    "end": 189.48,
+    "word": " de"
+   },
+   {
+    "start": 189.48,
+    "end": 189.8,
+    "word": " Costco"
+   },
+   {
+    "start": 189.8,
+    "end": 190.18,
+    "word": " et"
+   },
+   {
+    "start": 190.18,
+    "end": 190.46,
+    "word": " Walmart."
+   }
+  ]
+ },
+ {
+  "start": 190.46,
+  "end": 200.3,
+  "text": " Maxi, Provigo, Pharmapri d'un côté, Metro, Super C, Adonis, Jean Coutu de l'autre, IGA, Tradition et Bonnichois pour le troisième.",
+  "words": [
+   {
+    "start": 190.46,
+    "end": 191.64,
+    "word": " Maxi,"
+   },
+   {
+    "start": 191.84,
+    "end": 192.22,
+    "word": " Provigo,"
+   },
+   {
+    "start": 192.56,
+    "end": 193.02,
+    "word": " Pharmapri"
+   },
+   {
+    "start": 193.02,
+    "end": 193.14,
+    "word": " d"
+   },
+   {
+    "start": 193.14,
+    "end": 193.22,
+    "word": "'un"
+   },
+   {
+    "start": 193.22,
+    "end": 193.42,
+    "word": " côté,"
+   },
+   {
+    "start": 193.96,
+    "end": 194.36,
+    "word": " Metro,"
+   },
+   {
+    "start": 194.64,
+    "end": 194.88,
+    "word": " Super"
+   },
+   {
+    "start": 194.88,
+    "end": 195.2,
+    "word": " C,"
+   },
+   {
+    "start": 195.48,
+    "end": 196.0,
+    "word": " Adonis,"
+   },
+   {
+    "start": 196.26,
+    "end": 196.4,
+    "word": " Jean"
+   },
+   {
+    "start": 196.4,
+    "end": 196.78,
+    "word": " Coutu"
+   },
+   {
+    "start": 196.78,
+    "end": 196.92,
+    "word": " de"
+   },
+   {
+    "start": 196.92,
+    "end": 197.06,
+    "word": " l"
+   },
+   {
+    "start": 197.06,
+    "end": 197.26,
+    "word": "'autre,"
+   },
+   {
+    "start": 197.6,
+    "end": 197.96,
+    "word": " IGA,"
+   },
+   {
+    "start": 198.28,
+    "end": 198.82,
+    "word": " Tradition"
+   },
+   {
+    "start": 198.82,
+    "end": 199.1,
+    "word": " et"
+   },
+   {
+    "start": 199.1,
+    "end": 199.62,
+    "word": " Bonnichois"
+   },
+   {
+    "start": 199.62,
+    "end": 199.86,
+    "word": " pour"
+   },
+   {
+    "start": 199.86,
+    "end": 199.98,
+    "word": " le"
+   },
+   {
+    "start": 199.98,
+    "end": 200.3,
+    "word": " troisième."
+   }
+  ]
+ },
+ {
+  "start": 200.92,
+  "end": 206.56,
+  "text": " Quand trois groupes tiennent presque toutes les bannières de votre quartier, la concurrence réelle devient beaucoup plus fragile.",
+  "words": [
+   {
+    "start": 200.92,
+    "end": 201.06,
+    "word": " Quand"
+   },
+   {
+    "start": 201.06,
+    "end": 201.38,
+    "word": " trois"
+   },
+   {
+    "start": 201.38,
+    "end": 201.76,
+    "word": " groupes"
+   },
+   {
+    "start": 201.76,
+    "end": 201.98,
+    "word": " tiennent"
+   },
+   {
+    "start": 201.98,
+    "end": 202.2,
+    "word": " presque"
+   },
+   {
+    "start": 202.2,
+    "end": 202.6,
+    "word": " toutes"
+   },
+   {
+    "start": 202.6,
+    "end": 202.8,
+    "word": " les"
+   },
+   {
+    "start": 202.8,
+    "end": 203.16,
+    "word": " bannières"
+   },
+   {
+    "start": 203.16,
+    "end": 203.26,
+    "word": " de"
+   },
+   {
+    "start": 203.26,
+    "end": 203.44,
+    "word": " votre"
+   },
+   {
+    "start": 203.44,
+    "end": 203.96,
+    "word": " quartier,"
+   },
+   {
+    "start": 204.26,
+    "end": 204.34,
+    "word": " la"
+   },
+   {
+    "start": 204.34,
+    "end": 204.84,
+    "word": " concurrence"
+   },
+   {
+    "start": 204.84,
+    "end": 205.26,
+    "word": " réelle"
+   },
+   {
+    "start": 205.26,
+    "end": 205.58,
+    "word": " devient"
+   },
+   {
+    "start": 205.58,
+    "end": 205.98,
+    "word": " beaucoup"
+   },
+   {
+    "start": 205.98,
+    "end": 206.24,
+    "word": " plus"
+   },
+   {
+    "start": 206.24,
+    "end": 206.56,
+    "word": " fragile."
+   }
+  ]
+ },
+ {
+  "start": 207.18,
+  "end": 212.68,
+  "text": " Et voici l'un des secrets les mieux gardés de l'immobilier commercial révélé par le bureau de la concurrence,",
+  "words": [
+   {
+    "start": 207.18,
+    "end": 207.3,
+    "word": " Et"
+   },
+   {
+    "start": 207.3,
+    "end": 207.66,
+    "word": " voici"
+   },
+   {
+    "start": 207.66,
+    "end": 207.8,
+    "word": " l"
+   },
+   {
+    "start": 207.8,
+    "end": 207.86,
+    "word": "'un"
+   },
+   {
+    "start": 207.86,
+    "end": 208.0,
+    "word": " des"
+   },
+   {
+    "start": 208.0,
+    "end": 208.32,
+    "word": " secrets"
+   },
+   {
+    "start": 208.32,
+    "end": 208.56,
+    "word": " les"
+   },
+   {
+    "start": 208.56,
+    "end": 208.84,
+    "word": " mieux"
+   },
+   {
+    "start": 208.84,
+    "end": 209.26,
+    "word": " gardés"
+   },
+   {
+    "start": 209.26,
+    "end": 209.4,
+    "word": " de"
+   },
+   {
+    "start": 209.4,
+    "end": 209.52,
+    "word": " l"
+   },
+   {
+    "start": 209.52,
+    "end": 209.96,
+    "word": "'immobilier"
+   },
+   {
+    "start": 209.96,
+    "end": 210.48,
+    "word": " commercial"
+   },
+   {
+    "start": 210.48,
+    "end": 211.2,
+    "word": " révélé"
+   },
+   {
+    "start": 211.2,
+    "end": 211.42,
+    "word": " par"
+   },
+   {
+    "start": 211.42,
+    "end": 211.56,
+    "word": " le"
+   },
+   {
+    "start": 211.56,
+    "end": 211.8,
+    "word": " bureau"
+   },
+   {
+    "start": 211.8,
+    "end": 211.94,
+    "word": " de"
+   },
+   {
+    "start": 211.94,
+    "end": 212.02,
+    "word": " la"
+   },
+   {
+    "start": 212.02,
+    "end": 212.68,
+    "word": " concurrence,"
+   }
+  ]
+ },
+ {
+  "start": 213.04,
+  "end": 214.56,
+  "text": " les contrôles de propriété.",
+  "words": [
+   {
+    "start": 213.04,
+    "end": 213.14,
+    "word": " les"
+   },
+   {
+    "start": 213.14,
+    "end": 213.76,
+    "word": " contrôles"
+   },
+   {
+    "start": 213.76,
+    "end": 213.9,
+    "word": " de"
+   },
+   {
+    "start": 213.9,
+    "end": 214.56,
+    "word": " propriété."
+   }
+  ]
+ },
+ {
+  "start": 214.56,
+  "end": 220.98,
+  "text": " Pendant des années, de grandes chaînes ont inséré dans leurs beaux ou leurs actes de vente des closes d'exclusivité",
+  "words": [
+   {
+    "start": 214.56,
+    "end": 215.38,
+    "word": " Pendant"
+   },
+   {
+    "start": 215.38,
+    "end": 215.62,
+    "word": " des"
+   },
+   {
+    "start": 215.62,
+    "end": 216.02,
+    "word": " années,"
+   },
+   {
+    "start": 216.32,
+    "end": 216.42,
+    "word": " de"
+   },
+   {
+    "start": 216.42,
+    "end": 216.66,
+    "word": " grandes"
+   },
+   {
+    "start": 216.66,
+    "end": 217.04,
+    "word": " chaînes"
+   },
+   {
+    "start": 217.04,
+    "end": 217.14,
+    "word": " ont"
+   },
+   {
+    "start": 217.14,
+    "end": 217.58,
+    "word": " inséré"
+   },
+   {
+    "start": 217.58,
+    "end": 217.76,
+    "word": " dans"
+   },
+   {
+    "start": 217.76,
+    "end": 217.96,
+    "word": " leurs"
+   },
+   {
+    "start": 217.96,
+    "end": 218.3,
+    "word": " beaux"
+   },
+   {
+    "start": 218.3,
+    "end": 218.48,
+    "word": " ou"
+   },
+   {
+    "start": 218.48,
+    "end": 218.7,
+    "word": " leurs"
+   },
+   {
+    "start": 218.7,
+    "end": 219.0,
+    "word": " actes"
+   },
+   {
+    "start": 219.0,
+    "end": 219.14,
+    "word": " de"
+   },
+   {
+    "start": 219.14,
+    "end": 219.44,
+    "word": " vente"
+   },
+   {
+    "start": 219.44,
+    "end": 219.76,
+    "word": " des"
+   },
+   {
+    "start": 219.76,
+    "end": 220.04,
+    "word": " closes"
+   },
+   {
+    "start": 220.04,
+    "end": 220.24,
+    "word": " d"
+   },
+   {
+    "start": 220.24,
+    "end": 220.98,
+    "word": "'exclusivité"
+   }
+  ]
+ },
+ {
+  "start": 220.98,
+  "end": 225.98,
+  "text": " interdisant aux propriétaires d'un centre commercial de louer un local à un autre épicier,",
+  "words": [
+   {
+    "start": 220.98,
+    "end": 221.86,
+    "word": " interdisant"
+   },
+   {
+    "start": 221.86,
+    "end": 222.0,
+    "word": " aux"
+   },
+   {
+    "start": 222.0,
+    "end": 222.56,
+    "word": " propriétaires"
+   },
+   {
+    "start": 222.56,
+    "end": 222.68,
+    "word": " d"
+   },
+   {
+    "start": 222.68,
+    "end": 222.76,
+    "word": "'un"
+   },
+   {
+    "start": 222.76,
+    "end": 223.02,
+    "word": " centre"
+   },
+   {
+    "start": 223.02,
+    "end": 223.48,
+    "word": " commercial"
+   },
+   {
+    "start": 223.48,
+    "end": 224.0,
+    "word": " de"
+   },
+   {
+    "start": 224.0,
+    "end": 224.28,
+    "word": " louer"
+   },
+   {
+    "start": 224.28,
+    "end": 224.42,
+    "word": " un"
+   },
+   {
+    "start": 224.42,
+    "end": 224.7,
+    "word": " local"
+   },
+   {
+    "start": 224.7,
+    "end": 225.0,
+    "word": " à"
+   },
+   {
+    "start": 225.0,
+    "end": 225.16,
+    "word": " un"
+   },
+   {
+    "start": 225.16,
+    "end": 225.42,
+    "word": " autre"
+   },
+   {
+    "start": 225.42,
+    "end": 225.98,
+    "word": " épicier,"
+   }
+  ]
+ },
+ {
+  "start": 226.22,
+  "end": 231.36,
+  "text": " ou même empêchant un magasin à un dollar ou une boulangerie de vendre certains produits frais.",
+  "words": [
+   {
+    "start": 226.22,
+    "end": 226.3,
+    "word": " ou"
+   },
+   {
+    "start": 226.3,
+    "end": 226.5,
+    "word": " même"
+   },
+   {
+    "start": 226.5,
+    "end": 227.14,
+    "word": " empêchant"
+   },
+   {
+    "start": 227.14,
+    "end": 227.32,
+    "word": " un"
+   },
+   {
+    "start": 227.32,
+    "end": 227.8,
+    "word": " magasin"
+   },
+   {
+    "start": 227.8,
+    "end": 227.94,
+    "word": " à"
+   },
+   {
+    "start": 227.94,
+    "end": 228.14,
+    "word": " un"
+   },
+   {
+    "start": 228.14,
+    "end": 228.46,
+    "word": " dollar"
+   },
+   {
+    "start": 228.46,
+    "end": 228.86,
+    "word": " ou"
+   },
+   {
+    "start": 228.86,
+    "end": 229.02,
+    "word": " une"
+   },
+   {
+    "start": 229.02,
+    "end": 229.6,
+    "word": " boulangerie"
+   },
+   {
+    "start": 229.6,
+    "end": 229.8,
+    "word": " de"
+   },
+   {
+    "start": 229.8,
+    "end": 230.16,
+    "word": " vendre"
+   },
+   {
+    "start": 230.16,
+    "end": 230.58,
+    "word": " certains"
+   },
+   {
+    "start": 230.58,
+    "end": 230.92,
+    "word": " produits"
+   },
+   {
+    "start": 230.92,
+    "end": 231.36,
+    "word": " frais."
+   }
+  ]
+ },
+ {
+  "start": 231.8,
+  "end": 235.1,
+  "text": " En février 2025, Lobla a accepté de reculer.",
+  "words": [
+   {
+    "start": 231.8,
+    "end": 231.94,
+    "word": " En"
+   },
+   {
+    "start": 231.94,
+    "end": 232.3,
+    "word": " février"
+   },
+   {
+    "start": 232.3,
+    "end": 232.92,
+    "word": " 2025,"
+   },
+   {
+    "start": 233.52,
+    "end": 233.84,
+    "word": " Lobla"
+   },
+   {
+    "start": 233.84,
+    "end": 234.08,
+    "word": " a"
+   },
+   {
+    "start": 234.08,
+    "end": 234.56,
+    "word": " accepté"
+   },
+   {
+    "start": 234.56,
+    "end": 234.68,
+    "word": " de"
+   },
+   {
+    "start": 234.68,
+    "end": 235.1,
+    "word": " reculer."
+   }
+  ]
+ },
+ {
+  "start": 235.46,
+  "end": 238.68,
+  "text": " Et en septembre 2026, après des enquêtes en cours fédéral,",
+  "words": [
+   {
+    "start": 235.46,
+    "end": 235.5,
+    "word": " Et"
+   },
+   {
+    "start": 235.5,
+    "end": 235.6,
+    "word": " en"
+   },
+   {
+    "start": 235.6,
+    "end": 236.1,
+    "word": " septembre"
+   },
+   {
+    "start": 236.1,
+    "end": 236.82,
+    "word": " 2026,"
+   },
+   {
+    "start": 237.2,
+    "end": 237.4,
+    "word": " après"
+   },
+   {
+    "start": 237.4,
+    "end": 237.62,
+    "word": " des"
+   },
+   {
+    "start": 237.62,
+    "end": 237.96,
+    "word": " enquêtes"
+   },
+   {
+    "start": 237.96,
+    "end": 238.12,
+    "word": " en"
+   },
+   {
+    "start": 238.12,
+    "end": 238.3,
+    "word": " cours"
+   },
+   {
+    "start": 238.3,
+    "end": 238.68,
+    "word": " fédéral,"
+   }
+  ]
+ },
+ {
+  "start": 239.12,
+  "end": 243.4,
+  "text": " Empire Sobies a dû signer une entente juridiquement contraignante pour y mettre fin.",
+  "words": [
+   {
+    "start": 239.12,
+    "end": 239.46,
+    "word": " Empire"
+   },
+   {
+    "start": 239.46,
+    "end": 239.94,
+    "word": " Sobies"
+   },
+   {
+    "start": 239.94,
+    "end": 240.24,
+    "word": " a"
+   },
+   {
+    "start": 240.24,
+    "end": 240.38,
+    "word": " dû"
+   },
+   {
+    "start": 240.38,
+    "end": 240.72,
+    "word": " signer"
+   },
+   {
+    "start": 240.72,
+    "end": 240.86,
+    "word": " une"
+   },
+   {
+    "start": 240.86,
+    "end": 241.16,
+    "word": " entente"
+   },
+   {
+    "start": 241.16,
+    "end": 241.86,
+    "word": " juridiquement"
+   },
+   {
+    "start": 241.86,
+    "end": 242.58,
+    "word": " contraignante"
+   },
+   {
+    "start": 242.58,
+    "end": 242.8,
+    "word": " pour"
+   },
+   {
+    "start": 242.8,
+    "end": 242.9,
+    "word": " y"
+   },
+   {
+    "start": 242.9,
+    "end": 243.06,
+    "word": " mettre"
+   },
+   {
+    "start": 243.06,
+    "end": 243.4,
+    "word": " fin."
+   }
+  ]
+ },
+ {
+  "start": 243.4,
+  "end": 246.84,
+  "text": " Quel est le lien direct avec votre portefeuille au Québec ?",
+  "words": [
+   {
+    "start": 243.4,
+    "end": 243.98,
+    "word": " Quel"
+   },
+   {
+    "start": 243.98,
+    "end": 244.1,
+    "word": " est"
+   },
+   {
+    "start": 244.1,
+    "end": 244.24,
+    "word": " le"
+   },
+   {
+    "start": 244.24,
+    "end": 244.4,
+    "word": " lien"
+   },
+   {
+    "start": 244.4,
+    "end": 244.86,
+    "word": " direct"
+   },
+   {
+    "start": 244.86,
+    "end": 245.14,
+    "word": " avec"
+   },
+   {
+    "start": 245.14,
+    "end": 245.4,
+    "word": " votre"
+   },
+   {
+    "start": 245.4,
+    "end": 246.02,
+    "word": " portefeuille"
+   },
+   {
+    "start": 246.02,
+    "end": 246.1,
+    "word": " au"
+   },
+   {
+    "start": 246.1,
+    "end": 246.28,
+    "word": " Québec"
+   },
+   {
+    "start": 246.28,
+    "end": 246.84,
+    "word": " ?"
+   }
+  ]
+ },
+ {
+  "start": 246.84,
+  "end": 251.3,
+  "text": " Quand un bail restrictif empêche un compétiteur Est-Conte ou un nouvel acteur international",
+  "words": [
+   {
+    "start": 246.84,
+    "end": 247.02,
+    "word": " Quand"
+   },
+   {
+    "start": 247.02,
+    "end": 247.26,
+    "word": " un"
+   },
+   {
+    "start": 247.26,
+    "end": 247.42,
+    "word": " bail"
+   },
+   {
+    "start": 247.42,
+    "end": 248.22,
+    "word": " restrictif"
+   },
+   {
+    "start": 248.22,
+    "end": 248.68,
+    "word": " empêche"
+   },
+   {
+    "start": 248.68,
+    "end": 248.8,
+    "word": " un"
+   },
+   {
+    "start": 248.8,
+    "end": 249.4,
+    "word": " compétiteur"
+   },
+   {
+    "start": 249.4,
+    "end": 249.58,
+    "word": " Est"
+   },
+   {
+    "start": 249.58,
+    "end": 249.88,
+    "word": "-Conte"
+   },
+   {
+    "start": 249.88,
+    "end": 250.12,
+    "word": " ou"
+   },
+   {
+    "start": 250.12,
+    "end": 250.28,
+    "word": " un"
+   },
+   {
+    "start": 250.28,
+    "end": 250.5,
+    "word": " nouvel"
+   },
+   {
+    "start": 250.5,
+    "end": 250.86,
+    "word": " acteur"
+   },
+   {
+    "start": 250.86,
+    "end": 251.3,
+    "word": " international"
+   }
+  ]
+ },
+ {
+  "start": 251.3,
+  "end": 254.34,
+  "text": " de s'installer dans votre quartier ou votre ville en région,",
+  "words": [
+   {
+    "start": 251.3,
+    "end": 251.76,
+    "word": " de"
+   },
+   {
+    "start": 251.76,
+    "end": 251.94,
+    "word": " s"
+   },
+   {
+    "start": 251.94,
+    "end": 252.24,
+    "word": "'installer"
+   },
+   {
+    "start": 252.24,
+    "end": 252.42,
+    "word": " dans"
+   },
+   {
+    "start": 252.42,
+    "end": 252.66,
+    "word": " votre"
+   },
+   {
+    "start": 252.66,
+    "end": 253.16,
+    "word": " quartier"
+   },
+   {
+    "start": 253.16,
+    "end": 253.4,
+    "word": " ou"
+   },
+   {
+    "start": 253.4,
+    "end": 253.66,
+    "word": " votre"
+   },
+   {
+    "start": 253.66,
+    "end": 253.86,
+    "word": " ville"
+   },
+   {
+    "start": 253.86,
+    "end": 254.0,
+    "word": " en"
+   },
+   {
+    "start": 254.0,
+    "end": 254.34,
+    "word": " région,"
+   }
+  ]
+ },
+ {
+  "start": 254.68,
+  "end": 257.42,
+  "text": " vous perdez le seul levier qui force les prix à baisser.",
+  "words": [
+   {
+    "start": 254.68,
+    "end": 254.78,
+    "word": " vous"
+   },
+   {
+    "start": 254.78,
+    "end": 255.18,
+    "word": " perdez"
+   },
+   {
+    "start": 255.18,
+    "end": 255.3,
+    "word": " le"
+   },
+   {
+    "start": 255.3,
+    "end": 255.64,
+    "word": " seul"
+   },
+   {
+    "start": 255.64,
+    "end": 256.06,
+    "word": " levier"
+   },
+   {
+    "start": 256.06,
+    "end": 256.26,
+    "word": " qui"
+   },
+   {
+    "start": 256.26,
+    "end": 256.56,
+    "word": " force"
+   },
+   {
+    "start": 256.56,
+    "end": 256.76,
+    "word": " les"
+   },
+   {
+    "start": 256.76,
+    "end": 256.92,
+    "word": " prix"
+   },
+   {
+    "start": 256.92,
+    "end": 257.1,
+    "word": " à"
+   },
+   {
+    "start": 257.1,
+    "end": 257.42,
+    "word": " baisser."
+   }
+  ]
+ },
+ {
+  "start": 257.74,
+  "end": 259.34,
+  "text": " La vraie concurrence locale.",
+  "words": [
+   {
+    "start": 257.74,
+    "end": 257.92,
+    "word": " La"
+   },
+   {
+    "start": 257.92,
+    "end": 258.28,
+    "word": " vraie"
+   },
+   {
+    "start": 258.28,
+    "end": 258.84,
+    "word": " concurrence"
+   },
+   {
+    "start": 258.84,
+    "end": 259.34,
+    "word": " locale."
+   }
+  ]
+ },
+ {
+  "start": 259.76,
+  "end": 264.0,
+  "text": " Le bureau de la concurrence a d'ailleurs recommandé d'attirer de nouveaux épiciers étrangers,",
+  "words": [
+   {
+    "start": 259.76,
+    "end": 259.92,
+    "word": " Le"
+   },
+   {
+    "start": 259.92,
+    "end": 260.12,
+    "word": " bureau"
+   },
+   {
+    "start": 260.12,
+    "end": 260.26,
+    "word": " de"
+   },
+   {
+    "start": 260.26,
+    "end": 260.34,
+    "word": " la"
+   },
+   {
+    "start": 260.34,
+    "end": 260.94,
+    "word": " concurrence"
+   },
+   {
+    "start": 260.94,
+    "end": 261.1,
+    "word": " a"
+   },
+   {
+    "start": 261.1,
+    "end": 261.18,
+    "word": " d"
+   },
+   {
+    "start": 261.18,
+    "end": 261.36,
+    "word": "'ailleurs"
+   },
+   {
+    "start": 261.36,
+    "end": 262.0,
+    "word": " recommandé"
+   },
+   {
+    "start": 262.0,
+    "end": 262.18,
+    "word": " d"
+   },
+   {
+    "start": 262.18,
+    "end": 262.58,
+    "word": "'attirer"
+   },
+   {
+    "start": 262.58,
+    "end": 262.7,
+    "word": " de"
+   },
+   {
+    "start": 262.7,
+    "end": 262.98,
+    "word": " nouveaux"
+   },
+   {
+    "start": 262.98,
+    "end": 263.5,
+    "word": " épiciers"
+   },
+   {
+    "start": 263.5,
+    "end": 264.0,
+    "word": " étrangers,"
+   }
+  ]
+ },
+ {
+  "start": 264.28,
+  "end": 268.2,
+  "text": " de soutenir les indépendants et de standardiser l'affichage du prix unitaire.",
+  "words": [
+   {
+    "start": 264.28,
+    "end": 264.36,
+    "word": " de"
+   },
+   {
+    "start": 264.36,
+    "end": 264.76,
+    "word": " soutenir"
+   },
+   {
+    "start": 264.76,
+    "end": 264.9,
+    "word": " les"
+   },
+   {
+    "start": 264.9,
+    "end": 265.56,
+    "word": " indépendants"
+   },
+   {
+    "start": 265.56,
+    "end": 265.88,
+    "word": " et"
+   },
+   {
+    "start": 265.88,
+    "end": 266.0,
+    "word": " de"
+   },
+   {
+    "start": 266.0,
+    "end": 266.72,
+    "word": " standardiser"
+   },
+   {
+    "start": 266.72,
+    "end": 266.88,
+    "word": " l"
+   },
+   {
+    "start": 266.88,
+    "end": 267.32,
+    "word": "'affichage"
+   },
+   {
+    "start": 267.32,
+    "end": 267.56,
+    "word": " du"
+   },
+   {
+    "start": 267.56,
+    "end": 267.74,
+    "word": " prix"
+   },
+   {
+    "start": 267.74,
+    "end": 268.2,
+    "word": " unitaire."
+   }
+  ]
+ },
+ {
+  "start": 268.2,
+  "end": 270.96,
+  "text": " Car même avec des ententes pour libérer les beaux,",
+  "words": [
+   {
+    "start": 268.2,
+    "end": 268.7,
+    "word": " Car"
+   },
+   {
+    "start": 268.7,
+    "end": 269.12,
+    "word": " même"
+   },
+   {
+    "start": 269.12,
+    "end": 269.34,
+    "word": " avec"
+   },
+   {
+    "start": 269.34,
+    "end": 269.56,
+    "word": " des"
+   },
+   {
+    "start": 269.56,
+    "end": 269.9,
+    "word": " ententes"
+   },
+   {
+    "start": 269.9,
+    "end": 270.14,
+    "word": " pour"
+   },
+   {
+    "start": 270.14,
+    "end": 270.54,
+    "word": " libérer"
+   },
+   {
+    "start": 270.54,
+    "end": 270.76,
+    "word": " les"
+   },
+   {
+    "start": 270.76,
+    "end": 270.96,
+    "word": " beaux,"
+   }
+  ]
+ },
+ {
+  "start": 271.26,
+  "end": 275.42,
+  "text": " les habitudes et la domination des trois grands ne disparaissent pas du jour au lendemain.",
+  "words": [
+   {
+    "start": 271.26,
+    "end": 271.36,
+    "word": " les"
+   },
+   {
+    "start": 271.36,
+    "end": 272.0,
+    "word": " habitudes"
+   },
+   {
+    "start": 272.0,
+    "end": 272.12,
+    "word": " et"
+   },
+   {
+    "start": 272.12,
+    "end": 272.26,
+    "word": " la"
+   },
+   {
+    "start": 272.26,
+    "end": 272.72,
+    "word": " domination"
+   },
+   {
+    "start": 272.72,
+    "end": 273.0,
+    "word": " des"
+   },
+   {
+    "start": 273.0,
+    "end": 273.32,
+    "word": " trois"
+   },
+   {
+    "start": 273.32,
+    "end": 273.62,
+    "word": " grands"
+   },
+   {
+    "start": 273.62,
+    "end": 273.86,
+    "word": " ne"
+   },
+   {
+    "start": 273.86,
+    "end": 274.4,
+    "word": " disparaissent"
+   },
+   {
+    "start": 274.4,
+    "end": 274.6,
+    "word": " pas"
+   },
+   {
+    "start": 274.6,
+    "end": 274.78,
+    "word": " du"
+   },
+   {
+    "start": 274.78,
+    "end": 274.94,
+    "word": " jour"
+   },
+   {
+    "start": 274.94,
+    "end": 275.06,
+    "word": " au"
+   },
+   {
+    "start": 275.06,
+    "end": 275.42,
+    "word": " lendemain."
+   }
+  ]
+ },
+ {
+  "start": 275.68,
+  "end": 277.58,
+  "text": " Là encore, écoutons les deux versions.",
+  "words": [
+   {
+    "start": 275.68,
+    "end": 275.9,
+    "word": " Là"
+   },
+   {
+    "start": 275.9,
+    "end": 276.24,
+    "word": " encore,"
+   },
+   {
+    "start": 276.66,
+    "end": 277.0,
+    "word": " écoutons"
+   },
+   {
+    "start": 277.0,
+    "end": 277.14,
+    "word": " les"
+   },
+   {
+    "start": 277.14,
+    "end": 277.3,
+    "word": " deux"
+   },
+   {
+    "start": 277.3,
+    "end": 277.58,
+    "word": " versions."
+   }
+  ]
+ },
+ {
+  "start": 278.1,
+  "end": 280.4,
+  "text": " Pour les promoteurs immobiliers et les chaînes établis,",
+  "words": [
+   {
+    "start": 278.1,
+    "end": 278.2,
+    "word": " Pour"
+   },
+   {
+    "start": 278.2,
+    "end": 278.32,
+    "word": " les"
+   },
+   {
+    "start": 278.32,
+    "end": 278.8,
+    "word": " promoteurs"
+   },
+   {
+    "start": 278.8,
+    "end": 279.42,
+    "word": " immobiliers"
+   },
+   {
+    "start": 279.42,
+    "end": 279.58,
+    "word": " et"
+   },
+   {
+    "start": 279.58,
+    "end": 279.68,
+    "word": " les"
+   },
+   {
+    "start": 279.68,
+    "end": 279.94,
+    "word": " chaînes"
+   },
+   {
+    "start": 279.94,
+    "end": 280.4,
+    "word": " établis,"
+   }
+  ]
+ },
+ {
+  "start": 280.72,
+  "end": 285.4,
+  "text": " une close d'exclusivité servait historiquement à sécuriser un investissement massif.",
+  "words": [
+   {
+    "start": 280.72,
+    "end": 280.82,
+    "word": " une"
+   },
+   {
+    "start": 280.82,
+    "end": 281.1,
+    "word": " close"
+   },
+   {
+    "start": 281.1,
+    "end": 281.24,
+    "word": " d"
+   },
+   {
+    "start": 281.24,
+    "end": 281.94,
+    "word": "'exclusivité"
+   },
+   {
+    "start": 281.94,
+    "end": 282.42,
+    "word": " servait"
+   },
+   {
+    "start": 282.42,
+    "end": 283.18,
+    "word": " historiquement"
+   },
+   {
+    "start": 283.18,
+    "end": 283.44,
+    "word": " à"
+   },
+   {
+    "start": 283.44,
+    "end": 284.04,
+    "word": " sécuriser"
+   },
+   {
+    "start": 284.04,
+    "end": 284.2,
+    "word": " un"
+   },
+   {
+    "start": 284.2,
+    "end": 284.8,
+    "word": " investissement"
+   },
+   {
+    "start": 284.8,
+    "end": 285.4,
+    "word": " massif."
+   }
+  ]
+ },
+ {
+  "start": 285.7,
+  "end": 289.46,
+  "text": " Sans la garantie d'être le seul grand supermarché d'un nouveau centre commercial,",
+  "words": [
+   {
+    "start": 285.7,
+    "end": 285.94,
+    "word": " Sans"
+   },
+   {
+    "start": 285.94,
+    "end": 286.08,
+    "word": " la"
+   },
+   {
+    "start": 286.08,
+    "end": 286.54,
+    "word": " garantie"
+   },
+   {
+    "start": 286.54,
+    "end": 286.66,
+    "word": " d"
+   },
+   {
+    "start": 286.66,
+    "end": 286.74,
+    "word": "'être"
+   },
+   {
+    "start": 286.74,
+    "end": 287.0,
+    "word": " le"
+   },
+   {
+    "start": 287.0,
+    "end": 287.28,
+    "word": " seul"
+   },
+   {
+    "start": 287.28,
+    "end": 287.58,
+    "word": " grand"
+   },
+   {
+    "start": 287.58,
+    "end": 288.3,
+    "word": " supermarché"
+   },
+   {
+    "start": 288.3,
+    "end": 288.42,
+    "word": " d"
+   },
+   {
+    "start": 288.42,
+    "end": 288.5,
+    "word": "'un"
+   },
+   {
+    "start": 288.5,
+    "end": 288.66,
+    "word": " nouveau"
+   },
+   {
+    "start": 288.66,
+    "end": 288.98,
+    "word": " centre"
+   },
+   {
+    "start": 288.98,
+    "end": 289.46,
+    "word": " commercial,"
+   }
+  ]
+ },
+ {
+  "start": 289.96,
+  "end": 294.24,
+  "text": " personne ne risquerait des dizaines de millions de dollars pour ouvrir en banlieue ou en région.",
+  "words": [
+   {
+    "start": 289.96,
+    "end": 290.28,
+    "word": " personne"
+   },
+   {
+    "start": 290.28,
+    "end": 290.56,
+    "word": " ne"
+   },
+   {
+    "start": 290.56,
+    "end": 291.02,
+    "word": " risquerait"
+   },
+   {
+    "start": 291.02,
+    "end": 291.14,
+    "word": " des"
+   },
+   {
+    "start": 291.14,
+    "end": 291.6,
+    "word": " dizaines"
+   },
+   {
+    "start": 291.6,
+    "end": 291.78,
+    "word": " de"
+   },
+   {
+    "start": 291.78,
+    "end": 291.98,
+    "word": " millions"
+   },
+   {
+    "start": 291.98,
+    "end": 292.14,
+    "word": " de"
+   },
+   {
+    "start": 292.14,
+    "end": 292.46,
+    "word": " dollars"
+   },
+   {
+    "start": 292.46,
+    "end": 292.72,
+    "word": " pour"
+   },
+   {
+    "start": 292.72,
+    "end": 293.04,
+    "word": " ouvrir"
+   },
+   {
+    "start": 293.04,
+    "end": 293.24,
+    "word": " en"
+   },
+   {
+    "start": 293.24,
+    "end": 293.66,
+    "word": " banlieue"
+   },
+   {
+    "start": 293.66,
+    "end": 293.84,
+    "word": " ou"
+   },
+   {
+    "start": 293.84,
+    "end": 293.96,
+    "word": " en"
+   },
+   {
+    "start": 293.96,
+    "end": 294.24,
+    "word": " région."
+   }
+  ]
+ },
+ {
+  "start": 294.7,
+  "end": 297.82,
+  "text": " Pour les économistes de la concurrence, cet excuse ne tient plus.",
+  "words": [
+   {
+    "start": 294.7,
+    "end": 294.82,
+    "word": " Pour"
+   },
+   {
+    "start": 294.82,
+    "end": 294.96,
+    "word": " les"
+   },
+   {
+    "start": 294.96,
+    "end": 295.5,
+    "word": " économistes"
+   },
+   {
+    "start": 295.5,
+    "end": 295.68,
+    "word": " de"
+   },
+   {
+    "start": 295.68,
+    "end": 295.76,
+    "word": " la"
+   },
+   {
+    "start": 295.76,
+    "end": 296.42,
+    "word": " concurrence,"
+   },
+   {
+    "start": 296.7,
+    "end": 296.84,
+    "word": " cet"
+   },
+   {
+    "start": 296.84,
+    "end": 297.18,
+    "word": " excuse"
+   },
+   {
+    "start": 297.18,
+    "end": 297.38,
+    "word": " ne"
+   },
+   {
+    "start": 297.38,
+    "end": 297.56,
+    "word": " tient"
+   },
+   {
+    "start": 297.56,
+    "end": 297.82,
+    "word": " plus."
+   }
+  ]
+ },
+ {
+  "start": 297.82,
+  "end": 301.42,
+  "text": " Lorsque ces closes survivent même après la fermeture d'un magasin",
+  "words": [
+   {
+    "start": 297.82,
+    "end": 298.54,
+    "word": " Lorsque"
+   },
+   {
+    "start": 298.54,
+    "end": 298.68,
+    "word": " ces"
+   },
+   {
+    "start": 298.68,
+    "end": 298.98,
+    "word": " closes"
+   },
+   {
+    "start": 298.98,
+    "end": 299.6,
+    "word": " survivent"
+   },
+   {
+    "start": 299.6,
+    "end": 299.8,
+    "word": " même"
+   },
+   {
+    "start": 299.8,
+    "end": 300.08,
+    "word": " après"
+   },
+   {
+    "start": 300.08,
+    "end": 300.26,
+    "word": " la"
+   },
+   {
+    "start": 300.26,
+    "end": 300.7,
+    "word": " fermeture"
+   },
+   {
+    "start": 300.7,
+    "end": 300.82,
+    "word": " d"
+   },
+   {
+    "start": 300.82,
+    "end": 300.88,
+    "word": "'un"
+   },
+   {
+    "start": 300.88,
+    "end": 301.42,
+    "word": " magasin"
+   }
+  ]
+ },
+ {
+  "start": 301.42,
+  "end": 303.98,
+  "text": " ou bloquent des commerces complémentaires pendant 20 ans,",
+  "words": [
+   {
+    "start": 301.42,
+    "end": 301.68,
+    "word": " ou"
+   },
+   {
+    "start": 301.68,
+    "end": 301.96,
+    "word": " bloquent"
+   },
+   {
+    "start": 301.96,
+    "end": 302.08,
+    "word": " des"
+   },
+   {
+    "start": 302.08,
+    "end": 302.44,
+    "word": " commerces"
+   },
+   {
+    "start": 302.44,
+    "end": 303.06,
+    "word": " complémentaires"
+   },
+   {
+    "start": 303.06,
+    "end": 303.34,
+    "word": " pendant"
+   },
+   {
+    "start": 303.34,
+    "end": 303.74,
+    "word": " 20"
+   },
+   {
+    "start": 303.74,
+    "end": 303.98,
+    "word": " ans,"
+   }
+  ]
+ },
+ {
+  "start": 304.26,
+  "end": 307.96,
+  "text": " elles deviennent une barrière artificielle payée par les familles à la caisse.",
+  "words": [
+   {
+    "start": 304.26,
+    "end": 304.34,
+    "word": " elles"
+   },
+   {
+    "start": 304.34,
+    "end": 304.66,
+    "word": " deviennent"
+   },
+   {
+    "start": 304.66,
+    "end": 304.8,
+    "word": " une"
+   },
+   {
+    "start": 304.8,
+    "end": 305.14,
+    "word": " barrière"
+   },
+   {
+    "start": 305.14,
+    "end": 306.08,
+    "word": " artificielle"
+   },
+   {
+    "start": 306.08,
+    "end": 306.54,
+    "word": " payée"
+   },
+   {
+    "start": 306.54,
+    "end": 306.72,
+    "word": " par"
+   },
+   {
+    "start": 306.72,
+    "end": 306.86,
+    "word": " les"
+   },
+   {
+    "start": 306.86,
+    "end": 307.26,
+    "word": " familles"
+   },
+   {
+    "start": 307.26,
+    "end": 307.44,
+    "word": " à"
+   },
+   {
+    "start": 307.44,
+    "end": 307.54,
+    "word": " la"
+   },
+   {
+    "start": 307.54,
+    "end": 307.96,
+    "word": " caisse."
+   }
+  ]
+ },
+ {
+  "start": 308.38,
+  "end": 311.14,
+  "text": " Passons maintenant au moment le plus concret de votre semaine.",
+  "words": [
+   {
+    "start": 308.38,
+    "end": 308.72,
+    "word": " Passons"
+   },
+   {
+    "start": 308.72,
+    "end": 309.06,
+    "word": " maintenant"
+   },
+   {
+    "start": 309.06,
+    "end": 309.34,
+    "word": " au"
+   },
+   {
+    "start": 309.34,
+    "end": 309.56,
+    "word": " moment"
+   },
+   {
+    "start": 309.56,
+    "end": 309.76,
+    "word": " le"
+   },
+   {
+    "start": 309.76,
+    "end": 309.92,
+    "word": " plus"
+   },
+   {
+    "start": 309.92,
+    "end": 310.46,
+    "word": " concret"
+   },
+   {
+    "start": 310.46,
+    "end": 310.62,
+    "word": " de"
+   },
+   {
+    "start": 310.62,
+    "end": 310.76,
+    "word": " votre"
+   },
+   {
+    "start": 310.76,
+    "end": 311.14,
+    "word": " semaine."
+   }
+  ]
+ },
+ {
+  "start": 311.6,
+  "end": 314.22,
+  "text": " Votre passage devant le lecteur optique à la caisse.",
+  "words": [
+   {
+    "start": 311.6,
+    "end": 311.82,
+    "word": " Votre"
+   },
+   {
+    "start": 311.82,
+    "end": 312.2,
+    "word": " passage"
+   },
+   {
+    "start": 312.2,
+    "end": 312.56,
+    "word": " devant"
+   },
+   {
+    "start": 312.56,
+    "end": 312.8,
+    "word": " le"
+   },
+   {
+    "start": 312.8,
+    "end": 313.1,
+    "word": " lecteur"
+   },
+   {
+    "start": 313.1,
+    "end": 313.5,
+    "word": " optique"
+   },
+   {
+    "start": 313.5,
+    "end": 313.7,
+    "word": " à"
+   },
+   {
+    "start": 313.7,
+    "end": 313.84,
+    "word": " la"
+   },
+   {
+    "start": 313.84,
+    "end": 314.22,
+    "word": " caisse."
+   }
+  ]
+ },
+ {
+  "start": 314.64,
+  "end": 318.94,
+  "text": " Une enquête répétée de l'Union des consommateurs au Québec révèle un phénomène troublant.",
+  "words": [
+   {
+    "start": 314.64,
+    "end": 314.76,
+    "word": " Une"
+   },
+   {
+    "start": 314.76,
+    "end": 315.04,
+    "word": " enquête"
+   },
+   {
+    "start": 315.04,
+    "end": 315.54,
+    "word": " répétée"
+   },
+   {
+    "start": 315.54,
+    "end": 315.7,
+    "word": " de"
+   },
+   {
+    "start": 315.7,
+    "end": 315.82,
+    "word": " l"
+   },
+   {
+    "start": 315.82,
+    "end": 316.02,
+    "word": "'Union"
+   },
+   {
+    "start": 316.02,
+    "end": 316.14,
+    "word": " des"
+   },
+   {
+    "start": 316.14,
+    "end": 316.72,
+    "word": " consommateurs"
+   },
+   {
+    "start": 316.72,
+    "end": 316.92,
+    "word": " au"
+   },
+   {
+    "start": 316.92,
+    "end": 317.16,
+    "word": " Québec"
+   },
+   {
+    "start": 317.16,
+    "end": 317.78,
+    "word": " révèle"
+   },
+   {
+    "start": 317.78,
+    "end": 317.88,
+    "word": " un"
+   },
+   {
+    "start": 317.88,
+    "end": 318.38,
+    "word": " phénomène"
+   },
+   {
+    "start": 318.38,
+    "end": 318.94,
+    "word": " troublant."
+   }
+  ]
+ },
+ {
+  "start": 319.32,
+  "end": 324.6,
+  "text": " Les erreurs de prix entre la tablette et le lecteur de caisse ne sont presque jamais du 50-50.",
+  "words": [
+   {
+    "start": 319.32,
+    "end": 319.44,
+    "word": " Les"
+   },
+   {
+    "start": 319.44,
+    "end": 319.8,
+    "word": " erreurs"
+   },
+   {
+    "start": 319.8,
+    "end": 319.98,
+    "word": " de"
+   },
+   {
+    "start": 319.98,
+    "end": 320.22,
+    "word": " prix"
+   },
+   {
+    "start": 320.22,
+    "end": 320.54,
+    "word": " entre"
+   },
+   {
+    "start": 320.54,
+    "end": 320.74,
+    "word": " la"
+   },
+   {
+    "start": 320.74,
+    "end": 321.24,
+    "word": " tablette"
+   },
+   {
+    "start": 321.24,
+    "end": 321.36,
+    "word": " et"
+   },
+   {
+    "start": 321.36,
+    "end": 321.5,
+    "word": " le"
+   },
+   {
+    "start": 321.5,
+    "end": 321.8,
+    "word": " lecteur"
+   },
+   {
+    "start": 321.8,
+    "end": 321.94,
+    "word": " de"
+   },
+   {
+    "start": 321.94,
+    "end": 322.36,
+    "word": " caisse"
+   },
+   {
+    "start": 322.36,
+    "end": 322.58,
+    "word": " ne"
+   },
+   {
+    "start": 322.58,
+    "end": 322.76,
+    "word": " sont"
+   },
+   {
+    "start": 322.76,
+    "end": 323.06,
+    "word": " presque"
+   },
+   {
+    "start": 323.06,
+    "end": 323.66,
+    "word": " jamais"
+   },
+   {
+    "start": 323.66,
+    "end": 323.94,
+    "word": " du"
+   },
+   {
+    "start": 323.94,
+    "end": 324.22,
+    "word": " 50"
+   },
+   {
+    "start": 324.22,
+    "end": 324.6,
+    "word": "-50."
+   }
+  ]
+ },
+ {
+  "start": 324.6,
+  "end": 328.14,
+  "text": " Il est rarissime qu'un produit passe moins cher par erreur.",
+  "words": [
+   {
+    "start": 324.6,
+    "end": 325.36,
+    "word": " Il"
+   },
+   {
+    "start": 325.36,
+    "end": 325.48,
+    "word": " est"
+   },
+   {
+    "start": 325.48,
+    "end": 326.16,
+    "word": " rarissime"
+   },
+   {
+    "start": 326.16,
+    "end": 326.28,
+    "word": " qu"
+   },
+   {
+    "start": 326.28,
+    "end": 326.36,
+    "word": "'un"
+   },
+   {
+    "start": 326.36,
+    "end": 326.64,
+    "word": " produit"
+   },
+   {
+    "start": 326.64,
+    "end": 326.96,
+    "word": " passe"
+   },
+   {
+    "start": 326.96,
+    "end": 327.18,
+    "word": " moins"
+   },
+   {
+    "start": 327.18,
+    "end": 327.48,
+    "word": " cher"
+   },
+   {
+    "start": 327.48,
+    "end": 327.72,
+    "word": " par"
+   },
+   {
+    "start": 327.72,
+    "end": 328.14,
+    "word": " erreur."
+   }
+  ]
+ },
+ {
+  "start": 328.48,
+  "end": 331.9,
+  "text": " L'écart joue quasi systématiquement en faveur du commerçant.",
+  "words": [
+   {
+    "start": 328.48,
+    "end": 328.58,
+    "word": " L"
+   },
+   {
+    "start": 328.58,
+    "end": 328.84,
+    "word": "'écart"
+   },
+   {
+    "start": 328.84,
+    "end": 329.14,
+    "word": " joue"
+   },
+   {
+    "start": 329.14,
+    "end": 329.46,
+    "word": " quasi"
+   },
+   {
+    "start": 329.46,
+    "end": 330.52,
+    "word": " systématiquement"
+   },
+   {
+    "start": 330.52,
+    "end": 330.8,
+    "word": " en"
+   },
+   {
+    "start": 330.8,
+    "end": 331.24,
+    "word": " faveur"
+   },
+   {
+    "start": 331.24,
+    "end": 331.4,
+    "word": " du"
+   },
+   {
+    "start": 331.4,
+    "end": 331.9,
+    "word": " commerçant."
+   }
+  ]
+ },
+ {
+  "start": 332.28,
+  "end": 335.5,
+  "text": " Pire encore, face à des caisses de plus en plus automatisées",
+  "words": [
+   {
+    "start": 332.28,
+    "end": 332.48,
+    "word": " Pire"
+   },
+   {
+    "start": 332.48,
+    "end": 332.76,
+    "word": " encore,"
+   },
+   {
+    "start": 333.32,
+    "end": 333.44,
+    "word": " face"
+   },
+   {
+    "start": 333.44,
+    "end": 333.62,
+    "word": " à"
+   },
+   {
+    "start": 333.62,
+    "end": 333.74,
+    "word": " des"
+   },
+   {
+    "start": 333.74,
+    "end": 334.02,
+    "word": " caisses"
+   },
+   {
+    "start": 334.02,
+    "end": 334.18,
+    "word": " de"
+   },
+   {
+    "start": 334.18,
+    "end": 334.42,
+    "word": " plus"
+   },
+   {
+    "start": 334.42,
+    "end": 334.58,
+    "word": " en"
+   },
+   {
+    "start": 334.58,
+    "end": 334.74,
+    "word": " plus"
+   },
+   {
+    "start": 334.74,
+    "end": 335.5,
+    "word": " automatisées"
+   }
+  ]
+ },
+ {
+  "start": 335.5,
+  "end": 338.0,
+  "text": " et des changements de prix hebdomadaires par milliers,",
+  "words": [
+   {
+    "start": 335.5,
+    "end": 335.74,
+    "word": " et"
+   },
+   {
+    "start": 335.74,
+    "end": 335.88,
+    "word": " des"
+   },
+   {
+    "start": 335.88,
+    "end": 336.24,
+    "word": " changements"
+   },
+   {
+    "start": 336.24,
+    "end": 336.36,
+    "word": " de"
+   },
+   {
+    "start": 336.36,
+    "end": 336.52,
+    "word": " prix"
+   },
+   {
+    "start": 336.52,
+    "end": 337.22,
+    "word": " hebdomadaires"
+   },
+   {
+    "start": 337.22,
+    "end": 337.46,
+    "word": " par"
+   },
+   {
+    "start": 337.46,
+    "end": 338.0,
+    "word": " milliers,"
+   }
+  ]
+ },
+ {
+  "start": 338.32,
+  "end": 341.44,
+  "text": " les clients se heurtent souvent à des refus quand ils osent réclamer.",
+  "words": [
+   {
+    "start": 338.32,
+    "end": 338.4,
+    "word": " les"
+   },
+   {
+    "start": 338.4,
+    "end": 338.66,
+    "word": " clients"
+   },
+   {
+    "start": 338.66,
+    "end": 338.9,
+    "word": " se"
+   },
+   {
+    "start": 338.9,
+    "end": 339.24,
+    "word": " heurtent"
+   },
+   {
+    "start": 339.24,
+    "end": 339.58,
+    "word": " souvent"
+   },
+   {
+    "start": 339.58,
+    "end": 339.82,
+    "word": " à"
+   },
+   {
+    "start": 339.82,
+    "end": 339.94,
+    "word": " des"
+   },
+   {
+    "start": 339.94,
+    "end": 340.38,
+    "word": " refus"
+   },
+   {
+    "start": 340.38,
+    "end": 340.56,
+    "word": " quand"
+   },
+   {
+    "start": 340.56,
+    "end": 340.74,
+    "word": " ils"
+   },
+   {
+    "start": 340.74,
+    "end": 341.0,
+    "word": " osent"
+   },
+   {
+    "start": 341.0,
+    "end": 341.44,
+    "word": " réclamer."
+   }
+  ]
+ },
+ {
+  "start": 341.92,
+  "end": 344.42,
+  "text": " Et pourtant, au Québec, vous avez entre les mains",
+  "words": [
+   {
+    "start": 341.92,
+    "end": 342.02,
+    "word": " Et"
+   },
+   {
+    "start": 342.02,
+    "end": 342.32,
+    "word": " pourtant,"
+   },
+   {
+    "start": 342.74,
+    "end": 342.82,
+    "word": " au"
+   },
+   {
+    "start": 342.82,
+    "end": 343.08,
+    "word": " Québec,"
+   },
+   {
+    "start": 343.56,
+    "end": 343.62,
+    "word": " vous"
+   },
+   {
+    "start": 343.62,
+    "end": 343.84,
+    "word": " avez"
+   },
+   {
+    "start": 343.84,
+    "end": 344.04,
+    "word": " entre"
+   },
+   {
+    "start": 344.04,
+    "end": 344.24,
+    "word": " les"
+   },
+   {
+    "start": 344.24,
+    "end": 344.42,
+    "word": " mains"
+   }
+  ]
+ },
+ {
+  "start": 344.42,
+  "end": 347.22,
+  "text": " l'une des protections les plus puissantes en Amérique du Nord,",
+  "words": [
+   {
+    "start": 344.42,
+    "end": 344.64,
+    "word": " l"
+   },
+   {
+    "start": 344.64,
+    "end": 344.68,
+    "word": "'une"
+   },
+   {
+    "start": 344.68,
+    "end": 344.84,
+    "word": " des"
+   },
+   {
+    "start": 344.84,
+    "end": 345.28,
+    "word": " protections"
+   },
+   {
+    "start": 345.28,
+    "end": 345.58,
+    "word": " les"
+   },
+   {
+    "start": 345.58,
+    "end": 345.76,
+    "word": " plus"
+   },
+   {
+    "start": 345.76,
+    "end": 346.36,
+    "word": " puissantes"
+   },
+   {
+    "start": 346.36,
+    "end": 346.54,
+    "word": " en"
+   },
+   {
+    "start": 346.54,
+    "end": 346.82,
+    "word": " Amérique"
+   },
+   {
+    "start": 346.82,
+    "end": 347.02,
+    "word": " du"
+   },
+   {
+    "start": 347.02,
+    "end": 347.22,
+    "word": " Nord,"
+   }
+  ]
+ },
+ {
+  "start": 347.54,
+  "end": 349.9,
+  "text": " et la majorité des gens l'ignorent.",
+  "words": [
+   {
+    "start": 347.54,
+    "end": 347.68,
+    "word": " et"
+   },
+   {
+    "start": 347.68,
+    "end": 347.8,
+    "word": " la"
+   },
+   {
+    "start": 347.8,
+    "end": 348.36,
+    "word": " majorité"
+   },
+   {
+    "start": 348.36,
+    "end": 348.54,
+    "word": " des"
+   },
+   {
+    "start": 348.54,
+    "end": 348.82,
+    "word": " gens"
+   },
+   {
+    "start": 348.82,
+    "end": 349.2,
+    "word": " l"
+   },
+   {
+    "start": 349.2,
+    "end": 349.9,
+    "word": "'ignorent."
+   }
+  ]
+ },
+ {
+  "start": 349.94,
+  "end": 353.84,
+  "text": " La politique d'exactitude des prix bonifiée en mai 2025.",
+  "words": [
+   {
+    "start": 349.94,
+    "end": 350.08,
+    "word": " La"
+   },
+   {
+    "start": 350.08,
+    "end": 350.56,
+    "word": " politique"
+   },
+   {
+    "start": 350.56,
+    "end": 350.84,
+    "word": " d"
+   },
+   {
+    "start": 350.84,
+    "end": 351.44,
+    "word": "'exactitude"
+   },
+   {
+    "start": 351.44,
+    "end": 351.66,
+    "word": " des"
+   },
+   {
+    "start": 351.66,
+    "end": 351.88,
+    "word": " prix"
+   },
+   {
+    "start": 351.88,
+    "end": 352.72,
+    "word": " bonifiée"
+   },
+   {
+    "start": 352.72,
+    "end": 352.98,
+    "word": " en"
+   },
+   {
+    "start": 352.98,
+    "end": 353.16,
+    "word": " mai"
+   },
+   {
+    "start": 353.16,
+    "end": 353.84,
+    "word": " 2025."
+   }
+  ]
+ },
+ {
+  "start": 353.84,
+  "end": 358.32,
+  "text": " Si le prix scanné à la caisse est plus élevé que le prix affiché sur l'étiquette,",
+  "words": [
+   {
+    "start": 353.84,
+    "end": 354.56,
+    "word": " Si"
+   },
+   {
+    "start": 354.56,
+    "end": 354.7,
+    "word": " le"
+   },
+   {
+    "start": 354.7,
+    "end": 354.9,
+    "word": " prix"
+   },
+   {
+    "start": 354.9,
+    "end": 355.3,
+    "word": " scanné"
+   },
+   {
+    "start": 355.3,
+    "end": 355.4,
+    "word": " à"
+   },
+   {
+    "start": 355.4,
+    "end": 355.52,
+    "word": " la"
+   },
+   {
+    "start": 355.52,
+    "end": 355.9,
+    "word": " caisse"
+   },
+   {
+    "start": 355.9,
+    "end": 356.06,
+    "word": " est"
+   },
+   {
+    "start": 356.06,
+    "end": 356.36,
+    "word": " plus"
+   },
+   {
+    "start": 356.36,
+    "end": 356.72,
+    "word": " élevé"
+   },
+   {
+    "start": 356.72,
+    "end": 356.88,
+    "word": " que"
+   },
+   {
+    "start": 356.88,
+    "end": 357.06,
+    "word": " le"
+   },
+   {
+    "start": 357.06,
+    "end": 357.22,
+    "word": " prix"
+   },
+   {
+    "start": 357.22,
+    "end": 357.6,
+    "word": " affiché"
+   },
+   {
+    "start": 357.6,
+    "end": 357.76,
+    "word": " sur"
+   },
+   {
+    "start": 357.76,
+    "end": 357.88,
+    "word": " l"
+   },
+   {
+    "start": 357.88,
+    "end": 358.32,
+    "word": "'étiquette,"
+   }
+  ]
+ },
+ {
+  "start": 358.64,
+  "end": 363.04,
+  "text": " pour tout article de 15 $ au moins, le magasin doit vous le remettre gratuitement.",
+  "words": [
+   {
+    "start": 358.64,
+    "end": 358.72,
+    "word": " pour"
+   },
+   {
+    "start": 358.72,
+    "end": 358.92,
+    "word": " tout"
+   },
+   {
+    "start": 358.92,
+    "end": 359.34,
+    "word": " article"
+   },
+   {
+    "start": 359.34,
+    "end": 359.62,
+    "word": " de"
+   },
+   {
+    "start": 359.62,
+    "end": 359.9,
+    "word": " 15"
+   },
+   {
+    "start": 359.9,
+    "end": 360.2,
+    "word": " $"
+   },
+   {
+    "start": 360.2,
+    "end": 360.4,
+    "word": " au"
+   },
+   {
+    "start": 360.4,
+    "end": 360.62,
+    "word": " moins,"
+   },
+   {
+    "start": 360.88,
+    "end": 360.96,
+    "word": " le"
+   },
+   {
+    "start": 360.96,
+    "end": 361.4,
+    "word": " magasin"
+   },
+   {
+    "start": 361.4,
+    "end": 361.58,
+    "word": " doit"
+   },
+   {
+    "start": 361.58,
+    "end": 361.74,
+    "word": " vous"
+   },
+   {
+    "start": 361.74,
+    "end": 361.84,
+    "word": " le"
+   },
+   {
+    "start": 361.84,
+    "end": 362.16,
+    "word": " remettre"
+   },
+   {
+    "start": 362.16,
+    "end": 363.04,
+    "word": " gratuitement."
+   }
+  ]
+ },
+ {
+  "start": 363.44,
+  "end": 364.9,
+  "text": " Et s'il coûte plus de 15 $,",
+  "words": [
+   {
+    "start": 363.44,
+    "end": 363.56,
+    "word": " Et"
+   },
+   {
+    "start": 363.56,
+    "end": 363.68,
+    "word": " s"
+   },
+   {
+    "start": 363.68,
+    "end": 363.74,
+    "word": "'il"
+   },
+   {
+    "start": 363.74,
+    "end": 364.0,
+    "word": " coûte"
+   },
+   {
+    "start": 364.0,
+    "end": 364.22,
+    "word": " plus"
+   },
+   {
+    "start": 364.22,
+    "end": 364.38,
+    "word": " de"
+   },
+   {
+    "start": 364.38,
+    "end": 364.6,
+    "word": " 15"
+   },
+   {
+    "start": 364.6,
+    "end": 364.9,
+    "word": " $,"
+   }
+  ]
+ },
+ {
+  "start": 365.28,
+  "end": 369.36,
+  "text": " vous obtenez un rabais immédiat de 15 $ sur le plus bas prix affiché.",
+  "words": [
+   {
+    "start": 365.28,
+    "end": 365.38,
+    "word": " vous"
+   },
+   {
+    "start": 365.38,
+    "end": 365.8,
+    "word": " obtenez"
+   },
+   {
+    "start": 365.8,
+    "end": 365.92,
+    "word": " un"
+   },
+   {
+    "start": 365.92,
+    "end": 366.22,
+    "word": " rabais"
+   },
+   {
+    "start": 366.22,
+    "end": 366.98,
+    "word": " immédiat"
+   },
+   {
+    "start": 366.98,
+    "end": 367.12,
+    "word": " de"
+   },
+   {
+    "start": 367.12,
+    "end": 367.46,
+    "word": " 15"
+   },
+   {
+    "start": 367.46,
+    "end": 367.74,
+    "word": " $"
+   },
+   {
+    "start": 367.74,
+    "end": 368.04,
+    "word": " sur"
+   },
+   {
+    "start": 368.04,
+    "end": 368.22,
+    "word": " le"
+   },
+   {
+    "start": 368.22,
+    "end": 368.38,
+    "word": " plus"
+   },
+   {
+    "start": 368.38,
+    "end": 368.64,
+    "word": " bas"
+   },
+   {
+    "start": 368.64,
+    "end": 368.86,
+    "word": " prix"
+   },
+   {
+    "start": 368.86,
+    "end": 369.36,
+    "word": " affiché."
+   }
+  ]
+ },
+ {
+  "start": 369.72,
+  "end": 373.42,
+  "text": " Même si vous êtes déjà rentré chez vous, vous pouvez revenir avec votre reçu.",
+  "words": [
+   {
+    "start": 369.72,
+    "end": 369.88,
+    "word": " Même"
+   },
+   {
+    "start": 369.88,
+    "end": 370.08,
+    "word": " si"
+   },
+   {
+    "start": 370.08,
+    "end": 370.22,
+    "word": " vous"
+   },
+   {
+    "start": 370.22,
+    "end": 370.38,
+    "word": " êtes"
+   },
+   {
+    "start": 370.38,
+    "end": 370.68,
+    "word": " déjà"
+   },
+   {
+    "start": 370.68,
+    "end": 371.02,
+    "word": " rentré"
+   },
+   {
+    "start": 371.02,
+    "end": 371.2,
+    "word": " chez"
+   },
+   {
+    "start": 371.2,
+    "end": 371.42,
+    "word": " vous,"
+   },
+   {
+    "start": 371.72,
+    "end": 371.82,
+    "word": " vous"
+   },
+   {
+    "start": 371.82,
+    "end": 372.16,
+    "word": " pouvez"
+   },
+   {
+    "start": 372.16,
+    "end": 372.5,
+    "word": " revenir"
+   },
+   {
+    "start": 372.5,
+    "end": 372.74,
+    "word": " avec"
+   },
+   {
+    "start": 372.74,
+    "end": 372.98,
+    "word": " votre"
+   },
+   {
+    "start": 372.98,
+    "end": 373.42,
+    "word": " reçu."
+   }
+  ]
+ },
+ {
+  "start": 373.86,
+  "end": 377.16,
+  "text": " Ailleurs en Amérique du Nord, la riposte juridique s'accélère.",
+  "words": [
+   {
+    "start": 373.86,
+    "end": 374.16,
+    "word": " Ailleurs"
+   },
+   {
+    "start": 374.16,
+    "end": 374.32,
+    "word": " en"
+   },
+   {
+    "start": 374.32,
+    "end": 374.6,
+    "word": " Amérique"
+   },
+   {
+    "start": 374.6,
+    "end": 374.8,
+    "word": " du"
+   },
+   {
+    "start": 374.8,
+    "end": 374.98,
+    "word": " Nord,"
+   },
+   {
+    "start": 375.4,
+    "end": 375.48,
+    "word": " la"
+   },
+   {
+    "start": 375.48,
+    "end": 375.94,
+    "word": " riposte"
+   },
+   {
+    "start": 375.94,
+    "end": 376.5,
+    "word": " juridique"
+   },
+   {
+    "start": 376.5,
+    "end": 376.66,
+    "word": " s"
+   },
+   {
+    "start": 376.66,
+    "end": 377.16,
+    "word": "'accélère."
+   }
+  ]
+ },
+ {
+  "start": 377.5,
+  "end": 381.22,
+  "text": " L'État de New York oblige désormais à afficher un avertissement clair",
+  "words": [
+   {
+    "start": 377.5,
+    "end": 377.66,
+    "word": " L"
+   },
+   {
+    "start": 377.66,
+    "end": 377.82,
+    "word": "'État"
+   },
+   {
+    "start": 377.82,
+    "end": 377.96,
+    "word": " de"
+   },
+   {
+    "start": 377.96,
+    "end": 378.12,
+    "word": " New"
+   },
+   {
+    "start": 378.12,
+    "end": 378.4,
+    "word": " York"
+   },
+   {
+    "start": 378.4,
+    "end": 378.88,
+    "word": " oblige"
+   },
+   {
+    "start": 378.88,
+    "end": 379.42,
+    "word": " désormais"
+   },
+   {
+    "start": 379.42,
+    "end": 379.6,
+    "word": " à"
+   },
+   {
+    "start": 379.6,
+    "end": 379.98,
+    "word": " afficher"
+   },
+   {
+    "start": 379.98,
+    "end": 380.14,
+    "word": " un"
+   },
+   {
+    "start": 380.14,
+    "end": 380.68,
+    "word": " avertissement"
+   },
+   {
+    "start": 380.68,
+    "end": 381.22,
+    "word": " clair"
+   }
+  ]
+ },
+ {
+  "start": 381.22,
+  "end": 384.68,
+  "text": " dès qu'un algorithme fixe un prix à l'aide de vos données personnelles.",
+  "words": [
+   {
+    "start": 381.22,
+    "end": 381.58,
+    "word": " dès"
+   },
+   {
+    "start": 381.58,
+    "end": 381.7,
+    "word": " qu"
+   },
+   {
+    "start": 381.7,
+    "end": 381.78,
+    "word": "'un"
+   },
+   {
+    "start": 381.78,
+    "end": 382.38,
+    "word": " algorithme"
+   },
+   {
+    "start": 382.38,
+    "end": 382.78,
+    "word": " fixe"
+   },
+   {
+    "start": 382.78,
+    "end": 382.88,
+    "word": " un"
+   },
+   {
+    "start": 382.88,
+    "end": 383.1,
+    "word": " prix"
+   },
+   {
+    "start": 383.1,
+    "end": 383.4,
+    "word": " à"
+   },
+   {
+    "start": 383.4,
+    "end": 383.42,
+    "word": " l"
+   },
+   {
+    "start": 383.42,
+    "end": 383.52,
+    "word": "'aide"
+   },
+   {
+    "start": 383.52,
+    "end": 383.68,
+    "word": " de"
+   },
+   {
+    "start": 383.68,
+    "end": 383.78,
+    "word": " vos"
+   },
+   {
+    "start": 383.78,
+    "end": 384.02,
+    "word": " données"
+   },
+   {
+    "start": 384.02,
+    "end": 384.68,
+    "word": " personnelles."
+   }
+  ]
+ },
+ {
+  "start": 384.98,
+  "end": 387.32,
+  "text": " Le Maryland, le New Jersey et le Connecticut",
+  "words": [
+   {
+    "start": 384.98,
+    "end": 385.1,
+    "word": " Le"
+   },
+   {
+    "start": 385.1,
+    "end": 385.44,
+    "word": " Maryland,"
+   },
+   {
+    "start": 385.98,
+    "end": 386.1,
+    "word": " le"
+   },
+   {
+    "start": 386.1,
+    "end": 386.22,
+    "word": " New"
+   },
+   {
+    "start": 386.22,
+    "end": 386.52,
+    "word": " Jersey"
+   },
+   {
+    "start": 386.52,
+    "end": 386.84,
+    "word": " et"
+   },
+   {
+    "start": 386.84,
+    "end": 386.98,
+    "word": " le"
+   },
+   {
+    "start": 386.98,
+    "end": 387.32,
+    "word": " Connecticut"
+   }
+  ]
+ },
+ {
+  "start": 387.32,
+  "end": 391.62,
+  "text": " ont adopté des lois ciblées pour protéger les consommateurs en alimentation.",
+  "words": [
+   {
+    "start": 387.32,
+    "end": 387.9,
+    "word": " ont"
+   },
+   {
+    "start": 387.9,
+    "end": 388.34,
+    "word": " adopté"
+   },
+   {
+    "start": 388.34,
+    "end": 388.48,
+    "word": " des"
+   },
+   {
+    "start": 388.48,
+    "end": 388.72,
+    "word": " lois"
+   },
+   {
+    "start": 388.72,
+    "end": 389.28,
+    "word": " ciblées"
+   },
+   {
+    "start": 389.28,
+    "end": 389.5,
+    "word": " pour"
+   },
+   {
+    "start": 389.5,
+    "end": 389.96,
+    "word": " protéger"
+   },
+   {
+    "start": 389.96,
+    "end": 390.12,
+    "word": " les"
+   },
+   {
+    "start": 390.12,
+    "end": 390.74,
+    "word": " consommateurs"
+   },
+   {
+    "start": 390.74,
+    "end": 390.94,
+    "word": " en"
+   },
+   {
+    "start": 390.94,
+    "end": 391.62,
+    "word": " alimentation."
+   }
+  ]
+ },
+ {
+  "start": 391.9,
+  "end": 394.12,
+  "text": " Ici, au Québec, des partis d'opposition",
+  "words": [
+   {
+    "start": 391.9,
+    "end": 392.2,
+    "word": " Ici,"
+   },
+   {
+    "start": 392.44,
+    "end": 392.48,
+    "word": " au"
+   },
+   {
+    "start": 392.48,
+    "end": 392.7,
+    "word": " Québec,"
+   },
+   {
+    "start": 393.18,
+    "end": 393.28,
+    "word": " des"
+   },
+   {
+    "start": 393.28,
+    "end": 393.52,
+    "word": " partis"
+   },
+   {
+    "start": 393.52,
+    "end": 393.66,
+    "word": " d"
+   },
+   {
+    "start": 393.66,
+    "end": 394.12,
+    "word": "'opposition"
+   }
+  ]
+ },
+ {
+  "start": 394.12,
+  "end": 396.62,
+  "text": " ont pressé l'office de la protection du consommateur",
+  "words": [
+   {
+    "start": 394.12,
+    "end": 394.4,
+    "word": " ont"
+   },
+   {
+    "start": 394.4,
+    "end": 394.82,
+    "word": " pressé"
+   },
+   {
+    "start": 394.82,
+    "end": 394.96,
+    "word": " l"
+   },
+   {
+    "start": 394.96,
+    "end": 395.14,
+    "word": "'office"
+   },
+   {
+    "start": 395.14,
+    "end": 395.24,
+    "word": " de"
+   },
+   {
+    "start": 395.24,
+    "end": 395.32,
+    "word": " la"
+   },
+   {
+    "start": 395.32,
+    "end": 395.62,
+    "word": " protection"
+   },
+   {
+    "start": 395.62,
+    "end": 395.92,
+    "word": " du"
+   },
+   {
+    "start": 395.92,
+    "end": 396.62,
+    "word": " consommateur"
+   }
+  ]
+ },
+ {
+  "start": 396.62,
+  "end": 399.34,
+  "text": " d'encadrer d'avance la tarification dynamique",
+  "words": [
+   {
+    "start": 396.62,
+    "end": 396.92,
+    "word": " d"
+   },
+   {
+    "start": 396.92,
+    "end": 397.36,
+    "word": "'encadrer"
+   },
+   {
+    "start": 397.36,
+    "end": 397.58,
+    "word": " d"
+   },
+   {
+    "start": 397.58,
+    "end": 397.9,
+    "word": "'avance"
+   },
+   {
+    "start": 397.9,
+    "end": 398.12,
+    "word": " la"
+   },
+   {
+    "start": 398.12,
+    "end": 398.5,
+    "word": " tarification"
+   },
+   {
+    "start": 398.5,
+    "end": 399.34,
+    "word": " dynamique"
+   }
+  ]
+ },
+ {
+  "start": 399.34,
+  "end": 401.0,
+  "text": " avant qu'elle ne devienne la norme,",
+  "words": [
+   {
+    "start": 399.34,
+    "end": 399.76,
+    "word": " avant"
+   },
+   {
+    "start": 399.76,
+    "end": 399.96,
+    "word": " qu"
+   },
+   {
+    "start": 399.96,
+    "end": 400.02,
+    "word": "'elle"
+   },
+   {
+    "start": 400.02,
+    "end": 400.14,
+    "word": " ne"
+   },
+   {
+    "start": 400.14,
+    "end": 400.42,
+    "word": " devienne"
+   },
+   {
+    "start": 400.42,
+    "end": 400.6,
+    "word": " la"
+   },
+   {
+    "start": 400.6,
+    "end": 401.0,
+    "word": " norme,"
+   }
+  ]
+ },
+ {
+  "start": 401.2,
+  "end": 404.34,
+  "text": " tandis qu'Ottawa scrute les pratiques de prix planchés dans les circulaires.",
+  "words": [
+   {
+    "start": 401.2,
+    "end": 401.48,
+    "word": " tandis"
+   },
+   {
+    "start": 401.48,
+    "end": 401.58,
+    "word": " qu"
+   },
+   {
+    "start": 401.58,
+    "end": 401.88,
+    "word": "'Ottawa"
+   },
+   {
+    "start": 401.88,
+    "end": 402.36,
+    "word": " scrute"
+   },
+   {
+    "start": 402.36,
+    "end": 402.5,
+    "word": " les"
+   },
+   {
+    "start": 402.5,
+    "end": 402.84,
+    "word": " pratiques"
+   },
+   {
+    "start": 402.84,
+    "end": 403.0,
+    "word": " de"
+   },
+   {
+    "start": 403.0,
+    "end": 403.14,
+    "word": " prix"
+   },
+   {
+    "start": 403.14,
+    "end": 403.54,
+    "word": " planchés"
+   },
+   {
+    "start": 403.54,
+    "end": 403.68,
+    "word": " dans"
+   },
+   {
+    "start": 403.68,
+    "end": 403.82,
+    "word": " les"
+   },
+   {
+    "start": 403.82,
+    "end": 404.34,
+    "word": " circulaires."
+   }
+  ]
+ },
+ {
+  "start": 404.72,
+  "end": 407.64,
+  "text": " La fenêtre pourager appréventivement est grande ouverte maintenant.",
+  "words": [
+   {
+    "start": 404.72,
+    "end": 404.86,
+    "word": " La"
+   },
+   {
+    "start": 404.86,
+    "end": 405.14,
+    "word": " fenêtre"
+   },
+   {
+    "start": 405.14,
+    "end": 405.52,
+    "word": " pourager"
+   },
+   {
+    "start": 405.52,
+    "end": 406.34,
+    "word": " appréventivement"
+   },
+   {
+    "start": 406.34,
+    "end": 406.58,
+    "word": " est"
+   },
+   {
+    "start": 406.58,
+    "end": 406.86,
+    "word": " grande"
+   },
+   {
+    "start": 406.86,
+    "end": 407.3,
+    "word": " ouverte"
+   },
+   {
+    "start": 407.3,
+    "end": 407.64,
+    "word": " maintenant."
+   }
+  ]
+ },
+ {
+  "start": 408.0,
+  "end": 410.22,
+  "text": " C'est maintenant à vous de trancher dans ce spécial reportage.",
+  "words": [
+   {
+    "start": 408.0,
+    "end": 408.18,
+    "word": " C"
+   },
+   {
+    "start": 408.18,
+    "end": 408.18,
+    "word": "'est"
+   },
+   {
+    "start": 408.18,
+    "end": 408.46,
+    "word": " maintenant"
+   },
+   {
+    "start": 408.46,
+    "end": 408.7,
+    "word": " à"
+   },
+   {
+    "start": 408.7,
+    "end": 408.9,
+    "word": " vous"
+   },
+   {
+    "start": 408.9,
+    "end": 409.04,
+    "word": " de"
+   },
+   {
+    "start": 409.04,
+    "end": 409.44,
+    "word": " trancher"
+   },
+   {
+    "start": 409.44,
+    "end": 409.62,
+    "word": " dans"
+   },
+   {
+    "start": 409.62,
+    "end": 409.76,
+    "word": " ce"
+   },
+   {
+    "start": 409.76,
+    "end": 410.12,
+    "word": " spécial"
+   },
+   {
+    "start": 410.12,
+    "end": 410.4,
+    "word": " reportage."
+   }
+  ]
+ },
+ {
+  "start": 410.4,
+  "end": 412.76,
+  "text": " Face aux étiquettes électroniques,",
+  "words": [
+   {
+    "start": 410.4,
+    "end": 411.4,
+    "word": " Face"
+   },
+   {
+    "start": 411.4,
+    "end": 411.66,
+    "word": " aux"
+   },
+   {
+    "start": 411.66,
+    "end": 412.02,
+    "word": " étiquettes"
+   },
+   {
+    "start": 412.02,
+    "end": 412.76,
+    "word": " électroniques,"
+   }
+  ]
+ },
+ {
+  "start": 413.02,
+  "end": 416.44,
+  "text": " aux cartes de fidélité et à la puissance de l'intelligence artificielle",
+  "words": [
+   {
+    "start": 413.02,
+    "end": 413.12,
+    "word": " aux"
+   },
+   {
+    "start": 413.12,
+    "end": 413.38,
+    "word": " cartes"
+   },
+   {
+    "start": 413.38,
+    "end": 413.48,
+    "word": " de"
+   },
+   {
+    "start": 413.48,
+    "end": 414.04,
+    "word": " fidélité"
+   },
+   {
+    "start": 414.04,
+    "end": 414.36,
+    "word": " et"
+   },
+   {
+    "start": 414.36,
+    "end": 414.46,
+    "word": " à"
+   },
+   {
+    "start": 414.46,
+    "end": 414.58,
+    "word": " la"
+   },
+   {
+    "start": 414.58,
+    "end": 415.04,
+    "word": " puissance"
+   },
+   {
+    "start": 415.04,
+    "end": 415.24,
+    "word": " de"
+   },
+   {
+    "start": 415.24,
+    "end": 415.32,
+    "word": " l"
+   },
+   {
+    "start": 415.32,
+    "end": 415.72,
+    "word": "'intelligence"
+   },
+   {
+    "start": 415.72,
+    "end": 416.44,
+    "word": " artificielle"
+   }
+  ]
+ },
+ {
+  "start": 416.44,
+  "end": 417.46,
+  "text": " dans nos supermarchés,",
+  "words": [
+   {
+    "start": 416.44,
+    "end": 416.58,
+    "word": " dans"
+   },
+   {
+    "start": 416.58,
+    "end": 416.72,
+    "word": " nos"
+   },
+   {
+    "start": 416.72,
+    "end": 417.46,
+    "word": " supermarchés,"
+   }
+  ]
+ },
+ {
+  "start": 417.78,
+  "end": 420.36,
+  "text": " que devrait faire le gouvernement du Québec dès cette année?",
+  "words": [
+   {
+    "start": 417.78,
+    "end": 417.84,
+    "word": " que"
+   },
+   {
+    "start": 417.84,
+    "end": 418.08,
+    "word": " devrait"
+   },
+   {
+    "start": 418.08,
+    "end": 418.38,
+    "word": " faire"
+   },
+   {
+    "start": 418.38,
+    "end": 418.54,
+    "word": " le"
+   },
+   {
+    "start": 418.54,
+    "end": 418.82,
+    "word": " gouvernement"
+   },
+   {
+    "start": 418.82,
+    "end": 419.12,
+    "word": " du"
+   },
+   {
+    "start": 419.12,
+    "end": 419.42,
+    "word": " Québec"
+   },
+   {
+    "start": 419.42,
+    "end": 419.86,
+    "word": " dès"
+   },
+   {
+    "start": 419.86,
+    "end": 420.12,
+    "word": " cette"
+   },
+   {
+    "start": 420.12,
+    "end": 420.36,
+    "word": " année?"
+   }
+  ]
+ },
+ {
+  "start": 421.14,
+  "end": 424.66,
+  "text": " Option A, interdire dès maintenant toute tarification dynamique",
+  "words": [
+   {
+    "start": 421.14,
+    "end": 421.14,
+    "word": " Option"
+   },
+   {
+    "start": 421.14,
+    "end": 421.44,
+    "word": " A,"
+   },
+   {
+    "start": 421.78,
+    "end": 422.4,
+    "word": " interdire"
+   },
+   {
+    "start": 422.4,
+    "end": 422.62,
+    "word": " dès"
+   },
+   {
+    "start": 422.62,
+    "end": 422.98,
+    "word": " maintenant"
+   },
+   {
+    "start": 422.98,
+    "end": 423.32,
+    "word": " toute"
+   },
+   {
+    "start": 423.32,
+    "end": 423.84,
+    "word": " tarification"
+   },
+   {
+    "start": 423.84,
+    "end": 424.66,
+    "word": " dynamique"
+   }
+  ]
+ },
+ {
+  "start": 424.66,
+  "end": 426.40000000000003,
+  "text": " ou personnalisée sur les aliments essentiels",
+  "words": [
+   {
+    "start": 424.66,
+    "end": 424.9,
+    "word": " ou"
+   },
+   {
+    "start": 424.9,
+    "end": 425.58,
+    "word": " personnalisée"
+   },
+   {
+    "start": 425.58,
+    "end": 425.82,
+    "word": " sur"
+   },
+   {
+    "start": 425.82,
+    "end": 425.94,
+    "word": " les"
+   },
+   {
+    "start": 425.94,
+    "end": 426.26,
+    "word": " aliments"
+   },
+   {
+    "start": 426.26,
+    "end": 426.56,
+    "word": " essentiels"
+   }
+  ]
+ },
+ {
+  "start": 427.04,
+  "end": 429.66,
+  "text": " et imposer une transparence totale sur nos données.",
+  "words": [
+   {
+    "start": 427.04,
+    "end": 427.36,
+    "word": " et"
+   },
+   {
+    "start": 427.36,
+    "end": 427.74,
+    "word": " imposer"
+   },
+   {
+    "start": 427.74,
+    "end": 427.92,
+    "word": " une"
+   },
+   {
+    "start": 427.92,
+    "end": 428.56,
+    "word": " transparence"
+   },
+   {
+    "start": 428.56,
+    "end": 429.06,
+    "word": " totale"
+   },
+   {
+    "start": 429.06,
+    "end": 429.24,
+    "word": " sur"
+   },
+   {
+    "start": 429.24,
+    "end": 429.38,
+    "word": " nos"
+   },
+   {
+    "start": 429.38,
+    "end": 429.66,
+    "word": " données."
+   }
+  ]
+ },
+ {
+  "start": 430.04,
+  "end": 433.68,
+  "text": " Ou Option B, laisser les épiceries utiliser ces outils",
+  "words": [
+   {
+    "start": 430.04,
+    "end": 430.3,
+    "word": " Ou"
+   },
+   {
+    "start": 430.3,
+    "end": 430.94,
+    "word": " Option"
+   },
+   {
+    "start": 430.94,
+    "end": 431.26,
+    "word": " B,"
+   },
+   {
+    "start": 431.68,
+    "end": 431.88,
+    "word": " laisser"
+   },
+   {
+    "start": 431.88,
+    "end": 432.08,
+    "word": " les"
+   },
+   {
+    "start": 432.08,
+    "end": 432.5,
+    "word": " épiceries"
+   },
+   {
+    "start": 432.5,
+    "end": 432.98,
+    "word": " utiliser"
+   },
+   {
+    "start": 432.98,
+    "end": 433.32,
+    "word": " ces"
+   },
+   {
+    "start": 433.32,
+    "end": 433.68,
+    "word": " outils"
+   }
+  ]
+ },
+ {
+  "start": 433.68,
+  "end": 436.44,
+  "text": " pour réduire le gaspillage et accélérer les rabais",
+  "words": [
+   {
+    "start": 433.68,
+    "end": 433.9,
+    "word": " pour"
+   },
+   {
+    "start": 433.9,
+    "end": 434.34,
+    "word": " réduire"
+   },
+   {
+    "start": 434.34,
+    "end": 434.46,
+    "word": " le"
+   },
+   {
+    "start": 434.46,
+    "end": 435.14,
+    "word": " gaspillage"
+   },
+   {
+    "start": 435.14,
+    "end": 435.34,
+    "word": " et"
+   },
+   {
+    "start": 435.34,
+    "end": 435.88,
+    "word": " accélérer"
+   },
+   {
+    "start": 435.88,
+    "end": 436.06,
+    "word": " les"
+   },
+   {
+    "start": 436.06,
+    "end": 436.44,
+    "word": " rabais"
+   }
+  ]
+ },
+ {
+  "start": 436.44,
+  "end": 439.44,
+  "text": " tout en misant sur la concurrence et la règle des 15 $.",
+  "words": [
+   {
+    "start": 436.44,
+    "end": 436.76,
+    "word": " tout"
+   },
+   {
+    "start": 436.76,
+    "end": 436.96,
+    "word": " en"
+   },
+   {
+    "start": 436.96,
+    "end": 437.26,
+    "word": " misant"
+   },
+   {
+    "start": 437.26,
+    "end": 437.4,
+    "word": " sur"
+   },
+   {
+    "start": 437.4,
+    "end": 437.54,
+    "word": " la"
+   },
+   {
+    "start": 437.54,
+    "end": 438.22,
+    "word": " concurrence"
+   },
+   {
+    "start": 438.22,
+    "end": 438.38,
+    "word": " et"
+   },
+   {
+    "start": 438.38,
+    "end": 438.5,
+    "word": " la"
+   },
+   {
+    "start": 438.5,
+    "end": 438.72,
+    "word": " règle"
+   },
+   {
+    "start": 438.72,
+    "end": 438.94,
+    "word": " des"
+   },
+   {
+    "start": 438.94,
+    "end": 439.18,
+    "word": " 15"
+   },
+   {
+    "start": 439.18,
+    "end": 439.44,
+    "word": " $."
+   }
+  ]
+ },
+ {
+  "start": 439.98,
+  "end": 442.84,
+  "text": " Écrivez Option A ou Option B en commentaire,",
+  "words": [
+   {
+    "start": 439.98,
+    "end": 440.5,
+    "word": " Écrivez"
+   },
+   {
+    "start": 440.5,
+    "end": 440.82,
+    "word": " Option"
+   },
+   {
+    "start": 440.82,
+    "end": 441.22,
+    "word": " A"
+   },
+   {
+    "start": 441.22,
+    "end": 441.42,
+    "word": " ou"
+   },
+   {
+    "start": 441.42,
+    "end": 441.78,
+    "word": " Option"
+   },
+   {
+    "start": 441.78,
+    "end": 442.02,
+    "word": " B"
+   },
+   {
+    "start": 442.02,
+    "end": 442.16,
+    "word": " en"
+   },
+   {
+    "start": 442.16,
+    "end": 442.84,
+    "word": " commentaire,"
+   }
+  ]
+ },
+ {
+  "start": 443.02,
+  "end": 444.66,
+  "text": " partagez cette enquête autour de vous",
+  "words": [
+   {
+    "start": 443.02,
+    "end": 443.52,
+    "word": " partagez"
+   },
+   {
+    "start": 443.52,
+    "end": 443.66,
+    "word": " cette"
+   },
+   {
+    "start": 443.66,
+    "end": 444.04,
+    "word": " enquête"
+   },
+   {
+    "start": 444.04,
+    "end": 444.22,
+    "word": " autour"
+   },
+   {
+    "start": 444.22,
+    "end": 444.44,
+    "word": " de"
+   },
+   {
+    "start": 444.44,
+    "end": 444.66,
+    "word": " vous"
+   }
+  ]
+ },
+ {
+  "start": 444.66,
+  "end": 446.14,
+  "text": " et abonnez-vous à Front Nord!",
+  "words": [
+   {
+    "start": 444.66,
+    "end": 445.02,
+    "word": " et"
+   },
+   {
+    "start": 445.02,
+    "end": 445.5,
+    "word": " abonnez"
+   },
+   {
+    "start": 445.5,
+    "end": 445.62,
+    "word": "-vous"
+   },
+   {
+    "start": 445.62,
+    "end": 445.74,
+    "word": " à"
+   },
+   {
+    "start": 445.74,
+    "end": 445.86,
+    "word": " Front"
+   },
+   {
+    "start": 445.86,
+    "end": 446.14,
+    "word": " Nord!"
+   }
+  ]
+ }
+]

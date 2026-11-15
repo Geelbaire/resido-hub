@@ -1,7 +1,7 @@
 import { renderBroadcastFrame, resolveTimeline } from './broadcast-canvas.js';
 
 const params = new URLSearchParams(window.location.search);
-const episodeDate = params.get('episode') || '2026-11-14-Episode-03';
+const episodeDate = params.get('episode') || '2026-11-14-Special-Reportage-Epicerie';
 const initialFormat = params.get('format') === '9x16' ? '9x16' : '16x9';
 
 // Empreinte SHA-256 de "pseudo:motdepasse" (aucun mot de passe en clair dans le code)

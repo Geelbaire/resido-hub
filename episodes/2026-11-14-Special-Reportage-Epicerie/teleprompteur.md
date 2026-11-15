@@ -1,0 +1,96 @@
+# 🎙️ TÉLÉPROMPTEUR — FRANC NORD : SPÉCIAL REPORTAGE (STYLE *ENQUÊTE / LA FACTURE*)
+**Titre : Épicerie sous algorithme : étiquettes électroniques, baux secrets et le piège des prix personnalisés**
+**Durée totale : 8 minutes 30 secondes (510 s • 13 scènes)**
+
+---
+
+## CHAPITRE 00 — OUVERTURE DE L'ENQUÊTE (00:00 → 00:34)
+
+### [00:00 → 00:34] Scène 1 — `rep-ouverture-choc` (34 s)
+> « Bienvenue dans cette édition spéciale reportage de **Franc Nord**, sans filtre et sans commanditaire.
+>
+> Aujourd'hui, on ouvre un dossier qui touche chaque famille québécoise à chaque semaine, et dont on ne vous explique presque jamais la mécanique complète : ce qui se cache vraiment derrière l'explosion de votre facture d'épicerie. Étiquettes électroniques connectées, dossiers clients de soixante pages, clauses secrètes dans les baux commerciaux et règle méconnue des quinze dollars à la caisse. Voici notre enquête sur la nouvelle machine des géants alimentaires. »
+
+---
+
+## CHAPITRE 01 — ÉTIQUETTES ÉLECTRONIQUES & TARIFICATION DE SURVEILLANCE (00:34 → 03:14)
+
+### [00:34 → 01:14] Scène 2 — `rep-etiquettes-electroniques` (40 s)
+> « Commençons par un objet banal que vous croisez désormais partout chez Maxi, Provigo, Metro, Super C ou IGA : la petite **étiquette électronique** sur la tablette.
+>
+> Officiellement, elle remplace le papier pour économiser du temps aux employés et éviter les erreurs. Mais sur le plan technique, ces écrans sont reliés sans fil à un serveur central. En quelques secondes, un algorithme peut changer le prix de milliers de produits, dans une seule succursale, à une heure précise de la journée ou selon la météo. L'infrastructure du prix variable, comme chez Uber ou les compagnies aériennes, est déjà installée dans nos allées. »
+
+### [01:14 → 01:56] Scène 3 — `rep-scandale-instacart-23pct` (42 s)
+> « Est-ce de la science-fiction ? Non, ça vient d'être pris sur le fait juste au sud de notre frontière. En décembre deux mille vingt-cinq, une enquête choc de *Consumer Reports* a démontré que sur la plateforme **Instacart**, deux acheteurs commandant exactement les mêmes articles dans le même magasin se voyaient afficher des prix différents — avec des écarts allant jusqu'à **vingt-trois pour cent** !
+>
+> Une autre enquête sur Kroger a révélé des dossiers clients de **soixante pages** compilant revenu estimé, taille de la famille et géolocalisation. Résultat : la FTC américaine a lancé des ordonnances contre Instacart, Walmart et Target. »
+
+### [01:56 → 02:35] Scène 4 — `rep-cartes-fidelite-ia-canada` (39 s)
+> « Et au Canada ? Chaque fois que vous scannez votre carte **PC Optimum, Moi ou Scène Plus**, vous ne récoltez pas seulement quelques sous de rabais : vous nourrissez l'une des plus vastes bases de données comportementales du pays.
+>
+> Ajoutez maintenant l'arrivée de l'intelligence artificielle, comme le partenariat entre Loblaw et ChatGPT pour générer des listes d'épicerie. Officiellement, les bannières jurent qu'elles n'utilisent pas de tarification personnalisée en magasin. Mais les chercheurs et les élus sonnent l'alarme : aucune loi québécoise n'interdit encore explicitement à un épicier de moduler ses prix grâce à vos données. »
+
+### [02:35 → 03:14] Scène 5 — `rep-deux-cotes-etiquettes` (39 s)
+> « Faut-il bannir ces étiquettes électroniques et l'IA en épicerie ? Regardons les deux côtés de la médaille avec rigueur.
+>
+> **D'un côté**, les détaillants rappellent que les étiquettes numériques éliminent des tonnes de papier, réduisent les erreurs humaines d'affichage et permettent d'appliquer instantanément des rabais à la baisse sur les viandes ou les pains près de leur date limite, réduisant ainsi le gaspillage alimentaire.
+>
+> **De l'autre côté**, les groupes de consommateurs soulignent que l'alimentation est un bien essentiel, pas un billet de concert : si l'outil permet de baisser les prix, il permet tout autant de les gonfler à dix-sept heures un vendredi soir. »
+
+---
+
+## CHAPITRE 02 — BAUX SECRETS & OLIGOPOLE ALIMENTAIRE (03:14 → 05:50)
+
+### [03:14 → 03:52] Scène 6 — `rep-oligopole-89pct` (38 s)
+> « Mais la technologie n'explique pas tout. Pour comprendre pourquoi votre marge de manœuvre est si mince, il faut remonter à la structure même du marché.
+>
+> Au Canada, trois géants — **Loblaw, Empire-Sobeys et Metro** — contrôlent près de **quatre-vingt-neuf pour cent** du marché des supermarchés et épiceries traditionnels, aux côtés de Costco et Walmart. Maxi, Provigo, Pharmaprix d'un côté ; Metro, Super C, Adonis, Jean Coutu de l'autre ; IGA, Tradition et Bonichoix pour le troisième. Quand trois groupes tiennent presque toutes les bannières de votre quartier, la concurrence réelle devient beaucoup plus fragile. »
+
+### [03:52 → 04:34] Scène 7 — `rep-baux-secrets-concurrence` (42 s)
+> « Et voici l'un des secrets les mieux gardés de l'immobilier commercial, révélé par le **Bureau de la concurrence** : les « contrôles de propriété ». Pendant des années, de grandes chaînes ont inséré dans leurs baux ou leurs actes de vente des clauses d'exclusivité interdisant au propriétaire d'un centre commercial de louer un local à un autre épicier, ou même empêchant un magasin à un dollar ou une boulangerie de vendre certains produits frais !
+>
+> En février deux mille vingt-cinq, Loblaw a accepté de reculer. Et en septembre deux mille vingt-six, après des enquêtes en Cour fédérale, Empire-Sobeys a dû signer une entente juridiquement contraignante pour y mettre fin. »
+
+### [04:34 → 05:12] Scène 8 — `rep-impact-quartiers-quebec` (38 s)
+> « Quel est le lien direct avec votre portefeuille au Québec ? Quand un bail restrictif empêche un compétiteur escompte ou un nouvel acteur international de s'installer dans votre quartier ou votre ville en région, vous perdez le seul levier qui force les prix à baisser : la vraie concurrence locale.
+>
+> Le Bureau de la concurrence a d'ailleurs recommandé d'attirer de nouveaux épiciers étrangers, de soutenir les indépendants et de standardiser l'affichage du prix unitaire. Car même avec des ententes pour libérer les baux, les habitudes et la domination des trois grands ne disparaissent pas du jour au lendemain. »
+
+### [05:12 → 05:50] Scène 9 — `rep-deux-cotes-baux` (38 s)
+> « Là encore, écoutons les deux versions.
+>
+> **Pour les promoteurs immobiliers et les chaînes établies**, une clause d'exclusivité servait historiquement à sécuriser un investissement massif : sans la garantie d'être le seul grand supermarché d'un nouveau centre commercial, personne ne risquerait des dizaines de millions de dollars pour ouvrir en banlieue ou en région.
+>
+> **Pour les économistes de la concurrence**, cette excuse ne tient plus : lorsque ces clauses survivent même après la fermeture d'un magasin ou bloquent des commerces complémentaires pendant vingt ans, elles deviennent une barrière artificielle payée par les familles à la caisse. »
+
+---
+
+## CHAPITRE 03 — VOS DROITS À LA CAISSE & RIPOSTE JURIDIQUE (05:50 → 07:50)
+
+### [05:50 → 06:30] Scène 10 — `rep-erreurs-caisse-la-facture` (40 s)
+> « Passons maintenant au moment le plus concret de votre semaine : votre passage devant le lecteur optique à la caisse. Une enquête répétée de l'**Union des consommateurs** au Québec révèle un phénomène troublant : les erreurs de prix entre la tablette et le lecteur de caisse ne sont presque jamais du cinquante-cinquante.
+>
+> Il est rarissime qu'un produit passe moins cher par erreur ; l'écart joue quasi systématiquement en faveur du commerçant. Pire encore : face à des caisses de plus en plus automatisées et des changements de prix hebdomadaires par milliers, les clients se heurtent souvent à des refus quand ils osent réclamer. »
+
+### [06:30 → 07:11] Scène 11 — `rep-regle-15-dollars-opc` (41 s)
+> « Et pourtant, au Québec, vous avez entre les mains l'une des protections les plus puissantes en Amérique du Nord, et la majorité des gens l'ignorent : la **Politique d'exactitude des prix**, bonifiée en mai deux mille vingt-cinq.
+>
+> Si le prix scanné à la caisse est plus élevé que le prix affiché sur l'étiquette : pour tout article de **quinze dollars ou moins**, le magasin doit vous le remettre **gratuitement** ! Et s'il coûte plus de quinze dollars, vous obtenez un **rabais immédiat de quinze dollars** sur le plus bas prix affiché. Même si vous êtes déjà rentré chez vous, vous pouvez revenir avec votre reçu ! »
+
+### [07:11 → 07:50] Scène 12 — `rep-lois-monde-vs-quebec` (39 s)
+> « Ailleurs en Amérique du Nord, la riposte juridique s'accélère. L'État de **New York** oblige désormais à afficher un avertissement clair dès qu'un algorithme fixe un prix à l'aide de vos données personnelles. Le Maryland, le New Jersey et le Connecticut ont adopté des lois ciblées pour protéger les consommateurs en alimentation.
+>
+> Ici, au Québec, des partis d'opposition ont pressé l'**Office de la protection du consommateur** d'encadrer d'avance la tarification dynamique avant qu'elle ne devienne la norme, tandis qu'Ottawa scrute les pratiques de prix plancher dans les circulaires. La fenêtre pour agir préventivement est grande ouverte maintenant. »
+
+---
+
+## CHAPITRE 04 — LA QUESTION DU JOUR (07:50 → 08:30)
+
+### [07:50 → 08:30] Scène 13 — `rep-conclusion-debat` (41 s)
+> « C'est maintenant à vous de trancher dans ce spécial reportage. Face aux étiquettes électroniques, aux cartes de fidélité et à la puissance de l'intelligence artificielle dans nos supermarchés, que devrait faire le gouvernement du Québec dès cette année ?
+>
+> **Option A** : interdire dès maintenant toute tarification dynamique ou personnalisée sur les aliments essentiels et imposer une transparence totale sur nos données.
+>
+> Ou **Option B** : laisser les épiceries utiliser ces outils pour réduire le gaspillage et accélérer les rabais, tout en misant sur la concurrence et la règle des quinze dollars.
+>
+> Écrivez **Option A** ou **Option B** en commentaire, partagez cette enquête autour de vous, et abonnez-vous à Franc Nord ! »

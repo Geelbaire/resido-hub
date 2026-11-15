@@ -36,9 +36,9 @@ jobs:
       - name: Ajouter le MP4 16:9 du dernier épisode
         env:
           GH_TOKEN: ${{ github.token }}
-          DERNIER_DOSSIER: 2026-11-14-Episode-03
-          DERNIERE_RELEASE: episode-03-2026-11-14
-          DERNIER_MP4: Franc-Nord-Episode-03-16x9.mp4
+          DERNIER_DOSSIER: 2026-11-14-Special-Reportage-Epicerie
+          DERNIERE_RELEASE: episode-04-2026-11-14
+          DERNIER_MP4: Franc-Nord-Episode-04-16x9.mp4
         run: |
           mkdir -p "_site/videos/$DERNIER_DOSSIER"
           gh release download "$DERNIERE_RELEASE" --repo "$GITHUB_REPOSITORY" --pattern "$DERNIER_MP4" --dir "_site/videos/$DERNIER_DOSSIER"

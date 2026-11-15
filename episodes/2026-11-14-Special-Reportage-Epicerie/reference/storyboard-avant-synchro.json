@@ -1,0 +1,214 @@
+{
+  "showName": "FRANC NORD",
+  "showTagline": "Édition Spéciale Reportage • Sans filtre ni commanditaire",
+  "contactEmail": "contact.francnord@proton.me",
+  "episodeDate": "2026-11-14",
+  "episodeNumber": 4,
+  "episodeType": "special-reportage",
+  "title": "Épicerie sous algorithme : étiquettes électroniques, baux secrets et le piège des prix personnalisés",
+  "totalDurationSeconds": 510,
+  "chapters": [
+    {
+      "id": "ch0",
+      "number": "00",
+      "label": "ENQUÊTE • OUVERTURE",
+      "colorKey": "amber"
+    },
+    {
+      "id": "ch1",
+      "number": "01",
+      "label": "ÉTIQUETTES & SURVEILLANCE",
+      "colorKey": "cyan"
+    },
+    {
+      "id": "ch2",
+      "number": "02",
+      "label": "BAUX SECRETS & OLIGOPOLE",
+      "colorKey": "emerald"
+    },
+    {
+      "id": "ch3",
+      "number": "03",
+      "label": "VOS DROITS À LA CAISSE",
+      "colorKey": "amber"
+    },
+    {
+      "id": "ch4",
+      "number": "04",
+      "label": "LA QUESTION DU JOUR",
+      "colorKey": "rose"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "rep-ouverture-choc",
+      "chapterId": "ch0",
+      "duration": 34,
+      "shortVisualTitle": "Votre voisin paie-t-il le même prix que vous à l'épicerie ?",
+      "locationBadge": "FRANC NORD • SPÉCIAL REPORTAGE",
+      "sources": [
+        "Consumer Reports",
+        "Bureau de la concurrence",
+        "Union des consommateurs"
+      ],
+      "narration": "Bienvenue dans cette édition spéciale reportage de Franc Nord, sans filtre et sans commanditaire. Aujourd'hui, on ouvre un dossier qui touche chaque famille québécoise à chaque semaine, et dont on ne vous explique presque jamais la mécanique complète : ce qui se cache vraiment derrière l'explosion de votre facture d'épicerie. Étiquettes électroniques connectées, dossiers clients de soixante pages, clauses secrètes dans les baux commerciaux et règle méconnue des quinze dollars à la caisse. Voici notre enquête sur la nouvelle machine des géants alimentaires.",
+      "motionBrief": "Ouverture d'enquête haute couture style Apple News+ sur fond Abyssal Midnight (#030509). Acte I : la boussole Franc Nord se transforme en un scanner laser cyan (#38BDF8) qui balaie un code-barres géant flottant dans l'obscurité. Acte II : les barres du code-barres s'ouvrent en parallaxe pour révéler quatre strates lumineuses (Étiquettes, Données, Baux secrets, Caisse). Acte III : typographie cinématique « SPÉCIAL REPORTAGE : L'ÉPICERIE SOUS ALGORITHME »."
+    },
+    {
+      "id": "rep-etiquettes-electroniques",
+      "chapterId": "ch1",
+      "duration": 40,
+      "shortVisualTitle": "Des milliers d'étiquettes modifiables en 3 secondes à distance",
+      "locationBadge": "ALLÉES DU QUÉBEC • SANS FIL",
+      "sources": [
+        "IRPP",
+        "Radio-Canada",
+        "The Logic"
+      ],
+      "narration": "Commençons par un objet banal que vous croisez désormais partout chez Maxi, Provigo, Metro, Super C ou IGA : la petite étiquette électronique sur la tablette. Officiellement, elle remplace le papier pour économiser du temps aux employés et éviter les erreurs. Mais sur le plan technique, ces écrans sont reliés sans fil à un serveur central. En quelques secondes, un algorithme peut changer le prix de milliers de produits, dans une seule succursale, à une heure précise de la journée ou selon la météo. L'infrastructure du prix variable, comme chez Uber ou les compagnies aériennes, est déjà installée dans nos allées.",
+      "motionBrief": "Chorégraphie en 3 actes. Acte I : gros plan architectural 2.5D sur une rangée d'étiquettes électroniques épurées flottant dans le noir. Acte II : une impulsion sans fil ambre (#F59E0B) part d'un serveur central et traverse les étiquettes qui basculent toutes simultanément de 4,99 $ à 5,79 $ avec un compteur fluide sans jitter. Acte III : zoom arrière révélant une courbe horaire de fluctuation des prix façon billet d'avion."
+    },
+    {
+      "id": "rep-scandale-instacart-23pct",
+      "chapterId": "ch1",
+      "duration": 42,
+      "shortVisualTitle": "23 % d'écart sur le même panier : le choc Instacart & Kroger",
+      "locationBadge": "ENQUÊTE • ÉTATS-UNIS (2025-2026)",
+      "sources": [
+        "Consumer Reports",
+        "FTC",
+        "Groundwork Collaborative"
+      ],
+      "narration": "Est-ce de la science-fiction ? Non, ça vient d'être pris sur le fait juste au sud de notre frontière. En décembre deux mille vingt-cinq, une enquête choc de Consumer Reports a démontré que sur la plateforme Instacart, deux acheteurs commandant exactement les mêmes articles dans le même magasin se voyaient afficher des prix différents — avec des écarts allant jusqu'à vingt-trois pour cent ! Une autre enquête sur Kroger a révélé des dossiers clients de soixante pages compilant revenu estimé, taille de la famille et géolocalisation. Résultat : la FTC américaine a lancé des ordonnances contre Instacart, Walmart et Target.",
+      "motionBrief": "Chorégraphie dialectique de données. Acte I : l'écran se divise entre deux paniers identiques côte à côte (Client A vs Client B). Acte II : un faisceau de données personnelles (localisation, historique, appareil) relie le Client B à une fiche dossier de 60 pages qui se déploie en couches transparentes. Acte III : le chiffre monumental « +23 % » s'anime avec un masque cinétique ambre sur le même produit, suivi d'un sceau « ENQUÊTE FTC »."
+    },
+    {
+      "id": "rep-cartes-fidelite-ia-canada",
+      "chapterId": "ch1",
+      "duration": 39,
+      "shortVisualTitle": "Cartes de fidélité et IA : votre profil vaut de l'or",
+      "locationBadge": "CANADA & QUÉBEC • DONNÉES",
+      "sources": [
+        "IRPP",
+        "The Tyee",
+        "TVA Nouvelles"
+      ],
+      "narration": "Et au Canada ? Chaque fois que vous scannez votre carte PC Optimum, Moi ou Scène Plus, vous ne récoltez pas seulement quelques sous de rabais : vous nourrissez l'une des plus vastes bases de données comportementales du pays. Ajoutez maintenant l'arrivée de l'intelligence artificielle, comme le partenariat entre Loblaw et ChatGPT pour générer des listes d'épicerie. Officiellement, les bannières jurent qu'elles n'utilisent pas de tarification personnalisée en magasin. Mais les chercheurs et les élus sonnent l'alarme : aucune loi québécoise n'interdit encore explicitement à un épicier de moduler ses prix grâce à vos données.",
+      "motionBrief": "Chorégraphie en 3 actes. Acte I : trois cartes géométriques minimalistes (symbolisant les programmes de fidélité) émettent chacune un faisceau de points lumineux cyan (#38BDF8). Acte II : les faisceaux convergent vers un réseau neuronal d'intelligence artificielle en rotation 3D qui cartographie les habitudes d'un ménage québécois. Acte III : un triangle d'avertissement ambre révèle l'absence de verrou juridique au Québec."
+    },
+    {
+      "id": "rep-deux-cotes-etiquettes",
+      "chapterId": "ch1",
+      "duration": 39,
+      "shortVisualTitle": "Anti-gaspillage efficace ou piège algorithmique ?",
+      "locationBadge": "DEUX CÔTÉS DE LA MÉDAILLE",
+      "sources": [
+        "Conseil canadien du commerce",
+        "OPC / QS"
+      ],
+      "narration": "Faut-il bannir ces étiquettes électroniques et l'IA en épicerie ? Regardons les deux côtés de la médaille avec rigueur. D'un côté, les détaillants rappellent que les étiquettes numériques éliminent des tonnes de papier, réduisent les erreurs humaines d'affichage et permettent d'appliquer instantanément des rabais à la baisse sur les viandes ou les pains près de leur date limite, réduisant ainsi le gaspillage alimentaire. De l'autre côté, les groupes de consommateurs soulignent que l'alimentation est un bien essentiel, pas un billet de concert : si l'outil permet de baisser les prix, il permet tout autant de les gonfler à dix-sept heures un vendredi soir.",
+      "motionBrief": "Chorégraphie symétrique Apple Keynote. Acte I : une ligne d'horizon cyan divise l'écran en deux plans nets. Acte II : à gauche, une horloge d'anti-gaspillage fait chuter des étiquettes de -30 % à -50 % en émeraude (#10B981) ; à droite, une heure de pointe (17h00) fait bondir les mêmes étiquettes en ambre (#F59E0B). Acte III : les deux réalités coexistent autour d'une balance d'équilibre."
+    },
+    {
+      "id": "rep-oligopole-89pct",
+      "chapterId": "ch2",
+      "duration": 38,
+      "shortVisualTitle": "3 géants contrôlent près de 89 % des supermarchés",
+      "locationBadge": "CANADA & QUÉBEC • CONCENTRATION",
+      "sources": [
+        "Bureau de la concurrence"
+      ],
+      "narration": "Mais la technologie n'explique pas tout. Pour comprendre pourquoi votre marge de manœuvre est si mince, il faut remonter à la structure même du marché. Au Canada, trois géants — Loblaw, Empire-Sobeys et Metro — contrôlent près de quatre-vingt-neuf pour cent du marché des supermarchés et épiceries traditionnels, aux côtés de Costco et Walmart. Maxi, Provigo, Pharmaprix d'un côté ; Metro, Super C, Adonis, Jean Coutu de l'autre ; IGA, Tradition et Bonichoix pour le troisième. Quand trois groupes tiennent presque toutes les bannières de votre quartier, la concurrence réelle devient beaucoup plus fragile.",
+      "motionBrief": "Infographie architecturale en mouvement. Acte I : un cercle complet de parts de marché s'ouvre en perspective isométrique dans le noir. Acte II : trois immenses arcs lumineux (Cyan, Ambre, Émeraude) occupent 89 % du disque tandis que toutes les bannières québécoises gravitent en anneaux orbitaux autour de ces trois seuls noyaux. Acte III : le chiffre « 89 % » s'imprime avec un masque typographique net."
+    },
+    {
+      "id": "rep-baux-secrets-concurrence",
+      "chapterId": "ch2",
+      "duration": 42,
+      "shortVisualTitle": "Les clauses secrètes qui bloquaient vos nouvelles épiceries",
+      "locationBadge": "COUR FÉDÉRALE • SEPTEMBRE 2026",
+      "sources": [
+        "Bureau de la concurrence",
+        "Radio-Canada"
+      ],
+      "narration": "Et voici l'un des secrets les mieux gardés de l'immobilier commercial, révélé par le Bureau de la concurrence : les « contrôles de propriété ». Pendant des années, de grandes chaînes ont inséré dans leurs baux ou leurs actes de vente des clauses d'exclusivité interdisant au propriétaire d'un centre commercial de louer un local à un autre épicier, ou même empêchant un magasin à un dollar ou une boulangerie de vendre certains produits frais! En février deux mille vingt-cinq, Loblaw a accepté de reculer. Et en septembre deux mille vingt-six, après des enquêtes en Cour fédérale, Empire-Sobeys a dû signer une entente juridiquement contraignante pour y mettre fin.",
+      "motionBrief": "Chorégraphie de carte urbaine. Acte I : vue du dessus d'un centre commercial stylisé où un grand supermarché rayonne en ambre. Acte II : des barrières laser rouges-ambre bloquent les locaux voisins — un petit épicier indépendant et une boulangerie tentent d'entrer mais rebondissent sur des chaînes juridiques « CLAUSE EXCLUSIVE ». Acte III : un marteau géométrique du Bureau de la concurrence brise les barrières en 2025 et septembre 2026."
+    },
+    {
+      "id": "rep-impact-quartiers-quebec",
+      "chapterId": "ch2",
+      "duration": 38,
+      "shortVisualTitle": "Moins de joueurs dans votre quartier = prix plus hauts",
+      "locationBadge": "QUÉBEC • QUARTIERS & RÉGIONS",
+      "sources": [
+        "Bureau de la concurrence"
+      ],
+      "narration": "Quel est le lien direct avec votre portefeuille au Québec ? Quand un bail restrictif empêche un compétiteur escompte ou un nouvel acteur international de s'installer dans votre quartier ou votre ville en région, vous perdez le seul levier qui force les prix à baisser : la vraie concurrence locale. Le Bureau de la concurrence a d'ailleurs recommandé d'attirer de nouveaux épiciers étrangers, de soutenir les indépendants et de standardiser l'affichage du prix unitaire. Car même avec des ententes pour libérer les baux, les habitudes et la domination des trois grands ne disparaissent pas du jour au lendemain.",
+      "motionBrief": "Chorégraphie géographique du Québec. Acte I : la caméra survole la vallée du Saint-Laurent et les régions du Québec. Acte II : dans une ville isolée, une seule bannière maintient un prix élevé ; dès qu'un point concurrent indépendant émeraude (#10B981) s'ouvre à côté, une onde de pression fait baisser la jauge du panier d'épicerie. Acte III : affichage épuré du prix unitaire comparatif."
+    },
+    {
+      "id": "rep-deux-cotes-baux",
+      "chapterId": "ch2",
+      "duration": 38,
+      "shortVisualTitle": "Protéger un investissement local ou verrouiller le marché ?",
+      "locationBadge": "DEUX CÔTÉS DE LA MÉDAILLE",
+      "sources": [
+        "Bureau de la concurrence",
+        "Détaillants alimentaires"
+      ],
+      "narration": "Là encore, écoutons les deux versions. Pour les promoteurs immobiliers et les chaînes établies, une clause d'exclusivité servait historiquement à sécuriser un investissement massif : sans la garantie d'être le seul grand supermarché d'un nouveau centre commercial, personne ne risquerait des dizaines de millions de dollars pour ouvrir en banlieue ou en région. Pour les économistes de la concurrence, cette excuse ne tient plus : lorsque ces clauses survivent même après la fermeture d'un magasin ou bloquent des commerces complémentaires pendant vingt ans, elles deviennent une barrière artificielle payée par les familles à la caisse.",
+      "motionBrief": "Scène en deux plans contrastés. Acte I : à gauche, un investissement initial de 20 M$ pose les fondations lumineuses d'un marché de banlieue (cyan). Acte II : le même bouclier s'étend dans le temps — 5 ans, 10 ans, 20 ans — et se transforme en cage dorée (ambre) bloquant l'accès aux autres commerçants. Acte III : la cage s'ouvre pour montrer l'équilibre recherché."
+    },
+    {
+      "id": "rep-erreurs-caisse-la-facture",
+      "chapterId": "ch3",
+      "duration": 40,
+      "shortVisualTitle": "Pourquoi les erreurs à la caisse penchent toujours du même côté",
+      "locationBadge": "UNION DES CONSOMMATEURS • QUÉBEC",
+      "sources": [
+        "Union des consommateurs",
+        "24 Heures"
+      ],
+      "narration": "Passons maintenant au moment le plus concret de votre semaine : votre passage devant le lecteur optique à la caisse. Une enquête répétée de l'Union des consommateurs au Québec révèle un phénomène troublant : les erreurs de prix entre la tablette et le lecteur de caisse ne sont presque jamais du cinquante-cinquante. Il est rarissime qu'un produit passe moins cher par erreur ; l'écart joue quasi systématiquement en faveur du commerçant. Pire encore : face à des caisses enregistreuse de plus en plus automatisées et des changements de prix hebdomadaires par milliers, les clients se heurtent souvent à des refus quand ils osent réclamer.",
+      "motionBrief": "Animation cinématique de caisse enregistreuse minimaliste. Acte I : un faisceau laser cyan scanne une série d'articles en perspective fluide. Acte II : une balance statistique montre que 95 % des écarts de scan basculent vers le haut (+1,00 $, +2,50 $) plutôt que vers le bas. Acte III : gros plan typographique sur un reçu numérique où les écarts s'additionnent."
+    },
+    {
+      "id": "rep-regle-15-dollars-opc",
+      "chapterId": "ch3",
+      "duration": 41,
+      "shortVisualTitle": "Votre arme secrète légale au Québec : la règle des 15 $",
+      "locationBadge": "OPC QUÉBEC • DEPUIS MAI 2025",
+      "sources": [
+        "Office de la protection du consommateur",
+        "Option consommateurs"
+      ],
+      "narration": "Et pourtant, au Québec, vous avez entre les mains l'une des protections les plus puissantes en Amérique du Nord, et la majorité des gens l'ignorent : la Politique d'exactitude des prix, bonifiée en mai deux mille vingt-cinq. Si le prix scanné à la caisse est plus élevé que le prix affiché sur l'étiquette : pour tout article de quinze dollars ou moins, le magasin doit vous le remettre gratuitement ! Et s'il coûte plus de quinze dollars, vous obtenez un rabais immédiat de quinze dollars sur le plus bas prix affiché. Même si vous êtes déjà rentré chez vous, vous pouvez revenir avec votre reçu !",
+      "motionBrief": "Infographie pédagogique ultra-claire façon Apple Keynote. Acte I : une étiquette affiche 3,99 $, le scanner affiche 4,99 $ — alerte cyan. Acte II : le chiffre monumental « 15 $ » apparaît en or ambre : si ≤ 15 $, l'article passe à « 0,00 $ GRATUIT » ; si > 15 $, « -15,00 $ RABAIS ». Acte III : une icône de reçu de caisse confirme l'application même après le retour à la maison."
+    },
+    {
+      "id": "rep-lois-monde-vs-quebec",
+      "chapterId": "ch3",
+      "duration": 39,
+      "shortVisualTitle": "New York légifère, Washington enquête… et le Québec ?",
+      "locationBadge": "NEW YORK • OTTAWA • QUÉBEC",
+      "sources": [
+        "FTC",
+        "Assemblée nationale du Québec"
+      ],
+      "narration": "Ailleurs en Amérique du Nord, la riposte juridique s'accélère. L'État de New York oblige désormais à afficher un avertissement clair dès qu'un algorithme fixe un prix à l'aide de vos données personnelles. Le Maryland, le New Jersey et le Connecticut ont adopté des lois ciblées pour protéger les consommateurs en alimentation. Ici, au Québec, des partis d'opposition ont pressé l'Office de la protection du consommateur d'encadrer d'avance la tarification dynamique avant qu'elle ne devienne la norme, tandis qu'Ottawa scrute les pratiques de prix plancher dans les circulaires. La fenêtre pour agir préventivement est grande ouverte maintenant.",
+      "motionBrief": "Chorégraphie cartographique nord-américaine. Acte I : vue nocturne du nord-est américain où New York, le Maryland, le New Jersey et le Connecticut s'illuminent d'un bouclier juridique émeraude. Acte II : des lignes de faisceaux remontent vers Ottawa et Québec où un anneau de décision clignote en ambre. Acte III : horloge temporelle symbolisant la fenêtre d'action législative."
+    },
+    {
+      "id": "rep-conclusion-debat",
+      "chapterId": "ch4",
+      "duration": 41,
+      "shortVisualTitle": "Option A ou Option B : faut-il interdire les prix algorithmiques ?",
+      "locationBadge": "LA QUESTION DU JOUR • FRANC NORD",
+      "sources": [
+        "Enquête Citoyenne Franc Nord"
+      ],
+      "narration": "C'est maintenant à vous de trancher dans ce spécial reportage. Face aux étiquettes électroniques, aux cartes de fidélité et à la puissance de l'intelligence artificielle dans nos supermarchés, que devrait faire le gouvernement du Québec dès cette année ? Option A : interdire dès maintenant toute tarification dynamique ou personnalisée sur les aliments essentiels et imposer une transparence totale sur nos données. Ou Option B : laisser les épiceries utiliser ces outils pour réduire le gaspillage et accélérer les rabais, tout en misant sur la concurrence et la règle des quinze dollars. Écrivez Option A ou Option B en commentaire, partagez cette enquête autour de vous, et abonnez-vous à Franc Nord !",
+      "motionBrief": "Finale monumentale d'enquête sur fond #030509 : un faisceau vertical net scinde l'écran entre OPTION A (BOUCLIER LÉGAL SUR L'ALIMENTATION, ambre) et OPTION B (CONCURRENCE & ANTI-GASPILLAGE, cyan), tandis que la boussole Franc Nord pulse doucement au centre avec le coin inférieur droit libre pour le filigrane."
+    }
+  ]
+}
