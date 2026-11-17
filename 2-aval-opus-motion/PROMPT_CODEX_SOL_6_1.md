@@ -37,5 +37,5 @@ Lorsque vous choisissez **Codex** pour la réalisation vidéo, envoyez-lui cette
    * Livrer directement dans `/Volumes/Projets/FRANC NORD/episodes/YYYY-MM-DD-Episode-NN/` (exemple : `episodes/2026-11-17-Episode-05/`) :
      - Les 2 vidéos complètes (`16x9` et `9x16`)
      - Les 3 vidéos verticales Shorts/Reels (`Short-1-*.mp4`, `Short-2-*.mp4`, `Short-3-*.mp4`) découpées sur les chapitres `ch1`, `ch2` et `ch3`.
-     - Le fichier **`KIT-PUBLICATION-EPISODE-NN.md`** contenant les titres (< 85 car.), descriptions (avec chapitres calés sur `voix.mp3`), tags (< 500 car.), premier commentaire et prompt Thumbnail pour YouTube et Facebook, tant pour les vidéos complètes que pour les 3 Shorts/Reels.
+     - Le fichier **`KIT-PUBLICATION-EPISODE-NN.md`** déjà préparé dans `episodes/YYYY-MM-DD/` (en mettant uniquement à jour les horodatages exacts des chapitres et repères de coupe selon la durée réelle de `voix.mp3`).
    * Préparer la mise à jour dans le Studio Résido (`https://resido.ca`) et demander l'accord avant de pousser sur GitHub Pages.

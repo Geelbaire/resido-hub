@@ -95,7 +95,7 @@ Avant de lancer l'export complet des 8 minutes :
         - `Short-1-<sujet1>-9x16.mp4` (chapitre `ch1`)
         - `Short-2-<sujet2>-9x16.mp4` (chapitre `ch2`)
         - `Short-3-<sujet3>-9x16.mp4` (chapitre `ch3`)
-     4. Ainsi que `voix.mp3`, `storyboard.json`, `scenes-custom.js`, `teleprompteur.md` et **`KIT-PUBLICATION-EPISODE-NN.md`** (contenant les titres < 85 car., descriptions avec chapitres recalculés selon la durée réelle de `voix.mp3`, tags < 500 car., premier commentaire épinglé et prompt Thumbnail pour YouTube et Facebook — tant pour la vidéo complète que pour les 3 Shorts/Reels).
+     4. Ainsi que `voix.mp3`, `storyboard.json`, `scenes-custom.js`, `teleprompteur.md` et **`KIT-PUBLICATION-EPISODE-NN.md`** (repris depuis `episodes/YYYY-MM-DD/` en mettant uniquement à jour les horodatages exacts des chapitres selon la durée réelle de `voix.mp3`).
    - Si `voix.mp3` est présent, synchroniser les durées des scènes sur les mots prononcés sans accélérer ni ralentir la voix.
 2. **Livraison dans le Studio Résido (`https://resido.ca`)** :
    - Préparer la mise à jour de l’épisode dans le Studio FRANC NORD et demander explicitement à Gilbert : **« Veux-tu que je publie maintenant cet épisode dans le Studio Résido ? »** (sauf accord déjà donné).
