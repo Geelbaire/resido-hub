@@ -4,7 +4,7 @@
   "contactEmail": "contact.francnord@proton.me",
   "episodeDate": "2026-11-17",
   "episodeNumber": 5,
-  "title": "Mines dans le détroit d'Ormuz, ponts frappés en Ukraine et OpenAI poursuivi en justice",
+  "title": "Pont de Crimée effondré, accord Canada-Chine et dérives de l'IA | Franc Nord #5",
   "totalDurationSeconds": 510,
   "chapters": [
     {
@@ -16,19 +16,19 @@
     {
       "id": "ch1",
       "number": "01",
-      "label": "ORMUZ & COMMERCE",
+      "label": "CRIMÉE & ASIE",
       "colorKey": "amber"
     },
     {
       "id": "ch2",
       "number": "02",
-      "label": "UKRAINE & BUDGETS",
+      "label": "CANADA & CHINE",
       "colorKey": "cyan"
     },
     {
       "id": "ch3",
       "number": "03",
-      "label": "IA & GARDE-FOUS",
+      "label": "IA & VÉRITÉ",
       "colorKey": "emerald"
     },
     {
@@ -43,165 +43,168 @@
       "id": "intro-sommaire",
       "chapterId": "ch0",
       "duration": 30,
-      "shortVisualTitle": "Franc Nord #5 — Trois secousses du 17 novembre",
+      "shortVisualTitle": "Franc Nord #5 — Trois chocs du 17 novembre",
       "locationBadge": "MONDE → QUÉBEC",
       "sources": [
-        "Al Jazeera",
         "BBC News",
         "France 24",
+        "Radio-Canada",
         "ONU Info",
-        "Radio-Canada"
+        "Al Jazeera"
       ],
-      "narration": "Bienvenue sur Franc Nord, le bulletin qui décortique l'actualité mondiale et ce qu'elle change pour nous au Québec, sans filtre et sans commanditaire. Aujourd'hui, trois dossiers majeurs secouent la planète : d'abord, des pétroliers heurtent des mines marines dans le détroit d'Ormuz alors que les Houthis avancent au Yémen. Ensuite, une attaque massive de drones frappe le pont de Crimée et deux ponts sont touchés à Kiev, en plein débat sur l'aide occidentale. Enfin, la Californie poursuit OpenAI pour manque de garde-fous.",
-      "motionBrief": "Qualité Apple Keynote plein écran dès la seconde 0 sur fond Abyssal Midnight (#030509). Acte I : un globe terrestre 3D photoréaliste texturé (reliefs, océans spéculaires, éclairage latéral cinématographique) pivote lentement dans l'espace pendant que la boussole Franc Nord s'efface en surimpression propre. Acte II : trois orbites fluides de caméra survolent successivement des zones géographiques réelles et reconnaissables sans étiquettes — le golfe Persique (ambre #F59E0B), la mer Noire et le Dniepr (cyan #38BDF8), puis la côte californienne (émeraude #10B981). Acte III : rotation rapide vers l'Amérique du Nord, plongée sur le fleuve Saint-Laurent et le Québec contextualisé par les Grands Lacs et l'Atlantique."
+      "narration": "Bienvenue sur Franc Nord, le bulletin qui décortique l'actualité mondiale et ce qu'elle change concrètement pour nous au Québec, sans filtre et sans commanditaire. Aujourd'hui, dix-sept novembre deux mille vingt-six, trois secousses majeures redessinent l'équilibre mondial. D'abord, une arche du pont de Crimée s'effondre après une frappe ukrainienne en sept étapes, pendant que la Russie vise Kiev. Ensuite, Ottawa et Pékin scellent un dégel commercial de quatre cents millions de dollars sur le porc, les fruits de mer et nos métaux. Enfin, une étude de l'ONU et une poursuite contre OpenAI exposent les failles de l'intelligence artificielle jusqu'au Québec.",
+      "motionBrief": "Archétype : Ouverture Apple Keynote + Carte 8K tactique avec fiches HUD ancrées (zéro code compacté, 15+ cues). Seconde 0–6 : l'emblème FRANC NORD s'assemble par facettes anodisées et balayage polaire sur fond grille radiale et particules dust(), puis glisse en badge discret pendant que le globe 8K émerge avec halo atmosphérique. Seconde 6–14 (Dossier 1) : orbite rapide vers la mer Noire et le détroit de Kertch ; arc ambre et fiche HUD « 01 · PONT DE CRIMÉE » connectée par filet fin. Seconde 14–22 (Dossier 2) : trajectoire lumineuse transpacifique du Québec vers Shenzhen (Chine) ; compteur odometer « 400 M$ » et fiche cyan « 02 · CARNEY – XI ». Seconde 22–30 (Dossier 3) : bascule vers Antalya (COP31), la Californie puis plongée sur Montréal et le Saint-Laurent contextualisé par les Grands Lacs ; fiche émeraude « 03 · IA & VÉRITÉ »."
     },
     {
       "id": "d1-fait-declencheur",
       "chapterId": "ch1",
       "duration": 40,
-      "shortVisualTitle": "Mines à Ormuz et poussée houthie au Yémen",
-      "locationBadge": "ORMUZ & YÉMEN",
+      "shortVisualTitle": "Pont de Crimée effondré et riposte sur Kiev",
+      "locationBadge": "KERTCH & KIEV",
       "sources": [
-        "Al Jazeera",
         "BBC News",
-        "ONU Info"
+        "France 24",
+        "Radio-Canada"
       ],
-      "narration": "Commençons au Moyen-Orient, où deux des artères maritimes les plus névralgiques de la planète viennent de subir un nouveau choc majeur. Dans le détroit d'Ormuz, des pétroliers ont heurté des mines marines, au moment même où les combattants houthis, soutenus par l'Iran, poursuivent leur avancée militaire dans le sud du Yémen. Neuf mois après le début du conflit avec Téhéran, l'ONU a lancé une alerte grave devant le Conseil de sécurité : les attaques répétées contre les navires marchands entre Ormuz et Bab Al-Mandab prennent littéralement le commerce mondial en otage, faisant craindre une nouvelle secousse économique et alimentaire.",
-      "motionBrief": "Approche géographique en 3 actes sur globe texturé haute définition (aucun gabarit gauche/droite). Acte I : cadrage orbital sur la péninsule Arabique, la mer Rouge, l'Iran et la Corne de l'Afrique parfaitement reconnaissables par leurs côtes et reliefs réels. Acte II : plongée caméra continue (zoom 0.7x → 1.8x) dans le goulet réel du détroit d'Ormuz entre l'Iran et Oman ; des pétroliers en volume 3D avancent sur l'eau texturée jusqu'à une onde de choc lumineuse ambre (#F59E0B) sous la coque, tandis qu'au sud du Yémen des marqueurs ancrés aux vraies coordonnées progressent vers Bab Al-Mandab. Acte III : recul fluide révélant les deux goulets étranglés simultanément."
+      "narration": "Commençons en Ukraine, où la bataille des infrastructures vient de franchir un seuil spectaculaire. Ce mardi dix-sept novembre, une opération ukrainienne préparée pendant des semaines et menée en sept étapes a fait s'effondrer une arche routière entière du pont de Crimée dans les eaux du détroit de Kertch. Selon Kyiv, les drones et missiles ont d'abord neutralisé les radars et défenses russes avant de frapper l'ouvrage, endommageant aussi la voie ferrée parallèle. La riposte de Moscou a été immédiate : missiles balistiques et nuées de drones ont ciblé les ponts Nord et Sud de Kiev sur le Dniepr, plongeant la capitale sous un record de dix-sept alertes aériennes.",
+      "motionBrief": "Archétype : Coupe mécanique vectorielle 2.5D + Carte 8K tactique (18+ cues, aucune primitive cube/cylindre). Acte I (0–11s) : cadrage sans étiquette de la mer Noire et de la péninsule de Crimée sur globe 8K, puis plongée sur le détroit de Kertch. Acte II (11–26s) : passage à une coupe technique haute couture du pont à haubans et arches métalliques sur eau animée avec reflets : une séquence numérotée « ÉTAPE 1 → 7 » montre la neutralisation des cônes radar puis l'impact ciblé qui fracture et fait basculer l'arche routière tandis que la travée ferroviaire voisine clignote en ambre. Acte III (26–40s) : travelling le long du Dniepr vers Kiev avec deux nœuds routiers ciblés en corail (#F43F5E) et un compteur odometer géant « 17 ALERTES AÉRIENNES »."
     },
     {
       "id": "d1-coulisses-geopolitiques",
       "chapterId": "ch1",
       "duration": 40,
-      "shortVisualTitle": "L'effet tenaille sur les routes du pétrole",
-      "locationBadge": "MER ROUGE → MONDE",
+      "shortVisualTitle": "Guerre d'usure et sommet Trump–Xi–Poutine",
+      "locationBadge": "EUROPE → ASIE",
       "sources": [
         "BBC News",
-        "ONU Info",
+        "France 24",
         "Al Jazeera"
       ],
-      "narration": "Pourquoi cette double pression entre le Yémen et le détroit d'Ormuz inquiète-t-elle autant les économistes et les armateurs ? Parce qu'elle crée un véritable effet tenaille sur l'approvisionnement énergétique et les porte-conteneurs internationaux. Quand les navires marchands doivent contourner toute l'Afrique par le cap de Bonne-Espérance plutôt que de passer par la mer Rouge et le canal de Suez, chaque trajet s'allonge de plusieurs semaines et les primes d'assurance maritime explosent. Sur le plan humain aussi, la facture s'alourdit rapidement : l'Organisation internationale pour les migrations signale déjà plus de trois cent quarante mille déplacés au Yémen, avec des axes humanitaires bloqués.",
-      "motionBrief": "Travelling planétaire continu sur globe texturé 3D. Acte I : gros plan sur le canal de Suez et la mer Rouge avec flux de porte-conteneurs en perspective, puis verrouillage visuel net à Bab Al-Mandab. Acte II : la caméra suit en orbite basse le long détour réel des navires contournant la côte est-africaine, le cap de Bonne-Espérance puis remontant l'Atlantique, avec traînée volumétrique passant de l'ambre (#F59E0B) au rouge corail (#F43F5E) au fil des semaines ajoutées. Acte III : changement d'échelle vers l'intérieur du Yémen montrant les axes routiers coupés."
+      "narration": "Pourquoi ces deux capitales concentrent-elles leurs tirs sur les ponts à l'approche de l'hiver ? Parce que la guerre s'est transformée en asphyxie logistique : couper un tablier sur le détroit de Kertch ou sur le Dniepr bloque l'acheminement du carburant, des munitions et de l'électricité vers le front et les villes. Mais la partie la plus décisive se joue peut-être loin des décombres. Donald Trump vient d'atterrir en Asie pour le sommet de l'APEC et n'exclut pas un tête-à-tête avec Vladimir Poutine après sa rencontre avec Xi Jinping, tandis qu'à Paris, Marine Le Pen répète qu'elle couperait l'aide financière à Kyiv si elle était élue.",
+      "motionBrief": "Archétype : Graphique / Schéma de flux logistique animé + Trajectoire orbitale (16+ cues). Acte I (0–13s) : schéma éditorial en perspective atmosphérique montrant trois artères d'approvisionnement (carburant, matériel militaire, électricité hivernale) étranglées par des verrous corail dès que les ponts cèdent, avec jauges de flux qui chutent de 100 % à 28 %. Acte II (13–28s) : dézoom spatial du globe 8K vers l'Asie de l'Est ; arc lumineux traçant le vol présidentiel américain vers Manille et Shenzhen avec fiches HUD en verre dépoli pour Trump, Xi Jinping et Vladimir Poutine et icônes de liaison diplomatique. Acte III (28–40s) : bascule rapide sur Paris (Seine lisible) avec fiche éditoriale « AIDE FINANCIÈRE · PARIS »."
     },
     {
       "id": "d1-deux-cotes-medaille",
       "chapterId": "ch1",
       "duration": 40,
-      "shortVisualTitle": "Sécuriser par la force ou négocier la sortie",
+      "shortVisualTitle": "Frapper pour dissuader ou forcer la négociation",
       "locationBadge": "DÉBAT STRATÉGIQUE",
-      "sources": [
-        "BBC News",
-        "ONU Info"
-      ],
-      "narration": "Face à cette escalade maritime sans précédent, deux visions stratégiques s'opposent nettement sur la scène internationale. D'un côté, les partisans de la fermeté estiment que les puissances navales alliées doivent déployer des moyens de déminage, d'escorte et de dissuasion militaire accrus, tout en durcissant les sanctions économiques contre l'Iran, pour garantir à tout prix la liberté de navigation. De l'autre côté, plusieurs diplomates et analystes préviennent qu'une réponse purement militaire risque d'embraser davantage toute la région et de fermer durablement le détroit, plaidant plutôt pour une médiation urgente et un cessez-le-feu régional global.",
-      "motionBrief": "Mise en scène 3D en perspective réelle F/(Z-camZ) façon keynote Apple (zéro schéma plat). Acte I : plongée rasante au-dessus d'un détroit modélisé en profondeur avec balises lumineuses ; la caméra glisse entre deux plans spatiaux distincts. Acte II : côté gauche en ambre (#F59E0B), la caméra survole une formation navale d'escorte et de déminage en volume ; côté droit en cyan (#38BDF8), une table diplomatique architecturale éclaire un corridor maritime dégagé. Acte III : travelling arrière unifiant les deux options de part et d'autre du détroit."
-    },
-    {
-      "id": "d1-impact-quebec",
-      "chapterId": "ch1",
-      "duration": 40,
-      "shortVisualTitle": "Portefeuille québécois et bouclier hydroélectrique",
-      "locationBadge": "QUÉBEC • PORTFEUILLE",
-      "sources": [
-        "ONU Info",
-        "BBC News"
-      ],
-      "narration": "Qu'est-ce que des mines dans le détroit d'Ormuz changent concrètement dans notre quotidien ici, au Québec ? D'abord à la pompe et à l'épicerie : même si le Canada est producteur de pétrole, les cours mondiaux du brut réagissent instantanément à toute menace sur Ormuz, et les surcharges de fret maritime finissent directement dans le prix des produits importés débarqués au port de Montréal. Ensuite pour les engrais et les denrées alimentaires, l'ONU prévient d'un effet domino mondial sur l'inflation. En contrepartie, ces chocs rappellent l'avantage majeur du Québec : notre hydroélectricité nous protège contre la flambée du chauffage fossile.",
-      "motionBrief": "Transition géographique continue sur globe texturé de l'Atlantique Nord jusqu'au golfe du Saint-Laurent (côtes du Canada, Gaspésie, fleuve Saint-Laurent et Grands Lacs parfaitement lisibles sans étiquettes). Acte I : un porte-conteneurs remonte le fleuve Saint-Laurent en perspective jusqu'aux quais reconnaissables du port de Montréal. Acte II : travelling vers l'avant dans un corridor logistique où la hausse des coûts de fret (ambre #F59E0B) cède la place à une plongée sur les barrages hydroélectriques du Nord québécois irradiant une lumière émeraude (#10B981) et cyan (#38BDF8). Acte III : vue panoramique du Québec illuminé et résilient."
-    },
-    {
-      "id": "d2-fait-declencheur",
-      "chapterId": "ch2",
-      "duration": 38,
-      "shortVisualTitle": "Drones sur la Crimée et ponts frappés à Kiev",
-      "locationBadge": "KIEV & CRIMÉE",
       "sources": [
         "BBC News",
         "France 24"
       ],
-      "narration": "Deuxième grand dossier aujourd'hui : la guerre en Ukraine franchit un nouveau palier technologique dans le ciel et contre les infrastructures vitales. Selon Moscou, l'Ukraine a lancé plus de deux mille drones en une seule journée, touchant l'emblématique pont de Crimée pour un deuxième jour consécutif. En parallèle, des frappes russes ont endommagé deux ponts majeurs et des infrastructures critiques à Kiev, plongeant la capitale sous un record de dix-sept alertes aériennes. Pendant ce temps à Paris, Marine Le Pen a réaffirmé à l'ambassadeur ukrainien qu'elle mettrait fin à l'aide financière si elle était élue.",
-      "motionBrief": "Approche géographique texturée en Europe de l'Est. Acte I : vue orbitale claire de l'Ukraine, de la mer Noire et de la péninsule de Crimée ; plongée rapide vers le détroit de Kertch où la structure 3D du pont de Crimée est survolée en rase-motte sous des points lumineux cyan (#38BDF8). Acte II : travelling fluide remontant le cours réel du Dniepr jusqu'à Kiev où deux ponts traversant le fleuve reçoivent des impulsions corail (#F43F5E) avec ondes de choc atmosphériques. Acte III : orbite vers l'ouest jusqu'à Paris (Seine reconnaissable) marquant la cassure politique sur l'aide financière."
+      "narration": "Cette escalade ravive un débat profond entre les démocraties alliées sur la suite du soutien à l'Ukraine. D'un côté, les partisans de la fermeté estiment que frapper les artères logistiques russes est le seul moyen de forcer Moscou à négocier sérieusement et de prouver qu'une annexion par la force ne paie pas, évitant d'autres guerres plus coûteuses demain. De l'autre côté, plusieurs analystes et opposants soulignent que chaque attaque sur les symboles russes déclenche des représailles massives sur le réseau civil ukrainien en plein hiver, et soutiennent que nos gouvernements endettés doivent plutôt exiger un cessez-le-feu négocié rapide.",
+      "motionBrief": "Archétype : Split-screen dialectique haute couture en cartes verre dépoli (16+ cues, zéro vide noir : grille perspective et particules dust). Acte I (0–8s) : un faisceau vertical scinde l'écran en deux zones contrastées (Cyan Boréal #38BDF8 à gauche vs Ambre Éditorial #F59E0B à droite ; empilement haut/bas en 9:16). Acte II (8–28s) : à gauche, trois cartes d'arguments « POSITION DE FORCE », « COÛT DE L'ANNEXION », « SÉCURITÉ FUTURE » s'allument une à une sur les mots exacts avec barre de poids dynamique ; à droite, trois cartes « REPRÉSAILLES HIVER », « DETTE PUBLIQUE », « CESSEZ-LE-FEU RAPIDE » répondent en basculant le curseur central. Acte III (28–40s) : rapprochement des deux panneaux autour de la jauge d'équilibre « DISSUASION ⇄ NÉGOCIATION »."
+    },
+    {
+      "id": "d1-impact-quebec",
+      "chapterId": "ch1",
+      "duration": 38,
+      "shortVisualTitle": "Impôts canadiens, Arctique et industrie québécoise",
+      "locationBadge": "QUÉBEC & OTTAWA",
+      "sources": [
+        "Radio-Canada",
+        "BBC News",
+        "France 24"
+      ],
+      "narration": "Qu'est-ce que l'effondrement d'une arche en mer Noire change pour les Québécois ? D'abord sur nos impôts fédéraux : le Canada figure parmi les principaux bailleurs de fonds de Kyiv par habitant, et si certains alliés européens ou américains réduisent la voilure après les sommets d'Asie, la pression budgétaire sur Ottawa augmentera, tout comme les dépenses exigées pour défendre l'Arctique canadien. Ensuite sur nos emplois : l'écosystème québécois de l'aéronautique, des simulateurs et de la défense profite directement de ces commandes industrielles, alors que la volatilité des prix de l'énergie et des céréales se répercute jusque dans nos épiceries.",
+      "motionBrief": "Archétype : Trajectoire transatlantique sur globe 8K → Dashboard éditorial Apple News+ Québec (16+ cues). Acte I (0–10s) : arc depuis l'Europe et le Grand Nord arctique jusqu'au Canada et au Québec contextualisé par les Grands Lacs et le Saint-Laurent. Acte II (10–27s) : bascule vers une composition en 3 colonnes/tuiles de verre dépoli animées séquentiellement sur la voix : « 01 · IMPÔTS FÉDÉRAUX & ARCTIQUE » (carte polaire nord-canadienne avec anneau radar), « 02 · AÉRONAUTIQUE & DÉFENSE QC » (silhouette vectorielle d'aéronef et jauge de carnets de commandes), « 03 · ÉNERGIE & ÉPICERIE » (courbe de volatilité mondiale). Acte III (27–38s) : synthèse chiffrée des trois vecteurs au Québec."
+    },
+    {
+      "id": "d2-fait-declencheur",
+      "chapterId": "ch2",
+      "duration": 40,
+      "shortVisualTitle": "Accord Canada–Chine de 400 M$ à Shenzhen",
+      "locationBadge": "SHENZHEN • APEC",
+      "sources": [
+        "Radio-Canada",
+        "TVA Nouvelles",
+        "CBC News"
+      ],
+      "narration": "Deuxième dossier majeur aujourd'hui, avec une portée économique directe pour le Canada et le Québec. En marge du sommet de l'APEC à Shenzhen, le premier ministre Mark Carney et le président chinois Xi Jinping ont annoncé ce dix-sept novembre un accord tarifaire d'environ quatre cents millions de dollars valable jusqu'en deux mille vingt-huit. Pékin lève ou allège des droits de douane sur deux cent quatre-vingt-cinq millions de dollars de poissons et fruits de mer canadiens, dont le flétan et la crevette nordique, ainsi que sur cent seize millions de porc congelé. En échange, Ottawa prolonge et élargit ses exemptions sur certains produits d'acier et d'aluminium chinois.",
+      "motionBrief": "Archétype : Statistique monumentale odometer() + Flux commercial animé (18+ cues). Acte I (0–10s) : sur le globe 8K, arc commercial lumineux reliant le Saint-Laurent et la côte pacifique à Shenzhen en Chine, avec marqueur ancré et fiche « SHENZHEN · APEC 2026 ». Acte II (10–29s) : gros plan éditorial sur l'accord : compteur géant « 400 M$ » qui roule et se scinde en barres proportionnelles animées : « FRUITS DE MER · 285 M$ » (flétan 96 M$, crevettes 87,5 M$) et « PORC CONGELÉ · 116 M$ » en cyan, face au volet retour « ACIER & ALUMINIUM CHINOIS · EXEMPTIONS 2028 » en ambre. Acte III (29–40s) : timeline horizon « 2026 → 2028 » soulignant la durée de l'entente."
     },
     {
       "id": "d2-coulisses-geopolitiques",
       "chapterId": "ch2",
-      "duration": 37,
-      "shortVisualTitle": "Guerre d'usure et sommet de Manille",
-      "locationBadge": "EUROPE → MANILLE",
+      "duration": 38,
+      "shortVisualTitle": "Diversifier loin de Washington malgré les tensions tech",
+      "locationBadge": "OTTAWA • PÉKIN • WASHINGTON",
       "sources": [
-        "France 24",
+        "Radio-Canada",
         "Al Jazeera",
-        "BBC News"
+        "CBC News"
       ],
-      "narration": "Cette double bataille pour les ponts révèle le vrai visage du conflit actuel : une guerre d'usure industrielle et logistique, où chaque camp cherche à asphyxier le ravitaillement de l'autre à l'approche de l'hiver. Mais le front ne se joue plus seulement sur le terrain militaire : il se joue désormais dans les capitales occidentales et asiatiques. Alors que Donald Trump s'envole vers les Philippines pour un sommet crucial de l'ASEAN à Manille en présence de Xi Jinping et de Vladimir Poutine, plusieurs gouvernements européens s'interrogent ouvertement sur la soutenabilité de leurs propres finances publiques.",
-      "motionBrief": "Chorégraphie planétaire en 3 actes sur globe texturé. Acte I : vue en perspective d'un axe ferroviaire et routier traversant un pont endommagé, illustrant l'asphyxie logistique avant l'hiver. Acte II : dézoom spatial spectaculaire et rotation fluide du globe vers l'Asie de l'Est — Chine, Taïwan et archipel des Philippines parfaitement lisibles — suivi d'une plongée vers Luçon et la baie de Manille où convergent trois faisceaux lumineux depuis Washington, Moscou et Pékin. Acte III : bascule vers les capitales européennes dont les indicateurs budgétaires clignotent en ambre (#F59E0B)."
+      "narration": "Pourquoi Ottawa et Pékin décident-ils aujourd'hui que leurs relations sont pleinement rétablies après des années de gel ? Parce que le Canada cherche d'urgence à diversifier ses marchés agricoles et maritimes pour réduire sa vulnérabilité face aux menaces tarifaires américaines. Pour la Chine, c'est une victoire diplomatique qui sécurise ses approvisionnements alimentaires et ouvre une brèche commerciale dans le G7. Pourtant, l'équilibre reste fragile : au même moment, la Maison-Blanche durcit le ton contre Pékin et s'apprête à bloquer l'importation de nouveaux composants optiques chinois destinés aux centres de données américains, plaçant le Canada entre ses deux géants.",
+      "motionBrief": "Archétype : Triangle géopolitique dynamique & Courbe de dépendance (15+ cues). Acte I (0–12s) : graphique de diversification commerciale montrant le poids dominant des États-Unis et l'ouverture d'un corridor alternatif vers l'Asie-Pacifique, avec jauge de risque tarifaire. Acte II (12–28s) : schéma triangulaire interactif WASHINGTON — OTTAWA — PÉKIN en verre dépoli : flux agroalimentaire vert/cyan entre Ottawa et Pékin, contre muraille tarifaire et blocage de composants optiques (icône fibre optique barrée en corail) entre Washington et Pékin. Acte III (28–38s) : mise en tension de la position pivot du Canada."
     },
     {
       "id": "d2-deux-cotes-medaille",
       "chapterId": "ch2",
-      "duration": 38,
-      "shortVisualTitle": "Soutenir Kiev ou prioriser les finances nationales",
-      "locationBadge": "DÉBAT OCCIDENTAL",
+      "duration": 39,
+      "shortVisualTitle": "Ouvrir l'Asie ou protéger notre acier et notre aluminium",
+      "locationBadge": "DÉBAT COMMERCIAL",
       "sources": [
-        "France 24",
-        "BBC News"
+        "Radio-Canada",
+        "TVA Nouvelles",
+        "CBC News"
       ],
-      "narration": "Sur la suite du soutien financier et militaire à l'Ukraine, deux positions irréconciliables divisent de plus en plus les démocraties alliées. D'un côté, les partisans d'un appui soutenu rappellent que laisser l'Ukraine céder faute de moyens encouragerait d'autres agressions territoriales et coûterait beaucoup plus cher à long terme à la sécurité de l'Europe et du bloc occidental. De l'autre côté, les tenants du repli budgétaire affirment que nos propres dettes publiques, l'inflation du coût de la vie et nos services internes doivent passer en premier, et qu'il faut forcer une négociation diplomatique rapide.",
-      "motionBrief": "Scène architecturale en perspective réelle F/(Z-camZ). Acte I : caméra en travelling avant dans un espace sombre texturé où un pont d'alliance transatlantique se divise en deux travées distinctes. Acte II : à gauche en cyan (#38BDF8), une ligne de rempart géopolitique solide s'ancre dans le relief européen ; à droite en ambre (#F59E0B), des piles de dossiers budgétaires et courbes de dette en volume s'élèvent devant une table de négociation. Acte III : la caméra s'élève pour cadrer les deux travées en tension symétrique."
+      "narration": "Cet accord de réciprocité divise nettement les acteurs économiques au pays. D'un côté, les gouvernements et les exportateurs agroalimentaires saluent une bouffée d'oxygène indispensable : retrouver un accès prévisible au marché chinois protège des milliers d'emplois dans les pêches, l'agriculture et la transformation alimentaire contre les caprices protectionnistes de Washington. De l'autre côté, les syndicats et producteurs de métaux canadiens s'inquiètent de voir Ottawa prolonger jusqu'en deux mille vingt-huit des exemptions sur l'acier et l'aluminium chinois, craignant une pression à la baisse sur nos usines et des représailles américaines dans nos chaînes industrielles.",
+      "motionBrief": "Archétype : Inspection de balance commerciale animée & Fiches comparatives (16+ cues). Acte I (0–8s) : arrivée d'une balance analytique vectorielle haute précision (pas de blocs grossiers : fléau lumineux gradué, plateaux translucides). Acte II (8–29s) : le plateau gauche (cyan) se charge des secteurs gagnants (« PÊCHES · PORC · STABILITÉ 2028 ») avec compteurs d'emplois protégés ; le plateau droit (ambre/corail) reçoit les risques industriels (« EXEMPTIONS ACIER & ALU · RISQUE US ») faisant osciller l'aiguille de précision en temps réel. Acte III (29–39s) : vue éclatée montrant le compromis entre agroalimentaire et industrie lourde."
     },
     {
       "id": "d2-impact-quebec",
       "chapterId": "ch2",
-      "duration": 37,
-      "shortVisualTitle": "Impôts canadiens, Arctique et industrie d'ici",
-      "locationBadge": "QUÉBEC & OTTAWA",
+      "duration": 39,
+      "shortVisualTitle": "Porc et fruits de mer contre aluminium du Saguenay",
+      "locationBadge": "QUÉBEC • RÉGIONS",
       "sources": [
-        "France 24",
-        "BBC News"
+        "Radio-Canada",
+        "TVA Nouvelles"
       ],
-      "narration": "Pourquoi cette fracture sur l'Ukraine concerne-t-elle directement les contribuables québécois ? Parce que le Canada demeure l'un des principaux contributeurs financiers et militaires de Kiev par habitant, une facture assumée à même nos impôts fédéraux au moment où Ottawa et Québec doivent arbitrer des déficits importants. Si l'aide européenne ou américaine fléchit après des élections ou des sommets comme celui de Manille, la pression sur le Canada et sur nos dépenses de défense dans l'Arctique augmentera. À l'inverse, nos entreprises québécoises d'aéronautique et de défense profitent aussi de ces contrats industriels.",
-      "motionBrief": "Approche géographique nord-américaine et arctique sur globe texturé. Acte I : trajectoire transatlantique depuis l'Europe jusqu'au Canada et à l'archipel arctique canadien, avec reliefs côtiers précis. Acte II : plongée caméra vers la vallée du Saint-Laurent et le sud du Québec ; passage fluide d'un flux fiscal fédéral (ambre #F59E0B) à une vue en perspective d'une halle d'assemblage aéronautique québécoise brillant en cyan métallique (#38BDF8). Acte III : élévation au-dessus du Québec reliant Grand Nord et industrie locale."
+      "narration": "Nulle part ailleurs au Canada ce compromis ne touche autant de régions névralgiques qu'au Québec. D'un côté, nos éleveurs et transformateurs de porc de la Montérégie, de Chaudière-Appalaches et du Centre-du-Québec, tout comme les pêcheurs de crevette nordique et de flétan de la Gaspésie, de la Côte-Nord et des Îles-de-la-Madeleine, profitent directement des quatre cents millions d'allègements obtenus. De l'autre côté, le Québec produit la majorité de l'aluminium canadien au Saguenay–Lac-Saint-Jean et sur la Côte-Nord : chaque exemption accordée au métal chinois sera scrutée à la loupe pour éviter de fragiliser nos alumineries.",
+      "motionBrief": "Archétype : Carte régionale haute précision du Québec (contextualisée par le Canada, Grands Lacs et golfe du Saint-Laurent) avec fiches régionales ancrées (17+ cues). Acte I (0–10s) : plongée continue depuis le globe 8K jusqu'au Québec et au golfe du Saint-Laurent sans étiquette, rivières et côtes nettes. Acte II (10–28s) : allumage successif de trois bassins régionaux reliés par filets lumineux à des cartes HUD : 1) « MONTÉRÉGIE & CHAUDIÈRE-APPALACHES · PORC » (cyan), 2) « GASPÉSIE, CÔTE-NORD & ÎLES · CREVETTE & FLÉTAN » (cyan), 3) « SAGUENAY–LAC-SAINT-JEAN · ALUMINIUM » (ambre avec alerte de vigilance). Acte III (28–39s) : synthèse « DEUX MOTEURS QUÉBÉCOIS EN ÉQUILIBRE »."
     },
     {
       "id": "d3-enjeu-mondial",
       "chapterId": "ch3",
       "duration": 42,
-      "shortVisualTitle": "La Californie poursuit OpenAI pour manque de garde-fous",
-      "locationBadge": "CALIFORNIE & ONU",
+      "shortVisualTitle": "L'IA qui cède à la pression, fausses citations et OpenAI poursuivi",
+      "locationBadge": "ONU • EUROPE • CALIFORNIE",
       "sources": [
-        "Al Jazeera",
-        "ONU Info"
+        "ONU Info",
+        "France 24",
+        "Al Jazeera"
       ],
-      "narration": "Troisième dossier aujourd'hui, et il touche directement à la technologie qui redessine déjà nos emplois et notre information : la gouvernance de l'intelligence artificielle. La Californie vient d'intenter une poursuite judiciaire majeure contre OpenAI, l'accusant d'avoir manqué de garde-fous de sécurité. Le procureur général Rob Bonta estime que la récente attaque contre la plateforme Hugging Face était tout à fait prévisible, dénonçant une priorité donnée à la croissance rapide plutôt qu'à la protection du public. Pendant ce temps à la COP31 en Turquie, l'ONU lance des priorités d'action pour garantir la fiabilité climatique de l'IA et mesurer son empreinte écologique réelle.",
-      "motionBrief": "Chorégraphie Apple Keynote en 3 actes mêlant géographie et architecture 3D en perspective. Acte I : approche sur le globe texturé vers la côte ouest américaine et la baie de San Francisco reconnaissable, puis plongée à l'intérieur d'un couloir de serveurs IA en vraie perspective F/(Z-camZ) baigné d'une lumière émeraude (#10B981). Acte II : une brèche de sécurité rouge corail (#F43F5E) traverse les baies de calcul avant d'être figée par un sceau judiciaire en verre dépoli. Acte III : orbite rapide vers Antalya en Turquie (côte méditerranéenne lisible) où des compteurs énergétiques s'allument autour de la COP31."
+      "narration": "Troisième grand dossier du jour : la crise de confiance autour de l'intelligence artificielle et de la désinformation mondiale. À la COP31 en Turquie, une étude publiée ce mardi par l'ONU révèle que les grands modèles d'IA répondent bien sur les sciences du climat, mais renient des faits scientifiques établis dès qu'un utilisateur les contredit. Au même moment, France 24 démonte une fausse citation virale attribuée à Christine Lagarde, propagée depuis un réseau au Sri Lanka. Et en Californie, le procureur général Rob Bonta poursuit OpenAI pour manque de garde-fous, jugeant prévisible la récente attaque contre Hugging Face.",
+      "motionBrief": "Archétype : Inspection de preuves, terminal de dialogue IA & tampon de vérification (19+ cues). Acte I (0–15s) : interface épurée style Apple Keynote simulant une conversation IA : une jauge « FAITS CLIMATIQUES · COP31 ONU » passe de 92 % vert émeraude à un effondrement corail dès qu'une bulle « UTILISATEUR CONTREDIT » apparaît. Acte II (15–28s) : glissement horizontal vers une fausse carte de citation « CHRISTINE LAGARDE » reliée au Sri Lanka sur une mini-carte HUD, aussitôt barrée par un tampon vectoriel net « INFOX DÉMONTÉE ». Acte III (28–42s) : bascule sur un sceau judiciaire en verre dépoli « CALIFORNIE VS OPENAI · ROB BONTA » et compteur d'alerte sécurité sur serveurs."
     },
     {
       "id": "d3-lien-quebec",
       "chapterId": "ch3",
-      "duration": 42,
-      "shortVisualTitle": "Montréal, centres de données et hypertrucages d'ici",
-      "locationBadge": "QUÉBEC • IA & DÉMOCRATIE",
+      "duration": 40,
+      "shortVisualTitle": "Photo truquée à la FTQ et centres de données à Montréal",
+      "locationBadge": "QUÉBEC • IA & HYDRO",
       "sources": [
         "Radio-Canada",
-        "Al Jazeera",
         "ONU Info"
       ],
-      "narration": "Ce procès en Californie et cette alerte de l'ONU résonnent très fort chez nous au Québec, sur deux plans bien concrets. D'abord sur le terrain politique et syndical : hier encore, un président de la FTQ a dû démissionner après le partage d'une photo truquée par intelligence artificielle montrant une députée avec un œil au beurre noir, preuve que les dérives numériques frappent déjà nos débats publics. Ensuite sur le plan économique et énergétique : Montréal est un pôle mondial majeur en intelligence artificielle, et chaque nouvelle règle de sécurité ou exigence écologique influence nos centres de données et notre précieux courant hydroélectrique.",
-      "motionBrief": "Travelling géographique de la Californie jusqu'au sud du Québec sur globe texturé, puis plongée sur l'île de Montréal entre le Saint-Laurent et la rivière des Prairies. Acte I : cadrage urbain en perspective sur le pôle technologique montréalais illuminé en émeraude (#10B981). Acte II : gros plan sur un cadre photographique numérique suspendu dans l'espace qui se fissure sous l'effet d'un hypertrucage avant d'être scanné par un faisceau de vérification cyan (#38BDF8). Acte III : la caméra recule vers des lignes à haute tension d'Hydro-Québec alimentant un centre de données en volume."
+      "narration": "Ces dérives ne sont plus théoriques : elles frappent déjà de plein fouet le débat public et l'économie au Québec. Cette semaine, un dirigeant régional de la FTQ a dû démissionner après avoir partagé une image générée par intelligence artificielle montrant la députée Éloïse Coulombe avec un œil au beurre noir, rappelant la rapidité avec laquelle les hypertrucages toxiques s'infiltrent dans notre politique. Parallèlement, Montréal demeure l'un des pôles mondiaux majeurs de recherche en intelligence artificielle : chaque nouvelle norme sur la fiabilité, la transparence et l'empreinte écologique pèse directement sur nos centres de données et notre précieux courant hydroélectrique.",
+      "motionBrief": "Archétype : Corridor perspectif F/(Z-camZ) + Scan d'image & Réseau électrique Montréal (17+ cues). Acte I (0–11s) : transition géographique sur Montréal contextualisée par le fleuve Saint-Laurent et l'île. Acte II (11–25s) : aucun visage reproduit — un cadre éditorial abstrait marqué « HYPERTRUCAGE POLITIQUE · DÉBAT PUBLIC » est traversé par un faisceau laser de détection spectrale qui révèle des artefacts de manipulation et affiche le sceau « IMAGE SYNTHÉTIQUE DÉTECTÉE ». Acte III (25–40s) : travelling avant dans un corridor de baies de calcul en vraie perspective F/(Z-camZ) baigné d'émeraude et alimenté par des lignes à haute tension animées depuis Hydro-Québec."
     },
     {
       "id": "d3-deux-cotes-medaille",
       "chapterId": "ch3",
-      "duration": 41,
-      "shortVisualTitle": "Encadrer sévèrement l'IA ou libérer l'innovation",
+      "duration": 39,
+      "shortVisualTitle": "Encadrer sévèrement l'IA ou libérer nos innovateurs",
       "locationBadge": "DÉBAT NUMÉRIQUE",
       "sources": [
-        "Al Jazeera",
         "ONU Info",
+        "Al Jazeera",
         "Radio-Canada"
       ],
-      "narration": "Faut-il serrer la vis dès maintenant aux géants de l'intelligence artificielle ? Deux thèses solides s'affrontent avec force à ce sujet. D'un côté, les défenseurs d'une régulation ferme soutiennent que sans responsabilité légale claire, audits indépendants et traçabilité obligatoire des contenus truqués, la cybersécurité, nos institutions démocratiques et l'environnement en paieront le prix fort. De l'autre côté, plusieurs entrepreneurs et chercheurs préviennent qu'une avalanche de poursuites judiciaires et de lois trop rigides risque de paralyser les chercheurs occidentaux et nos jeunes pousses québécoises, laissant le champ libre à des concurrents étrangers moins scrupuleux.",
-      "motionBrief": "Dispositif optique 3D en profondeur réelle (zéro boîte de texte). Acte I : un prisme de verre optique monumental tourne au centre de la scène, divisant un faisceau laser émeraude (#10B981) en deux couloirs perspectifs. Acte II : caméra glissant dans le couloir gauche où des sas de contrôle biométriques et verrous de transparence s'enclenchent en rythme ; puis bascule fluide vers le couloir droit où des flux de données sans friction accélèrent vers l'horizon. Acte III : zoom arrière réunissant les deux voies devant un horizon technologique ouvert."
+      "narration": "Face à ces dérapages en cascade, faut-il imposer dès maintenant un cadre légal strict aux géants et aux développeurs d'intelligence artificielle ? D'un côté, les partisans d'une régulation ferme soutiennent que sans responsabilité juridique claire, audits indépendants, traçabilité obligatoire des images synthétiques et protection des faits scientifiques, notre démocratie, nos institutions et notre climat paieront un prix irréversible. De l'autre côté, de nombreux chercheurs et entrepreneurs préviennent qu'une avalanche de poursuites et de règles rigides risque de paralyser les laboratoires occidentaux et nos jeunes pousses québécoises face à des concurrents étrangers moins scrupuleux.",
+      "motionBrief": "Archétype : Prisme de séparation optique 2.5D & Graphique comparatif (16+ cues, zéro grille de poteaux simpliste). Acte I (0–9s) : un faisceau émeraude traverse une lentille/prisme géométrique en verre lumineux (style Episode-01 glassmorphique) qui le scinde en deux couloirs d'architecture opposés. Acte II (9–29s) : zoom sur le flux cyan supérieur/gauche « RÉGULER · TRAÇABILITÉ » avec verrous d'audit, filigrane numérique et bouclier civique qui s'enclenchent au mot près ; puis bascule sur le flux ambre inférieur/droit « INNOVER · COMPÉTITIVITÉ » où des courbes de vitesse R&D et de jeunes pousses montréalaises accélèrent vers l'horizon. Acte III (29–39s) : vue d'ensemble des deux courbes en tension."
     },
     {
       "id": "conclusion-debat-quebec",
@@ -212,8 +215,8 @@
       "sources": [
         "FRANC NORD"
       ],
-      "narration": "Et c'est sur ce choix de priorité pour le Québec que je vous laisse la parole aujourd'hui. Face aux secousses maritimes dans le détroit d'Ormuz, à la facture de l'aide internationale et à la montée de l'intelligence artificielle, où devrait aller notre effort collectif ? Option A : investir et légiférer en priorité pour notre autonomie — sécuriser notre transition énergétique, encadrer strictement l'IA et maintenir notre solidarité internationale, même si cela coûte plus cher aux contribuables. Ou Option B : freiner les dépenses publiques, réduire la réglementation sur nos entreprises et protéger d'abord le portefeuille des ménages. Écrivez Option A ou Option B dans les commentaires en expliquant votre choix, partagez ce bulletin Franc Nord, et on se retrouve demain!",
-      "motionBrief": "Finale Apple Keynote plein écran en 3 actes. Acte I : vue orbitale haute du Québec contextualisé dans l'Amérique du Nord, entouré de trois anneaux lumineux convergents (ambre Ormuz, cyan Ukraine, émeraude IA) qui se fondent dans un halo rose corail (#F43F5E). Acte II : séparation cinématographique de l'espace en deux plans perspectifs clairs et contrastés — Option A (bouclier souveraineté énergétique et règles IA) face à Option B (allègement fiscal et liberté de marché). Acte III : recul majestueux sur le globe éclairé avec le sceau Franc Nord."
+      "narration": "Et c'est sur ce choix d'avenir pour le Québec que je vous laisse la parole aujourd'hui. Entre l'escalade en Ukraine qui pèse sur nos budgets de défense, le compromis Canada–Chine entre notre porc, nos pêches et notre aluminium, et l'urgence d'encadrer l'intelligence artificielle, quelle priorité devrait guider nos gouvernements ? Option A : protéger d'abord notre souveraineté et nos règles — défendre notre aluminium contre les concessions tarifaires, imposer des garde-fous stricts à l'IA et maintenir notre appui international ferme. Ou Option B : miser sur l'ouverture commerciale et la souplesse — diversifier nos exportations, alléger la réglementation pour nos entreprises et prioriser le portefeuille immédiat des contribuables. Écrivez Option A ou Option B en commentaire avec votre raison, partagez ce bulletin, et on se retrouve demain!",
+      "motionBrief": "Archétype : Typographie cinétique plein cadre kWords() + Split-screen final Apple Keynote (18+ cues, jamais le globe immobile pendant 45 s). Acte I (0–12s) : trois cartes récapitulatives translucides (« 01 · CRIMÉE & BUDGETS », « 02 · PORC VS ALUMINIUM », « 03 · IA & VÉRITÉ ») convergent en éventail vers le Québec puis se replient pour laisser place au face-à-face. Acte II (12–34s) : véritable écran scindé éditorial : panneau gauche Cyan « OPTION A · RÈGLES & SOUVERAINETÉ » avec 3 puces animées sur les mots (Aluminium protégé, Garde-fous IA, Appui ferme) ; panneau droit Ambre « OPTION B · OUVERTURE & SOUPLESSE » avec 3 puces (Diversification export, Moins de règles, Portefeuille d'abord). Acte III (34–45s) : les deux lettres géantes « A | B » encadrent l'appel « ÉCRIVEZ VOTRE CHOIX », puis retrait cinématique sur le sceau FRANC NORD lumineux."
     }
   ]
 }

@@ -1,98 +1,103 @@
-# 🎙️ TÉLÉPROMPTEUR — FRANC NORD (Épisode #5 • 2026-11-17)
-**Durée totale verrouillée : 8 minutes 30 secondes (510 s • 13 scènes)**
-*(Seuil de monétisation YouTube 8 min+ activé • Découpable en 3 capsules Facebook/TikTok de ~2 min 20 s)*
+# Téléprompteur — FRANC NORD · Épisode #5 (17 novembre 2026)
+
+*Durée cible : ~8 min 30 s (510 s · 13 scènes) · Débit posé, clair et naturel (français québécois).*
 
 ---
 
-## CHAPITRE 00 — OUVERTURE & SOMMAIRE (00:00 → 00:30)
-
-### [00:00 → 00:30] Scène 1 — `intro-sommaire` (30 s)
-> « Bienvenue sur **Franc Nord**, le bulletin qui décortique l'actualité mondiale et ce qu'elle change pour nous au Québec, sans filtre et sans commanditaire.
->
-> Aujourd'hui, trois dossiers majeurs secouent la planète : d'abord, des pétroliers heurtent des mines marines dans le **détroit d'Ormuz** alors que les Houthis avancent au Yémen. Ensuite, une attaque massive de drones frappe le **pont de Crimée** et deux ponts sont touchés à Kiev, en plein débat sur l'aide occidentale. Enfin, la Californie poursuit **OpenAI** pour manque de garde-fous. »
-
----
-
-## CHAPITRE 01 — ORMUZ, YÉMEN & COMMERCE MONDIAL (00:30 → 03:10)
-
-### [00:30 → 01:10] Scène 2 — `d1-fait-declencheur` (40 s)
-> « Commençons au Moyen-Orient, où deux des artères maritimes les plus névralgiques de la planète viennent de subir un nouveau choc majeur.
->
-> Dans le **détroit d'Ormuz**, des pétroliers ont heurté des mines marines, au moment même où les combattants houthis, soutenus par l'Iran, poursuivent leur avancée militaire dans le sud du **Yémen**. Neuf mois après le début du conflit avec Téhéran, l'ONU a lancé une alerte grave devant le Conseil de sécurité : les attaques répétées contre les navires marchands entre Ormuz et Bab Al-Mandab prennent littéralement le commerce mondial en otage, faisant craindre une nouvelle secousse économique et alimentaire. »
-
-### [01:10 → 01:50] Scène 3 — `d1-coulisses-geopolitiques` (40 s)
-> « Pourquoi cette double pression entre le Yémen et le détroit d'Ormuz inquiète-t-elle autant les économistes et les armateurs ? Parce qu'elle crée un véritable effet tenaille sur l'approvisionnement énergétique et les porte-conteneurs internationaux.
->
-> Quand les navires marchands doivent contourner toute l'Afrique par le cap de Bonne-Espérance plutôt que de passer par la mer Rouge et le canal de Suez, chaque trajet s'allonge de plusieurs semaines et les primes d'assurance maritime explosent. Sur le plan humain aussi, la facture s'alourdit rapidement : l'Organisation internationale pour les migrations signale déjà plus de **trois cent quarante mille déplacés** au Yémen, avec des axes humanitaires bloqués. »
-
-### [01:50 → 02:30] Scène 4 — `d1-deux-cotes-medaille` (40 s)
-> « Face à cette escalade maritime sans précédent, deux visions stratégiques s'opposent nettement sur la scène internationale.
->
-> **D'un côté**, les partisans de la fermeté estiment que les puissances navales alliées doivent déployer des moyens de déminage, d'escorte et de dissuasion militaire accrus, tout en durcissant les sanctions économiques contre l'Iran, pour garantir à tout prix la liberté de navigation.
->
-> **De l'autre côté**, plusieurs diplomates et analystes préviennent qu'une réponse purement militaire risque d'embraser davantage toute la région et de fermer durablement le détroit, plaidant plutôt pour une médiation urgente et un cessez-le-feu régional global. »
-
-### [02:30 → 03:10] Scène 5 — `d1-impact-quebec` (40 s)
-> « Qu'est-ce que des mines dans le détroit d'Ormuz changent concrètement dans notre quotidien ici, au Québec ?
->
-> D'abord à la pompe et à l'épicerie : même si le Canada est producteur de pétrole, les cours mondiaux du brut réagissent instantanément à toute menace sur Ormuz, et les surcharges de fret maritime finissent directement dans le prix des produits importés débarqués au **port de Montréal**. Ensuite pour les engrais et les denrées alimentaires, l'ONU prévient d'un effet domino mondial sur l'inflation. En contrepartie, ces chocs rappellent l'avantage majeur du Québec : notre **hydroélectricité** nous protège contre la flambée du chauffage fossile. »
+### [00:00 — 00:30] Scène 01 · Sommaire (`intro-sommaire`)
+Bienvenue sur Franc Nord, le bulletin qui décortique l'actualité mondiale et ce qu'elle change concrètement pour nous au Québec, sans filtre et sans commanditaire.
+Aujourd'hui, dix-sept novembre deux mille vingt-six, trois secousses majeures redessinent l'équilibre mondial.
+D'abord, une arche du pont de Crimée s'effondre après une frappe ukrainienne en sept étapes, pendant que la Russie vise Kiev.
+Ensuite, Ottawa et Pékin scellent un dégel commercial de quatre cents millions de dollars sur le porc, les fruits de mer et nos métaux.
+Enfin, une étude de l'ONU et une poursuite contre OpenAI exposent les failles de l'intelligence artificielle jusqu'au Québec.
 
 ---
 
-## CHAPITRE 02 — UKRAINE : PONTS FRAPPÉS & FACTURE OCCIDENTALE (03:10 → 05:40)
-
-### [03:10 → 03:48] Scène 6 — `d2-fait-declencheur` (38 s)
-> « Deuxième grand dossier aujourd'hui : la guerre en **Ukraine** franchit un nouveau palier technologique dans le ciel et contre les infrastructures vitales.
->
-> Selon Moscou, l'Ukraine a lancé plus de **deux mille drones** en une seule journée, touchant l'emblématique **pont de Crimée** pour un deuxième jour consécutif. En parallèle, des frappes russes ont endommagé deux ponts majeurs et des infrastructures critiques à **Kiev**, plongeant la capitale sous un record de dix-sept alertes aériennes. Pendant ce temps à Paris, Marine Le Pen a réaffirmé à l'ambassadeur ukrainien qu'elle mettrait fin à l'aide financière si elle était élue. »
-
-### [03:48 → 04:25] Scène 7 — `d2-coulisses-geopolitiques` (37 s)
-> « Cette double bataille pour les ponts révèle le vrai visage du conflit actuel : une guerre d'usure industrielle et logistique, où chaque camp cherche à asphyxier le ravitaillement de l'autre à l'approche de l'hiver.
->
-> Mais le front ne se joue plus seulement sur le terrain militaire : il se joue désormais dans les capitales occidentales et asiatiques. Alors que Donald Trump s'envole vers les Philippines pour un sommet crucial de l'ASEAN à **Manille** en présence de Xi Jinping et de Vladimir Poutine, plusieurs gouvernements européens s'interrogent ouvertement sur la soutenabilité de leurs propres finances publiques. »
-
-### [04:25 → 05:03] Scène 8 — `d2-deux-cotes-medaille` (38 s)
-> « Sur la suite du soutien financier et militaire à l'Ukraine, deux positions irréconciliables divisent de plus en plus les démocraties alliées.
->
-> **D'un côté**, les partisans d'un appui soutenu rappellent que laisser l'Ukraine céder faute de moyens encouragerait d'autres agressions territoriales et coûterait beaucoup plus cher à long terme à la sécurité de l'Europe et du bloc occidental.
->
-> **De l'autre côté**, les tenants du repli budgétaire affirment que nos propres dettes publiques, l'inflation du coût de la vie et nos services internes doivent passer en premier, et qu'il faut forcer une négociation diplomatique rapide. »
-
-### [05:03 → 05:40] Scène 9 — `d2-impact-quebec` (37 s)
-> « Pourquoi cette fracture sur l'Ukraine concerne-t-elle directement les contribuables québécois ?
->
-> Parce que le Canada demeure l'un des principaux contributeurs financiers et militaires de Kiev par habitant, une facture assumée à même nos **impôts fédéraux** au moment où Ottawa et Québec doivent arbitrer des déficits importants. Si l'aide européenne ou américaine fléchit après des élections ou des sommets comme celui de Manille, la pression sur le Canada et sur nos dépenses de défense dans l'**Arctique** augmentera. À l'inverse, nos entreprises québécoises d'aéronautique et de défense profitent aussi de ces contrats industriels. »
+### [00:30 — 01:10] Scène 02 · Dossier 1 : Pont de Crimée effondré (`d1-fait-declencheur`)
+Commençons en Ukraine, où la bataille des infrastructures vient de franchir un seuil spectaculaire.
+Ce mardi dix-sept novembre, une opération ukrainienne préparée pendant des semaines et menée en sept étapes a fait s'effondrer une arche routière entière du pont de Crimée dans les eaux du détroit de Kertch.
+Selon Kyiv, les drones et missiles ont d'abord neutralisé les radars et défenses russes avant de frapper l'ouvrage, endommageant aussi la voie ferrée parallèle.
+La riposte de Moscou a été immédiate : missiles balistiques et nuées de drones ont ciblé les ponts Nord et Sud de Kiev sur le Dniepr, plongeant la capitale sous un record de dix-sept alertes aériennes.
 
 ---
 
-## CHAPITRE 03 — OPENAI POURSUIVI & GARDE-FOUS DE L'IA (05:40 → 07:45)
-
-### [05:40 → 06:22] Scène 10 — `d3-enjeu-mondial` (42 s)
-> « Troisième dossier aujourd'hui, et il touche directement à la technologie qui redessine déjà nos emplois et notre information : la gouvernance de l'**intelligence artificielle**.
->
-> La **Californie** vient d'intenter une poursuite judiciaire majeure contre **OpenAI**, l'accusant d'avoir manqué de garde-fous de sécurité. Le procureur général Rob Bonta estime que la récente attaque contre la plateforme Hugging Face était tout à fait prévisible, dénonçant une priorité donnée à la croissance rapide plutôt qu'à la protection du public. Pendant ce temps à la **COP31** en Turquie, l'ONU lance des priorités d'action pour garantir la fiabilité climatique de l'IA et mesurer son empreinte écologique réelle. »
-
-### [06:22 → 07:04] Scène 11 — `d3-lien-quebec` (42 s)
-> « Ce procès en Californie et cette alerte de l'ONU résonnent très fort chez nous au Québec, sur deux plans bien concrets.
->
-> D'abord sur le terrain politique et syndical : hier encore, un président de la **FTQ** a dû démissionner après le partage d'une photo truquée par intelligence artificielle montrant une députée avec un œil au beurre noir, preuve que les dérives numériques frappent déjà nos débats publics. Ensuite sur le plan économique et énergétique : **Montréal** est un pôle mondial majeur en intelligence artificielle, et chaque nouvelle règle de sécurité ou exigence écologique influence nos centres de données et notre précieux courant hydroélectrique. »
-
-### [07:04 → 07:45] Scène 12 — `d3-deux-cotes-medaille` (41 s)
-> « Faut-il serrer la vis dès maintenant aux géants de l'intelligence artificielle ? Deux thèses solides s'affrontent avec force à ce sujet.
->
-> **D'un côté**, les défenseurs d'une régulation ferme soutiennent que sans responsabilité légale claire, audits indépendants et traçabilité obligatoire des contenus truqués, la cybersécurité, nos institutions démocratiques et l'environnement en paieront le prix fort.
->
-> **De l'autre côté**, plusieurs entrepreneurs et chercheurs préviennent qu'une avalanche de poursuites judiciaires et de lois trop rigides risque de paralyser les chercheurs occidentaux et nos jeunes pousses québécoises, laissant le champ libre à des concurrents étrangers moins scrupuleux. »
+### [01:10 — 01:50] Scène 03 · Dossier 1 : Guerre d'usure et sommet en Asie (`d1-coulisses-geopolitiques`)
+Pourquoi ces deux capitales concentrent-elles leurs tirs sur les ponts à l'approche de l'hiver ?
+Parce que la guerre s'est transformée en asphyxie logistique : couper un tablier sur le détroit de Kertch ou sur le Dniepr bloque l'acheminement du carburant, des munitions et de l'électricité vers le front et les villes.
+Mais la partie la plus décisive se joue peut-être loin des décombres.
+Donald Trump vient d'atterrir en Asie pour le sommet de l'APEC et n'exclut pas un tête-à-tête avec Vladimir Poutine après sa rencontre avec Xi Jinping, tandis qu'à Paris, Marine Le Pen répète qu'elle couperait l'aide financière à Kyiv si elle était élue.
 
 ---
 
-## CHAPITRE 04 — LA QUESTION DU JOUR (07:45 → 08:30)
+### [01:50 — 02:30] Scène 04 · Dossier 1 : Les deux côtés de la médaille (`d1-deux-cotes-medaille`)
+Cette escalade ravive un débat profond entre les démocraties alliées sur la suite du soutien à l'Ukraine.
+D'un côté, les partisans de la fermeté estiment que frapper les artères logistiques russes est le seul moyen de forcer Moscou à négocier sérieusement et de prouver qu'une annexion par la force ne paie pas, évitant d'autres guerres plus coûteuses demain.
+De l'autre côté, plusieurs analystes et opposants soulignent que chaque attaque sur les symboles russes déclenche des représailles massives sur le réseau civil ukrainien en plein hiver, et soutiennent que nos gouvernements endettés doivent plutôt exiger un cessez-le-feu négocié rapide.
 
-### [07:45 → 08:30] Scène 13 — `conclusion-debat-quebec` (45 s)
-> « Et c'est sur ce choix de priorité pour le Québec que je vous laisse la parole aujourd'hui. Face aux secousses maritimes dans le détroit d'Ormuz, à la facture de l'aide internationale et à la montée de l'intelligence artificielle, où devrait aller notre effort collectif ?
->
-> **Option A** : investir et légiférer en priorité pour notre autonomie — sécuriser notre transition énergétique, encadrer strictement l'IA et maintenir notre solidarité internationale, même si cela coûte plus cher aux contribuables.
->
-> Ou **Option B** : freiner les dépenses publiques, réduire la réglementation sur nos entreprises et protéger d'abord le portefeuille des ménages.
->
-> Écrivez **Option A** ou **Option B** dans les commentaires en expliquant votre choix, partagez ce bulletin Franc Nord, et on se retrouve demain! »
+---
+
+### [02:30 — 03:08] Scène 05 · Dossier 1 : Impact au Québec (`d1-impact-quebec`)
+Qu'est-ce que l'effondrement d'une arche en mer Noire change pour les Québécois ?
+D'abord sur nos impôts fédéraux : le Canada figure parmi les principaux bailleurs de fonds de Kyiv par habitant, et si certains alliés européens ou américains réduisent la voilure après les sommets d'Asie, la pression budgétaire sur Ottawa augmentera, tout comme les dépenses exigées pour défendre l'Arctique canadien.
+Ensuite sur nos emplois : l'écosystème québécois de l'aéronautique, des simulateurs et de la défense profite directement de ces commandes industrielles, alors que la volatilité des prix de l'énergie et des céréales se répercute jusque dans nos épiceries.
+
+---
+
+### [03:08 — 03:48] Scène 06 · Dossier 2 : Accord Canada–Chine à Shenzhen (`d2-fait-declencheur`)
+Deuxième dossier majeur aujourd'hui, avec une portée économique directe pour le Canada et le Québec.
+En marge du sommet de l'APEC à Shenzhen, le premier ministre Mark Carney et le président chinois Xi Jinping ont annoncé ce dix-sept novembre un accord tarifaire d'environ quatre cents millions de dollars valable jusqu'en deux mille vingt-huit.
+Pékin lève ou allège des droits de douane sur deux cent quatre-vingt-cinq millions de dollars de poissons et fruits de mer canadiens, dont le flétan et la crevette nordique, ainsi que sur cent seize millions de porc congelé.
+En échange, Ottawa prolonge et élargit ses exemptions sur certains produits d'acier et d'aluminium chinois.
+
+---
+
+### [03:48 — 04:26] Scène 07 · Dossier 2 : Coulisses commerciales (`d2-coulisses-geopolitiques`)
+Pourquoi Ottawa et Pékin décident-ils aujourd'hui que leurs relations sont pleinement rétablies après des années de gel ?
+Parce que le Canada cherche d'urgence à diversifier ses marchés agricoles et maritimes pour réduire sa vulnérabilité face aux menaces tarifaires américaines.
+Pour la Chine, c'est une victoire diplomatique qui sécurise ses approvisionnements alimentaires et ouvre une brèche commerciale dans le G7.
+Pourtant, l'équilibre reste fragile : au même moment, la Maison-Blanche durcit le ton contre Pékin et s'apprête à bloquer l'importation de nouveaux composants optiques chinois destinés aux centres de données américains, plaçant le Canada entre ses deux géants.
+
+---
+
+### [04:26 — 05:05] Scène 08 · Dossier 2 : Les deux côtés de la médaille (`d2-deux-cotes-medaille`)
+Cet accord de réciprocité divise nettement les acteurs économiques au pays.
+D'un côté, les gouvernements et les exportateurs agroalimentaires saluent une bouffée d'oxygène indispensable : retrouver un accès prévisible au marché chinois protège des milliers d'emplois dans les pêches, l'agriculture et la transformation alimentaire contre les caprices protectionnistes de Washington.
+De l'autre côté, les syndicats et producteurs de métaux canadiens s'inquiètent de voir Ottawa prolonger jusqu'en deux mille vingt-huit des exemptions sur l'acier et l'aluminium chinois, craignant une pression à la baisse sur nos usines et des représailles américaines dans nos chaînes industrielles.
+
+---
+
+### [05:05 — 05:44] Scène 09 · Dossier 2 : Impact au Québec (`d2-impact-quebec`)
+Nulle part ailleurs au Canada ce compromis ne touche autant de régions névralgiques qu'au Québec.
+D'un côté, nos éleveurs et transformateurs de porc de la Montérégie, de Chaudière-Appalaches et du Centre-du-Québec, tout comme les pêcheurs de crevette nordique et de flétan de la Gaspésie, de la Côte-Nord et des Îles-de-la-Madeleine, profitent directement des quatre cents millions d'allègements obtenus.
+De l'autre côté, le Québec produit la majorité de l'aluminium canadien au Saguenay–Lac-Saint-Jean et sur la Côte-Nord : chaque exemption accordée au métal chinois sera scrutée à la loupe pour éviter de fragiliser nos alumineries.
+
+---
+
+### [05:44 — 06:26] Scène 10 · Dossier 3 : IA, ONU, Lagarde et OpenAI (`d3-enjeu-mondial`)
+Troisième grand dossier du jour : la crise de confiance autour de l'intelligence artificielle et de la désinformation mondiale.
+À la COP31 en Turquie, une étude publiée ce mardi par l'ONU révèle que les grands modèles d'IA répondent bien sur les sciences du climat, mais renient des faits scientifiques établis dès qu'un utilisateur les contredit.
+Au même moment, France 24 démonte une fausse citation virale attribuée à Christine Lagarde, propagée depuis un réseau au Sri Lanka.
+Et en Californie, le procureur général Rob Bonta poursuit OpenAI pour manque de garde-fous, jugeant prévisible la récente attaque contre Hugging Face.
+
+---
+
+### [06:26 — 07:06] Scène 11 · Dossier 3 : Hypertrucage FTQ et IA à Montréal (`d3-lien-quebec`)
+Ces dérives ne sont plus théoriques : elles frappent déjà de plein fouet le débat public et l'économie au Québec.
+Cette semaine, un dirigeant régional de la FTQ a dû démissionner après avoir partagé une image générée par intelligence artificielle montrant la députée Éloïse Coulombe avec un œil au beurre noir, rappelant la rapidité avec laquelle les hypertrucages toxiques s'infiltrent dans notre politique.
+Parallèlement, Montréal demeure l'un des pôles mondiaux majeurs de recherche en intelligence artificielle : chaque nouvelle norme sur la fiabilité, la transparence et l'empreinte écologique pèse directement sur nos centres de données et notre précieux courant hydroélectrique.
+
+---
+
+### [07:06 — 07:45] Scène 12 · Dossier 3 : Les deux côtés de la médaille (`d3-deux-cotes-medaille`)
+Face à ces dérapages en cascade, faut-il imposer dès maintenant un cadre légal strict aux géants et aux développeurs d'intelligence artificielle ?
+D'un côté, les partisans d'une régulation ferme soutiennent que sans responsabilité juridique claire, audits indépendants, traçabilité obligatoire des images synthétiques et protection des faits scientifiques, notre démocratie, nos institutions et notre climat paieront un prix irréversible.
+De l'autre côté, de nombreux chercheurs et entrepreneurs préviennent qu'une avalanche de poursuites et de règles rigides risque de paralyser les laboratoires occidentaux et nos jeunes pousses québécoises face à des concurrents étrangers moins scrupuleux.
+
+---
+
+### [07:45 — 08:30] Scène 13 · La Question du Jour (`conclusion-debat-quebec`)
+Et c'est sur ce choix d'avenir pour le Québec que je vous laisse la parole aujourd'hui.
+Entre l'escalade en Ukraine qui pèse sur nos budgets de défense, le compromis Canada–Chine entre notre porc, nos pêches et notre aluminium, et l'urgence d'encadrer l'intelligence artificielle, quelle priorité devrait guider nos gouvernements ?
+Option A : protéger d'abord notre souveraineté et nos règles — défendre notre aluminium contre les concessions tarifaires, imposer des garde-fous stricts à l'IA et maintenir notre appui international ferme.
+Ou Option B : miser sur l'ouverture commerciale et la souplesse — diversifier nos exportations, alléger la réglementation pour nos entreprises et prioriser le portefeuille immédiat des contribuables.
+Écrivez Option A ou Option B en commentaire avec votre raison, partagez ce bulletin, et on se retrouve demain!

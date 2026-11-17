@@ -1,7 +1,7 @@
 import { renderBroadcastFrame, resolveTimeline } from './broadcast-canvas.js';
 
 const params = new URLSearchParams(window.location.search);
-const episodeDate = params.get('episode') || '2026-11-14-Special-Reportage-Epicerie';
+const episodeDate = params.get('episode') || '2026-11-17';
 const initialFormat = params.get('format') === '9x16' ? '9x16' : '16x9';
 
 // Empreinte SHA-256 de "pseudo:motdepasse" (aucun mot de passe en clair dans le code)
@@ -36,6 +36,7 @@ const voiceAudioPlayer = document.getElementById('voiceAudioPlayer');
 const voiceStatusText = document.getElementById('voiceStatusText');
 
 let storyboard = null;
+let publication = null;
 let customScenes = {};
 let totalDuration = 65;
 let globalTime = 0;
@@ -379,11 +380,11 @@ copyGeminiPromptBtn?.addEventListener('click', async () => {
 copyMotionPromptBtn?.addEventListener('click', async () => {
   const isCodex = motionAgentSelect?.value === 'codex';
   const todayStr = new Date().toISOString().slice(0, 10);
-  const refs = `"/Volumes/Projets/FRANC NORD/episodes/2026-11-14-Special-Reportage-Epicerie/scenes-custom.js" (projection perspective F/(Z-camZ), vrais travellings et objets qui se transforment) et "/Volumes/Projets/FRANC NORD/episodes/2026-11-15-Episode-04/REPRISE-DIRECTION-ARTISTIQUE.md" (avec earth.js, atlas.js et canaries-approved.js : globe texturé 3D, géographie immédiatement reconnaissable sans étiquettes, changements d'échelle fluides)`;
+  const refs = `"/Volumes/Projets/FRANC NORD/episodes/2026-11-14-Special-Reportage-Epicerie/scenes-custom.js" (et son guide reference/outils-production/BRIEF.md : 15-26 cues par scène sur wordTimes, compteurs odometer, cartes verre dépoli, graphiques vivants, corridor F/(Z-camZ), micro-mouvements permanents), "/Volumes/Projets/FRANC NORD/episodes/2026-11-14-Episode-01/reference-episode-1/scenes-custom.js" (esthétique glassmorphique translucide et grilles radiales), et "/Volumes/Projets/FRANC NORD/episodes/2026-11-15-Episode-04/REPRISE-DIRECTION-ARTISTIQUE.md" (avec earth.js, atlas.js et canaries-approved.js : globe texturé 8K 3D, géographie reconnaissable sans étiquettes)`;
   const basePrompt = isCodex
-    ? `Examine les images haute résolution de notre charte dans "/Volumes/Projets/FRANC NORD/identite-visuelle/", étudie attentivement nos deux références approuvées ${refs}, et lis "/Volumes/Projets/FRANC NORD/2-aval-opus-motion/PROMPT_OPUS_5_5.md", "/Volumes/Projets/FRANC NORD/2-aval-opus-motion/PROMPT_CODEX_SOL_6_1.md" et "/Volumes/Projets/FRANC NORD/episodes/${todayStr}/storyboard.json". Code ensuite les 13 scènes dans "/Volumes/Projets/FRANC NORD/episodes/${todayStr}/scenes-custom.js", synchronise avec voix.mp3, valide d'abord une séquence pilote complète avec sa voix en 16:9 et 9:16 (plus une passe de vérification géographique sans aucune étiquette), puis exporte les 2 vidéos complètes (16x9 et 9x16) ET découpe automatiquement les 3 Shorts/Reels verticaux (Short-1-*.mp4, Short-2-*.mp4, Short-3-*.mp4 pour les chapitres ch1, ch2, ch3).`
-    : `Examine les images haute résolution de notre charte dans "/Volumes/Projets/FRANC NORD/identite-visuelle/", inspecte nos deux références approuvées ${refs}, puis lis "/Volumes/Projets/FRANC NORD/2-aval-opus-motion/PROMPT_OPUS_5_5.md" et "/Volumes/Projets/FRANC NORD/episodes/${todayStr}/storyboard.json". Code ensuite les 13 scènes dans "/Volumes/Projets/FRANC NORD/episodes/${todayStr}/scenes-custom.js", synchronise avec voix.mp3, valide d'abord une séquence pilote complète avec sa voix en 16:9 et 9:16 (plus une passe de vérification géographique sans aucune étiquette), puis exporte les 2 vidéos complètes (16x9 et 9x16) ET découpe automatiquement les 3 Shorts/Reels verticaux (Short-1-*.mp4, Short-2-*.mp4, Short-3-*.mp4 pour les chapitres ch1, ch2, ch3).`;
-  const appleStandard = `EXIGENCE ABSOLUE — QUALITÉ APPLE QUI ANNONCE UN PRODUIT PHARE (DE LA 1re À LA DERNIÈRE SECONDE DES 13 SCÈNES) : INTERDIT de dessiner un « melting pot de lignes avec des noms de pays au-dessus » : les côtes, mers, détroits, fleuves et continents doivent être immédiatement reconnaissables sur un globe texturé 3D avant même l'apparition des noms (Québec contextualisé par le Canada, les Grands Lacs et le Saint-Laurent, marqueurs ancrés aux vraies coordonnées). INTERDIT d'utiliser un gabarit répétitif « titre à gauche + petit schéma à droite » ou de simuler 3 actes en changeant seulement le titre à 0,30 et 0,68. OBLIGATOIRE : vraie projection perspective F/(Z-camZ), volumes, lumières, vrais changements d'échelle (0.60 → 1.50+), orbites et plongées de caméra continus, typographies cinétiques sans aucun tremblement (zéro jitter, coordonnées flottantes) et 13 mises en scène diversifiées collées seconde par seconde à la narration (zéro musique, uniquement voix.mp3).`;
+    ? `Examine les images haute résolution de notre charte dans "/Volumes/Projets/FRANC NORD/identite-visuelle/", étudie attentivement nos trois références approuvées ${refs}, et lis "/Volumes/Projets/FRANC NORD/2-aval-opus-motion/PROMPT_OPUS_5_5.md", "/Volumes/Projets/FRANC NORD/2-aval-opus-motion/PROMPT_CODEX_SOL_6_1.md" et "/Volumes/Projets/FRANC NORD/episodes/${todayStr}/storyboard.json". Code ensuite 13 scènes artisanales sur mesure (~200-450 lignes lisibles par scène, zéro code compacté) dans "/Volumes/Projets/FRANC NORD/episodes/${todayStr}/scenes-custom.js", synchronise au mot près avec voix.mp3 (14 à 26 cues par scène), valide d'abord une séquence pilote complète avec sa voix en 16:9 et 9:16 (plus la passe géographique sans étiquettes et l'audit visuel anti-temps-morts des planches), puis exporte les 2 vidéos complètes (16x9 et 9x16) ET découpe automatiquement les 3 Shorts/Reels verticaux (Short-1-*.mp4, Short-2-*.mp4, Short-3-*.mp4 pour les chapitres ch1, ch2, ch3).`
+    : `Examine les images haute résolution de notre charte dans "/Volumes/Projets/FRANC NORD/identite-visuelle/", inspecte nos trois références approuvées ${refs}, puis lis "/Volumes/Projets/FRANC NORD/2-aval-opus-motion/PROMPT_OPUS_5_5.md" et "/Volumes/Projets/FRANC NORD/episodes/${todayStr}/storyboard.json". Code ensuite 13 scènes artisanales sur mesure (~200-450 lignes lisibles par scène) dans "/Volumes/Projets/FRANC NORD/episodes/${todayStr}/scenes-custom.js", synchronise au mot près avec voix.mp3 (14 à 26 cues par scène), valide d'abord une séquence pilote complète avec sa voix en 16:9 et 9:16 (plus la passe géographique sans étiquettes et l'audit visuel anti-temps-morts des planches), puis exporte les 2 vidéos complètes (16x9 et 9x16) ET découpe automatiquement les 3 Shorts/Reels verticaux (Short-1-*.mp4, Short-2-*.mp4, Short-3-*.mp4 pour les chapitres ch1, ch2, ch3).`;
+  const appleStandard = `EXIGENCE ABSOLUE — ZERO VIDÉO MORTE, ZERO JOUET 3D EN BLOCS, QUALITÉ APPLE NEWS+ : RÈGLE DES 2 SECONDES obligatoire (jamais plus de 2,5 s sans évolution visuelle, nouvelle donnée odometer, graphique, carte HUD, onde ou transformation calée sur wordTimes). INTERDIT de sculpter humains (« pions de Monopoly »), navires, mines, trains, barrages ou bâtiments avec de simples box()/cylinder()/ellipsoid() opaques dans un vide noir #030509 nu : utilise du vectoriel Canvas haute couture, des cartes verre dépoli, des infographies vivantes, 3 plans de profondeur (grille/lueur + sujet + particules dust) et 8+ mises en scène variées (jamais titre centré à y=21% partout). Globe 8K vivant (arcs, radar, fiches ancrées, Québec contextualisé par Canada/Grands Lacs/Saint-Laurent, test sans étiquettes). Zéro jitter, zéro titre tronqué en fondu, zéro musique (uniquement voix.mp3).`;
   const deliveryPrompt = `${basePrompt} ${appleStandard} LIVRAISON OBLIGATOIRE : place les 2 MP4 complets (16x9 et 9x16), les 3 MP4 Shorts/Reels verticaux (ch1, ch2, ch3), tous les fichiers de l'épisode ET le fichier KIT-PUBLICATION-EPISODE-NN.md (repris depuis episodes/${todayStr}/ en mettant uniquement à jour les horodatages exacts des chapitres selon voix.mp3) dans un dossier daté créé directement sous /Volumes/Projets/FRANC NORD/episodes/ (exemple : ${todayStr}-Episode-05), sans dossier livraisons/. Prépare aussi la mise à jour dans le Studio sur https://resido.ca et demande-moi explicitement si je veux la publier.`;
   await copyTextReliable(deliveryPrompt);
   voiceStatusText.textContent = `✓ Copié dans le presse-papiers : ${deliveryPrompt}`;
@@ -463,10 +464,15 @@ async function init() {
   const sbRes = await fetch(`../episodes/${episodeDate}/storyboard.json`);
   storyboard = await sbRes.json();
 
-  const scenesModule = await import(`../episodes/${episodeDate}/scenes-custom.js`);
-  customScenes = scenesModule.CUSTOM_SCENES || {};
+  try {
+    const scenesModule = await import(`../episodes/${episodeDate}/scenes-custom.js`);
+    customScenes = scenesModule.CUSTOM_SCENES || {};
+  } catch {
+    customScenes = {};
+  }
 
   buildUI();
+  await configureDelivery();
   if (String(storyboard.productionStatus?.voice || '').startsWith('word-aligned')) {
     voiceAudioPlayer.src = `../episodes/${episodeDate}/voix.mp3`;
     voiceAudioPlayer.style.display = 'block';
@@ -486,15 +492,44 @@ init().catch((err) => {
 });
 
 
-// The delivered MP4 and the animation studio share the same format selector.
+// Sources locales pour la prévisualisation ; Pages + Release après publication.
 const finalVideo = document.getElementById('finalVideo');
 const finalPanel = document.getElementById('finalVideoPanel');
 const animationPanel = document.querySelector('.canvas-viewport');
+const localDelivery = ['127.0.0.1', 'localhost', '[::1]'].includes(location.hostname);
+function deliveryUrl(file) {
+  if (localDelivery) return `../episodes/${episodeDate}/${file.file}`;
+  if (file.kind === 'complete' && file.format === '16x9') return `../videos/${episodeDate}/${file.file}`;
+  return `https://github.com/Geelbaire/resido-hub/releases/download/${publication.releaseTag}/${file.file}`;
+}
+async function configureDelivery() {
+  try {
+    const response = await fetch(`../episodes/${episodeDate}/publication-metadata.json`);
+    if (!response.ok) return;
+    publication = await response.json();
+    const links = document.getElementById('episodeDownloads');
+    links.replaceChildren();
+    for (const file of publication.files) {
+      const link = document.createElement('a');
+      link.href = deliveryUrl(file);
+      link.download = file.file;
+      link.textContent = file.kind === 'complete' ? `MP4 ${file.format.replace('x', ':')}` : `Short ${file.chapterId.slice(2)}`;
+      links.append(link);
+    }
+    const kit = document.createElement('a');
+    kit.href = `../episodes/${episodeDate}/KIT-PUBLICATION-EPISODE-${String(publication.episode).padStart(2, '0')}.md`;
+    kit.textContent = 'Kit de publication'; kit.download = ''; links.append(kit);
+    document.getElementById('showFinalVideo').textContent = `▶ Épisode ${publication.episode} · Ormuz, Ukraine et IA`;
+    finalVideo.setAttribute('aria-label', `Épisode ${publication.episode} complet avec narration`);
+    const duration = Math.round(publication.files.find(f => f.kind === 'complete').duration);
+    document.getElementById('deliveryDuration').textContent = `${Math.floor(duration / 60)} min ${String(duration % 60).padStart(2, '0')} s · Voix originale · Sans musique`;
+  } catch (error) { console.warn('Informations de livraison indisponibles', error); }
+}
 function selectDeliveredVideo() {
   const previous = finalVideo.currentTime || 0;
-  const epNum = String(storyboard?.episodeNumber || 3).padStart(2, '0');
-  // Le site n'héberge que la version 16:9 du dernier épisode (9:16 : lien de téléchargement Release).
-  finalVideo.src = `../videos/${episodeDate}/Franc-Nord-Episode-${epNum}-16x9.mp4`;
+  const file = publication?.files.find(f => f.kind === 'complete' && f.format === currentFormat);
+  const epNum = String(storyboard?.episodeNumber || 5).padStart(2, '0');
+  finalVideo.src = file ? deliveryUrl(file) : '../videos/2026-11-14-Special-Reportage-Epicerie/Franc-Nord-Episode-04-16x9.mp4';
   finalVideo.addEventListener('loadedmetadata', () => { finalVideo.currentTime = Math.min(previous, finalVideo.duration); }, {once:true});
 }
 document.getElementById('showFinalVideo').addEventListener('click', () => {
