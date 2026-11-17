@@ -15,7 +15,8 @@ Chaque jour, sélectionnez **Gemini Hydrogen** et envoyez-lui cette consigne :
 > 4. Génère dans `episodes/YYYY-MM-DD/` :
 >    - `storyboard.json` (13 scènes détaillées avec un `motionBrief` cinématique plein écran par scène pour Codex/Opus, sans aucun bandeau défilant ni boîte de tableau de bord).
 >    - `teleprompteur.md` (environ 1 280 à 1 350 mots en français québécois naturel, fluide, précis et captivant).
->    - `KIT-PUBLICATION-EPISODE-NN.md` (titres < 85 car., descriptions avec chapitres, tags < 500 car., premier commentaire épinglé et prompts de miniatures pour la vidéo complète YouTube/Facebook et les 3 Shorts/Reels ch1, ch2, ch3) — **et affiche aussi ces textes de publication directement dans la conversation**. »
+>    - `KIT-PUBLICATION-EPISODE-NN.md` (titres < 85 car., descriptions avec chapitres, tags < 500 car., premier commentaire épinglé et prompts de miniatures pour la vidéo complète YouTube/Facebook et les 3 Shorts/Reels ch1, ch2, ch3) — **et affiche aussi ces textes de publication directement dans la conversation**.
+>      **RÈGLE ABSOLUE POUR TOUTES LES MINIATURES :** Chaque prompt de miniature (YouTube 16:9, Facebook 9:16 et les 3 Shorts/Reels) **DOIT OBLIGATOIREMENT contenir un titre éditorial géant et percutant (2 à 5 mots en majuscules, en blanc `#F8FAFC` et accent couleur)** rendu directement dans l'image (jamais de « titre ajouté en postproduction » ni de miniature sans texte). »
 
 ---
 
