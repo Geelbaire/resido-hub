@@ -1,0 +1,367 @@
+{
+  "date": "2026-11-17",
+  "collectedAt": "2026-11-17T00:29:33.588Z",
+  "totalArticles": 40,
+  "articles": [
+    {
+      "sourceId": "bbc-world",
+      "sourceName": "BBC News World",
+      "region": "Global (UK)",
+      "title": "Five EU countries announce migrant deportation centre in Rwanda",
+      "summary": "Germany, Denmark, Austria, Greece and the Netherlands have announced a \"return hub\" for failed asylum seekers.",
+      "link": "https://www.bbc.co.uk/news/articles/cw987343352go?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Mon, 16 Nov 2026 23:20:45 GMT"
+    },
+    {
+      "sourceId": "bbc-world",
+      "sourceName": "BBC News World",
+      "region": "Global (UK)",
+      "title": "Houthi rebel advance in Yemen may further destabilise global economy",
+      "summary": "The Iran-backed Houthis are gaining ground and their advance could have dangerous consequences, writes the BBC's security correspondent.",
+      "link": "https://www.bbc.co.uk/news/articles/cmy97qperq9eo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Mon, 16 Nov 2026 21:40:07 GMT"
+    },
+    {
+      "sourceId": "bbc-world",
+      "sourceName": "BBC News World",
+      "region": "Global (UK)",
+      "title": "Nvidia dismisses 'Bring Jensen Back' campaign as Trump backs effort to reinstate ex CEO",
+      "summary": "A number of tech figures have backed an effort asking the AI chip giant to give Jensen Huang his job back.",
+      "link": "https://www.bbc.co.uk/news/articles/cry49plv8v3go?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Mon, 16 Nov 2026 22:21:27 GMT"
+    },
+    {
+      "sourceId": "bbc-world",
+      "sourceName": "BBC News World",
+      "region": "Global (UK)",
+      "title": "Landmark Crimea bridge hit as Russia reports biggest Ukrainian drone attack of war",
+      "summary": "Russia said Ukraine had launched over 2,000 drones over the course of a day, while Kyiv came under a record 17 air raid alerts.",
+      "link": "https://www.bbc.co.uk/news/articles/ckx27v6dpjz0o?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Mon, 16 Nov 2026 14:58:12 GMT"
+    },
+    {
+      "sourceId": "bbc-world",
+      "sourceName": "BBC News World",
+      "region": "Global (UK)",
+      "title": "When will we see Robert Pattinson as Bond in cinemas?",
+      "summary": "Robert Pattinson has been announced as the next James Bond, becoming the seventh actor to take up the mantle of 007.",
+      "link": "https://www.bbc.co.uk/news/videos/cmd91xjd9zk2o?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Mon, 16 Nov 2026 17:18:54 GMT"
+    },
+    {
+      "sourceId": "bbc-world",
+      "sourceName": "BBC News World",
+      "region": "Global (UK)",
+      "title": "Forensic expert says his analysis of autopsy photos suggests Epstein was killed",
+      "summary": "Professor Michael Freeman tells BBC Newsnight that he believes the convicted sex offender's injuries are consistent with a homicide.",
+      "link": "https://www.bbc.co.uk/news/articles/c5n4exg1kkmyo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Mon, 16 Nov 2026 20:33:57 GMT"
+    },
+    {
+      "sourceId": "bbc-world",
+      "sourceName": "BBC News World",
+      "region": "Global (UK)",
+      "title": "Lindsay Clancy to face retrial next year for deaths of her three children",
+      "summary": "The 36-year-old's first trial this year fell apart when a 12-person jury failed to reach a verdict.",
+      "link": "https://www.bbc.co.uk/news/articles/cw5y1v8de35go?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Mon, 16 Nov 2026 19:30:30 GMT"
+    },
+    {
+      "sourceId": "bbc-world",
+      "sourceName": "BBC News World",
+      "region": "Global (UK)",
+      "title": "Two mass shootings in South Africa leave 17 dead",
+      "summary": "The shootings in KwaZulu-Natal and Gauteng highlight South Africa's struggle to curb violent crime.",
+      "link": "https://www.bbc.co.uk/news/articles/c8y5x3n4kywpo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Mon, 16 Nov 2026 10:57:48 GMT"
+    },
+    {
+      "sourceId": "france24-monde",
+      "sourceName": "France 24 Monde",
+      "region": "Global (FR)",
+      "title": "Ukraine en direct : deux ponts de Kiev touchés par des frappes russes",
+      "summary": "Des frappes russes ont touché deux ponts importants de Kiev lundi soir, a déclaré le maire de la capitale ukrainienne, Vitali Klitschko, ajoutant que des \"systèmes d'infrastructures critiques\" avaient été endommagés. La Russie a de son côté confirmé que le pont de Crimée avait été frappé pour la deuxième journée conséc",
+      "link": "https://www.france24.com/fr/europe/20261117-en-direct-ukraine-deux-ponts-kiev-touches-frappes-russes-zelensky-poutine",
+      "pubDate": "Tue, 17 Nov 2026 00:22:05 GMT"
+    },
+    {
+      "sourceId": "france24-monde",
+      "sourceName": "France 24 Monde",
+      "region": "Global (FR)",
+      "title": "États-Unis : un juge annule les limites de visa pour étudiants et journalistes, Trump fait appel",
+      "summary": "Les restrictions de séjour pour les étudiants et les journalistes étrangers ordonnées par l'administration Trump ont été annulées lundi par un juge fédéral qui considère la nouvelle règlementation \"arbitraire\". Le gouvernement républicain a d'ores et déjà fait appel.",
+      "link": "https://www.france24.com/fr/am%C3%A9riques/20261117-etats-unis-juge-federal-annule-limites-visa-etudiants-journalistes-etrangers-donal-trump-appel",
+      "pubDate": "Tue, 17 Nov 2026 00:02:25 GMT"
+    },
+    {
+      "sourceId": "france24-monde",
+      "sourceName": "France 24 Monde",
+      "region": "Global (FR)",
+      "title": "Francophonie : l'avenir du français se joue-t-il en Afrique ?",
+      "summary": "Au Cambodge, le sommet de la Francophonie s’est achevé ce lundi sur le report d’un an de l’élection à la tête de l’organisation. En cause notamment : les tensions entre la République démocratique du Congo et le Rwanda. La secrétaire générale, la Rwandaise Louise Mushikiwabo, reste donc en poste jusqu’au prochain scruti",
+      "link": "https://www.france24.com/fr/%C3%A9missions/les-cl%C3%A9s-de-l-info/20261116-francophonie-l-avenir-du-fran%C3%A7ais-se-joue-t-il-en-afrique",
+      "pubDate": "Mon, 16 Nov 2026 23:11:50 GMT"
+    },
+    {
+      "sourceId": "france24-monde",
+      "sourceName": "France 24 Monde",
+      "region": "Global (FR)",
+      "title": "Impôts, logement, Smic... les candidats à la présidentielle débattent de leurs propositions",
+      "summary": "Les candidats à la présidentielle française Marine Le Pen, Jean-Luc Mélenchon, Raphaël Glucksmann, Bruno Retailleau et Gabriel Attal ont débattu lundi sur les inégalités, le pouvoir d’achat et la solidarité, lors d’un débat organisé en région parisienne dans un entrepôt des Restos du Cœur en l’absence d’Édouard Philipp",
+      "link": "https://www.france24.com/fr/france/20261116-imp%C3%B4ts-logement-smic-les-candidats-%C3%A0-la-pr%C3%A9sidentielle-d%C3%A9battent-de-leurs-propositions",
+      "pubDate": "Mon, 16 Nov 2026 22:39:30 GMT"
+    },
+    {
+      "sourceId": "france24-monde",
+      "sourceName": "France 24 Monde",
+      "region": "Global (FR)",
+      "title": "Ukraine : Marine Le Pen confirme à l'ambassadeur la fin de l'aide financière si elle est élue",
+      "summary": "Los d'une rencontre lundi avec l'ambassadeur d'Ukraine à Paris, Marine Le Pen a réaffirmé que si elle était élue à l'Élysée \"l'état des finances publiques de la France ne permett(rait) plus d'aider financièrement l'Ukraine dans les prochains mois\", selon un communiqué du Rassemblement national.",
+      "link": "https://www.france24.com/fr/france/20261116-ukraine-marine-le-pen-confirme-%C3%A0-l-ambassadeur-la-fin-de-l-aide-financi%C3%A8re-si-elle-est-%C3%A9lue",
+      "pubDate": "Mon, 16 Nov 2026 21:46:15 GMT"
+    },
+    {
+      "sourceId": "france24-monde",
+      "sourceName": "France 24 Monde",
+      "region": "Global (FR)",
+      "title": "Francophonie : face à l'impasse, l'élection du secrétaire général repoussée d'un an",
+      "summary": "L'élection du secrétaire général de l'Organisation internationale de la Francophonie (OIF), au coeur d'un bras de fer entre République démocratique du Congo et Rwanda, a été reportée d'un an lundi faute de consensus, un \"compromis\" diversement accueilli. La sortante rwandaise Louise Mushikiwabo, qui a dénoncé des \"pres",
+      "link": "https://www.france24.com/fr/%C3%A9missions/journal-de-l-afrique/20261116-francophonie-face-%C3%A0-l-impasse-l-%C3%A9lection-du-secr%C3%A9taire-g%C3%A9n%C3%A9ral-repouss%C3%A9e-d-un-an",
+      "pubDate": "Mon, 16 Nov 2026 21:39:37 GMT"
+    },
+    {
+      "sourceId": "france24-monde",
+      "sourceName": "France 24 Monde",
+      "region": "Global (FR)",
+      "title": "17 novembre : comment une rumeur a propagé l'idée d'une panne en France",
+      "summary": "Depuis plusieurs semaines, des publications mettent en garde contre une panne générale d'Internet, d'électricité et de transports en France notamment, pour le 17 novembre. Une rumeur basée sur l'exagération de certains faits véridiques couplés à des théories complotistes et à des évènements récents bien réels qui alime",
+      "link": "https://www.france24.com/fr/%C3%A9missions/info-ou-intox/20261116-17-novembre-comment-une-rumeur-a-propag%C3%A9-l-id%C3%A9e-d-une-panne-en-france",
+      "pubDate": "Mon, 16 Nov 2026 20:53:33 GMT"
+    },
+    {
+      "sourceId": "france24-monde",
+      "sourceName": "France 24 Monde",
+      "region": "Global (FR)",
+      "title": "Maileva : nouvelle cyberattaque contre une société française",
+      "summary": "C'est le plus récent piratage informatique d'une société française : Maileva, filiale de La Poste, s'est vu dérober les coordonnées de 22 millions de clients (nom, prénom et adresse postale). Elle est la dernière victime d'une longue liste de victimes de cyberattaques en France, après le Crédit Mutuel Arkéa la semaine ",
+      "link": "https://www.france24.com/fr/%C3%A9missions/info-%C3%A9co/20261116-maileva-nouvelle-cyberattaque-contre-une-soci%C3%A9t%C3%A9-fran%C3%A7aise",
+      "pubDate": "Mon, 16 Nov 2026 19:57:51 GMT"
+    },
+    {
+      "sourceId": "rc-monde",
+      "sourceName": "Radio-Canada International",
+      "region": "Canada / Monde",
+      "title": "Cinq départs coup sur coup au bureau de Pierre Poilievre",
+      "summary": "Le chef conservateur perd, entre autres, son chef de cabinet adjoint et son directeur des communications.",
+      "link": "https://ici.radio-canada.ca/article/info/2301130/conservateur-poilievre-departs-cabinet-communication",
+      "pubDate": "Mon, 16 Nov 2026 22:19:34 GMT"
+    },
+    {
+      "sourceId": "rc-monde",
+      "sourceName": "Radio-Canada International",
+      "region": "Canada / Monde",
+      "title": "Vente de l’usine de Stellantis : le gouvernement Ford sur la défensive",
+      "summary": "Doug Ford dit soutenir Ottawa pour sauver l&#x27;usine du constructeur automobile Stellantis à Brampton en Ontario.",
+      "link": "https://ici.radio-canada.ca/article/info/2301085/stellantis-doug-ford-industrie-auto",
+      "pubDate": "Mon, 16 Nov 2026 19:37:05 GMT"
+    },
+    {
+      "sourceId": "rc-monde",
+      "sourceName": "Radio-Canada International",
+      "region": "Canada / Monde",
+      "title": "Photo truquée d’une députée amochée : un président de la FTQ démissionne",
+      "summary": "La photo générée par l&#x27;IA montre Éloïse Coulombe avec «&nbsp;un œil au beurre noir&nbsp;».",
+      "link": "https://ici.radio-canada.ca/article/info/2301061/photo-truquee-deputee-amochee-duhaime-ftq",
+      "pubDate": "Mon, 16 Nov 2026 21:00:03 GMT"
+    },
+    {
+      "sourceId": "rc-monde",
+      "sourceName": "Radio-Canada International",
+      "region": "Canada / Monde",
+      "title": "La compagnie américaine United Airlines fait état d’une brève panne « généralisée »",
+      "summary": "Le nombre de vols touchés n&#x27;était pas connu dans l&#x27;immédiat.",
+      "link": "https://ici.radio-canada.ca/article/info/2301163/united-airlines-panne-informatique-generalisee",
+      "pubDate": "Mon, 16 Nov 2026 23:49:06 GMT"
+    },
+    {
+      "sourceId": "rc-monde",
+      "sourceName": "Radio-Canada International",
+      "region": "Canada / Monde",
+      "title": "Couche-Tard obtient le feu vert pour acquérir l’entreprise polonaise Żabka Group",
+      "summary": "Le géant québécois des dépanneurs prévoit investir 12&nbsp;milliards&nbsp;$ dans cette acquisition.",
+      "link": "https://ici.radio-canada.ca/article/info/2301125/couche-tard-acquerir-entreprise-polonaise-zabka-group",
+      "pubDate": "Mon, 16 Nov 2026 21:14:48 GMT"
+    },
+    {
+      "sourceId": "rc-monde",
+      "sourceName": "Radio-Canada International",
+      "region": "Canada / Monde",
+      "title": "Les Canadiennes en argent au mondial de hockey, les Américaines championnes",
+      "summary": "Les États-Unis décrochent l&#x27;or avec une victoire sans appel de 6-2.",
+      "link": "https://ici.radio-canada.ca/article/sports/2301070/iihf-championnat-monde-femmes-canada-usa",
+      "pubDate": "Mon, 16 Nov 2026 22:21:05 GMT"
+    },
+    {
+      "sourceId": "rc-monde",
+      "sourceName": "Radio-Canada International",
+      "region": "Canada / Monde",
+      "title": "Une panne touche de grandes banques américaines",
+      "summary": "Un problème technique chez JPMorgan Chase a eu des répercussions sur l’ensemble du système financier.",
+      "link": "https://ici.radio-canada.ca/article/info/2301108/panne-informatique-grandes-banques-americaines",
+      "pubDate": "Mon, 16 Nov 2026 22:03:37 GMT"
+    },
+    {
+      "sourceId": "rc-monde",
+      "sourceName": "Radio-Canada International",
+      "region": "Canada / Monde",
+      "title": "Dépendance aux drogues : la loi en hommage au fils de Luc Berthold adoptée à l’unanimité",
+      "summary": "La nouvelle loi met davantage l&#x27;accent sur les programmes de traitement avant la judiciarisation.",
+      "link": "https://ici.radio-canada.ca/article/info/2301056/luc-berthold-loi-amis-david-drogues",
+      "pubDate": "Mon, 16 Nov 2026 19:31:45 GMT"
+    },
+    {
+      "sourceId": "un-news",
+      "sourceName": "ONU Info",
+      "region": "International",
+      "title": "Contre la haine, l'ONU mise sur les leaders religieux, traditionnels et autochtones",
+      "summary": "Les responsables religieux, traditionnels et autochtones doivent être reconnus comme des partenaires à part entière dans la prévention des conflits, et non simplement salués pour leur contribution, ont plaidé dimanche les participants à l’ouverture du Forum sur le Plan d’action de Mascate, à Oman.",
+      "link": "https://news.un.org/feed/view/fr/story/2026/11/1159849",
+      "pubDate": "Mon, 16 Nov 2026 12:00:00 +0000"
+    },
+    {
+      "sourceId": "un-news",
+      "sourceName": "ONU Info",
+      "region": "International",
+      "title": "Syrie : deux ans après la chute d’Al-Assad, la transition à l’épreuve de la pauvreté et des violences",
+      "summary": "À l’approche du deuxième anniversaire de la chute du dictateur Bachar Al-Assad, la Syrie tente de reconstruire ses institutions et son économie. Mais derrière les progrès affichés, les violences persistent, la pauvreté entrave le retour des déplacés et les libertés restent fragiles. Lundi, devant le Conseil de sécurité",
+      "link": "https://news.un.org/feed/view/fr/story/2026/11/1159848",
+      "pubDate": "Mon, 16 Nov 2026 12:00:00 +0000"
+    },
+    {
+      "sourceId": "un-news",
+      "sourceName": "ONU Info",
+      "region": "International",
+      "title": "Six mois après l'apparition d'Ebola en RDC, l’accès aux populations isolées reste un défi",
+      "summary": "Six mois après le début de l’épidémie d’Ebola due au virus Bundibugyo en République démocratique du Congo (RDC), la situation demeure préoccupante, malgré des « progrès significatifs » dans la riposte sanitaire. Des centaines de nouveaux cas continuent d’être signalés chaque semaine, tandis que l’épidémie a touché 67 z",
+      "link": "https://news.un.org/feed/view/fr/story/2026/11/1159846",
+      "pubDate": "Mon, 16 Nov 2026 12:00:00 +0000"
+    },
+    {
+      "sourceId": "un-news",
+      "sourceName": "ONU Info",
+      "region": "International",
+      "title": "Samarcande : faire vivre le patrimoine sans sacrifier la ville",
+      "summary": "Alors que le soleil se couche sur le majestueux Registan de Samarcande, ses derniers rayons scintillent sur les mosaïques turquoise. Le crépuscule enveloppe cette place historique, témoin de siècles d’échanges commerciaux et culturels sur la Route de la Soie. Autour des monuments, les touristes flânent devant les étals",
+      "link": "https://news.un.org/feed/view/fr/story/2026/11/1159832",
+      "pubDate": "Sun, 15 Nov 2026 12:00:00 +0000"
+    },
+    {
+      "sourceId": "un-news",
+      "sourceName": "ONU Info",
+      "region": "International",
+      "title": "COP31 : assurer une information climatique fiable à l’ère de l’IA",
+      "summary": "Comment se fier aux réponses de l’intelligence artificielle sur le climat ? Et comment mesurer l’empreinte écologique de cette technologie ? De nouvelles priorités d’action, lancées vendredi à la Conférence des Nations Unies sur le climat (COP31), visent à répondre à ces deux défis.",
+      "link": "https://news.un.org/feed/view/fr/story/2026/11/1159843",
+      "pubDate": "Fri, 13 Nov 2026 12:00:00 +0000"
+    },
+    {
+      "sourceId": "un-news",
+      "sourceName": "ONU Info",
+      "region": "International",
+      "title": "D’Ormuz à Bab Al-Mandab, la guerre au Moyen-Orient prend le commerce mondial en otage",
+      "summary": "Neuf mois après le début de la guerre avec l’Iran, les attaques contre les navires marchands continuent de perturber deux des principales voies maritimes de la planète. Devant le Conseil de sécurité, vendredi, l’ONU a alerté sur les conséquences économiques et alimentaires de cette crise, tandis que les monarchies du G",
+      "link": "https://news.un.org/feed/view/fr/story/2026/11/1159841",
+      "pubDate": "Fri, 13 Nov 2026 12:00:00 +0000"
+    },
+    {
+      "sourceId": "un-news",
+      "sourceName": "ONU Info",
+      "region": "International",
+      "title": "« Faites payer les pollueurs » : à la COP31, la justice climatique se fait entendre",
+      "summary": "Des appels empreints d’émotion en faveur de la justice climatique aux négociations cruciales portant sur des milliards de dollars, le financement a dominé les débats de la COP31, vendredi, à Antalya, en Turquie.&nbsp;",
+      "link": "https://news.un.org/feed/view/fr/story/2026/11/1159842",
+      "pubDate": "Fri, 13 Nov 2026 12:00:00 +0000"
+    },
+    {
+      "sourceId": "un-news",
+      "sourceName": "ONU Info",
+      "region": "International",
+      "title": "Yémen : la crise des déplacés s’aggrave, l'aide humanitaire entravée",
+      "summary": "Plus de 340 000 personnes ont été contraintes de fuir leur foyer au Yémen, sur fond de violences persistantes et d’insécurité croissante. Alors que les besoins humanitaires s’aggravent, les restrictions imposées sur des axes de transport essentiels compliquent l’acheminement de l’aide, alerte vendredi l’Organisation in",
+      "link": "https://news.un.org/feed/view/fr/story/2026/11/1159839",
+      "pubDate": "Fri, 13 Nov 2026 12:00:00 +0000"
+    },
+    {
+      "sourceId": "aljazeera",
+      "sourceName": "Al Jazeera English",
+      "region": "Global (ME)",
+      "title": "Ethiopia Moyale clashes disrupt livelihoods as territorial dispute deepens",
+      "summary": "The country's unresolved Oromia-Somali border dispute fuels renewed violence, displacing thousands.",
+      "link": "https://www.aljazeera.com/news/2026/11/17/ethiopia-moyale-clashes-disrupt-livelihoods-as-territorial-dispute-deepens?traffic_source=rss",
+      "pubDate": "Tue, 17 Nov 2026 00:21:19 +0000"
+    },
+    {
+      "sourceId": "aljazeera",
+      "sourceName": "Al Jazeera English",
+      "region": "Global (ME)",
+      "title": "Live: Houthis advance in Yemen as tankers hit sea mines in Strait of Hormuz",
+      "summary": "Iran-aligned Houthi fighters kept up their push in southern Yemen as oil tankers hit sea mines in the Strait of Hormuz.",
+      "link": "https://www.aljazeera.com/news/liveblog/2026/11/16/live-houthis-advance-in-yemen-as-tankers-hit-sea-mines-in-strait-of-hormuz?traffic_source=rss",
+      "pubDate": "Mon, 16 Nov 2026 23:57:49 +0000"
+    },
+    {
+      "sourceId": "aljazeera",
+      "sourceName": "Al Jazeera English",
+      "region": "Global (ME)",
+      "title": "Paraguay ex-president moved to military jail amid special treatment reports",
+      "summary": "Santiago Pena has been accused of corruption following the collapse of Ueno Bank earlier this month.",
+      "link": "https://www.aljazeera.com/news/2026/11/16/paraguay-ex-president-moved-to-military-jail-amid-special-treatment-reports?traffic_source=rss",
+      "pubDate": "Mon, 16 Nov 2026 23:44:32 +0000"
+    },
+    {
+      "sourceId": "aljazeera",
+      "sourceName": "Al Jazeera English",
+      "region": "Global (ME)",
+      "title": "Trump departs for ASEAN on summit with Xi and Putin",
+      "summary": "Donald Trump is heading to the Philippines where he’s scheduled to speak at a meeting of ASEAN leaders in Manila.",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/16/trump-departs-for-asean-on-summit-with-xi-and-putin?traffic_source=rss",
+      "pubDate": "Mon, 16 Nov 2026 23:42:03 +0000"
+    },
+    {
+      "sourceId": "aljazeera",
+      "sourceName": "Al Jazeera English",
+      "region": "Global (ME)",
+      "title": "EU agrees to resurrect cooperation deal with Syria",
+      "summary": "Decision aims to bolster bloc's ties with Damascus following the collapse of Assad's government in December 2024.",
+      "link": "https://www.aljazeera.com/news/2026/11/16/eu-agrees-to-resurrect-cooperation-deal-with-syria?traffic_source=rss",
+      "pubDate": "Mon, 16 Nov 2026 23:00:36 +0000"
+    },
+    {
+      "sourceId": "aljazeera",
+      "sourceName": "Al Jazeera English",
+      "region": "Global (ME)",
+      "title": "US Pentagon rejects allegations linking deputy to a Goldman Sachs banker",
+      "summary": "Pentagon defends Steve Feinberg, amid claims in Bloomberg he encouraged defence contractors to use a specific banker.",
+      "link": "https://www.aljazeera.com/news/2026/11/16/us-pentagon-rejects-allegations-linking-deputy-to-a-goldman-sachs-banker?traffic_source=rss",
+      "pubDate": "Mon, 16 Nov 2026 22:40:07 +0000"
+    },
+    {
+      "sourceId": "aljazeera",
+      "sourceName": "Al Jazeera English",
+      "region": "Global (ME)",
+      "title": "Germany thrash Netherlands to book quarterfinal spot",
+      "summary": "Jurgen Klopp's side outclasses the Dutch 5-0 in Berlin to secure top spot in UEFA Nations League Group A2.",
+      "link": "https://www.aljazeera.com/sports/2026/11/16/germany-thrash-netherlands-to-book-quarterfinal-spot?traffic_source=rss",
+      "pubDate": "Mon, 16 Nov 2026 22:04:31 +0000"
+    },
+    {
+      "sourceId": "aljazeera",
+      "sourceName": "Al Jazeera English",
+      "region": "Global (ME)",
+      "title": "California files lawsuit against OpenAI alleging lack of proper safeguards",
+      "summary": "Attorney General Rob Bonta says Hugging Face attack was 'entirely predictable' result of emphasis on rapid growth.",
+      "link": "https://www.aljazeera.com/news/2026/11/16/california-files-lawsuit-against-openai-alleging-lack-of-proper-safeguards?traffic_source=rss",
+      "pubDate": "Mon, 16 Nov 2026 21:35:51 +0000"
+    }
+  ]
+}

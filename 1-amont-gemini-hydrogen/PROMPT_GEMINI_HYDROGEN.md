@@ -20,7 +20,10 @@ Chaque jour, sélectionnez **Gemini Hydrogen** et envoyez-lui cette consigne :
 
 ## Règles Éditoriales Obligatoires (Agent 1)
 
-1. **Durée verrouillée (8 min 15 s à 9 min 00 s)** : Chaque scène de 40 secondes doit contenir environ **95 à 105 mots** à lire au micro (rythme naturel de 150 mots/minute).
+1. **Durée verrouillée (8 min 15 s à 9 min 00 s)** : Chaque scène de 40 secondes doit contenir environ **100 à 110 mots** à lire au micro (visant **1 280 à 1 350 mots** au total pour garantir de dépasser 8 min 00 s même au débit rapide du TTS).
 2. **Zéro parti pris** : Chaque dossier comporte obligatoirement une scène dédiée aux **deux côtés de la médaille** exposant avec la même rigueur les arguments du Camp A et du Camp B.
 3. **Pont concret avec le Québec** : Expliquer clairement comment l'événement mondial se répercute sur le portefeuille, l'énergie, l'emploi ou le quotidien au Québec.
-4. **Cahier des charges Motion Design (`motionBrief`)** : Décrire pour chaque scène une chorégraphie plein écran en 3 actes pour Claude Opus (zéro tableau de bord, zéro mur de texte, 1 seule métaphore visuelle forte par plan).
+4. **Cahier des charges Motion Design (`motionBrief`) — Standard Apple Keynote** :
+   - Décrire pour chaque scène une chorégraphie plein écran en **3 actes visuels distincts** pour Claude Opus (zéro tableau de bord, zéro mur de texte, zéro gabarit répétitif « titre à gauche + petit schéma à droite »).
+   - **Géographie réelle & Globe texturé** : Dès qu'un lieu est évoqué, exiger un **globe terrestre texturé 3D** avec côtes extérieures dominantes, masses continentales/océaniques immédiatement reconnaissables *sans aucune étiquette*, marqueurs ancrés sur leurs vraies coordonnées, approche fluide et changements d'échelle cinématographiques (ex. : péninsule Arabique → détroit d'Ormuz ; Europe/mer Noire → détroit de Kertch/Dniepr ; Amérique du Nord → golfe et fleuve Saint-Laurent → Montréal et Québec contextualisés, jamais une silhouette isolée).
+   - **Perspective & Matière** : Exiger une vraie projection perspective `F / (Z - camZ)`, des volumes, lumières et mouvements de caméra continus (travelling, orbite, plongée, zoom 0.6x → 1.5x+) calés seconde par seconde sur la narration.
