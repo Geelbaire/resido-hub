@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>FRANC NORD · Rendu de production</title>
+  <style>html,body {margin:0;background:#030509} canvas {display:block;max-width:100vw;max-height:100vh;object-fit:contain}</style>
+</head>
+<body>
+<canvas id="frame"></canvas>
+<script>
+  window.addEventListener('error', event => window.renderFailure = event.message);
+  window.addEventListener('unhandledrejection', event => window.renderFailure = String(event.reason?.stack || event.reason));
+</script>
+<script type="module">
+  import {renderBroadcastFrame} from '../../../studio/broadcast-canvas.js';
+  import {CUSTOM_SCENES} from '../scenes-custom.js';
+
+  const storyboard = await fetch('../storyboard.json').then(response => response.json());
+  const canvas = document.querySelector('canvas');
+  const ctx = canvas.getContext('2d', {alpha: false, desynchronized: true});
+  const format = new URL(location.href).searchParams.get('format');
+  canvas.width = format === '9x16' ? 1080 : 1920;
+  canvas.height = format === '9x16' ? 1920 : 1080;
+  await document.fonts.ready;
+
+  const bareScenes = Object.fromEntries(
+    Object.entries(CUSTOM_SCENES).map(([id, draw]) => [id, args => draw({...args,labelsOff:true})])
+  );
+  const bareStoryboard = {
+    ...storyboard,
+    chapters: storyboard.chapters.map(chapter => ({...chapter,label:'',number:''})),
+    scenes: storyboard.scenes.map(scene => ({...scene,sources:[]})),
+  };
+
+  window.conduites = function () {
+    return storyboard.scenes.map(scene => {
+      const renderer = CUSTOM_SCENES[scene.id];
+      if (!renderer) throw new Error('Scène manquante : ' + scene.id);
+      const {markers,timings,maxGap,silent,interpolated} = renderer.conduite(scene);
+      return {id:scene.id, duration:scene.duration, maxGap, silent, interpolated, timings,
+        plans:markers.map(({time,title,at})=>({time,title,at}))};
+    });
+  };
+
+  window.renderAt = function (time, bare = false) {
+    renderBroadcastFrame({
+      ctx,
+      width: canvas.width,
+      height: canvas.height,
+      storyboard: bare ? bareStoryboard : storyboard,
+      customScenes: bare ? bareScenes : CUSTOM_SCENES,
+      globalTime: time,
+    });
+  };
+
+  window.controleTexte = function () {
+    const courses = window.conduites();
+    let start = 0;
+    return courses.map(course => {
+      const samples = new Set();
+      for (const plan of course.plans) {
+        samples.add(Math.min(course.duration-.02,plan.time+.34));
+        samples.add(Math.min(course.duration-.02,plan.time+1.17));
+      }
+      const data = [];
+      for (const t of samples) {
+        globalThis.__FN_QA = [];
+        globalThis.__FN_QA_G = 0;
+        globalThis.__FN_QA_CLIP = null;
+        try {
+          window.renderAt(start+t);
+          data.push({t,labels:globalThis.__FN_QA.filter(box => box.a>.60 && box.size>=15)});
+        } finally {
+          globalThis.__FN_QA = undefined;
+          globalThis.__FN_QA_CLIP = null;
+        }
+      }
+      start += course.duration;
+      return {scene:course.id, samples:data};
+    });
+  };
+
+  window.encode = async function ({start, count, fps, bitrate, url, bare = false}) {
+    const config = {
+      codec: 'avc1.640033',
+      width: canvas.width,
+      height: canvas.height,
+      bitrate,
+      framerate: fps,
+      latencyMode: 'realtime',
+      hardwareAcceleration: 'prefer-hardware',
+      avc: {format:'annexb'},
+    };
+    const support = await VideoEncoder.isConfigSupported(config);
+    if (!support.supported) throw new Error('Encodeur H.264 WebCodecs indisponible');
+    const batch = [];
+    let fault;
+    const encoder = new VideoEncoder({
+      output(chunk) {
+        const bytes = new Uint8Array(chunk.byteLength);
+        chunk.copyTo(bytes);
+        batch.push(bytes);
+      },
+      error(error) {fault = error;},
+    });
+    encoder.configure(config);
+
+    let rendered = 0;
+    const step = Math.max(10,Math.round(fps));
+    try {
+      for (let first = 0; first < count; first += step) {
+        const last = Math.min(count,first + step);
+        for (let i = first; i < last; i++) {
+          window.renderAt(start + i / fps,bare);
+          const frame = new VideoFrame(canvas,{
+            timestamp: Math.round(i * 1e6 / fps),
+            duration: Math.round(1e6 / fps),
+          });
+          encoder.encode(frame,{keyFrame:i % (fps * 2) === 0});
+          frame.close();
+          // L'encodeur matériel traite les frames par petits groupes.
+          if (encoder.encodeQueueSize > 9) {
+            await new Promise(resolve => encoder.addEventListener('dequeue',resolve,{once:true}));
+          }
+          if (fault) throw fault;
+        }
+        await encoder.flush();
+        if (fault) throw fault;
+        rendered += batch.length;
+        const payload = new Blob(batch.splice(0));
+        const response = await fetch(url,{method:'POST',body:payload});
+        if (!response.ok) throw new Error('Écriture vidéo interrompue');
+      }
+    } finally {
+      if (encoder.state !== 'closed') encoder.close();
+    }
+    if (rendered !== count) throw new Error(`${rendered}/${count} images encodées`);
+    return rendered;
+  };
+</script>
+</body>
+</html>

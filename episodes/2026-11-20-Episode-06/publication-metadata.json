@@ -1,0 +1,80 @@
+{
+  "episode": 6,
+  "date": "2026-11-20",
+  "title": "Missile russe en Pologne, recul à la COP31 et chute d’Anthropic",
+  "folder": "2026-11-20-Episode-06",
+  "releaseTag": "episode-06-2026-11-20",
+  "chapters": [
+    {
+      "id": "ch0",
+      "start": 0,
+      "end": 39.8,
+      "title": "Sommaire : trois ondes de choc du 20 novembre"
+    },
+    {
+      "id": "ch1",
+      "start": 39.8,
+      "end": 196.8,
+      "title": "Missile russe en Pologne, sommet de Shenzhen et chantier Davie / STQ"
+    },
+    {
+      "id": "ch2",
+      "start": 196.8,
+      "end": 354.48,
+      "title": "COP31 en prolongation, Qatar–Allemagne et énergie au Québec"
+    },
+    {
+      "id": "ch3",
+      "start": 354.48,
+      "end": 475.06,
+      "title": "Anthropic −9 %, cybersécurité et alerte de l’ONU : impact au Québec"
+    },
+    {
+      "id": "ch4",
+      "start": 475.06,
+      "end": 526.567,
+      "title": "La question du jour : Option A ou Option B ?"
+    }
+  ],
+  "files": [
+    {
+      "file": "Franc-Nord-Episode-06-16x9.mp4",
+      "kind": "complete",
+      "format": "16x9",
+      "duration": 526.5666666666667
+    },
+    {
+      "file": "Franc-Nord-Episode-06-9x16.mp4",
+      "kind": "complete",
+      "format": "9x16",
+      "duration": 526.5666666666667
+    },
+    {
+      "file": "Short-1-Missile-Pologne-Shenzhen-Quebec-9x16.mp4",
+      "kind": "short",
+      "format": "9x16",
+      "chapterId": "ch1",
+      "start": 39.8,
+      "end": 196.8,
+      "duration": 157.0
+    },
+    {
+      "file": "Short-2-COP31-Fossiles-Energie-Quebec-9x16.mp4",
+      "kind": "short",
+      "format": "9x16",
+      "chapterId": "ch2",
+      "start": 196.8,
+      "end": 354.48,
+      "duration": 157.68
+    },
+    {
+      "file": "Short-3-Anthropic-Bourse-Cyber-Quebec-9x16.mp4",
+      "kind": "short",
+      "format": "9x16",
+      "chapterId": "ch3",
+      "start": 354.48,
+      "end": 475.06,
+      "duration": 120.58
+    }
+  ]
+}

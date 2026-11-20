@@ -1,0 +1,89 @@
+{
+  "transcript": "voice-transcript-small.json",
+  "scriptWords": 1568,
+  "recognizedWords": 1521,
+  "matchedWords": 1492,
+  "audioDurationSeconds": 523.964063,
+  "finalHoldSeconds": 2.6,
+  "totalDurationSeconds": 526.564,
+  "scenes": [
+    {
+      "id": "intro-sommaire",
+      "chapterId": "ch0",
+      "start": 0,
+      "end": 39.8
+    },
+    {
+      "id": "d1-fait-declencheur",
+      "chapterId": "ch1",
+      "start": 39.8,
+      "end": 77.88
+    },
+    {
+      "id": "d1-coulisses-geopolitiques",
+      "chapterId": "ch1",
+      "start": 77.88,
+      "end": 117.98
+    },
+    {
+      "id": "d1-deux-cotes-medaille",
+      "chapterId": "ch1",
+      "start": 117.98,
+      "end": 157.48
+    },
+    {
+      "id": "d1-impact-quebec",
+      "chapterId": "ch1",
+      "start": 157.48,
+      "end": 196.8
+    },
+    {
+      "id": "d2-fait-declencheur",
+      "chapterId": "ch2",
+      "start": 196.8,
+      "end": 235.8
+    },
+    {
+      "id": "d2-coulisses-geopolitiques",
+      "chapterId": "ch2",
+      "start": 235.8,
+      "end": 276.96
+    },
+    {
+      "id": "d2-deux-cotes-medaille",
+      "chapterId": "ch2",
+      "start": 276.96,
+      "end": 314.74
+    },
+    {
+      "id": "d2-impact-quebec",
+      "chapterId": "ch2",
+      "start": 314.74,
+      "end": 354.48
+    },
+    {
+      "id": "d3-enjeu-mondial",
+      "chapterId": "ch3",
+      "start": 354.48,
+      "end": 396.86
+    },
+    {
+      "id": "d3-lien-quebec",
+      "chapterId": "ch3",
+      "start": 396.86,
+      "end": 437.18
+    },
+    {
+      "id": "d3-deux-cotes-medaille",
+      "chapterId": "ch3",
+      "start": 437.18,
+      "end": 475.06
+    },
+    {
+      "id": "conclusion-debat-quebec",
+      "chapterId": "ch4",
+      "start": 475.06,
+      "end": 526.564
+    }
+  ]
+}

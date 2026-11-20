@@ -296,7 +296,8 @@ export function renderBroadcastFrame({
 
   // 4. Filigrane Officiel FRANC NORD en haut à gauche
   const margin = isVertical ? 48 : 64;
-  drawOfficialBrandCorner(ctx, margin, margin, chapter, globalTime);
+  drawOfficialBrandCorner(ctx, margin, margin, chapter,
+    storyboard.productionStatus?.motion === 'stable' ? 0 : globalTime);
 
   // 5. Crédit source discret en bas à gauche (laisse le coin inférieur droit libre pour le filigrane YouTube)
   if (scene.sources?.length) {

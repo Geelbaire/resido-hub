@@ -1,0 +1,949 @@
+{
+  "sourceVoiceSHA256": "b6d6a7db0fea3acf1679b291f17006bc1b68730230509b3aa143f1580d655e66",
+  "media": [
+    {
+      "file": "Franc-Nord-Episode-06-16x9.mp4",
+      "durationSeconds": 526.566667,
+      "bytes": 493162298,
+      "sha256": "64889c599d6d62ced3e54d7b3034c6a436961d7fce8e9ce41b926da105bb6ac9",
+      "format": "16x9",
+      "frames": 15797,
+      "codecVideo": "h264",
+      "codecAudio": "aac",
+      "audioChannels": 1,
+      "chapterCount": 5,
+      "voiceMatch": [
+        {
+          "timeSeconds": 13.164,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        },
+        {
+          "timeSeconds": 47.391,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        },
+        {
+          "timeSeconds": 100.047,
+          "lagMs": 0.0,
+          "correlation": 0.99998
+        },
+        {
+          "timeSeconds": 168.5,
+          "lagMs": 0.0,
+          "correlation": 0.99996
+        },
+        {
+          "timeSeconds": 263.282,
+          "lagMs": 0.0,
+          "correlation": 0.99997
+        },
+        {
+          "timeSeconds": 342.267,
+          "lagMs": 0.0,
+          "correlation": 0.99996
+        },
+        {
+          "timeSeconds": 426.517,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        },
+        {
+          "timeSeconds": 505.501,
+          "lagMs": 0.0,
+          "correlation": 0.99995
+        }
+      ],
+      "continuity": {
+        "freezeOver2_5": [
+          "524"
+        ],
+        "matchedBlack": [],
+        "sampledFrames": 2106,
+        "lowVisualDelta": []
+      }
+    },
+    {
+      "file": "Franc-Nord-Episode-06-9x16.mp4",
+      "durationSeconds": 526.566667,
+      "bytes": 478139972,
+      "sha256": "2e560c039df1f3567927538cae2b238dc635c3eec49f25dd019bf39b49d93f38",
+      "format": "9x16",
+      "frames": 15797,
+      "codecVideo": "h264",
+      "codecAudio": "aac",
+      "audioChannels": 1,
+      "chapterCount": 5,
+      "voiceMatch": [
+        {
+          "timeSeconds": 13.164,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        },
+        {
+          "timeSeconds": 47.391,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        },
+        {
+          "timeSeconds": 100.047,
+          "lagMs": 0.0,
+          "correlation": 0.99998
+        },
+        {
+          "timeSeconds": 168.5,
+          "lagMs": 0.0,
+          "correlation": 0.99996
+        },
+        {
+          "timeSeconds": 263.282,
+          "lagMs": 0.0,
+          "correlation": 0.99997
+        },
+        {
+          "timeSeconds": 342.267,
+          "lagMs": 0.0,
+          "correlation": 0.99996
+        },
+        {
+          "timeSeconds": 426.517,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        },
+        {
+          "timeSeconds": 505.501,
+          "lagMs": 0.0,
+          "correlation": 0.99995
+        }
+      ],
+      "continuity": {
+        "freezeOver2_5": [],
+        "matchedBlack": [],
+        "sampledFrames": 2106,
+        "lowVisualDelta": []
+      }
+    },
+    {
+      "file": "Short-1-Missile-Pologne-Shenzhen-Quebec-9x16.mp4",
+      "durationSeconds": 157.0,
+      "bytes": 158113980,
+      "sha256": "7da43f33a61f73b572b62bbd4e652ae962e4ddc8a3c62e868268d0d89a7693eb",
+      "format": "9x16",
+      "frames": 4710,
+      "codecVideo": "h264",
+      "codecAudio": "aac",
+      "audioChannels": 1,
+      "chapterCount": 3,
+      "voiceMatch": [
+        {
+          "timeSeconds": 3.925,
+          "lagMs": 0.0,
+          "correlation": 0.99998
+        },
+        {
+          "timeSeconds": 14.13,
+          "lagMs": 0.0,
+          "correlation": 0.99995
+        },
+        {
+          "timeSeconds": 29.83,
+          "lagMs": 0.0,
+          "correlation": 0.99995
+        },
+        {
+          "timeSeconds": 50.24,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        },
+        {
+          "timeSeconds": 78.5,
+          "lagMs": 0.0,
+          "correlation": 0.99996
+        },
+        {
+          "timeSeconds": 102.05,
+          "lagMs": 0.0,
+          "correlation": 0.99997
+        },
+        {
+          "timeSeconds": 127.17,
+          "lagMs": 0.0,
+          "correlation": 0.99991
+        },
+        {
+          "timeSeconds": 150.72,
+          "lagMs": 0.0,
+          "correlation": 0.99997
+        }
+      ],
+      "continuity": {
+        "freezeOver2_5": [],
+        "matchedBlack": [],
+        "sampledFrames": 628,
+        "lowVisualDelta": []
+      }
+    },
+    {
+      "file": "Short-2-COP31-Fossiles-Energie-Quebec-9x16.mp4",
+      "durationSeconds": 157.7,
+      "bytes": 161332153,
+      "sha256": "afc92b2f18230a103c2a0c29edffb533205a6fd492c675e1301c63b4d34aa93e",
+      "format": "9x16",
+      "frames": 4731,
+      "codecVideo": "h264",
+      "codecAudio": "aac",
+      "audioChannels": 1,
+      "chapterCount": 3,
+      "voiceMatch": [
+        {
+          "timeSeconds": 3.942,
+          "lagMs": 0.0,
+          "correlation": 0.99994
+        },
+        {
+          "timeSeconds": 14.191,
+          "lagMs": 0.0,
+          "correlation": 0.99994
+        },
+        {
+          "timeSeconds": 29.959,
+          "lagMs": 0.0,
+          "correlation": 0.99996
+        },
+        {
+          "timeSeconds": 50.458,
+          "lagMs": 0.0,
+          "correlation": 0.99996
+        },
+        {
+          "timeSeconds": 78.84,
+          "lagMs": 0.0,
+          "correlation": 0.99994
+        },
+        {
+          "timeSeconds": 102.492,
+          "lagMs": 0.0,
+          "correlation": 0.99998
+        },
+        {
+          "timeSeconds": 127.721,
+          "lagMs": 0.0,
+          "correlation": 0.99997
+        },
+        {
+          "timeSeconds": 151.373,
+          "lagMs": 0.0,
+          "correlation": 0.99993
+        }
+      ],
+      "continuity": {
+        "freezeOver2_5": [],
+        "matchedBlack": [],
+        "sampledFrames": 631,
+        "lowVisualDelta": []
+      }
+    },
+    {
+      "file": "Short-3-Anthropic-Bourse-Cyber-Quebec-9x16.mp4",
+      "durationSeconds": 120.6,
+      "bytes": 119743349,
+      "sha256": "c280da28157bac1fbccfa5b606c9508b91f45397ef274d668eb39b1ac5fe282c",
+      "format": "9x16",
+      "frames": 3617,
+      "codecVideo": "h264",
+      "codecAudio": "aac",
+      "audioChannels": 1,
+      "chapterCount": 3,
+      "voiceMatch": [
+        {
+          "timeSeconds": 3.014,
+          "lagMs": 0.0,
+          "correlation": 0.99995
+        },
+        {
+          "timeSeconds": 10.852,
+          "lagMs": 0.0,
+          "correlation": 0.99996
+        },
+        {
+          "timeSeconds": 22.91,
+          "lagMs": 0.0,
+          "correlation": 0.99998
+        },
+        {
+          "timeSeconds": 38.586,
+          "lagMs": 0.0,
+          "correlation": 0.99995
+        },
+        {
+          "timeSeconds": 60.29,
+          "lagMs": 0.0,
+          "correlation": 0.99996
+        },
+        {
+          "timeSeconds": 78.377,
+          "lagMs": 0.0,
+          "correlation": 0.99994
+        },
+        {
+          "timeSeconds": 97.67,
+          "lagMs": 0.0,
+          "correlation": 0.99996
+        },
+        {
+          "timeSeconds": 115.757,
+          "lagMs": 0.0,
+          "correlation": 0.99997
+        }
+      ],
+      "continuity": {
+        "freezeOver2_5": [],
+        "matchedBlack": [],
+        "sampledFrames": 482,
+        "lowVisualDelta": []
+      }
+    },
+    {
+      "file": "controle/Pilote-Ouverture-16x9.mp4",
+      "durationSeconds": 39.8,
+      "bytes": 49523378,
+      "sha256": "93bfac44189f6edb28873e5c6a5c7839a774f0d053e9b11a265e46f5ecaf3d3f",
+      "format": "16x9",
+      "frames": 1194,
+      "codecVideo": "h264",
+      "codecAudio": "aac",
+      "audioChannels": 1,
+      "chapterCount": 0,
+      "voiceMatch": [
+        {
+          "timeSeconds": 0.995,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        },
+        {
+          "timeSeconds": 3.582,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        },
+        {
+          "timeSeconds": 7.562,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        },
+        {
+          "timeSeconds": 12.736,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        },
+        {
+          "timeSeconds": 19.9,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        },
+        {
+          "timeSeconds": 25.87,
+          "lagMs": 0.0,
+          "correlation": 1.0
+        },
+        {
+          "timeSeconds": 32.238,
+          "lagMs": 0.0,
+          "correlation": 1.0
+        },
+        {
+          "timeSeconds": 38.208,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        }
+      ],
+      "continuity": {
+        "freezeOver2_5": [],
+        "matchedBlack": [],
+        "sampledFrames": 159,
+        "lowVisualDelta": []
+      }
+    },
+    {
+      "file": "controle/Pilote-Ouverture-9x16.mp4",
+      "durationSeconds": 39.8,
+      "bytes": 43976074,
+      "sha256": "b23efa7c62bf61d798f92623746e3ec4f0e484acf8d3aa460d599694e38724e2",
+      "format": "9x16",
+      "frames": 1194,
+      "codecVideo": "h264",
+      "codecAudio": "aac",
+      "audioChannels": 1,
+      "chapterCount": 0,
+      "voiceMatch": [
+        {
+          "timeSeconds": 0.995,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        },
+        {
+          "timeSeconds": 3.582,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        },
+        {
+          "timeSeconds": 7.562,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        },
+        {
+          "timeSeconds": 12.736,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        },
+        {
+          "timeSeconds": 19.9,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        },
+        {
+          "timeSeconds": 25.87,
+          "lagMs": 0.0,
+          "correlation": 1.0
+        },
+        {
+          "timeSeconds": 32.238,
+          "lagMs": 0.0,
+          "correlation": 1.0
+        },
+        {
+          "timeSeconds": 38.208,
+          "lagMs": 0.0,
+          "correlation": 0.99999
+        }
+      ],
+      "continuity": {
+        "freezeOver2_5": [],
+        "matchedBlack": [],
+        "sampledFrames": 159,
+        "lowVisualDelta": []
+      }
+    }
+  ],
+  "boards": [
+    {
+      "format": "16x9",
+      "scene": "intro-sommaire",
+      "views": 12,
+      "changedAdjacentPairs": 11,
+      "distinctViews": 12,
+      "delta": [
+        0.3248,
+        0.1368,
+        0.242,
+        0.2219,
+        0.6467,
+        0.398,
+        0.6453,
+        0.5908,
+        0.1364,
+        0.5757,
+        0.6667
+      ]
+    },
+    {
+      "format": "16x9",
+      "scene": "d1-fait-declencheur",
+      "views": 12,
+      "changedAdjacentPairs": 11,
+      "distinctViews": 12,
+      "delta": [
+        0.5766,
+        0.0935,
+        0.1444,
+        0.1027,
+        0.4578,
+        0.9839,
+        0.1154,
+        0.1321,
+        0.0982,
+        0.1203,
+        0.3152
+      ]
+    },
+    {
+      "format": "16x9",
+      "scene": "d1-coulisses-geopolitiques",
+      "views": 12,
+      "changedAdjacentPairs": 10,
+      "distinctViews": 11,
+      "delta": [
+        0.5752,
+        0.4846,
+        0.5792,
+        0.185,
+        0.3172,
+        0.6161,
+        0.0315,
+        0.0777,
+        0.7217,
+        0.604,
+        0.6257
+      ]
+    },
+    {
+      "format": "16x9",
+      "scene": "d1-deux-cotes-medaille",
+      "views": 12,
+      "changedAdjacentPairs": 11,
+      "distinctViews": 12,
+      "delta": [
+        0.3527,
+        0.2442,
+        0.2094,
+        0.19,
+        0.1453,
+        0.1337,
+        0.5279,
+        0.102,
+        0.1319,
+        0.0542,
+        0.3725
+      ]
+    },
+    {
+      "format": "16x9",
+      "scene": "d1-impact-quebec",
+      "views": 12,
+      "changedAdjacentPairs": 11,
+      "distinctViews": 12,
+      "delta": [
+        0.5759,
+        0.3435,
+        0.1121,
+        0.7944,
+        0.8096,
+        0.0489,
+        0.1636,
+        0.0375,
+        0.5386,
+        0.1629,
+        0.1025
+      ]
+    },
+    {
+      "format": "16x9",
+      "scene": "d2-fait-declencheur",
+      "views": 12,
+      "changedAdjacentPairs": 10,
+      "distinctViews": 11,
+      "delta": [
+        0.5498,
+        0.408,
+        0.2,
+        0.3848,
+        0.8192,
+        0.0221,
+        0.0426,
+        0.0917,
+        0.7022,
+        0.4221,
+        0.1074
+      ]
+    },
+    {
+      "format": "16x9",
+      "scene": "d2-coulisses-geopolitiques",
+      "views": 12,
+      "changedAdjacentPairs": 10,
+      "distinctViews": 11,
+      "delta": [
+        0.0326,
+        0.1098,
+        0.058,
+        0.6632,
+        0.4996,
+        0.1839,
+        0.5987,
+        0.402,
+        0.2446,
+        0.3734,
+        0.1862
+      ]
+    },
+    {
+      "format": "16x9",
+      "scene": "d2-deux-cotes-medaille",
+      "views": 12,
+      "changedAdjacentPairs": 10,
+      "distinctViews": 11,
+      "delta": [
+        0.0411,
+        0.2516,
+        0.0027,
+        0.1067,
+        0.0449,
+        0.0621,
+        0.4317,
+        0.0415,
+        0.0652,
+        0.0906,
+        0.0913
+      ]
+    },
+    {
+      "format": "16x9",
+      "scene": "d2-impact-quebec",
+      "views": 12,
+      "changedAdjacentPairs": 10,
+      "distinctViews": 11,
+      "delta": [
+        0.4696,
+        0.2799,
+        0.6154,
+        0.6386,
+        0.3397,
+        0.2462,
+        0.2821,
+        0.2058,
+        0.5337,
+        0.0208,
+        0.0779
+      ]
+    },
+    {
+      "format": "16x9",
+      "scene": "d3-enjeu-mondial",
+      "views": 12,
+      "changedAdjacentPairs": 9,
+      "distinctViews": 10,
+      "delta": [
+        0.0384,
+        0.0819,
+        0.0766,
+        0.29,
+        0.0408,
+        0.6007,
+        0.0368,
+        0.0643,
+        0.5317,
+        0.0165,
+        0.1496
+      ]
+    },
+    {
+      "format": "16x9",
+      "scene": "d3-lien-quebec",
+      "views": 12,
+      "changedAdjacentPairs": 10,
+      "distinctViews": 11,
+      "delta": [
+        0.6315,
+        0.9866,
+        0.0754,
+        0.0723,
+        0.0551,
+        0.0013,
+        0.2775,
+        0.1098,
+        0.0717,
+        0.1817,
+        0.0391
+      ]
+    },
+    {
+      "format": "16x9",
+      "scene": "d3-deux-cotes-medaille",
+      "views": 12,
+      "changedAdjacentPairs": 8,
+      "distinctViews": 9,
+      "delta": [
+        0.3167,
+        0.2683,
+        0.0049,
+        0.006,
+        0.0741,
+        0.04,
+        0.0743,
+        0.4828,
+        0.0652,
+        0.0239,
+        0.4734
+      ]
+    },
+    {
+      "format": "16x9",
+      "scene": "conclusion-debat-quebec",
+      "views": 12,
+      "changedAdjacentPairs": 10,
+      "distinctViews": 11,
+      "delta": [
+        0.454,
+        0.2174,
+        0.1734,
+        0.2922,
+        0.519,
+        0.04,
+        0.025,
+        0.4359,
+        0.0462,
+        0.3937,
+        0.2103
+      ]
+    },
+    {
+      "format": "9x16",
+      "scene": "intro-sommaire",
+      "views": 12,
+      "changedAdjacentPairs": 11,
+      "distinctViews": 12,
+      "delta": [
+        0.2386,
+        0.0904,
+        0.1783,
+        0.1484,
+        0.6558,
+        0.2877,
+        0.5703,
+        0.5565,
+        0.1029,
+        0.5574,
+        0.648
+      ]
+    },
+    {
+      "format": "9x16",
+      "scene": "d1-fait-declencheur",
+      "views": 12,
+      "changedAdjacentPairs": 11,
+      "distinctViews": 12,
+      "delta": [
+        0.5368,
+        0.0549,
+        0.1136,
+        0.0868,
+        0.4518,
+        0.7757,
+        0.1688,
+        0.1679,
+        0.0989,
+        0.1187,
+        0.3248
+      ]
+    },
+    {
+      "format": "9x16",
+      "scene": "d1-coulisses-geopolitiques",
+      "views": 12,
+      "changedAdjacentPairs": 10,
+      "distinctViews": 11,
+      "delta": [
+        0.6868,
+        0.4455,
+        0.6721,
+        0.1484,
+        0.4364,
+        0.79,
+        0.0228,
+        0.6783,
+        0.5109,
+        0.5712,
+        0.4897
+      ]
+    },
+    {
+      "format": "9x16",
+      "scene": "d1-deux-cotes-medaille",
+      "views": 12,
+      "changedAdjacentPairs": 11,
+      "distinctViews": 12,
+      "delta": [
+        0.4574,
+        0.1598,
+        0.2268,
+        0.1929,
+        0.1627,
+        0.1431,
+        0.4152,
+        0.171,
+        0.1971,
+        0.0804,
+        0.3538
+      ]
+    },
+    {
+      "format": "9x16",
+      "scene": "d1-impact-quebec",
+      "views": 12,
+      "changedAdjacentPairs": 9,
+      "distinctViews": 10,
+      "delta": [
+        0.4752,
+        0.2429,
+        0.1377,
+        0.7953,
+        0.8161,
+        0.0292,
+        0.0955,
+        0.0217,
+        0.5714,
+        0.2455,
+        0.1223
+      ]
+    },
+    {
+      "format": "9x16",
+      "scene": "d2-fait-declencheur",
+      "views": 12,
+      "changedAdjacentPairs": 10,
+      "distinctViews": 11,
+      "delta": [
+        0.4902,
+        0.3025,
+        0.1946,
+        0.2674,
+        0.7792,
+        0.0315,
+        0.0422,
+        0.1132,
+        0.7317,
+        0.275,
+        0.1388
+      ]
+    },
+    {
+      "format": "9x16",
+      "scene": "d2-coulisses-geopolitiques",
+      "views": 12,
+      "changedAdjacentPairs": 10,
+      "distinctViews": 11,
+      "delta": [
+        0.0259,
+        0.1453,
+        0.0734,
+        0.5199,
+        0.5208,
+        0.1411,
+        0.5826,
+        0.3435,
+        0.3225,
+        0.3518,
+        0.2326
+      ]
+    },
+    {
+      "format": "9x16",
+      "scene": "d2-deux-cotes-medaille",
+      "views": 12,
+      "changedAdjacentPairs": 10,
+      "distinctViews": 11,
+      "delta": [
+        0.0263,
+        0.1719,
+        0.04,
+        0.1054,
+        0.0585,
+        0.0551,
+        0.327,
+        0.071,
+        0.1002,
+        0.0926,
+        0.0996
+      ]
+    },
+    {
+      "format": "9x16",
+      "scene": "d2-impact-quebec",
+      "views": 12,
+      "changedAdjacentPairs": 10,
+      "distinctViews": 11,
+      "delta": [
+        0.4283,
+        0.1618,
+        0.5835,
+        0.5036,
+        0.2491,
+        0.2125,
+        0.2449,
+        0.1272,
+        0.4223,
+        0.0306,
+        0.0984
+      ]
+    },
+    {
+      "format": "9x16",
+      "scene": "d3-enjeu-mondial",
+      "views": 12,
+      "changedAdjacentPairs": 8,
+      "distinctViews": 9,
+      "delta": [
+        0.0589,
+        0.102,
+        0.0748,
+        0.2134,
+        0.023,
+        0.7192,
+        0.0223,
+        0.0598,
+        0.6949,
+        0.0096,
+        0.1328
+      ]
+    },
+    {
+      "format": "9x16",
+      "scene": "d3-lien-quebec",
+      "views": 12,
+      "changedAdjacentPairs": 9,
+      "distinctViews": 10,
+      "delta": [
+        0.5612,
+        0.7768,
+        0.0837,
+        0.0768,
+        0.0728,
+        0.0002,
+        0.2933,
+        0.1614,
+        0.1047,
+        0.2408,
+        0.0299
+      ]
+    },
+    {
+      "format": "9x16",
+      "scene": "d3-deux-cotes-medaille",
+      "views": 12,
+      "changedAdjacentPairs": 9,
+      "distinctViews": 10,
+      "delta": [
+        0.3458,
+        0.1871,
+        0.0065,
+        0.0069,
+        0.0857,
+        0.0491,
+        0.0859,
+        0.3542,
+        0.106,
+        0.0551,
+        0.3875
+      ]
+    },
+    {
+      "format": "9x16",
+      "scene": "conclusion-debat-quebec",
+      "views": 12,
+      "changedAdjacentPairs": 10,
+      "distinctViews": 11,
+      "delta": [
+        0.3911,
+        0.192,
+        0.1929,
+        0.2462,
+        0.6143,
+        0.0661,
+        0.0234,
+        0.3728,
+        0.0989,
+        0.4219,
+        0.2379
+      ]
+    }
+  ]
+}

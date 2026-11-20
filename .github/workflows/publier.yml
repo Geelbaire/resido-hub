@@ -29,6 +29,12 @@ jobs:
           cp index.html CNAME .nojekyll _site/
           cp -R studio _site/
           cp -R episodes _site/
+          rm -rf _site/episodes/2026-11-17-Episode-05/controle \
+                 _site/episodes/2026-11-17-Episode-05/reference \
+                 _site/episodes/2026-11-17-Episode-05/studio-preparation \
+                 _site/episodes/2026-11-20-Episode-06/controle \
+                 _site/episodes/2026-11-20-Episode-06/reference
+          find _site/episodes -name '*.mp4' -delete
 
       # Seul le dernier épisode est en ligne, en 16:9 uniquement (site < 1 Go).
       # Les épisodes précédents et les versions 9:16 restent sur le SSD et dans les Releases GitHub.
@@ -36,9 +42,9 @@ jobs:
       - name: Ajouter le MP4 16:9 du dernier épisode
         env:
           GH_TOKEN: ${{ github.token }}
-          DERNIER_DOSSIER: 2026-11-14-Special-Reportage-Epicerie
-          DERNIERE_RELEASE: episode-04-2026-11-14
-          DERNIER_MP4: Franc-Nord-Episode-04-16x9.mp4
+          DERNIER_DOSSIER: 2026-11-20-Episode-06
+          DERNIERE_RELEASE: episode-06-2026-11-20
+          DERNIER_MP4: Franc-Nord-Episode-06-16x9.mp4
         run: |
           mkdir -p "_site/videos/$DERNIER_DOSSIER"
           gh release download "$DERNIERE_RELEASE" --repo "$GITHUB_REPOSITORY" --pattern "$DERNIER_MP4" --dir "_site/videos/$DERNIER_DOSSIER"

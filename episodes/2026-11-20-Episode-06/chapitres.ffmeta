@@ -1,0 +1,33 @@
+;FFMETADATA1
+title=Missile russe en Pologne, recul à la COP31 et chute d’Anthropic | Franc Nord #6
+artist=FRANC NORD
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=39800
+title=Sommaire · Trois ondes de choc
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=39800
+END=196800
+title=Missile en Pologne, Shenzhen & Davie
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=196800
+END=354480
+title=COP31, Qatar & énergie au Québec
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=354480
+END=475060
+title=Anthropic, cyber & nos jeunes
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=475060
+END=526564
+title=La question du jour

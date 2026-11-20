@@ -1,0 +1,23 @@
+[
+  {
+    "chapter": "ch1",
+    "file": "Short-1-Missile-Pologne-Shenzhen-Quebec-9x16.mp4",
+    "start": 39.8,
+    "end": 196.8,
+    "duration": 157.0
+  },
+  {
+    "chapter": "ch2",
+    "file": "Short-2-COP31-Fossiles-Energie-Quebec-9x16.mp4",
+    "start": 196.8,
+    "end": 354.48,
+    "duration": 157.68
+  },
+  {
+    "chapter": "ch3",
+    "file": "Short-3-Anthropic-Bourse-Cyber-Quebec-9x16.mp4",
+    "start": 354.48,
+    "end": 475.06,
+    "duration": 120.58
+  }
+]
